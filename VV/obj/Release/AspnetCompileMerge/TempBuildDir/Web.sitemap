@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode securityTrimmingEnabled="true" roles="*">
+    <siteMapNode title="Home" url="~/Home.aspx" />
+    <siteMapNode title="Import SO Backlog" url="~/UploadBaan.aspx" />
+    <siteMapNode title="Production Release" url="~/ViewProdRelease.aspx" />
+    <siteMapNode title="Invoiced Data Importing" url="~/UploadInvoice.aspx" />
+    <siteMapNode title="Freeze Plan" url="~/FreezePlan.aspx" />
+    <siteMapNode title="Release Plan" url="~/ViewReleasePlan.aspx" />
+    <siteMapNode title="FG Plan" url="~/ViewFGPlan.aspx" />
+    <siteMapNode title="Sales Plan" url="~/ViewSalesPlan.aspx" />
+  </siteMapNode>
+</siteMap>

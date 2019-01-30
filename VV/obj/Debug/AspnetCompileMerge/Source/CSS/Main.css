@@ -1,0 +1,43 @@
+﻿.maindiv {
+    margin-top: 30px;
+    height: 100%;
+}
+
+.textBox {
+    Width: 180px;
+    margin-left: 20px;
+}
+
+.Grid_RowRecord {
+    text-align: left;
+    font-family: Tahoma;
+    font-size: 11px;
+    font-style: normal;
+    text-decoration: none;
+    border: solid 1px #DCDCDC;
+    background-color: #F2F2f2;
+    padding: 3px;
+}
+
+.label {
+    padding-left: 1px;
+    font-family: Verdana;
+    margin-left: 10px;
+    width: 150px;
+}
+
+.button {
+    margin-top: 10px;
+    margin-left: 500px;
+}
+
+.lblSuccessMessage {
+    font-family: 'Times New Roman';
+    text-align: center;
+    color: green;
+    font-size: large;
+}
+
+.td {
+    height: 20px;
+}

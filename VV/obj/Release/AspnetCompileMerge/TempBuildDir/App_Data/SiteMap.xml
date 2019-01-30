@@ -1,0 +1,70 @@
+<items>
+	<item ID="000" Text="Home" NavigateUrl="home.aspx" SubGroupTabSpacing="1"  >
+	</item>
+
+	<item ID="100" Text="Planning" NavigateUrl="" SubGroupTabSpacing="1" >
+		<item ID="101" Text="Import SO Backlog" NavigateUrl="UploadBaan.aspx" />
+		<item ID="102" Text="Production Release" NavigateUrl="ViewProdRelease.aspx" />
+		<item ID="103" Text="" NavigateUrl="UpdateProdRelease.aspx" visible="false"/>
+    <item ID="104" Text="Invoiced Data Importing" NavigateUrl="UploadInvoice.aspx"/>
+    <item ID="104" Text="Freeze Plan" NavigateUrl="FreezePlan.aspx"/>
+    <item ID="104" Text="" NavigateUrl=".aspx"/>
+    <item ID="104" Text="" NavigateUrl=".aspx"/>
+	</item>
+
+	<item ID="200" Text="Clients" NavigateUrl=""  SubGroupTabSpacing="1"  >
+		<item ID="201" Text="View Clients" NavigateUrl="ManageClients.aspx" />
+		<item ID="202" Text="Add Client" NavigateUrl="AddClients.aspx" />
+		<item ID="203" Text="" NavigateUrl="UpdateClient.aspx" visible="false"/>
+	</item>
+	
+	<item ID="300" Text="Projects" NavigateUrl="" SubGroupTabSpacing="1"  >
+		<item ID="301" Text="View Projects" NavigateUrl="ManageProjects.aspx" />
+		<item ID="302" Text="Add Project" NavigateUrl="AddProjects.aspx" />
+		<item ID="303" Text="" NavigateUrl="UpdateProject.aspx" visible="false"/>
+	</item>
+
+	<item ID="400" Text="Tasks" NavigateUrl="" SubGroupTabSpacing="1" >
+		<item ID="401" Text="View Tasks" NavigateUrl="ManageTasks.aspx" />
+		<item ID="402" Text="Add Task" NavigateUrl="AddTasks.aspx" />
+		<item ID="403" Text="" NavigateUrl="UpdateTasks.aspx" visible="false"/>
+	</item>
+
+	<item ID="500" Text="Resources" NavigateUrl="" SubGroupTabSpacing="1"  >
+		<item ID="501" Text="View Resources" NavigateUrl="ManageResources.aspx" />
+		<item ID="502" Text="Add Resource" NavigateUrl="AddResources.aspx" />
+		<item ID="503" Text="" NavigateUrl="UpdateResources.aspx" visible="false"/>
+	</item>
+
+	<item ID="600" Text="TimeSheets" NavigateUrl="" SubGroupTabSpacing="1" >
+		<item ID="601" Text="View Timesheets" NavigateUrl="ManageTimeSheets.aspx" />
+		<item ID="602" Text="Add Timesheet" NavigateUrl="AddTimeSheet.aspx" />
+		<item ID="603" Text="Approve Timesheet" NavigateUrl="ApproveTimeSheet.aspx" />
+	</item>
+
+	<item ID="700" Text="Reports" NavigateUrl="" SubGroupTabSpacing="1" >
+		<item ID="701" Text="Timesheet Detailed Report" NavigateUrl="FilledTimeSheetReport.aspx" />
+		<item ID="702" Text="Timesheet Non-Compliance Report" NavigateUrl="TimesheetNonComplianceReport.aspx" />
+	</item>
+
+	<item ID="800" Text="Leaves" NavigateUrl="" SubGroupTabSpacing="1" >
+		<item ID="801" Text="View Leave Status" NavigateUrl="ManageLeave.aspx" />
+		<item ID="802" Text="Apply For Leave" NavigateUrl="ApplyLeave.aspx" />
+		<item ID="803" Text="Approve Leave" NavigateUrl="ApproveLeave.aspx"/>
+	</item>
+
+	<item ID="900" Text="Probation" NavigateUrl="" SubGroupTabSpacing="1" >
+		<item ID="901" Text="View Probation Forms" NavigateUrl="ManageProbation.aspx" />
+		<item ID="902" Text="Add Probation Form" NavigateUrl="AddProbation.aspx" />
+    <item ID="903" Text="" NavigateUrl="UpdateProbation.aspx" />
+	</item>
+
+	<item ID="1000" Text="Admin" NavigateUrl="" SubGroupTabSpacing="1" >
+		<item ID="1001" Text="View Logs" NavigateUrl="ViewLogs.aspx" />
+		<item ID="1002" Text="EOM Setup" NavigateUrl="EmployeeOfMonth.aspx" />
+		<item ID="1003" Text="Holiday Calendar" NavigateUrl="CorporateHolidaysCalendar.aspx" />
+		<item ID="1004" Text="Manage Security" NavigateUrl="ManageSecurity.aspx" />
+		<item ID="1005" Text="" NavigateUrl="ViewLogDetailPage.aspx" visible="false"/>
+	</item>	
+
+</items>

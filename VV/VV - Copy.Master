@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="false" CodeBehind="VV.master.cs" Inherits="VV.VV" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Velan Valves</title>
+    <link href="Css/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+    <script src="Js/Calendar.js" language="javascript" type="text/javascript"></script>
+
+    <script src="Js/Common.js" language="javascript" type="text/javascript"></script>
+
+    <script src="Js/Catch.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table border="0" cellpadding="0" cellspacing="0" class="main" style="width: 100%">
+                <tr>
+                    <td style="width: 100%;" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" style="height: 100%;" width="99%">
+                            <tr>
+                                <td align="left" style="background-color: white; height: 58px;" valign="top">
+                                    <img id="IMG1" align="left" alt="Company Logo" onclick="javascript:window.open('http://www.increvcorp.com');"
+                                        src="Images/logo_velan.png" style="cursor: pointer; width: 275px; height: 75px" />
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0" style="height: 100%;" width="100%">
+                                        <tr>
+                                            <td valign="top" class="logoApplicationName" style="background-color: white; letter-spacing: 0.5mm; padding-left:780px;"
+                                                align="left">
+                                                Baan Management Systems</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" valign="bottom" style="padding-top: 5px;">
+                                                <asp:LinkButton ID="lnkBtnMyProfile" Visible="false" runat="server" OnClick="lnkBtnMyProfile_Click" CssClass="MyProfile" CausesValidation="false">MyProfile</asp:LinkButton>
+                                                <asp:Label ID="lblUserName" CssClass="userName" runat="server" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="menu" valign="bottom" align="left">
+                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                            <DataBindings>
+                                <asp:MenuItemBinding DataMember="item" NavigateUrlField="NavigateUrl" TextField="Text"
+                                    ToolTipField="" ValueField="" />
+                            </DataBindings>
+                            <StaticMenuStyle BackColor="#661010" ForeColor="Black" HorizontalPadding="15px" />
+                            <StaticMenuItemStyle Font-Bold="true" Font-Names="Trebuchet MS, Verdana" Font-Size="13px"
+                                ForeColor="White" />
+                            <StaticSelectedStyle BorderStyle="None" />
+                            <StaticHoverStyle ForeColor="#FF8080" />
+                            <DynamicMenuStyle BackColor="MistyRose" ForeColor="Maroon" BorderColor="#FFC0C0"
+                                BorderWidth="1px" HorizontalPadding="0px" VerticalPadding="0px" />
+                            <DynamicMenuItemStyle ForeColor="Maroon" HorizontalPadding="3px" ItemSpacing="0px"
+                                VerticalPadding="1px" Font-Bold="true" Font-Names="Trebuchet MS, Verdana" Font-Size="12px" />
+                            <DynamicHoverStyle BackColor="#FFC0C0" ForeColor="#661010" BorderStyle="None" />
+                            <DynamicSelectedStyle BorderStyle="None" />
+                        </asp:Menu>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="body" width="100%" valign="top" title="">
+                        <table width="100%" style="border: none" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td valign="top">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="footer">
+                        Copyright &copy; Velan 2015.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

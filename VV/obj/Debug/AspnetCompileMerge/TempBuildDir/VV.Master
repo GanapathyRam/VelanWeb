@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="false" CodeBehind="VV.master.cs" Inherits="VV.VV" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Velan Valves</title>
+    <link href="Css/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/PopUpStyleSheet.css" rel="stylesheet" type="text/css" />
+
+    <script src="Js/Calendar.js" language="javascript" type="text/javascript"></script>
+
+    <script src="Js/Common.js" language="javascript" type="text/javascript"></script>
+
+    <script src="Js/Catch.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table border="0" cellpadding="0" cellspacing="0" class="main" style="width: 100%">
+                <tr>
+                    <td style="width: 100%;" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" style="height: 100%;" width="99%">
+                            <tr>
+                                <td align="left" style="background-color: white; height: 39px;" valign="top">
+                                    <img id="IMG1" align="left" alt="Company Logo"
+                                        src="Images/logo_velan.png" style="cursor: pointer; width: 167px; height: 39px" />
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0" style="height: 100%;" width="100%">
+                                        <tr>
+                                            <td valign="middle" class="logoApplicationName" style="background-color: white; letter-spacing: 0.5mm; padding-left: 780px;"
+                                                align="right">MIS Order Status</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" valign="bottom" style="padding-top: 5px;">
+                                                <asp:LinkButton ID="lnkBtnMyProfile" Visible="false" runat="server" OnClick="lnkBtnMyProfile_Click" CssClass="MyProfile" CausesValidation="false">MyProfile</asp:LinkButton>
+                                                <asp:Label ID="lblUserName" CssClass="userName" runat="server" />
+                                                <asp:LinkButton ID="lnkBtnLogOut" Visible="false" runat="server" OnClick="lnkBtnLogout_Click" CssClass="MyProfile" CausesValidation="false">[LogOut]</asp:LinkButton>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="menu" valign="bottom" align="left">
+                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" OnMenuItemClick="NavigationMenu_MenuItemClick">
+                            <%--<DataBindings>
+                                <asp:MenuItemBinding DataMember="item" NavigateUrlField="NavigateUrl" TextField="Text"
+                                    ToolTipField="" ValueField="" />
+                            </DataBindings>--%>
+                            <Items>
+                                <asp:MenuItem Value="Home" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                                <asp:MenuItem Value="Planning" Enabled="true">
+                                    <asp:MenuItem Value="Import SO Backlog" NavigateUrl="~/UploadBaan.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Production Release" NavigateUrl="~/ViewProdRelease.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Invoiced Data Importing" NavigateUrl="~/UploadInvoice.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Freeze Plan" NavigateUrl="~/FreezePlan.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Plan Review" Enabled="true">
+                                        <asp:MenuItem Value="Release Plan" NavigateUrl="~/ViewReleasePlan.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="FG Plan" NavigateUrl="~/ViewFGPlan.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="Sales Plan" NavigateUrl="~/ViewSalesPlan.aspx" Enabled="false"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Value="Reports" Enabled="true">
+                                        <asp:MenuItem Value="Order status Report" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="ToRelease Report" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="SO BackLog Report" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="Ready To Release Report" Enabled="false"></asp:MenuItem> <%--//Shortage Report--%>
+                                        <asp:MenuItem Value="Shortage Report" Enabled="false"></asp:MenuItem> <%--//Shortage Report--%>                                        
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Value="Production Order Reversal" NavigateUrl="~/ProdOrderReversal.aspx" Enabled="false"></asp:MenuItem>
+                                    <%--<asp:MenuItem Value="ICS PO Reversal" NavigateUrl="~/ICSPOReversal.aspx" Enabled="false"></asp:MenuItem>--%>
+                                    <asp:MenuItem Value="Schedule Process" NavigateUrl="~/ScheduleProcess.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="View Processed Items" NavigateUrl="~/ViewProcessedItems.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Update WIP" NavigateUrl="~/UpdateWIPRecDate.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Update PO" NavigateUrl="~/UpdatePOCommitmentDate.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="View WIP Dates" NavigateUrl="~/ViewWIPDates.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="View PO Dates" NavigateUrl="~/ViewPODates.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Buyer Master" NavigateUrl="~/BuyerMaster.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="View Shortages" NavigateUrl="~/Shortage.aspx" Enabled="false"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Value="Production" Enabled="true">
+                                    <asp:MenuItem Value="WIP To FG" NavigateUrl="~/ViewWIPItems.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Prod Completion" NavigateUrl="~/ViewProdCompletion.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="WIP Report" Enabled="false"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Value="Quality" Enabled="true">
+                                    <asp:MenuItem Value="TPI Offering" NavigateUrl="~/ViewTPIOffering.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="TPI Pending Report" Enabled="false"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Value="Sales" Enabled="true">
+                                    <asp:MenuItem Value="ITP/ GAD Information" NavigateUrl="~/ViewITP.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Stock Code / Tag No Import" NavigateUrl="~/UploadUpdatedMISSalesInput.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="SCN Input" NavigateUrl="~/ViewSCNInput.aspx" Enabled="false"></asp:MenuItem>
+                                    <%--<asp:MenuItem Value="MIS Sales Input" NavigateUrl="~/ViewMISSalesInput.aspx" Enabled="false"></asp:MenuItem>--%>
+                                    <asp:MenuItem Value="Commerical" NavigateUrl="~/ViewMISFinanceInput.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="QR & QA" NavigateUrl="~/ViewQRAndQA.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="QR & QA Sales Summary" NavigateUrl="~/ViewQRAndQASalesSummary.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Commercial Review" NavigateUrl="~/ViewCommercial.aspx" Enabled="false"></asp:MenuItem>
+                                </asp:MenuItem>
+
+                                <asp:MenuItem Value="Print" Enabled="true">
+                                    <asp:MenuItem Value="Assembly Order Processing" NavigateUrl="~/ViewAssemblyOrderProcessing.aspx" Enabled="false"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Value="System Utility" Enabled="true">
+                                    <asp:MenuItem Value="Create New User" NavigateUrl="~/CreateNewUser.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Update Role Access" NavigateUrl="~/UpdateScreenAccess.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Change Password" NavigateUrl="~/UpdatePassword.aspx" Enabled="false"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Value="Stores" Enabled="true">
+                                    <asp:MenuItem Value="Production Order Issue" NavigateUrl="~/ProductionOrderIssue.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Vendor Master" NavigateUrl="~/VendorMaster.aspx" Enabled="false"></asp:MenuItem>
+                                    <%-- <asp:MenuItem Value="Item Master" NavigateUrl="~/ItemMaster.aspx" Enabled="false"></asp:MenuItem>--%>
+                                    <asp:MenuItem Value="Employee Master" NavigateUrl="~/EmployeeMaster.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Delivery Challan" NavigateUrl="~/DeliveryChallan.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Delivery Challan Receipts" NavigateUrl="~/DeliveryChallanReceipts.aspx" Enabled="false"></asp:MenuItem>
+                                    <%--<asp:MenuItem Value="Print DC" NavigateUrl="~/DCReports.aspx" Enabled="false"></asp:MenuItem>--%>
+                                    <asp:MenuItem Value="Reports" Enabled="true">
+                                       <asp:MenuItem Value="All DC Reports" NavigateUrl="~/AllDCReport.aspx" Enabled="false"></asp:MenuItem>
+                                       </asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Value="MIS Utility" Enabled="true">
+                                    <asp:MenuItem Value="Sales Order Line Item Deletion" NavigateUrl="~/SalesOrderLineItemDeletion.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Serial No Details" NavigateUrl="~/SerialNoDetails.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Sales Order Qty Decrement" NavigateUrl="~/SalesOrderQtyDecrement.aspx" Enabled="false"></asp:MenuItem> 
+                                    <asp:MenuItem Value="Convert FG" NavigateUrl="~/FGOrderChange.aspx" Enabled="false"></asp:MenuItem>   
+                                    <asp:MenuItem Value="FG To WIP Reversal" NavigateUrl="~/FgToWipReversal.aspx" Enabled="false"></asp:MenuItem>                                                                                                                                                                                                                                                     
+                                </asp:MenuItem>
+                            </Items>
+                            <StaticMenuStyle BackColor="#661010" ForeColor="Black" HorizontalPadding="15px" />
+                            <StaticMenuItemStyle Font-Bold="true" Font-Names="Trebuchet MS, Verdana" Font-Size="13px"
+                                ForeColor="White" HorizontalPadding="10" />
+                            <StaticSelectedStyle BorderStyle="None" />
+                            <StaticHoverStyle ForeColor="#FF8080" />
+                            <DynamicMenuStyle BackColor="MistyRose" ForeColor="Maroon" BorderColor="#FFC0C0"
+                                BorderWidth="1px" HorizontalPadding="0px" VerticalPadding="0px" />
+                            <DynamicMenuItemStyle ForeColor="Maroon" HorizontalPadding="3px" ItemSpacing="0px"
+                                VerticalPadding="1px" Font-Bold="true" Font-Names="Trebuchet MS, Verdana" Font-Size="12px" />
+                            <DynamicHoverStyle BackColor="#FFC0C0" ForeColor="#661010" BorderStyle="None" />
+                            <DynamicSelectedStyle BorderStyle="None" />
+                        </asp:Menu>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="body" width="100%" valign="top" title="">
+                        <table width="100%" style="border: none" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td valign="top">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="footer">Copyright &copy; 2015.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

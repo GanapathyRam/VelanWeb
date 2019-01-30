@@ -1,0 +1,27 @@
+<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">SupplierCode</th><th scope="col">VendorName</th><th scope="col">DCNumber</th><th scope="col">DCDate</th><th scope="col">SlNo</th><th scope="col">ItemDescription</th><th scope="col">Units</th><th scope="col">QuantitySent</th><th scope="col">QuantityReceived</th><th scope="col">QuantityPending</th><th scope="col">RequestedBy</th><th scope="col">Reason</th>
+		</tr><tr class="textmode">
+			<td>&nbsp;</td><td>ACCQURATE ENGINEERS</td><td>VVI-R-19-0069</td><td>14-06-2018</td><td>1</td><td>Fixture (refer enclosed)</td><td>Each</td><td>21.000</td><td>0.00</td><td>21.000</td><td>Dhayalan.S</td><td>FOR INSPECTION PURPOSE</td>
+		</tr><tr class="textmode">
+			<td>&nbsp;</td><td>DELTA WEARTECH ENGINEER’S(P)LTD</td><td>VVI-R-19-0100</td><td>25-07-2018</td><td>1</td><td>4.75&quot;-12 UN-2B Thread Plug gauge (gO &amp; nogo)</td><td>Set</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Dhayalan.S</td><td>FOR INSPECTION PURPOSE</td>
+		</tr><tr class="textmode">
+			<td>410520</td><td>Epsilon Ultra Automation Pvt Ltd</td><td>VVI-R-19-0099</td><td>24-07-2018</td><td>1</td><td>1/2” X 14 NPT DEPTH GAUGE </td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Dhayalan.S</td><td>For inspection purpose</td>
+		</tr><tr class="textmode">
+			<td>410565</td><td>Esal Press Tools</td><td>VVI-R-19-0082</td><td>04-07-2018</td><td>1</td><td>7/8&quot; Eye nut - Thread plug gauge</td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Dhayalan.S</td><td>Sent for inspection purpose</td>
+		</tr><tr class="textmode">
+			<td>410565</td><td>Esal Press Tools</td><td>VVI-R-19-0082</td><td>04-07-2018</td><td>2</td><td>3/4&quot; Eye nut - Thread plug gauge</td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Dhayalan.S</td><td>Sent for inspection purpose</td>
+		</tr><tr class="textmode">
+			<td>410565</td><td>Esal Press Tools</td><td>VVI-R-19-0084</td><td>05-07-2018</td><td>1</td><td>7/8” – 9UNC &amp; &#190;” – 10UNC Drill Tap</td><td>Each</td><td>2.000</td><td>0.00</td><td>2.000</td><td>Dhayalan.S</td><td>For inspection purpose</td>
+		</tr><tr class="textmode">
+			<td>&nbsp;</td><td>FLOWLINES ENGINEERS</td><td>VVI-R-19-0074</td><td>20-06-2018</td><td>1</td><td>3/4&quot; - 6 ACME - 2G – LH (GO)</td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Dhayalan.S</td><td>Sent for inspection purpose</td>
+		</tr><tr class="textmode">
+			<td>&nbsp;</td><td>FLOWLINES ENGINEERS</td><td>VVI-R-19-0074</td><td>20-06-2018</td><td>2</td><td>3/8&quot;-16 UNC -2A (Go &amp; NOGO)</td><td>Set</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Dhayalan.S</td><td>Sent for inspection purpose</td>
+		</tr><tr class="textmode">
+			<td>&nbsp;</td><td>FLOWLINES ENGINEERS</td><td>VVI-R-19-0074</td><td>20-06-2018</td><td>3</td><td>1/2&quot; - 10 STUB ACME - 2G (GO)</td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Dhayalan.S</td><td>Sent for inspection purpose</td>
+		</tr><tr class="textmode">
+			<td>&nbsp;</td><td>FLOWLINES ENGINEERS</td><td>VVI-R-19-0085</td><td>05-07-2018</td><td>1</td><td>1/2&quot;-10 ACME-2G- LH-DL </td><td>Set</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Dhayalan.S</td><td>Sent for inspection purpose</td>
+		</tr>
+	</table>
+</div>

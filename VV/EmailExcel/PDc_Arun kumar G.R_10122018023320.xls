@@ -1,0 +1,25 @@
+<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">SupplierCode</th><th scope="col">VendorName</th><th scope="col">DCNumber</th><th scope="col">DCDate</th><th scope="col">SlNo</th><th scope="col">ItemDescription</th><th scope="col">Units</th><th scope="col">QuantitySent</th><th scope="col">QuantityReceived</th><th scope="col">QuantityPending</th><th scope="col">RequestedBy</th><th scope="col">Reason</th>
+		</tr><tr class="textmode">
+			<td>&nbsp;</td><td>ACCQURATE ENGINEERS</td><td>VVI-R-19-0068</td><td>14-06-2018</td><td>1</td><td>2 11 &#189; NPT PLUG GAUGE</td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Arun kumar G.R</td><td>for inspection purpose</td>
+		</tr><tr class="textmode">
+			<td>&nbsp;</td><td>ACCQURATE ENGINEERS</td><td>VVI-R-19-0068</td><td>14-06-2018</td><td>2</td><td>2” .81 depth gauge  </td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Arun kumar G.R</td><td>for inspection purpose</td>
+		</tr><tr class="textmode">
+			<td>410290</td><td>Cast Alloys</td><td>VVI-R-18-0118</td><td>18-09-2017</td><td>1</td><td>3/4&quot; x 4 acme TPG</td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Arun kumar G.R</td><td>For inspection purpose</td>
+		</tr><tr class="textmode">
+			<td>410520</td><td>Epsilon Ultra Automation Pvt Ltd</td><td>VVI-R-18-0116</td><td>15-09-2017</td><td>1</td><td>Q104-005-036 Oulet shell rm</td><td>Each</td><td>2.000</td><td>0.00</td><td>2.000</td><td>Arun kumar G.R</td><td>for machining purpose</td>
+		</tr><tr class="textmode">
+			<td>410473</td><td>Indra Engineering</td><td>VVI-R-18-0104</td><td>25-08-2017</td><td>1</td><td>8587-015 – 1.875-4ACME-2GLH (GO &amp; NO GO</td><td>Each</td><td>2.000</td><td>0.00</td><td>2.000</td><td>Arun kumar G.R</td><td>FOR INSPECTION</td>
+		</tr><tr class="textmode">
+			<td>410473</td><td>Indra Engineering</td><td>VVI-R-18-0104</td><td>25-08-2017</td><td>2</td><td>8589-754 – 1.750-4ACME-2GLH (GO &amp; NO GO)</td><td>Each</td><td>2.000</td><td>0.00</td><td>2.000</td><td>Arun kumar G.R</td><td>FOR INSPECTION</td>
+		</tr><tr class="textmode">
+			<td>410685</td><td>Industrial Radiographic Inspection Co.</td><td>VVI-R-18-0098</td><td>16-08-2017</td><td>1</td><td>Engraving machine </td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Arun kumar G.R</td><td>Sent for Engraving purpose</td>
+		</tr><tr class="textmode">
+			<td>410435</td><td>Miraa Equipments</td><td>VVI-R-18-0115</td><td>13-09-2017</td><td>1</td><td>Burnishing tool  Size - 48.006mm </td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Arun kumar G.R</td><td>Sent for machining purpose</td>
+		</tr><tr class="textmode">
+			<td>410435</td><td>Miraa Equipments</td><td>VVI-R-19-0063</td><td>12-06-2018</td><td>1</td><td>Burnishing Tool - Dia 47.87mm</td><td>Each</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Arun kumar G.R</td><td>Sent for inspection purpose</td>
+		</tr>
+	</table>
+</div>

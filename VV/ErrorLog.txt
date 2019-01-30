@@ -1,0 +1,3424 @@
+Time: 07-07-2016 09:13:37 PM
+-----------------------------------------------------------
+Message: Invalid column name 'Customer'.
+Invalid column name 'SalesOrder'.
+Invalid column name 'Pos'.
+Invalid column name 'MaterialIssued'.
+Invalid column name 'X'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:08:22 PM
+-----------------------------------------------------------
+Message: The given value of type String from the data source cannot be converted to type float of the specified target column.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:14:40 PM
+-----------------------------------------------------------
+Message: The given value of type String from the data source cannot be converted to type float of the specified target column.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:18:57 PM
+-----------------------------------------------------------
+Message: Invalid column name 'Customer'.
+Invalid column name 'SalesOrder'.
+Invalid column name 'Pos'.
+Invalid column name 'MaterialIssued'.
+Invalid column name 'X'.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:21:50 PM
+-----------------------------------------------------------
+Message: Column 'Rec,Date' does not belong to table Sheet1.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:23:52 PM
+-----------------------------------------------------------
+Message: Invalid column name 'Customer'.
+Invalid column name 'SalesOrder'.
+Invalid column name 'Pos'.
+Invalid column name 'MaterialIssued'.
+Invalid column name 'X'.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:24:04 PM
+-----------------------------------------------------------
+Message: Invalid column name 'Customer'.
+Invalid column name 'SalesOrder'.
+Invalid column name 'Pos'.
+Invalid column name 'MaterialIssued'.
+Invalid column name 'X'.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:26:18 PM
+-----------------------------------------------------------
+Message: Invalid column name 'Customer'.
+Invalid column name 'SalesOrder'.
+Invalid column name 'Pos'.
+Invalid column name 'MaterialIssued'.
+Invalid column name 'X'.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:26:41 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Customer'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:31:34 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Customer'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:31:41 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Customer'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:31:50 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Customer'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:38:40 PM
+-----------------------------------------------------------
+Message: The given value of type String from the data source cannot be converted to type float of the specified target column.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:41:09 PM
+-----------------------------------------------------------
+Message: The given value of type String from the data source cannot be converted to type float of the specified target column.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:45:40 PM
+-----------------------------------------------------------
+Message: The given value of type String from the data source cannot be converted to type float of the specified target column.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:48:26 PM
+-----------------------------------------------------------
+Message: Received an invalid column length from the bcp client for colid 2.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:52:47 PM
+-----------------------------------------------------------
+Message: Received an invalid column length from the bcp client for colid 2.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-07-2016 10:56:04 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Customer'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 07-07-2016 11:02:28 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Customer'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 07-07-2016 11:07:24 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Buyer'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 07-07-2016 11:08:39 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Buyer'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 07-07-2016 11:10:16 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Buyer'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 07-07-2016 11:11:56 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Buyer'.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 08-07-2016 01:35:05 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click!
+-----------------------------------------------------------
+
+Time: 10-07-2016 01:29:29 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click!
+-----------------------------------------------------------
+
+Time: 22-07-2016 09:10:17 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 22-07-2016 09:27:23 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from on selection of PO Radio button!
+-----------------------------------------------------------
+
+Time: 22-07-2016 09:29:48 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 22-07-2016 09:25:49 PM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 22-07-2016 09:29:47 PM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from on selection of PO Radio button!
+-----------------------------------------------------------
+
+Time: 23-07-2016 01:08:09 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception occured while bulk updating wip rec date.
+-----------------------------------------------------------
+
+Time: 23-07-2016 01:08:29 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception occured while bulk updating wip rec date.
+-----------------------------------------------------------
+
+Time: 30-07-2016 04:38:56 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 31-07-2016 02:12:34 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spUpdateWIPRecDate' expects parameter '@WIPRecDate', which was not supplied.
+Exception from SQLConnectionOpen-Exception occured while bulk updating wip rec date.
+-----------------------------------------------------------
+
+Time: 31-07-2016 02:13:39 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spUpdateWIPRecDate' expects parameter '@WIPRecDate', which was not supplied.
+Exception from SQLConnectionOpen-Exception occured while bulk updating wip rec date.
+-----------------------------------------------------------
+
+Time: 31-07-2016 02:14:56 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spUpdateWIPRecDate' expects parameter '@WIPRecDate', which was not supplied.
+Exception from SQLConnectionOpen-Exception occured while bulk updating wip rec date.
+-----------------------------------------------------------
+
+Time: 31-07-2016 02:15:46 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spUpdateWIPRecDate' expects parameter '@WIPRecDate', which was not supplied.
+Exception from SQLConnectionOpen-Exception occured while bulk updating wip rec date.
+-----------------------------------------------------------
+
+Time: 31-07-2016 02:15:59 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spUpdateWIPRecDate' expects parameter '@WIPRecDate', which was not supplied.
+Exception from SQLConnectionOpen-Exception occured while bulk updating wip rec date.
+-----------------------------------------------------------
+
+Time: 31-07-2016 02:18:24 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spUpdateWIPRecDate' expects parameter '@WIPRecDate', which was not supplied.
+Exception from SQLConnectionOpen-Exception occured while bulk updating wip rec date.
+-----------------------------------------------------------
+
+Time: 31-07-2016 10:47:51 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click!
+-----------------------------------------------------------
+
+Time: 31-07-2016 11:01:44 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from PO View CommitmentsDates!
+-----------------------------------------------------------
+
+Time: 31-07-2016 11:05:24 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from PO View CommitmentsDates!
+-----------------------------------------------------------
+
+Time: 31-07-2016 11:38:12 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from WIP view RecDates!
+-----------------------------------------------------------
+
+Time: 02-08-2016 11:01:46 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click!
+-----------------------------------------------------------
+
+Time: 06-08-2016 11:41:53 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from WIP view RecDates!
+-----------------------------------------------------------
+
+Time: 07-08-2016 05:07:07 PM
+-----------------------------------------------------------
+Message: The given ColumnMapping does not match up with any column in the source or destination.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-08-2016 05:09:36 PM
+-----------------------------------------------------------
+Message: The given ColumnMapping does not match up with any column in the source or destination.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-08-2016 05:14:56 PM
+-----------------------------------------------------------
+Message: The given ColumnMapping does not match up with any column in the source or destination.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-08-2016 05:16:53 PM
+-----------------------------------------------------------
+Message: The given ColumnMapping does not match up with any column in the source or destination.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-08-2016 05:22:23 PM
+-----------------------------------------------------------
+Message: Received an invalid column length from the bcp client for colid 3.
+Exception from SQLConnectionOpen-Exception from bom:
+-----------------------------------------------------------
+
+Time: 07-08-2016 05:34:04 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click!
+-----------------------------------------------------------
+
+Time: 08-08-2016 10:32:51 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click!
+-----------------------------------------------------------
+
+Time: 08-08-2016 11:00:35 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.Couldn't store <V> in buyerid Column.  Expected type is Int32.
+Exception from SQLConnectionOpen-Exception occured while fetching buyer names from web config.
+-----------------------------------------------------------
+
+Time: 09-08-2016 12:53:55 AM
+-----------------------------------------------------------
+Message: Procedure or function 'spUpdatePOCommittment' expects parameter '@POCommittment', which was not supplied.
+Exception from SQLConnectionOpen-Exception occured while bulk updating PO committment.
+-----------------------------------------------------------
+
+Time: 09-08-2016 12:54:51 AM
+-----------------------------------------------------------
+Message: Procedure or function 'spUpdatePOCommittment' expects parameter '@POCommittment', which was not supplied.
+Exception from SQLConnectionOpen-Exception occured while bulk updating PO committment.
+-----------------------------------------------------------
+
+Time: 11-08-2016 11:20:22 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting character string to smalldatetime data type.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 11-08-2016 11:20:26 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting character string to smalldatetime data type.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 11-08-2016 11:20:29 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting character string to smalldatetime data type.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 11-08-2016 11:20:46 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting character string to smalldatetime data type.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 11-08-2016 11:26:20 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'RecDate'.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 11-08-2016 11:26:24 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'RecDate'.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 11-08-2016 11:26:28 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'RecDate'.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 11-08-2016 11:26:47 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'RecDate'.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 11-08-2016 11:27:27 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting character string to smalldatetime data type.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 11-08-2016 11:30:01 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting character string to smalldatetime data type.
+Exception from SQLConnectionOpen-Exception from Upload WIP button click!
+-----------------------------------------------------------
+
+Time: 12-08-2016 11:45:34 AM
+-----------------------------------------------------------
+Message: Cannot find table 0.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 12-08-2016 01:14:15 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.Couldn't store <31-07-2013> in EarliestFinishDate Column.  Expected type is Double.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 23-08-2016 06:53:53 PM
+-----------------------------------------------------------
+Message: Received an invalid column length from the bcp client for colid 8.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 23-08-2016 07:35:51 PM
+-----------------------------------------------------------
+Message: Received an invalid column length from the bcp client for colid 8.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 23-08-2016 07:37:43 PM
+-----------------------------------------------------------
+Message: Received an invalid column length from the bcp client for colid 8.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 23-08-2016 07:44:37 PM
+-----------------------------------------------------------
+Message: Received an invalid column length from the bcp client for colid 8.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 23-08-2016 11:55:53 PM
+-----------------------------------------------------------
+Message: Received an invalid column length from the bcp client for colid 8.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 25-08-2016 12:32:58 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value '31-08-16' to data type int.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 25-08-2016 12:50:29 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value '31-08-16' to data type int.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 25-08-2016 12:52:13 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value '31-08-16' to data type int.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 25-08-2016 12:54:29 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value '31-08-16' to data type int.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 25-08-2016 12:56:32 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value '31-08-16' to data type int.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 30-08-2016 06:01:43 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from PO View CommitmentsDates!
+-----------------------------------------------------------
+
+Time: 30-08-2016 06:10:17 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from WIP view RecDates History!
+-----------------------------------------------------------
+
+Time: 30-08-2016 06:10:43 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from PO View CommitmentsDates History!
+-----------------------------------------------------------
+
+Time: 30-08-2016 07:27:47 AM
+-----------------------------------------------------------
+Message: The given value of type String from the data source cannot be converted to type float of the specified target column.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 30-08-2016 07:29:20 AM
+-----------------------------------------------------------
+Message: Column 'Buyer' does not belong to table b2win.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 12-10-2016 11:19:08 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting date and/or time from character string.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 12-10-2016 11:19:13 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting date and/or time from character string.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 12-10-2016 11:22:18 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting date and/or time from character string.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 12-10-2016 11:36:14 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting date and/or time from character string.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 12-10-2016 11:36:31 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting date and/or time from character string.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 12-10-2016 11:45:09 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting date and/or time from character string.
+Exception from SQLConnectionOpen-Exception from on selection of WIP Radio button!
+-----------------------------------------------------------
+
+Time: 25-12-2016 10:05:16 PM
+-----------------------------------------------------------
+Message: Column 'Pos' does not allow DBNull.Value.
+Exception from SQLConnectionOpen-Exception from PO upload:
+-----------------------------------------------------------
+
+Time: 09-01-2017 12:42:54 PM
+-----------------------------------------------------------
+Message: Exception of type 'System.Exception' was thrown.
+Exception from SQLConnectionOpen-Doesn't have any file to uplaod. Please choose file!!:
+-----------------------------------------------------------
+
+Time: 29-01-2017 04:30:27 PM
+-----------------------------------------------------------
+Message: Invalid object name 'EmployeeMaster'.
+Exception from SQLConnectionOpen-Exception from display employee master details!
+-----------------------------------------------------------
+
+Time: 29-01-2017 04:31:06 PM
+-----------------------------------------------------------
+Message: Invalid object name 'EmployeeMaster'.
+Exception from SQLConnectionOpen-Exception from display employee master details!
+-----------------------------------------------------------
+
+Time: 29-01-2017 04:33:41 PM
+-----------------------------------------------------------
+Message: Invalid object name 'EmployeeMaster'.
+Exception from SQLConnectionOpen-Exception from display employee master details!
+-----------------------------------------------------------
+
+Time: 29-01-2017 04:34:05 PM
+-----------------------------------------------------------
+Message: Invalid object name 'EmployeeMaster'.
+Exception from SQLConnectionOpen-Exception occured -- insert employee master details.
+-----------------------------------------------------------
+
+Time: 29-01-2017 04:34:39 PM
+-----------------------------------------------------------
+Message: Invalid object name 'EmployeeMaster'.
+Exception from SQLConnectionOpen-Exception occured -- insert employee master details.
+-----------------------------------------------------------
+
+Time: 29-01-2017 04:35:10 PM
+-----------------------------------------------------------
+Message: Invalid object name 'EmployeeMaster'.
+Exception from SQLConnectionOpen-Exception from display employee master details!
+-----------------------------------------------------------
+
+Time: 29-01-2017 04:37:57 PM
+-----------------------------------------------------------
+Message: Invalid object name 'EmployeeMaster'.
+Exception from SQLConnectionOpen-Exception from while updating row from employee Master.
+-----------------------------------------------------------
+
+Time: 29-01-2017 11:00:15 PM
+-----------------------------------------------------------
+Message: Specified argument was out of the range of valid values.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from display vendor master details.
+-----------------------------------------------------------
+
+Time: 29-01-2017 11:00:38 PM
+-----------------------------------------------------------
+Message: Specified argument was out of the range of valid values.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from view item master details!
+-----------------------------------------------------------
+
+Time: 31-01-2017 12:37:11 AM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'SLNo'.
+Exception from SQLConnectionOpen-Exception from view item master details!
+-----------------------------------------------------------
+
+Time: 31-01-2017 12:40:04 AM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'SLNo'.
+Exception from SQLConnectionOpen-Exception from view item master details!
+-----------------------------------------------------------
+
+Time: 31-01-2017 12:41:02 AM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'SLNo'.
+Exception from SQLConnectionOpen-Exception from view item master details!
+-----------------------------------------------------------
+
+Time: 01-02-2017 10:56:02 PM
+-----------------------------------------------------------
+Message: A field or property with the name 'RowNumber' was not found on the selected data source.
+Exception from SQLConnectionOpen-Exception from view item master details!
+-----------------------------------------------------------
+
+Time: 01-02-2017 10:56:29 PM
+-----------------------------------------------------------
+Message: A field or property with the name 'RowNumber' was not found on the selected data source.
+Exception from SQLConnectionOpen-Exception from view item master details!
+-----------------------------------------------------------
+
+Time: 05-02-2017 12:30:35 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 05-02-2017 02:16:12 AM
+-----------------------------------------------------------
+Message: Invalid column name 'R'.
+Exception from SQLConnectionOpen-Exception from DC type drop down selection
+-----------------------------------------------------------
+
+Time: 12-02-2017 12:07:09 PM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 12-02-2017 02:04:31 PM
+-----------------------------------------------------------
+Message: Incorrect syntax near the keyword 'from'.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 12-02-2017 06:16:05 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Units'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 12-02-2017 06:18:00 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Quantity'.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 12-02-2017 06:23:37 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Quantity'.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 12-02-2017 06:23:52 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Quantity'.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 12-02-2017 07:51:23 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ItemName'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 12-02-2017 07:52:47 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ItemName'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 12-02-2017 09:03:04 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 12-02-2017 09:17:45 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Char' does not contain a property with the name 'ItemCode'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 12-02-2017 11:00:44 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 12-02-2017 11:03:23 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 12-02-2017 11:10:56 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Quantity'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 17-02-2017 06:19:31 AM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Quantity'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 03:52:02 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 07:21:08 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 07:21:49 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 07:22:32 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 07:22:34 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 07:22:50 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 07:23:12 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 07:37:22 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 07:37:24 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 07:47:06 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 07:47:09 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:00:05 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:00:08 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:00:14 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:00:16 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:00:17 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:00:25 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:06:27 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ItemCode'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:18:31 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ItemDescription'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:19:24 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:19:27 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:35:08 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ItemDescription'.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:41:47 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 08:51:32 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 18-02-2017 10:33:26 PM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 18-02-2017 10:33:27 PM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 18-02-2017 10:33:28 PM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 18-02-2017 10:33:31 PM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 18-02-2017 10:33:32 PM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 18-02-2017 10:33:35 PM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 18-02-2017 10:33:37 PM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 18-02-2017 10:50:24 PM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 18-02-2017 11:21:48 PM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 19-02-2017 12:08:32 AM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 19-02-2017 10:31:52 AM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 19-02-2017 12:47:51 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 19-02-2017 04:35:37 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 19-02-2017 04:35:42 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 19-02-2017 04:36:07 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 19-02-2017 07:15:16 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 19-02-2017 07:15:38 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 19-02-2017 07:17:27 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 19-02-2017 07:27:46 PM
+-----------------------------------------------------------
+Message: 'ddlPreparedBy' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 20-02-2017 07:48:10 AM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.ContentPlaceHolder' to type 'System.Web.UI.WebControls.GridViewRow'.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 20-02-2017 08:00:50 AM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.ContentPlaceHolder' to type 'System.Web.UI.WebControls.GridViewRow'.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 20-02-2017 08:01:01 AM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.ContentPlaceHolder' to type 'System.Web.UI.WebControls.GridViewRow'.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 21-02-2017 12:49:13 AM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Add Delivery Challan
+-----------------------------------------------------------
+
+Time: 21-02-2017 01:58:28 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 21-02-2017 04:54:23 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Units'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 21-02-2017 04:55:58 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Units'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 21-02-2017 04:56:16 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Units'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 21-02-2017 05:13:26 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 21-02-2017 05:28:38 PM
+-----------------------------------------------------------
+Message: 'ddlVendorName' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 21-02-2017 10:09:45 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Units'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 21-02-2017 10:11:07 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Units'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 21-02-2017 10:15:40 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 21-02-2017 10:27:17 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 21-02-2017 10:30:45 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 21-02-2017 10:44:04 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 21-02-2017 10:44:49 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 21-02-2017 10:47:34 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 22-02-2017 01:35:10 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 02:11:31 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 02:11:31 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 02:11:44 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 02:11:45 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 02:35:47 AM
+-----------------------------------------------------------
+Message: String or binary data would be truncated.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 22-02-2017 11:07:20 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 11:08:11 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 11:20:57 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 11:21:09 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 11:21:34 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 11:25:17 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 11:30:59 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 11:31:01 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 11:31:37 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 11:38:13 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 12:14:45 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 12:14:46 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 12:15:07 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 12:20:37 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 12:20:37 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 12:21:40 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 12:21:47 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 12:24:21 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 12:32:09 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 22-02-2017 12:46:31 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 24-02-2017 12:29:36 AM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 24-02-2017 12:29:41 AM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 24-02-2017 12:29:51 AM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 24-02-2017 01:08:47 AM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'ItemCode', table 'VVIMIS.dbo.DeliveryChallanDetails'; column does not allow nulls. INSERT fails.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 24-02-2017 01:18:55 AM
+-----------------------------------------------------------
+Message: Invalid column name 'ItemCode'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 24-02-2017 01:23:17 AM
+-----------------------------------------------------------
+Message: Invalid column name 'ItemCode'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 24-02-2017 01:23:30 AM
+-----------------------------------------------------------
+Message: Invalid column name 'ItemCode'.
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 24-02-2017 01:39:38 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 24-02-2017 01:40:42 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 24-02-2017 01:46:16 AM
+-----------------------------------------------------------
+Message: Invalid column name 'ItemCode'.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 24-02-2017 02:32:27 AM
+-----------------------------------------------------------
+Message: Invalid column name 'itemcode'.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 24-02-2017 02:39:47 AM
+-----------------------------------------------------------
+Message: Invalid column name 'itemcode'.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 24-02-2017 02:40:21 AM
+-----------------------------------------------------------
+Message: Invalid column name 'itemcode'.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 24-02-2017 02:40:23 AM
+-----------------------------------------------------------
+Message: Invalid column name 'itemcode'.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 24-02-2017 03:05:02 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 24-02-2017 03:31:41 AM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ItemName'.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 24-02-2017 04:09:14 AM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.Label' to type 'System.Web.UI.WebControls.TextBox'.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 25-02-2017 03:10:07 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from display employee master details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 01:13:54 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 01:14:01 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 01:16:57 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 01:23:49 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 07:58:00 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from Print!
+-----------------------------------------------------------
+
+Time: 26-02-2017 08:01:22 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from Print!
+-----------------------------------------------------------
+
+Time: 26-02-2017 08:17:43 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from Print!
+-----------------------------------------------------------
+
+Time: 26-02-2017 09:02:41 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from Print!
+-----------------------------------------------------------
+
+Time: 26-02-2017 09:05:33 PM
+-----------------------------------------------------------
+Message: Could not find stored procedure 'spGetDcDetailsForPrint'.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 09:05:57 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from Print!
+-----------------------------------------------------------
+
+Time: 26-02-2017 09:06:23 PM
+-----------------------------------------------------------
+Message: Could not find stored procedure 'spGetDcDetailsForPrint'.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 09:06:29 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from Print!
+-----------------------------------------------------------
+
+Time: 26-02-2017 09:06:35 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spGetDcDetailsForPrint' expects parameter '@DCNumber', which was not supplied.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 09:06:40 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from Print!
+-----------------------------------------------------------
+
+Time: 26-02-2017 09:08:26 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from Print!
+-----------------------------------------------------------
+
+Time: 26-02-2017 09:20:16 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from Print!
+-----------------------------------------------------------
+
+Time: 26-02-2017 11:43:43 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spGetDcDetailsForPrint' expects parameter '@DCNumber', which was not supplied.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 11:48:05 PM
+-----------------------------------------------------------
+Message: Column 'EmployeeName' does not belong to table Table.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 11:49:33 PM
+-----------------------------------------------------------
+Message: Column 'EmployeeName' does not belong to table Table.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 11:50:44 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spGetDcDetailsForPrint' expects parameter '@DCNumber', which was not supplied.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 26-02-2017 11:53:45 PM
+-----------------------------------------------------------
+Message: Column 'EmployeeName' does not belong to table Table.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 27-02-2017 12:56:21 AM
+-----------------------------------------------------------
+Message: Procedure or function 'spGetDcDetailsForPrint' expects parameter '@DCNumber', which was not supplied.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 27-02-2017 01:10:55 AM
+-----------------------------------------------------------
+Message: Procedure or function 'spGetDcDetailsForPrint' expects parameter '@DCNumber', which was not supplied.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 27-02-2017 01:11:46 AM
+-----------------------------------------------------------
+Message: Procedure or function 'spGetDcDetailsForPrint' expects parameter '@DCNumber', which was not supplied.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 27-02-2017 01:28:05 AM
+-----------------------------------------------------------
+Message: Procedure or function 'spGetDcDetailsForPrint' expects parameter '@DCNumber', which was not supplied.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 27-02-2017 01:32:24 AM
+-----------------------------------------------------------
+Message: Procedure or function 'spGetDcDetailsForPrint' expects parameter '@DCNumber', which was not supplied.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 27-02-2017 01:44:15 AM
+-----------------------------------------------------------
+Message: Procedure or function 'spGetDcDetailsForPrint' expects parameter '@DCNumber', which was not supplied.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:34:22 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:34:22 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:36:11 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:36:11 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:37:47 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:38:08 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:38:08 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:48:24 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:48:30 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:48:30 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 01-03-2017 12:48:33 AM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from While deleting the delivery chalan details.
+-----------------------------------------------------------
+
+Time: 01-03-2017 11:45:04 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from WIP view RecDates History!
+-----------------------------------------------------------
+
+Time: 01-03-2017 11:46:27 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from WIP view RecDates History!
+-----------------------------------------------------------
+
+Time: 02-03-2017 12:02:48 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from WIP view RecDates History!
+-----------------------------------------------------------
+
+Time: 02-03-2017 12:05:55 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from WIP view RecDates History!
+-----------------------------------------------------------
+
+Time: 06-03-2017 11:36:21 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.DropDownList' to type 'System.IConvertible'.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 06-03-2017 11:42:27 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 07-03-2017 01:53:32 AM
+-----------------------------------------------------------
+Message: 'ddlForUnits' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception from Searching DC Number
+-----------------------------------------------------------
+
+Time: 07-03-2017 04:05:22 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to int.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 07-03-2017 04:05:36 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to int.
+Exception from SQLConnectionOpen-Exception from Update Delivery Challan
+-----------------------------------------------------------
+
+Time: 08-03-2017 10:49:59 PM
+-----------------------------------------------------------
+Message: Could not find stored procedure 'spDeleteDeliveryChallanDetails'.
+Exception from SQLConnectionOpen-Exception from While deleting the delivery chalan details.
+-----------------------------------------------------------
+
+Time: 08-03-2017 10:50:28 PM
+-----------------------------------------------------------
+Message: Could not find stored procedure 'spDeleteDeliveryChallanDetails'.
+Exception from SQLConnectionOpen-Exception from While deleting the delivery chalan details.
+-----------------------------------------------------------
+
+Time: 08-03-2017 11:02:10 PM
+-----------------------------------------------------------
+Message: Could not find stored procedure 'spDeleteDeliveryChallanDetails'.
+Exception from SQLConnectionOpen-Exception from While deleting the delivery chalan details.
+-----------------------------------------------------------
+
+Time: 08-03-2017 11:42:33 PM
+-----------------------------------------------------------
+Message: Could not find stored procedure 'spDeleteDeliveryChallanDetails'.
+Exception from SQLConnectionOpen-Exception from While deleting the delivery chalan details.
+-----------------------------------------------------------
+
+Time: 08-03-2017 11:47:55 PM
+-----------------------------------------------------------
+Message: There is no row at position 2.
+Exception from SQLConnectionOpen-Exception from While deleting the delivery chalan details.
+-----------------------------------------------------------
+
+Time: 08-03-2017 11:48:16 PM
+-----------------------------------------------------------
+Message: There is no row at position 2.
+Exception from SQLConnectionOpen-Exception from While deleting the delivery chalan details.
+-----------------------------------------------------------
+
+Time: 09-03-2017 12:57:01 AM
+-----------------------------------------------------------
+Message: Cannot find column [Prod.Order].
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 09-03-2017 12:58:14 AM
+-----------------------------------------------------------
+Message: Cannot find column [Order].
+Exception from SQLConnectionOpen-Exception from PO upload:
+-----------------------------------------------------------
+
+Time: 09-03-2017 12:59:11 AM
+-----------------------------------------------------------
+Message: Cannot find column [Order].
+Exception from SQLConnectionOpen-Exception from PO upload:
+-----------------------------------------------------------
+
+Time: 11-03-2017 03:08:52 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 11-03-2017 03:09:36 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 11-03-2017 03:10:20 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 11-03-2017 03:10:42 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 11-03-2017 03:12:16 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 11-03-2017 03:13:40 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 11-03-2017 03:14:44 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 11-03-2017 03:17:55 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 11-03-2017 03:18:47 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 12-03-2017 01:47:20 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 12-03-2017 04:07:05 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Sent Items!
+-----------------------------------------------------------
+
+Time: 13-03-2017 08:57:03 AM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 13-03-2017 09:00:10 AM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 13-03-2017 09:02:07 AM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 14-03-2017 11:38:40 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 14-03-2017 11:40:07 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 14-03-2017 11:40:26 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 14-03-2017 11:44:56 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 14-03-2017 11:53:24 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 14-03-2017 11:56:49 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 15-03-2017 12:01:10 AM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 15-03-2017 09:38:42 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 15-03-2017 11:35:24 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 19-03-2017 04:46:10 PM
+-----------------------------------------------------------
+Message: Error converting data type nvarchar to float.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 23-04-2017 12:42:48 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'EmployeeCode'.
+Exception from SQLConnectionOpen-Exception from display buyer master details!
+-----------------------------------------------------------
+
+Time: 23-04-2017 12:43:17 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'EmployeeCode'.
+Exception from SQLConnectionOpen-Exception from display buyer master details!
+-----------------------------------------------------------
+
+Time: 23-04-2017 12:43:21 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'EmployeeCode'.
+Exception from SQLConnectionOpen-Exception occured -- insert buyer master details.
+-----------------------------------------------------------
+
+Time: 23-04-2017 12:44:17 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'EmployeeCode'.
+Exception from SQLConnectionOpen-Exception from display buyer master details!
+-----------------------------------------------------------
+
+Time: 23-04-2017 12:44:20 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'EmployeeCode'.
+Exception from SQLConnectionOpen-Exception occured -- insert buyer master details.
+-----------------------------------------------------------
+
+Time: 23-04-2017 12:45:26 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'EmployeeCode'.
+Exception from SQLConnectionOpen-Exception from display buyer master details!
+-----------------------------------------------------------
+
+Time: 23-04-2017 12:45:27 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'EmployeeCode'.
+Exception from SQLConnectionOpen-Exception occured -- insert buyer master details.
+-----------------------------------------------------------
+
+Time: 23-04-2017 11:13:17 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'DCType'.
+Exception from SQLConnectionOpen-Exception occured while fetching buyer names from web config.
+-----------------------------------------------------------
+
+Time: 01-05-2017 12:46:12 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Sale Order Line Item Deletion!
+-----------------------------------------------------------
+
+Time: 01-05-2017 12:53:04 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Sale Order Line Item Deletion!
+-----------------------------------------------------------
+
+Time: 01-05-2017 12:54:45 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Sale Order Line Item Deletion!
+-----------------------------------------------------------
+
+Time: 24-05-2017 12:07:05 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from while updating row from Sale Order Qty Decrement.
+-----------------------------------------------------------
+
+Time: 24-05-2017 10:25:16 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click!
+-----------------------------------------------------------
+
+Time: 29-05-2017 01:02:53 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while converting FG To Other!.
+-----------------------------------------------------------
+
+Time: 29-05-2017 01:43:07 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from while converting FG To Other!.
+-----------------------------------------------------------
+
+Time: 29-05-2017 01:43:41 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from while converting FG To Other!.
+-----------------------------------------------------------
+
+Time: 29-05-2017 01:44:05 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from while converting FG To Other!.
+-----------------------------------------------------------
+
+Time: 30-05-2017 12:59:01 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from while confirming the FG To Other!.
+-----------------------------------------------------------
+
+Time: 30-05-2017 01:00:11 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from while confirming the FG To Other!.
+-----------------------------------------------------------
+
+Time: 06-06-2017 10:04:06 PM
+-----------------------------------------------------------
+Message: Procedure or function spUpdateWIPBalQuantity has too many arguments specified.
+Exception from SQLConnectionOpen-Exception from wip
+-----------------------------------------------------------
+
+Time: 30-07-2017 12:19:03 AM
+-----------------------------------------------------------
+Message: There is no row at position 3675.
+Exception from SQLConnectionOpen-Exception from export button click!
+-----------------------------------------------------------
+
+Time: 30-07-2017 12:30:55 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click!
+-----------------------------------------------------------
+
+Time: 22-08-2017 12:20:05 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:36 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:47 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:48 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:48 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:49 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:49 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:49 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:49 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:50 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:51 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:51 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:20:51 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:21:58 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 07-09-2017 10:21:59 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display grid view details!
+-----------------------------------------------------------
+
+Time: 15-10-2017 11:56:36 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while clicking on page number from DeliveryChallanReceipts.
+-----------------------------------------------------------
+
+Time: 08-01-2018 10:21:36 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 08-01-2018 10:22:01 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 10-01-2018 12:27:57 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 12:46:39 AM
+-----------------------------------------------------------
+Message: Cannot find this file. Verify the path and file name are correct.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 12:47:04 AM
+-----------------------------------------------------------
+Message: Cannot find this file. Verify the path and file name are correct.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 12:48:04 AM
+-----------------------------------------------------------
+Message: Cannot find this file. Verify the path and file name are correct.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 12:48:23 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 12:49:15 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 12:58:45 AM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 01:05:22 AM
+-----------------------------------------------------------
+Message: Could not find a part of the path 'C:\Program Files (x86)\IIS Express\EmailExcel\ExportedFile.xlsx'.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 09:46:15 PM
+-----------------------------------------------------------
+Message: Could not find a part of the path 'C:\Program Files (x86)\IIS Express\~\EmailExcel\ExportedFile.xlsx'.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 09:49:12 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 09:51:51 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 09:54:23 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 09:59:22 PM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 10:21:41 PM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 10-01-2018 11:56:43 PM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 11-01-2018 12:06:08 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 11-01-2018 12:26:00 AM
+-----------------------------------------------------------
+Message: Could not find file 'F:\Excel\ExportedFile.xlsx'.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 11-01-2018 12:38:17 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 11-01-2018 12:43:06 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 20-01-2018 11:03:30 PM
+-----------------------------------------------------------
+Message: Could not find file 'F:\Excel\ExportedFile.xlsx'.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 20-01-2018 11:07:54 PM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 20-01-2018 11:18:19 PM
+-----------------------------------------------------------
+Message: Could not find file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\App_Data\DCPendingItems1.xlsx'.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 12:07:31 AM
+-----------------------------------------------------------
+Message: A dialog box is open. Close it and try again.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 12:11:28 AM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\ExportExcel.xls' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 12:47:05 PM
+-----------------------------------------------------------
+Message: A dialog box is open. Close it and try again.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 12:48:37 PM
+-----------------------------------------------------------
+Message: A dialog box is open. Close it and try again.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 12:51:53 PM
+-----------------------------------------------------------
+Message: A dialog box is open. Close it and try again.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 03:03:54 PM
+-----------------------------------------------------------
+Message: A dialog box is open. Close it and try again.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 03:03:58 PM
+-----------------------------------------------------------
+Message: A dialog box is open. Close it and try again.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 03:07:29 PM
+-----------------------------------------------------------
+Message: Server cannot append header after HTTP headers have been sent.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 03:07:30 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\PendingDC's.xls' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 03:07:32 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\PendingDC's.xls' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 03:07:39 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\PendingDC's.xls' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 03:07:41 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\PendingDC's.xls' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 03:08:33 PM
+-----------------------------------------------------------
+Message: Server cannot append header after HTTP headers have been sent.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 03:11:47 PM
+-----------------------------------------------------------
+Message: Server cannot append header after HTTP headers have been sent.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 03:14:37 PM
+-----------------------------------------------------------
+Message: Server cannot append header after HTTP headers have been sent.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 10:51:35 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel\PendingDC's.xls' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 10:52:07 PM
+-----------------------------------------------------------
+Message: Empty path name is not legal.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 11:00:46 PM
+-----------------------------------------------------------
+Message: Empty path name is not legal.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 11:19:30 PM
+-----------------------------------------------------------
+Message: Empty path name is not legal.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 11:19:57 PM
+-----------------------------------------------------------
+Message: Empty path name is not legal.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 11:22:05 PM
+-----------------------------------------------------------
+Message: Could not find a part of the path 'C:\Program Files (x86)\IIS Express\~\EmailExcel\PendingDC's.xls'.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 11:23:21 PM
+-----------------------------------------------------------
+Message: 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel\PendingDC's.xls' is not a valid virtual path.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 11:24:06 PM
+-----------------------------------------------------------
+Message: 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel\PendingDC's.xls' is not a valid virtual path.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 11:28:30 PM
+-----------------------------------------------------------
+Message: 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel\PendingDC's.xls' is not a valid virtual path.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 21-01-2018 11:31:34 PM
+-----------------------------------------------------------
+Message: 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel\PendingDC's.xls' is not a valid virtual path.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 22-01-2018 07:55:35 PM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 22-01-2018 08:32:10 PM
+-----------------------------------------------------------
+Message: A dialog box is open. Close it and try again.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 25-01-2018 12:18:59 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 25-01-2018 01:00:06 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 25-01-2018 01:00:20 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 27-01-2018 01:21:54 PM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 27-01-2018 01:23:09 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 27-01-2018 01:57:18 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 27-01-2018 02:14:01 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 27-01-2018 03:34:55 PM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 27-01-2018 03:36:14 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 12:29:49 PM
+-----------------------------------------------------------
+Message: Access to the path 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel' is denied.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 12:34:49 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel\PDC_Balaji B' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 12:35:43 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel\PDC_Balaji B' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 12:36:53 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel\PDC_Balaji B' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 12:45:46 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel\PDC_Balaji B.xls' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 12:53:54 PM
+-----------------------------------------------------------
+Message: The process cannot access the file 'F:\CodeBase\Engineering\Velan\velanvalves\VV\EmailExcel\PDC_Anand J.xls' because it is being used by another process.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 01:03:30 PM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 01:04:57 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 01:30:38 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 01:30:47 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 01:53:11 PM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 02:45:20 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 02:49:26 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 02:49:32 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 02:52:06 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 28-01-2018 02:52:12 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 30-01-2018 11:37:06 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 20-03-2018 05:04:11 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'CustomerName'.
+Exception from SQLConnectionOpen-Exception from Branch Report Drop down selection.!
+-----------------------------------------------------------
+
+Time: 20-03-2018 05:51:30 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 24-03-2018 10:16:31 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 24-03-2018 10:20:45 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 25-03-2018 01:08:13 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+Exception from SQLConnectionOpen-Exception from while updating the order status.
+-----------------------------------------------------------
+
+Time: 25-03-2018 01:42:30 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid DateTime.
+Exception from SQLConnectionOpen-Exception from while updating the order status.
+-----------------------------------------------------------
+
+Time: 25-03-2018 01:42:48 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid DateTime.
+Exception from SQLConnectionOpen-Exception from while updating the order status.
+-----------------------------------------------------------
+
+Time: 25-03-2018 03:58:14 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 25-03-2018 03:58:31 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 25-03-2018 07:05:39 PM
+-----------------------------------------------------------
+Message: Cannot perform 'Like' operation on System.Int32 and System.String.
+Exception from SQLConnectionOpen-Exception from while searching record based on CustomerName Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 11-06-2018 12:24:26 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 30-07-2018 10:08:19 PM
+-----------------------------------------------------------
+Message: Operation aborted (Exception from HRESULT: 0x80004004 (E_ABORT))
+Exception from SQLConnectionOpen-Exception from opening Outlook mail!
+-----------------------------------------------------------
+
+Time: 31-07-2018 01:41:56 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 19-08-2018 01:17:38 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from DC Pending Items!
+-----------------------------------------------------------
+
+Time: 19-08-2018 04:29:00 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spUpdateOrderStatus' expects parameter '@IsReceipt', which was not supplied.
+Exception from SQLConnectionOpen-Exception from while updating the order status.
+-----------------------------------------------------------
+
+Time: 11-10-2018 11:12:23 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'BuyerName'.
+Exception from SQLConnectionOpen-Exception from display supplier master details!
+-----------------------------------------------------------
+
+Time: 11-10-2018 11:52:16 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'BuyerName'.
+Exception from SQLConnectionOpen-Exception from display supplier master details!
+-----------------------------------------------------------
+
+Time: 11-10-2018 11:55:00 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'BuyerName'.
+Exception from SQLConnectionOpen-Exception from display supplier master details!
+-----------------------------------------------------------
+
+Time: 11-10-2018 11:56:54 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.HtmlControls.HtmlInputHidden' to type 'System.Web.UI.WebControls.HiddenField'.
+Exception from SQLConnectionOpen-Exception from updating supplier master details!
+-----------------------------------------------------------
+
+Time: 14-10-2018 10:55:22 PM
+-----------------------------------------------------------
+Message: Specified cast is not valid.
+Exception from SQLConnectionOpen-Exception from Upload PO button click!
+-----------------------------------------------------------
+
+Time: 14-10-2018 10:55:44 PM
+-----------------------------------------------------------
+Message: Could not find stored procedure 'Select * from SupplierRemarks'.
+Exception from SQLConnectionOpen-Exception from Upload PO button click!
+-----------------------------------------------------------
+
+Time: 14-10-2018 11:00:30 PM
+-----------------------------------------------------------
+Message: Could not find stored procedure 'Select * from SupplierRemarks'.
+Exception from SQLConnectionOpen-Exception from Upload PO button click!
+-----------------------------------------------------------
+
+Time: 16-10-2018 12:01:41 AM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Id'.
+Exception from SQLConnectionOpen-Exception from Upload PO button click!
+-----------------------------------------------------------
+
+Time: 16-10-2018 12:07:54 AM
+-----------------------------------------------------------
+Message: Id is neither a DataColumn nor a DataRelation for table Table.
+Exception from SQLConnectionOpen-Exception from Upload PO button click!
+-----------------------------------------------------------
+
+Time: 16-10-2018 12:09:23 AM
+-----------------------------------------------------------
+Message: Id is neither a DataColumn nor a DataRelation for table Table.
+Exception from SQLConnectionOpen-Exception from Upload PO button click!
+-----------------------------------------------------------
+
+Time: 31-10-2018 08:14:49 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception occured -- delete buyer master details.
+-----------------------------------------------------------
+
+Time: 31-10-2018 08:14:51 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception occured -- delete buyer master details.
+-----------------------------------------------------------
+
+Time: 31-10-2018 09:24:18 AM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.HtmlControls.HtmlInputHidden' to type 'System.Web.UI.WebControls.HiddenField'.
+Exception from SQLConnectionOpen-Exception from while updating row from buyer Master.
+-----------------------------------------------------------
+
+Time: 07-12-2018 11:28:49 PM
+-----------------------------------------------------------
+Message: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 07-12-2018 11:32:30 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 10-12-2018 08:03:50 PM
+-----------------------------------------------------------
+Message: Failure sending mail.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 10-12-2018 08:05:45 PM
+-----------------------------------------------------------
+Message: Failure sending mail.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 10-12-2018 08:12:05 PM
+-----------------------------------------------------------
+Message: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. o8sm20428332pfa.42 - gsmtp
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 10-12-2018 08:15:40 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 19-12-2018 10:20:57 PM
+-----------------------------------------------------------
+Message: Failure sending mail.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 19-12-2018 10:23:49 PM
+-----------------------------------------------------------
+Message: Failure sending mail.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 19-12-2018 10:53:42 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 19-12-2018 11:11:47 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 19-12-2018 11:15:22 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 22-12-2018 11:39:56 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Ready To Release!
+-----------------------------------------------------------
+
+Time: 22-12-2018 11:48:04 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Ready To Release!
+-----------------------------------------------------------
+
+Time: 22-12-2018 11:53:18 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Data.DataView' to type 'System.Data.DataSet'.
+Exception from SQLConnectionOpen-Exception from export button click from Ready To Release!
+-----------------------------------------------------------
+
+Time: 22-12-2018 11:53:29 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Data.DataView' to type 'System.Data.DataSet'.
+Exception from SQLConnectionOpen-Exception from export button click from Ready To Release!
+-----------------------------------------------------------
+
+Time: 22-12-2018 11:53:54 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Data.DataView' to type 'System.Data.DataSet'.
+Exception from SQLConnectionOpen-Exception from export button click from Ready To Release!
+-----------------------------------------------------------
+
+Time: 22-12-2018 11:54:00 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Data.DataView' to type 'System.Data.DataSet'.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 22-12-2018 11:54:21 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Data.DataView' to type 'System.Data.DataSet'.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 22-12-2018 11:54:36 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Data.DataView' to type 'System.Data.DataSet'.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 22-12-2018 11:54:46 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Data.DataView' to type 'System.Data.DataSet'.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 22-12-2018 11:57:04 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Data.DataView' to type 'System.Data.DataSet'.
+Exception from SQLConnectionOpen-Exception from export button click from Ready To Release!
+-----------------------------------------------------------
+
+Time: 23-12-2018 12:06:08 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Ready To Release!
+-----------------------------------------------------------
+
+Time: 23-12-2018 12:14:32 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Ready To Release!
+-----------------------------------------------------------
+
+Time: 23-12-2018 12:15:20 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Ready To Release!
+-----------------------------------------------------------
+
+Time: 23-12-2018 12:07:32 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Urgent'.
+Exception from SQLConnectionOpen-Exception from Upload PO button click!
+-----------------------------------------------------------
+
+Time: 23-12-2018 12:36:20 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception occured while bulk updating PO committment.
+-----------------------------------------------------------
+
+Time: 23-12-2018 12:38:21 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception occured while bulk updating PO committment.
+-----------------------------------------------------------
+
+Time: 23-12-2018 12:52:42 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'OrderBalance'.
+Exception from SQLConnectionOpen-Exception from Upload PO button click!
+-----------------------------------------------------------
+
+Time: 23-12-2018 02:09:10 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Commit1'.
+Exception from SQLConnectionOpen-Exception from on selection of PO Radio button!
+-----------------------------------------------------------
+
+Time: 23-12-2018 02:09:16 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Commit1'.
+Exception from SQLConnectionOpen-Exception from on selection of PO Radio button!
+-----------------------------------------------------------
+
+Time: 23-12-2018 02:09:23 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Commit1'.
+Exception from SQLConnectionOpen-Exception from on selection of PO Radio button!
+-----------------------------------------------------------
+
+Time: 23-12-2018 02:33:25 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from PO View CommitmentsDates!
+-----------------------------------------------------------
+
+Time: 29-12-2018 10:43:12 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 06-01-2019 12:36:49 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 12:36:51 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 12:44:08 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 12:44:10 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 12:46:07 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 12:48:23 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 12:48:47 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 12:49:20 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 12:53:23 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 12:53:27 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 01:05:21 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 01:05:41 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 01:05:46 AM
+-----------------------------------------------------------
+Message: Cannot find table 0.
+Exception from SQLConnectionOpen-Exception from View SCM GridView3 PageIndexChanging.
+-----------------------------------------------------------
+
+Time: 06-01-2019 01:06:31 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 01:10:33 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 01:10:35 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 01:11:14 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 01:11:16 AM
+-----------------------------------------------------------
+Message: The IListSource does not contain any data sources.
+Exception from SQLConnectionOpen-Exception from fetch Update View SCM Items
+-----------------------------------------------------------
+
+Time: 06-01-2019 09:31:23 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 06-01-2019 11:47:14 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from MIS Utility Result Save.
+-----------------------------------------------------------
+
+Time: 06-01-2019 11:47:25 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from MIS Utility Result Save.
+-----------------------------------------------------------
+
+Time: 06-01-2019 11:48:14 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from MIS Utility Result Save.
+-----------------------------------------------------------
+
+Time: 07-01-2019 12:09:50 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from MIS Utility Result Save.
+-----------------------------------------------------------
+
+Time: 07-01-2019 12:09:53 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from MIS Utility Result Save.
+-----------------------------------------------------------
+
+Time: 07-01-2019 08:05:35 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from while updating row from Sale Order Qty Decrement.
+-----------------------------------------------------------
+
+Time: 07-01-2019 08:05:37 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from while updating row from Sale Order Qty Decrement.
+-----------------------------------------------------------
+
+Time: 07-01-2019 08:05:38 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from while updating row from Sale Order Qty Decrement.
+-----------------------------------------------------------
+
+Time: 08-01-2019 11:01:18 AM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.HtmlControls.HtmlInputHidden' to type 'System.Web.UI.WebControls.HiddenField'.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 08-01-2019 11:10:17 AM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.HiddenField' to type 'System.IConvertible'.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 08-01-2019 11:12:22 AM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.HiddenField' to type 'System.IConvertible'.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 08-01-2019 07:18:09 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'CustomerName'.
+Exception from SQLConnectionOpen-Exception from display Pending Report!
+-----------------------------------------------------------
+
+Time: 08-01-2019 07:26:44 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'EmployeeName'.
+Exception from SQLConnectionOpen-Exception from display Pending Report!
+-----------------------------------------------------------
+
+Time: 08-01-2019 07:47:46 PM
+-----------------------------------------------------------
+Message: Cannot perform '=' operation on System.Int32 and System.String.
+Exception from SQLConnectionOpen-Exception from while searching record based from utility reports!.
+-----------------------------------------------------------
+
+Time: 08-01-2019 07:47:52 PM
+-----------------------------------------------------------
+Message: Cannot perform '=' operation on System.Int32 and System.String.
+Exception from SQLConnectionOpen-Exception from while searching record based from utility reports!.
+-----------------------------------------------------------
+
+Time: 08-01-2019 07:53:59 PM
+-----------------------------------------------------------
+Message: Cannot perform '=' operation on System.Int32 and System.String.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 08-01-2019 07:55:32 PM
+-----------------------------------------------------------
+Message: Cannot perform '=' operation on System.Int32 and System.String.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 11:49:24 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Utility Enquiries And Report!
+-----------------------------------------------------------
+
+Time: 09-01-2019 11:49:39 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Utility Enquiries And Report!
+-----------------------------------------------------------
+
+Time: 09-01-2019 11:55:29 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Utility Enquiries And Report!
+-----------------------------------------------------------
+
+Time: 09-01-2019 11:55:39 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Utility Enquiries And Report!
+-----------------------------------------------------------
+
+Time: 09-01-2019 01:55:17 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while clicking on page number from serial no details!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 02:16:16 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 02:16:27 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while clicking on page number from serial no details!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 02:17:41 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:12:27 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:13:24 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:14:02 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:14:21 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:14:33 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:14:53 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:21:00 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:21:10 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:21:36 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:21:50 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:22:31 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 03:22:39 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 06:41:32 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 06:42:08 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 09-01-2019 06:42:35 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 11-01-2019 01:00:14 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from WIP Aging!
+-----------------------------------------------------------
+
+Time: 23-01-2019 08:56:21 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from WIP Aging!
+-----------------------------------------------------------
+
+Time: 23-01-2019 09:20:36 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 09:21:24 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 09:22:37 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 09:38:00 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 09:45:27 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 09:55:37 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 09:58:35 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 10:14:35 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 10:19:52 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 10:33:45 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 10:36:16 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 11:26:58 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 11:27:04 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 11:27:04 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 11:28:41 PM
+-----------------------------------------------------------
+Message: The conversion of a varchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+Exception from SQLConnectionOpen-Exception from while updating row from Utility Quality.
+-----------------------------------------------------------
+
+Time: 23-01-2019 11:45:52 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'QCRemarks'.
+Exception from SQLConnectionOpen-Exception from display Pending Report!
+-----------------------------------------------------------
+
+Time: 23-01-2019 11:46:40 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Utility Enquiries And Report!
+-----------------------------------------------------------
+

@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>F:\CodeBase\Engineering\Deployment\Velan</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AllDCReport.aspx">
+      <publishTime>03/11/2018 00:51:27</publishTime>
+    </File>
+    <File Include="App_Data/CachedProperties.xml">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="App_Data/SiteMap.xml">
+      <publishTime>08/05/2016 23:44:38</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>06/29/2015 20:09:59</publishTime>
+    </File>
+    <File Include="bin/App_Code/SecurityCheck.cs">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>01/27/2019 23:19:09</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>01/27/2019 23:19:08</publishTime>
+    </File>
+    <File Include="bin/ComponentArt.Web.UI.dll">
+      <publishTime>06/29/2015 20:10:00</publishTime>
+    </File>
+    <File Include="bin/EmailExcel/PDC_Ajay B Shukla_28012018091834.xls">
+      <publishTime>01/28/2018 14:48:56</publishTime>
+    </File>
+    <File Include="bin/Excel.dll">
+      <publishTime>06/29/2015 20:10:01</publishTime>
+    </File>
+    <File Include="bin/ExcelUtil.dll">
+      <publishTime>06/29/2015 20:10:01</publishTime>
+    </File>
+    <File Include="bin/FreeLibrary.dll">
+      <publishTime>06/29/2015 20:10:01</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>06/29/2015 20:10:02</publishTime>
+    </File>
+    <File Include="bin/Images/Velan_Background.jpg">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="bin/Images/Velan_BG.JPG">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="bin/Interop.Microsoft.Office.Interop.Excel.dll">
+      <publishTime>06/29/2015 20:10:02</publishTime>
+    </File>
+    <File Include="bin/Libraries.dll">
+      <publishTime>06/29/2015 20:10:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Office.Interop.Outlook.dll">
+      <publishTime>09/06/2016 15:36:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>06/29/2015 20:10:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>06/29/2015 20:10:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll">
+      <publishTime>06/29/2015 20:10:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll">
+      <publishTime>06/29/2015 20:10:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ObjectBuilder.dll">
+      <publishTime>06/29/2015 20:10:05</publishTime>
+    </File>
+    <File Include="bin/RKLib.ExportData.dll">
+      <publishTime>06/29/2015 20:10:06</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>03/18/2010 23:21:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Extensions.Design.dll">
+      <publishTime>06/29/2015 20:10:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.Extensions.dll">
+      <publishTime>06/29/2015 20:10:07</publishTime>
+    </File>
+    <File Include="bin/TimeSheetLibrary.dll">
+      <publishTime>06/29/2015 20:10:07</publishTime>
+    </File>
+    <File Include="bin/VV.dll">
+      <publishTime>01/27/2019 23:18:33</publishTime>
+    </File>
+    <File Include="bin/VV.pdb">
+      <publishTime>01/22/2018 18:50:55</publishTime>
+    </File>
+    <File Include="BranchReport.aspx">
+      <publishTime>01/06/2019 01:51:44</publishTime>
+    </File>
+    <File Include="BulkProdCompletion.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="BulkRelease.aspx">
+      <publishTime>01/05/2019 23:07:25</publishTime>
+    </File>
+    <File Include="BulkTPIOffering.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="BuyerMaster.aspx">
+      <publishTime>10/31/2018 09:26:27</publishTime>
+    </File>
+    <File Include="CreateNewUser.aspx">
+      <publishTime>12/07/2018 23:30:40</publishTime>
+    </File>
+    <File Include="CSS/Main.css">
+      <publishTime>02/26/2017 12:27:39</publishTime>
+    </File>
+    <File Include="CSS/PopUpStyleSheet.css">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="CSS/StyleSheet.css">
+      <publishTime>02/25/2017 15:28:11</publishTime>
+    </File>
+    <File Include="DCReports.aspx">
+      <publishTime>12/27/2017 23:04:20</publishTime>
+    </File>
+    <File Include="DeliveryChallan.aspx">
+      <publishTime>11/24/2018 13:39:22</publishTime>
+    </File>
+    <File Include="DeliveryChallanReceipts.aspx">
+      <publishTime>10/15/2017 11:55:17</publishTime>
+    </File>
+    <File Include="EmailExcel/PDC_Ajay B Shukla_28012018091834.xls">
+      <publishTime>01/28/2018 14:48:56</publishTime>
+    </File>
+    <File Include="EmployeeMaster.aspx">
+      <publishTime>02/26/2017 13:04:37</publishTime>
+    </File>
+    <File Include="FGOrderChange.aspx">
+      <publishTime>06/02/2017 22:00:04</publishTime>
+    </File>
+    <File Include="FgToWipReversal.aspx">
+      <publishTime>09/07/2017 10:41:54</publishTime>
+    </File>
+    <File Include="FreezePlan.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/29/2017 23:23:52</publishTime>
+    </File>
+    <File Include="Home.aspx">
+      <publishTime>11/30/2016 22:56:26</publishTime>
+    </File>
+    <File Include="ICSPOReversal.aspx">
+      <publishTime>08/16/2016 23:30:36</publishTime>
+    </File>
+    <File Include="Images/asc.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/button-end.png">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/button-mid.png">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/button-start.png">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/Calendar.JPG">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/calendar_img.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/collapse_down.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/collapse_up.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/csl_end.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/csl_nrm.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/dayheader_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/Delete.JPG">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/desc.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/end_csl.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/end_nrm.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/end_sel.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/excel.jpg">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/grid_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/grid_headerBg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/groupHeader_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/header1stCell_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/header_activeBg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/header_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/header_grip.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/header_hoverBg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/header_rowBg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/headingSelectorCell_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/icon_hover.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/icon_selected.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/icon_transparent.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/level2_group_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/lines/i.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/lines/lminus.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/lines/lplus.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/lines/rminus.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/lines/rplus.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/lines/tminus.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/lines/tplus.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/loading.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/logo_velan.png">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/minus.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/month_selector.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/next.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/next_mon.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/NoFill.JPG">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/nrm_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/nrm_csl.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/nrm_end.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/nrm_nrm.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/nrm_sel.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/pager/first.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/pager/last.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/pager/next.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/pager/prev.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/pager/slider_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/pager/slider_grip.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/plus.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/pointLeft.bmp">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/pointright.bmp">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/post.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/prev.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/prev_mon.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/Remove.jpg">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/reorder.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/scroller/bottom.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/scroller/down.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/scroller/down_disabled.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/scroller/scroller_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/scroller/scroll_gripBg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/scroller/top.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/scroller/up.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/scroller/up_disabled.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/selector.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/selectorCell_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/sel_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/sel_end.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/sel_nrm.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/slider.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/slider_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/small_icons.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/tick.jpg">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/title_bg.gif">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/Velan_Background.jpg">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/Velan_BG.JPG">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Images/wrong.jpg">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ItemMaster.aspx">
+      <publishTime>01/29/2017 23:02:42</publishTime>
+    </File>
+    <File Include="Js/Calendar.js">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Js/Catch.js">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Js/common.js">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>01/28/2017 23:36:19</publishTime>
+    </File>
+    <File Include="LoginSupplierUpdation.aspx">
+      <publishTime>01/08/2019 01:08:20</publishTime>
+    </File>
+    <File Include="MISFinancialInput.xml">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="MISFinancialInput.xsl">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/31/2018 07:22:36</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>01/27/2019 23:18:51</publishTime>
+    </File>
+    <File Include="ProdOrderReversal.aspx">
+      <publishTime>10/21/2016 09:12:50</publishTime>
+    </File>
+    <File Include="ProductionOrderIssue.aspx">
+      <publishTime>03/24/2018 10:27:41</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/g.pubxml.user">
+      <publishTime>05/09/2016 09:41:49</publishTime>
+    </File>
+    <File Include="ReadyToRelease.aspx">
+      <publishTime>01/05/2019 23:11:01</publishTime>
+    </File>
+    <File Include="Reports.aspx">
+      <publishTime>01/28/2017 19:09:01</publishTime>
+    </File>
+    <File Include="SalesOrderLineItemDeletion.aspx">
+      <publishTime>01/08/2019 14:58:43</publishTime>
+    </File>
+    <File Include="SalesOrderQtyDecrement.aspx">
+      <publishTime>05/28/2017 22:47:44</publishTime>
+    </File>
+    <File Include="ScheduleProcess.aspx">
+      <publishTime>08/18/2018 15:49:49</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1-vsdoc.js">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1.js">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1.min.js">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.intellisense.js">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.js">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.min.js">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="SerialNoDetails.aspx">
+      <publishTime>01/09/2019 13:54:27</publishTime>
+    </File>
+    <File Include="Shortage.aspx">
+      <publishTime>07/30/2017 01:49:25</publishTime>
+    </File>
+    <File Include="StatusImporting.aspx">
+      <publishTime>05/23/2018 01:21:21</publishTime>
+    </File>
+    <File Include="SupplierRemarks.aspx">
+      <publishTime>10/12/2018 22:36:30</publishTime>
+    </File>
+    <File Include="TimesheetNonComplianceReport.xml">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="UpdateMISFinanceInput.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="UpdateMISSalesInput.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="UpdateOrderStatus.aspx">
+      <publishTime>08/19/2018 15:04:48</publishTime>
+    </File>
+    <File Include="UpdatePassword.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="UpdatePO.aspx">
+      <publishTime>01/08/2019 12:29:53</publishTime>
+    </File>
+    <File Include="UpdatePOCommitmentDate.aspx">
+      <publishTime>12/29/2018 12:56:13</publishTime>
+    </File>
+    <File Include="UpdateProdRelease.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="UpdateScreenAccess.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="UpdateWIPRecDate.aspx">
+      <publishTime>04/25/2017 23:49:10</publishTime>
+    </File>
+    <File Include="UpdateWIPToFG.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="UploadBaan.aspx">
+      <publishTime>08/05/2016 23:38:50</publishTime>
+    </File>
+    <File Include="UploadInvoice.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="UploadUpdatedMISSalesInput.aspx">
+      <publishTime>12/25/2016 23:44:33</publishTime>
+    </File>
+    <File Include="UtilityEnquiriesReports.aspx">
+      <publishTime>01/23/2019 23:41:56</publishTime>
+    </File>
+    <File Include="UtilityQuality.aspx">
+      <publishTime>01/27/2019 20:09:34</publishTime>
+    </File>
+    <File Include="UtilityRequest.aspx">
+      <publishTime>01/08/2019 12:23:50</publishTime>
+    </File>
+    <File Include="UtilityStores.aspx">
+      <publishTime>01/27/2019 20:26:51</publishTime>
+    </File>
+    <File Include="VendorMaster.aspx">
+      <publishTime>01/09/2018 23:35:08</publishTime>
+    </File>
+    <File Include="ViewAssemblyOrderProcessing.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ViewCommercial.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ViewFGPlan.aspx">
+      <publishTime>08/20/2016 11:51:28</publishTime>
+    </File>
+    <File Include="ViewITP.aspx">
+      <publishTime>10/11/2018 23:29:49</publishTime>
+    </File>
+    <File Include="ViewMacroFGPlan.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ViewMacroReleasePlan.aspx">
+      <publishTime>03/12/2017 11:59:52</publishTime>
+    </File>
+    <File Include="ViewMacroSalesPlan.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ViewMISFinanceInput.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ViewMISSalesInput.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ViewPODates.aspx">
+      <publishTime>12/23/2018 14:31:09</publishTime>
+    </File>
+    <File Include="ViewProcessedItems.aspx">
+      <publishTime>08/10/2016 00:42:58</publishTime>
+    </File>
+    <File Include="ViewProdCompletion.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ViewProdRelease.aspx">
+      <publishTime>08/21/2016 13:11:37</publishTime>
+    </File>
+    <File Include="ViewQRAndQA.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ViewQRAndQASalesSummary.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ViewReleasePlan.aspx">
+      <publishTime>08/20/2016 11:51:33</publishTime>
+    </File>
+    <File Include="ViewSalesPlan.aspx">
+      <publishTime>08/20/2016 11:00:18</publishTime>
+    </File>
+    <File Include="ViewSCM.aspx">
+      <publishTime>01/23/2019 23:51:16</publishTime>
+    </File>
+    <File Include="ViewSCNInput.aspx">
+      <publishTime>04/18/2016 08:48:36</publishTime>
+    </File>
+    <File Include="ViewTPIOffering.aspx">
+      <publishTime>06/18/2016 16:29:11</publishTime>
+    </File>
+    <File Include="ViewWIPDates.aspx">
+      <publishTime>04/05/2017 23:28:10</publishTime>
+    </File>
+    <File Include="ViewWIPItems.aspx">
+      <publishTime>10/15/2017 12:10:52</publishTime>
+    </File>
+    <File Include="VV.Master">
+      <publishTime>01/06/2019 15:54:02</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/09/2019 17:38:21</publishTime>
+    </File>
+    <File Include="Web.sitemap">
+      <publishTime>08/05/2016 23:44:54</publishTime>
+    </File>
+    <File Include="WIPAgingReport.aspx">
+      <publishTime>01/24/2019 19:55:38</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

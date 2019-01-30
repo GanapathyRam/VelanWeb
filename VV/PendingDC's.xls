@@ -1,0 +1,13 @@
+<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">SupplierCode</th><th scope="col">VendorName</th><th scope="col">DCNumber</th><th scope="col">DCDate</th><th scope="col">SlNo</th><th scope="col">ItemDescription</th><th scope="col">Units</th><th scope="col">QuantitySent</th><th scope="col">QuantityReceived</th><th scope="col">QuantityPending</th><th scope="col">RequestedBy</th><th scope="col">Reason</th>
+		</tr><tr class="textmode">
+			<td>410635</td><td>Harihar Alloys Pvt Ltd</td><td>VVI-R-18-0045</td><td>09-06-2017</td><td>1</td><td>N675 Body Die </td><td>Set</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Anilkumar.G</td><td>Sent for manufacturing purpose</td>
+		</tr><tr class="textmode">
+			<td>410635</td><td>Harihar Alloys Pvt Ltd</td><td>VVI-R-18-0045</td><td>09-06-2017</td><td>2</td><td>N675 Cover die </td><td>Set</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Anilkumar.G</td><td>Sent for manufacturing purpose</td>
+		</tr><tr class="textmode">
+			<td>410635</td><td>Harihar Alloys Pvt Ltd</td><td>VVI-R-18-0045</td><td>09-06-2017</td><td>3</td><td>Cryo Bonnet Die </td><td>Set</td><td>1.000</td><td>0.00</td><td>1.000</td><td>Anilkumar.G</td><td>Sent for manufacturing purpose</td>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,7 @@
+E:\MyWork\VV\VV\bin\App_Code\SecurityCheck.cs
+E:\MyWork\VV\VV\bin\VV.dll.config
+E:\MyWork\VV\VV\bin\VV.dll
+E:\MyWork\VV\VV\bin\VV.pdb
+E:\MyWork\VV\VV\obj\x86\Debug\VV.dll
+E:\MyWork\VV\VV\obj\x86\Debug\VV.pdb
+E:\MyWork\VV\VV\obj\x86\Debug\VV.csprojResolveAssemblyReference.cache
