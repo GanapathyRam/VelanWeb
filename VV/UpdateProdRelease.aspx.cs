@@ -308,14 +308,22 @@ namespace VV
             {
                 
                 String SerialNo = "";
+                String valueSpare = "";
                 DBUtil _DBObj = new DBUtil();
 
                 DataSet ds = new DataSet();
-                
+
+                ds = _DBObj.GetMISOrderStatusForValveSpare(Convert.ToInt32(Request.QueryString["OrderNo"].ToString()), Convert.ToInt32(Request.QueryString["Pos"].ToString()));
+
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    valueSpare = Convert.ToString(ds.Tables[0].Rows[0]["ValveSpare"]);
+                }
+
                 // Depending on the Checkbox, decide if to generate multiple Serial or only one
                 //if (chkBoxSerialNoGeneration.Checked) // Commmented as per the changes given on 01-July-2015
 
-                if (!lblOrderTypeVal.Text.Trim().ToUpper().Equals("ICS"))  // Generate Serial No only for  non-ICS order Types
+                if (!lblOrderTypeVal.Text.Trim().ToUpper().Equals("ICS") && valueSpare != "PRODUCTION SPARE PARTS")  // Generate Serial No only for  non-ICS order Types
                 {
                     for (int i = 1; i <= Int32.Parse(txtProdReleaseQty.Text.Trim()); i++)
                     {

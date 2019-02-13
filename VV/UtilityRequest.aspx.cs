@@ -286,7 +286,7 @@ namespace VV
                     txtPos.Text = (string.IsNullOrWhiteSpace(txtPos.Text) ? "0" : txtPos.Text);
 
                     _dbObj.InsertStockTransferRequest(Convert.ToInt16(ddlEmployess.SelectedValue), Convert.ToDateTime(DateTime.UtcNow.ToString("dd/MM/yyyy")), txtItemCodeFrom.Text, txtItemCodeTo.Text,
-                        Convert.ToInt32(txtOrderNo.Text), Convert.ToInt32(txtPos.Text), Convert.ToInt32(txtQuantity.Text));
+                        Convert.ToInt32(txtOrderNo.Text), Convert.ToInt32(txtPos.Text), Convert.ToInt32(txtQuantity.Text), txtRemarks.Text.Trim());
 
                     lblMessage.ForeColor = System.Drawing.Color.Green;
                     lblMessage.Visible = true;
@@ -297,6 +297,7 @@ namespace VV
                     txtItemCodeTo.Text = "";
                     txtOrderNo.Text = "";
                     txtPos.Text = "";
+                    txtRemarks.Text = "";
                 }
                 else
                 {
@@ -319,6 +320,7 @@ namespace VV
             txtOrderNo.Text = "";
             txtPos.Text = "";
             lblMessage.Text = "";
+            txtRemarks.Text = "";
         }
 
         private void LogError(Exception ex, string section)

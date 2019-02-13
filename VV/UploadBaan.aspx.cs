@@ -362,6 +362,7 @@ namespace VV
                         string OriginalPromDate = ds_UploadedExcelData.Tables[0].Rows[i]["Orignal PromDate"].ToString();
 
                         float AmtFromExcel = float.Parse(ds_UploadedExcelData.Tables[0].Rows[i]["Amount[INR]"].ToString());
+                        string Description_2 = ds_UploadedExcelData.Tables[0].Rows[i]["Description_2"].ToString();
 
                         // Section For checking, If OrderNo and Pos is not available into MISOrderStatus table add it, Or else Updating the Original PromDate,
                         // PlannedDelDate, Item, Description
@@ -421,13 +422,13 @@ namespace VV
                             {
                                 // Update OrderQty Also + BalanceQty + ToReleaseQty + other cols
                                 _dbObj.UpdateBaaNDataInMISOrderStatus(Int32.Parse(OrderNo), LineNum, Pos, Item, Description, ItemGroup, DiffQty, PlanWeek, WIPWeek, FGWeek, 
-                                    AmtFromExcel, Convert.ToDateTime(PlannedPromDate), Convert.ToDateTime(OriginalPromDate), CustomerName);
+                                    AmtFromExcel, Convert.ToDateTime(PlannedPromDate), Convert.ToDateTime(OriginalPromDate), CustomerName, Description_2);
                             }
                             else
                             {
                                 // Update other Cols other than OrderQty,BalanceQty,ToReleaseQty
                                 _dbObj.UpdateBaaNDataInMISOrderStatus(Int32.Parse(OrderNo), LineNum, Pos, Item, Description, ItemGroup, 0, PlanWeek, WIPWeek, FGWeek, AmtFromExcel,
-                                    Convert.ToDateTime(PlannedPromDate), Convert.ToDateTime(OriginalPromDate), CustomerName);
+                                    Convert.ToDateTime(PlannedPromDate), Convert.ToDateTime(OriginalPromDate), CustomerName, Description_2);
                             }
 
                             ds_UploadedExcelData.Tables[0].Rows.RemoveAt(i);
@@ -479,8 +480,19 @@ namespace VV
                 for (int i = 43; i >= 35; i--)
                     ds.Tables["SO Backlog Detail by Valve Code"].Columns.RemoveAt(i);
 
-                for (int i = 31; i >= 16; i--)
+                //for (int i = 31; i >= 16; i--)
+                //    ds.Tables["SO Backlog Detail by Valve Code"].Columns.RemoveAt(i);
+
+                #region New Added Code : 10/02/2019
+                for (int i = 31; i >= 21; i--)
                     ds.Tables["SO Backlog Detail by Valve Code"].Columns.RemoveAt(i);
+
+                ds.Tables["SO Backlog Detail by Valve Code"].Columns.RemoveAt(19);
+                ds.Tables["SO Backlog Detail by Valve Code"].Columns.RemoveAt(18);
+                ds.Tables["SO Backlog Detail by Valve Code"].Columns.RemoveAt(17);
+                ds.Tables["SO Backlog Detail by Valve Code"].Columns.RemoveAt(16);
+               
+                #endregion
 
                 ds.Tables["SO Backlog Detail by Valve Code"].Columns.RemoveAt(14);
 
@@ -510,34 +522,63 @@ namespace VV
 
                 DataColumn dc9 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[8].ColumnName.Trim()); dc9.DataType = typeof(String); dt.Columns.Add(dc9);
 
+                #region Original Code -- Added by Arun --- 11/02/2019
+                //DataColumn dc10 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[9].ColumnName.Trim()); dc10.DataType = typeof(Int32); dt.Columns.Add(dc10);
+                //DataColumn dc11 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[10].ColumnName.Trim()); dc11.DataType = typeof(DateTime); dt.Columns.Add(dc11);
 
-                DataColumn dc10 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[9].ColumnName.Trim()); dc10.DataType = typeof(Int32); dt.Columns.Add(dc10);
-                DataColumn dc11 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[10].ColumnName.Trim()); dc11.DataType = typeof(DateTime); dt.Columns.Add(dc11);
+                //DataColumn dc12 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[11].ColumnName.Trim()); dc12.DataType = typeof(Int32); dt.Columns.Add(dc12);
+                //DataColumn dc13 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[12].ColumnName.Trim()); dc13.DataType = typeof(DateTime); dt.Columns.Add(dc13);
+                //DataColumn dc14 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[13].ColumnName.Trim()); dc14.DataType = typeof(DateTime); dt.Columns.Add(dc14);
+                //DataColumn dc15 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[14].ColumnName.Trim()); dc15.DataType = typeof(DateTime); dt.Columns.Add(dc15);
+                //DataColumn dc16 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[15].ColumnName.Trim()); dc16.DataType = typeof(Int32); dt.Columns.Add(dc16);
 
-                DataColumn dc12 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[11].ColumnName.Trim()); dc12.DataType = typeof(Int32); dt.Columns.Add(dc12);
-                DataColumn dc13 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[12].ColumnName.Trim()); dc13.DataType = typeof(DateTime); dt.Columns.Add(dc13);
+                //DataColumn dc17 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[16].ColumnName.Trim()); dc17.DataType = typeof(Int32); dt.Columns.Add(dc17);
+                //DataColumn dc18 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[17].ColumnName.Trim()); dc18.DataType = typeof(float); dt.Columns.Add(dc18);
+                //DataColumn dc19 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[18].ColumnName.Trim()); dc19.DataType = typeof(Int32); dt.Columns.Add(dc19);
+                //DataColumn dc20 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[19].ColumnName.Trim()); dc20.DataType = typeof(Int32); dt.Columns.Add(dc20);
+                //DataColumn dc21 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[20].ColumnName.Trim()); dc21.DataType = typeof(Int32); dt.Columns.Add(dc21);
+
+                //// Add the Rel Qty Here                      
+                //DataColumn dc22 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[21].ColumnName.Trim()); dc22.DataType = typeof(DateTime); dt.Columns.Add(dc22);
+                //DataColumn dc23 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[22].ColumnName.Trim()); dc23.DataType = typeof(DateTime); dt.Columns.Add(dc23);
+                //DataColumn dc24 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[23].ColumnName.Trim()); dc24.DataType = typeof(DateTime); dt.Columns.Add(dc24);
+
+                //DataColumn dc25 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[24].ColumnName.Trim()); dc25.DataType = typeof(Int32); dt.Columns.Add(dc25);
+
+                //// Week Cols
+                //DataColumn dc26 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[25].ColumnName.Trim()); dc26.DataType = typeof(Int32); dt.Columns.Add(dc26);
+                //DataColumn dc27 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[26].ColumnName.Trim()); dc27.DataType = typeof(Int32); dt.Columns.Add(dc27);
+                //DataColumn dc28 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[27].ColumnName.Trim()); dc28.DataType = typeof(Int32); dt.Columns.Add(dc28);
+                #endregion
+
+                DataColumn dc10 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[9].ColumnName.Trim()); dc10.DataType = typeof(String); dt.Columns.Add(dc10);
+
+                DataColumn dc11 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[10].ColumnName.Trim()); dc11.DataType = typeof(Int32); dt.Columns.Add(dc11);
+                DataColumn dc12 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[11].ColumnName.Trim()); dc12.DataType = typeof(DateTime); dt.Columns.Add(dc12);
+
+                DataColumn dc13 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[12].ColumnName.Trim()); dc13.DataType = typeof(Int32); dt.Columns.Add(dc13);
                 DataColumn dc14 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[13].ColumnName.Trim()); dc14.DataType = typeof(DateTime); dt.Columns.Add(dc14);
                 DataColumn dc15 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[14].ColumnName.Trim()); dc15.DataType = typeof(DateTime); dt.Columns.Add(dc15);
-                DataColumn dc16 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[15].ColumnName.Trim()); dc16.DataType = typeof(Int32); dt.Columns.Add(dc16);
-
+                DataColumn dc16 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[15].ColumnName.Trim()); dc16.DataType = typeof(DateTime); dt.Columns.Add(dc16);
                 DataColumn dc17 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[16].ColumnName.Trim()); dc17.DataType = typeof(Int32); dt.Columns.Add(dc17);
-                DataColumn dc18 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[17].ColumnName.Trim()); dc18.DataType = typeof(float); dt.Columns.Add(dc18);
-                DataColumn dc19 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[18].ColumnName.Trim()); dc19.DataType = typeof(Int32); dt.Columns.Add(dc19);
+
+                DataColumn dc18 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[17].ColumnName.Trim()); dc18.DataType = typeof(Int32); dt.Columns.Add(dc18);
+                DataColumn dc19 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[18].ColumnName.Trim()); dc19.DataType = typeof(float); dt.Columns.Add(dc19);
                 DataColumn dc20 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[19].ColumnName.Trim()); dc20.DataType = typeof(Int32); dt.Columns.Add(dc20);
                 DataColumn dc21 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[20].ColumnName.Trim()); dc21.DataType = typeof(Int32); dt.Columns.Add(dc21);
+                DataColumn dc22 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[21].ColumnName.Trim()); dc22.DataType = typeof(Int32); dt.Columns.Add(dc22);
 
                 // Add the Rel Qty Here                      
-                DataColumn dc22 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[21].ColumnName.Trim()); dc22.DataType = typeof(DateTime); dt.Columns.Add(dc22);
                 DataColumn dc23 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[22].ColumnName.Trim()); dc23.DataType = typeof(DateTime); dt.Columns.Add(dc23);
                 DataColumn dc24 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[23].ColumnName.Trim()); dc24.DataType = typeof(DateTime); dt.Columns.Add(dc24);
+                DataColumn dc25 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[24].ColumnName.Trim()); dc25.DataType = typeof(DateTime); dt.Columns.Add(dc25);
 
-                DataColumn dc25 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[24].ColumnName.Trim()); dc25.DataType = typeof(Int32); dt.Columns.Add(dc25);
+                DataColumn dc26 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[25].ColumnName.Trim()); dc26.DataType = typeof(Int32); dt.Columns.Add(dc26);
 
                 // Week Cols
-                DataColumn dc26 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[25].ColumnName.Trim()); dc26.DataType = typeof(Int32); dt.Columns.Add(dc26);
                 DataColumn dc27 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[26].ColumnName.Trim()); dc27.DataType = typeof(Int32); dt.Columns.Add(dc27);
                 DataColumn dc28 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[27].ColumnName.Trim()); dc28.DataType = typeof(Int32); dt.Columns.Add(dc28);
-
+                DataColumn dc29 = new DataColumn(ds.Tables["SO Backlog Detail by Valve Code"].Columns[28].ColumnName.Trim()); dc29.DataType = typeof(Int32); dt.Columns.Add(dc29);
 
                 DataSet UpdatedDS = new DataSet();
                 UpdatedDS.Tables.Add(dt);

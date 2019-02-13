@@ -136,6 +136,14 @@
                             </ItemTemplate>
                             <ItemStyle Wrap="false" />
                         </asp:TemplateField>
+
+                        <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="Request Remarks">
+                            <ItemTemplate>
+                                <asp:Label ID="lblRequestRemarks" runat="server" Text='<%# Eval("RequestRemarks") %>'></asp:Label>
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
+
                         <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="QCBy">
                             <ItemTemplate>
                                 <asp:Label ID="lblQCBy" runat="server" Text='<%# Eval("QCBy") %>'></asp:Label>
@@ -154,6 +162,14 @@
                             </ItemTemplate>
                             <ItemStyle Wrap="false" />
                         </asp:TemplateField>
+
+                          <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="QCRemarks">
+                            <ItemTemplate>
+                                <asp:Label ID="lblQcRemarks" runat="server" Text='<%# Eval("QCRemarks") %>'></asp:Label>
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
+
                         <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="StoresOn">
                             <ItemTemplate>
                                 <asp:Label ID="lblStoresOn" runat="server" Text='<%# Bind("StoresOn", "{0:dd-MM-yyyy}") %>'></asp:Label>
@@ -163,13 +179,6 @@
                         <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="StoresDisposition">
                             <ItemTemplate>
                                 <asp:Label ID="lblStoresDisposition" runat="server" Text='<%# Eval("StoresDisposition") %>'></asp:Label>
-                            </ItemTemplate>
-                            <ItemStyle Wrap="false" />
-                        </asp:TemplateField>
-
-                          <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="QCRemarks">
-                            <ItemTemplate>
-                                <asp:Label ID="lblQcRemarks" runat="server" Text='<%# Eval("QCRemarks") %>'></asp:Label>
                             </ItemTemplate>
                             <ItemStyle Wrap="false" />
                         </asp:TemplateField>

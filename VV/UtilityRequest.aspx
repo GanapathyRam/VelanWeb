@@ -67,7 +67,12 @@
                 <asp:TextBox ID="txtQuantity" Height="15px" CssClass="textBox" runat="server"></asp:TextBox>
                 <asp:Label ID="Label6" Text="*" Font-Bold="true" Visible="true" ForeColor="Red" runat="server"></asp:Label>
             </td>
-            <td></td>
+             <td style="padding-left: 10px; text-align: right; font-family: Verdana; width: 220px;">
+                <asp:Label ID="lblRemarks" Text="Remarks" runat="server"></asp:Label>
+            </td>
+            <td style="padding-left: 10px; width: 220px;">
+                <asp:TextBox ID="txtRemarks" runat="server" CssClass="textBox" Height="15px"></asp:TextBox>
+            </td>
             <td></td>
         </tr>
         <tr>

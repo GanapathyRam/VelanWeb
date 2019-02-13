@@ -143,6 +143,12 @@
                         </ItemTemplate>
                         <ItemStyle Wrap="false" />
                     </asp:TemplateField>
+                    <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="Request Remarks">
+                        <ItemTemplate>
+                            <asp:Label ID="lblRequestRemarks" runat="server" Text='<%# Eval("RequestRemarks") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle Wrap="false" />
+                    </asp:TemplateField>
                       <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="QCBy">
                         <ItemTemplate>
                             <asp:Label ID="lblQCBy" runat="server" Text='<%# Eval("QCBy") %>'></asp:Label>

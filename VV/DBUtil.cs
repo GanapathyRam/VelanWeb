@@ -135,25 +135,26 @@ namespace VV
                     copy.ColumnMappings.Add(6, "Item");
                     copy.ColumnMappings.Add(7, "Description");
                     copy.ColumnMappings.Add(8, "ItemGroup");
-                    copy.ColumnMappings.Add(9, "SalesOrderRevision");
-                    copy.ColumnMappings.Add(10, "RevisionDate");
-                    copy.ColumnMappings.Add(11, "Area");
-                    copy.ColumnMappings.Add(12, "OrderDate");
-                    copy.ColumnMappings.Add(13, "OriginalPromDate");
-                    copy.ColumnMappings.Add(14, "PlannedDelDate");
-                    copy.ColumnMappings.Add(15, "OrderQty");
-                    copy.ColumnMappings.Add(16, "BalanceQty");
-                    copy.ColumnMappings.Add(17, "Amount");
-                    copy.ColumnMappings.Add(18, "InvoicedQty");
-                    copy.ColumnMappings.Add(19, "FGQty");
-                    copy.ColumnMappings.Add(20, "WIPQty");
-                    copy.ColumnMappings.Add(21, "RelDate");
-                    copy.ColumnMappings.Add(22, "ProdCompletionDate");
-                    copy.ColumnMappings.Add(23, "ProdRemarks");
-                    copy.ColumnMappings.Add(24, "PlanWeek");
-                    copy.ColumnMappings.Add(25, "WIPWeek");
-                    copy.ColumnMappings.Add(26, "FGWeek");
-                    copy.ColumnMappings.Add(27, "ToReleaseQty");
+                    copy.ColumnMappings.Add(9, "ValveSpare");
+                    copy.ColumnMappings.Add(10, "SalesOrderRevision");
+                    copy.ColumnMappings.Add(11, "RevisionDate");
+                    copy.ColumnMappings.Add(12, "Area");
+                    copy.ColumnMappings.Add(13, "OrderDate");
+                    copy.ColumnMappings.Add(14, "OriginalPromDate");
+                    copy.ColumnMappings.Add(15, "PlannedDelDate");
+                    copy.ColumnMappings.Add(16, "OrderQty");
+                    copy.ColumnMappings.Add(17, "BalanceQty");
+                    copy.ColumnMappings.Add(18, "Amount");
+                    copy.ColumnMappings.Add(19, "InvoicedQty");
+                    copy.ColumnMappings.Add(20, "FGQty");
+                    copy.ColumnMappings.Add(21, "WIPQty");
+                    copy.ColumnMappings.Add(22, "RelDate");
+                    copy.ColumnMappings.Add(23, "ProdCompletionDate");
+                    copy.ColumnMappings.Add(24, "ProdRemarks");
+                    copy.ColumnMappings.Add(25, "PlanWeek");
+                    copy.ColumnMappings.Add(26, "WIPWeek");
+                    copy.ColumnMappings.Add(27, "FGWeek");
+                    copy.ColumnMappings.Add(28, "ToReleaseQty");
 
                     copy.DestinationTableName = "MISOrderStatus";
                     copy.WriteToServer(ds.Tables[0]);
@@ -238,6 +239,35 @@ namespace VV
             {
                 conn.Close();
                 Logger.Write(this.GetType().ToString() + " : ProdutionRelease() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet GetMISOrderStatusForValveSpare(int OrderNo, int Pos)
+        {
+            DataSet ds = new DataSet();
+            //var valveSpare = string.Empty;
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("Select ValveSpare from MISOrderStatus where OrderNo = '" + OrderNo + "' and Pos = " + Pos + "", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetMISOrderStatusForValveSpare() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
                 throw ex;
             }
         }
@@ -3593,7 +3623,7 @@ namespace VV
         /// <param name="WIPWeek"></param>
         /// <param name="FGWeek"></param>
         public void UpdateBaaNDataInMISOrderStatus(int OrderNum, String LineNum, int Pos, String Item, String Description, String ItemGroup, int DiffQtyToBeUpdated, int PlanWeek, int WIPWeek, int FGWeek, 
-            float UpdatedAmount, DateTime PlannedDelDate, DateTime OriginalPromDate, String CustomerName)
+            float UpdatedAmount, DateTime PlannedDelDate, DateTime OriginalPromDate, String CustomerName, String Description_2)
         {
             try
             {
@@ -3616,6 +3646,7 @@ namespace VV
                 cmd.Parameters.Add(new SqlParameter("@UpdatedAmount", UpdatedAmount)); //float
                 cmd.Parameters.Add(new SqlParameter("@OriginalPromDate", OriginalPromDate)); //DateTime
                 cmd.Parameters.Add(new SqlParameter("@PlannedDelDate", PlannedDelDate)); //DateTime
+                cmd.Parameters.Add(new SqlParameter("@Description_2", Description_2)); //String
 
                 cmd.ExecuteNonQuery();
 
@@ -5839,7 +5870,8 @@ namespace VV
             }
         }
 
-        public void InsertStockTransferRequest(int RequestedBy, DateTime RequestDate, string ItemcodeFrom, string ItemcodeTo, int OrderNo, int Pos, float Quantity)
+        public void InsertStockTransferRequest(int RequestedBy, DateTime RequestDate, string ItemcodeFrom, string ItemcodeTo, int OrderNo, int Pos, float Quantity,
+            string Remarks)
         {
             try
             {
@@ -5857,6 +5889,7 @@ namespace VV
                 cmd.Parameters.Add(new SqlParameter("@OrderNo", OrderNo)); // int
                 cmd.Parameters.Add(new SqlParameter("@pos", Pos)); // String
                 cmd.Parameters.Add(new SqlParameter("@Quantity", Quantity)); // DateTime
+                cmd.Parameters.Add(new SqlParameter("@RequestRemarks", Remarks)); // String
 
                 cmd.ExecuteNonQuery();
 

@@ -310,6 +310,10 @@ namespace VV
             GridView3.PageSize = Convert.ToInt32(pageSize);
             GridView3.DataSource = ds;
             GridView3.DataBind();
+
+            GridView1.PageSize = Convert.ToInt32(pageSize);
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
         }
 
         protected void GridView3_PageIndexChanging(object sender, GridViewPageEventArgs e)

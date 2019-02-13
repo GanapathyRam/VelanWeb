@@ -142,6 +142,12 @@
                         </ItemTemplate>
                         <ItemStyle Wrap="false" />
                     </asp:TemplateField>
+                     <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Remarks">
+                        <ItemTemplate>
+                            <asp:Label ID="lblRequestRemarks" runat="server" Text='<%# Eval("RequestRemarks") %>'></asp:Label>
+                        </ItemTemplate>
+                        <ItemStyle Wrap="false" />
+                    </asp:TemplateField>
                 </Columns>
                 <HeaderStyle CssClass="Grid_Header" />
                 <FooterStyle CssClass="Grid_Summary" />
