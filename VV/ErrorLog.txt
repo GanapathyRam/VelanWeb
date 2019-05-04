@@ -3422,3 +3422,339 @@ Message: Thread was being aborted.
 Exception from SQLConnectionOpen-Exception from export button click from Utility Enquiries And Report!
 -----------------------------------------------------------
 
+Time: 11-02-2019 11:39:41 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Utility Enquiries And Report!
+-----------------------------------------------------------
+
+Time: 13-02-2019 08:18:44 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from WIP Aging!
+-----------------------------------------------------------
+
+Time: 27-03-2019 10:26:45 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 29-03-2019 08:25:42 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 29-03-2019 08:40:55 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 29-03-2019 08:45:25 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from email sending!
+-----------------------------------------------------------
+
+Time: 30-03-2019 02:58:11 PM
+-----------------------------------------------------------
+Message: Syntax error: Missing operand before '=' operator.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 30-03-2019 02:58:24 PM
+-----------------------------------------------------------
+Message: Syntax error: Missing operand before '=' operator.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 30-03-2019 02:58:31 PM
+-----------------------------------------------------------
+Message: Syntax error: Missing operand before '=' operator.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 30-03-2019 02:59:30 PM
+-----------------------------------------------------------
+Message: Syntax error: Missing operand before '=' operator.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 30-03-2019 02:59:36 PM
+-----------------------------------------------------------
+Message: Syntax error: Missing operand before '=' operator.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 30-03-2019 03:00:15 PM
+-----------------------------------------------------------
+Message: Syntax error: Missing operand before '=' operator.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 31-03-2019 05:01:29 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 31-03-2019 05:09:54 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 31-03-2019 05:28:56 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+Exception from SQLConnectionOpen-Exception from export button click from Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 08-04-2019 07:22:48 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Rate'.
+Exception from SQLConnectionOpen-Exception from view delivery challan receipts details!
+-----------------------------------------------------------
+
+Time: 09-04-2019 05:50:58 PM
+-----------------------------------------------------------
+Message: Cannot cast DBNull.Value to type 'System.Decimal'. Please use a nullable type.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 09-04-2019 05:56:44 PM
+-----------------------------------------------------------
+Message: Cannot cast DBNull.Value to type 'System.Decimal'. Please use a nullable type.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 09-04-2019 06:07:59 PM
+-----------------------------------------------------------
+Message: Specified cast is not valid.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 10-04-2019 12:09:13 AM
+-----------------------------------------------------------
+Message: Column 'HeatNoControl' does not belong to table Table.
+Exception from SQLConnectionOpen-Exception from Fetch Heat No Control
+-----------------------------------------------------------
+
+Time: 10-04-2019 12:13:28 AM
+-----------------------------------------------------------
+Message: Column 'HeatNoControl' does not belong to table Table.
+Exception from SQLConnectionOpen-Exception from Fetch Heat No Control
+-----------------------------------------------------------
+
+Time: 10-04-2019 12:14:14 AM
+-----------------------------------------------------------
+Message: Column 'HeatNoControl' does not belong to table Table.
+Exception from SQLConnectionOpen-Exception from Fetch Heat No Control
+-----------------------------------------------------------
+
+Time: 10-04-2019 12:15:11 AM
+-----------------------------------------------------------
+Message: Column 'HeatNoControl' does not belong to table Table.
+Exception from SQLConnectionOpen-Exception from Fetch Heat No Control
+-----------------------------------------------------------
+
+Time: 10-04-2019 12:15:14 AM
+-----------------------------------------------------------
+Message: Column 'HeatNoControl' does not belong to table Table.
+Exception from SQLConnectionOpen-Exception from Fetch Heat No Control
+-----------------------------------------------------------
+
+Time: 10-04-2019 12:35:45 AM
+-----------------------------------------------------------
+Message: Invalid object name 'GENREAL'.
+Exception from SQLConnectionOpen-Exception from heat number control insert.!
+-----------------------------------------------------------
+
+Time: 10-04-2019 12:36:12 AM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+Exception from SQLConnectionOpen-Exception from Fetch Heat No Control
+-----------------------------------------------------------
+
+Time: 10-04-2019 12:36:14 AM
+-----------------------------------------------------------
+Message: Invalid object name 'GENREAL'.
+Exception from SQLConnectionOpen-Exception from heat number control insert.!
+-----------------------------------------------------------
+
+Time: 10-04-2019 12:36:45 AM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+Exception from SQLConnectionOpen-Exception from Fetch Heat No Control
+-----------------------------------------------------------
+
+Time: 13-04-2019 11:43:30 AM
+-----------------------------------------------------------
+Message: Cannot cast DBNull.Value to type 'System.Decimal'. Please use a nullable type.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 14-04-2019 09:04:53 PM
+-----------------------------------------------------------
+Message: Specified cast is not valid.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+
+Time: 28-04-2019 05:34:13 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 28-04-2019 05:35:08 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 28-04-2019 05:35:12 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 28-04-2019 05:42:50 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 28-04-2019 05:48:49 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 28-04-2019 05:58:53 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 28-04-2019 05:59:27 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 28-04-2019 05:59:29 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:16:19 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:16:43 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:16:44 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:16:45 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:16:46 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:16:46 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:16:47 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:18:53 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from export button click from Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:20:59 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:24:59 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:25:03 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:29:19 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:30:29 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:30:49 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 29-04-2019 09:31:17 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 02-05-2019 07:39:59 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 02-05-2019 07:52:31 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 04-05-2019 12:44:07 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+

@@ -7,6 +7,7 @@ using System.Data;
 using System.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 using Libraries.Entity;
+using System.Linq;
 
 namespace VV
 {
@@ -14,7 +15,7 @@ namespace VV
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            if (!Page.IsPostBack)
                 GetRemarks();
         }
 
@@ -25,6 +26,12 @@ namespace VV
         /// <param name="e"></param>
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            DataSet ds = new DataSet();
+            DBUtil _dbObj = new DBUtil();
+            bool isHeatNoControl = false;
+            string SerialNo = string.Empty;
+            string BodyHeatNo = string.Empty;
+
             try
             {
                 int FromSerialNo = Int32.Parse(txtFromSerialNo.Text.Trim());
@@ -47,11 +54,52 @@ namespace VV
                 // Join the string together using the ; delimiter.
                 String BulkSerialNo = String.Join(",", YrStrList.ToArray());
 
-                DBUtil _dbObj = new DBUtil();
-                _dbObj.BulkUpdateProdCompletion(txtProdOrderNo.Text.Trim(), BulkSerialNo.Trim(), txtProdCommitedDate.Text.Trim(), txtCompDate.Text.Trim(), drpDwnPrdRem.SelectedItem.Text.Trim());
+                ds = _dbObj.FetchHeatNoControl();
+                DataSet ds1 = _dbObj.FetchHeatNoControlAndSerialNoFromProdPrderNo(txtProdOrderNo.Text.Trim());
 
-                lblResult.Text = "Updated Successfully";
-                btnSubmit.Enabled = false;
+                if (ds.Tables.Count > 0)
+                {
+                    isHeatNoControl = Convert.ToBoolean(ds.Tables[0].Rows[0]["HeatNoControl"].ToString());
+                }
+
+                if (isHeatNoControl && drpDwnPrdRem.SelectedItem.Text.Trim() == "Under TPI")
+                {
+                    if (ds1 != null && ds1.Tables.Count > 0)
+                    {
+                        SerialNo = Convert.ToString(ds1.Tables[0].Rows[0]["SerialNo"].ToString());
+                        BodyHeatNo = Convert.ToString(ds1.Tables[0].Rows[0]["BodyHeatNo"].ToString());
+
+                        //int rowCount = ds1.Tables[0].AsEnumerable().Where(x =>  x.IsNull("BodyHeatNo") || x.ToString() != string.Empty).CopyToDataTable().Rows.Count;
+
+                        //bool contains = ds1.Tables[0].AsEnumerable().Any(row => string.IsNullOrEmpty(test) == row.Field<String>("BodyHeatNo"));
+
+                        bool rowCount = HasNull(ds1.Tables[0]);
+                        
+                        if (!rowCount)
+                        {
+                            _dbObj.BulkUpdateProdCompletion(txtProdOrderNo.Text.Trim(), BulkSerialNo.Trim(), txtProdCommitedDate.Text.Trim(), txtCompDate.Text.Trim(), drpDwnPrdRem.SelectedItem.Text.Trim());
+
+                            lblResult.Text = "Updated Successfully";
+                            btnSubmit.Enabled = false;
+                        }
+                        else
+                        {
+                            lblResult.Text = "Selected row does not have body heat number to proceed further.";
+                            btnSubmit.Enabled = false;
+                        }
+                    }
+                }
+                else
+                {
+                    _dbObj.BulkUpdateProdCompletion(txtProdOrderNo.Text.Trim(), BulkSerialNo.Trim(), txtProdCommitedDate.Text.Trim(), txtCompDate.Text.Trim(), drpDwnPrdRem.SelectedItem.Text.Trim());
+
+                    lblResult.Text = "Updated Successfully";
+                    btnSubmit.Enabled = false;
+                }
+
+                //_dbObj.BulkUpdateProdCompletion(txtProdOrderNo.Text.Trim(), BulkSerialNo.Trim(), txtProdCommitedDate.Text.Trim(), txtCompDate.Text.Trim(), drpDwnPrdRem.SelectedItem.Text.Trim());
+                //lblResult.Text = "Updated Successfully";
+                //btnSubmit.Enabled = false;
 
             }
             catch (Exception ex)
@@ -109,6 +157,23 @@ namespace VV
                 Logger.Write(this.GetType().ToString() + " : GetRemarks : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
                 throw ex;
             }
+        }
+
+        private bool HasNull(DataTable table)
+        {
+            bool isExist = false;
+
+            for (int i = 0; i <= table.Rows.Count - 1; i++)
+            {
+                var bodyheatno = Convert.ToString(table.Rows[i]["BodyHeatNo"]).ToString();
+
+                if (string.IsNullOrEmpty(bodyheatno))
+                {
+                    isExist = true;
+                }
+            }
+
+            return isExist;
         }
     }
 }

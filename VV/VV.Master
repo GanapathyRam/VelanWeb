@@ -86,6 +86,7 @@
                                     <asp:MenuItem Value="Supplier Remarks" NavigateUrl="~/SupplierRemarks.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Bulk Release" NavigateUrl="~/BulkRelease.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="View SCM" NavigateUrl="~/ViewSCM.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Week Wise Shortage Report" NavigateUrl="~/WeekWiseShortageReport.aspx" Enabled="false"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="Production" Enabled="true">
                                     <asp:MenuItem Value="WIP To FG" NavigateUrl="~/ViewWIPItems.aspx" Enabled="false"></asp:MenuItem>
@@ -117,6 +118,7 @@
                                     <asp:MenuItem Value="Update Role Access" NavigateUrl="~/UpdateScreenAccess.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Change Password" NavigateUrl="~/UpdatePassword.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Login Supplier Updation" NavigateUrl="~/LoginSupplierUpdation.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Heat No Control" NavigateUrl="~/HeatNoControl.aspx" Enabled="false"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="Stores" Enabled="true">
                                     <asp:MenuItem Value="Production Order Issue" NavigateUrl="~/ProductionOrderIssue.aspx" Enabled="false"></asp:MenuItem>

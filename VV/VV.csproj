@@ -129,6 +129,7 @@
     <Content Include="EmployeeMaster.aspx" />
     <Content Include="FGOrderChange.aspx" />
     <Content Include="FgToWipReversal.aspx" />
+    <Content Include="HeatNoControl.aspx" />
     <Content Include="ICSPOReversal.aspx" />
     <Content Include="ItemMaster.aspx" />
     <Content Include="LoginSupplierUpdation.aspx" />
@@ -307,6 +308,7 @@
     </Content>
     <Content Include="ViewITP.aspx" />
     <Content Include="BulkProdCompletion.aspx" />
+    <Content Include="WeekWiseShortageReport.aspx" />
     <Content Include="WIPAgingReport.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -379,6 +381,13 @@
     </Compile>
     <Compile Include="FgToWipReversal.aspx.designer.cs">
       <DependentUpon>FgToWipReversal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HeatNoControl.aspx.cs">
+      <DependentUpon>HeatNoControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HeatNoControl.aspx.designer.cs">
+      <DependentUpon>HeatNoControl.aspx</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="ICSPOReversal.aspx.cs">
@@ -809,6 +818,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VVDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WeekWiseShortageReport.aspx.cs">
+      <DependentUpon>WeekWiseShortageReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeekWiseShortageReport.aspx.designer.cs">
+      <DependentUpon>WeekWiseShortageReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="WIPAgingReport.aspx.cs">
       <DependentUpon>WIPAgingReport.aspx</DependentUpon>

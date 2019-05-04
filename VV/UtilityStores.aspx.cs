@@ -101,6 +101,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[17].Enabled = true;
                     else if (MenuID == 24) // View SCM
                         tbstr.Items[ParentMenuID].ChildItems[18].Enabled = true;
+                    else if (MenuID == 25) // Week Wise Shortage Report
+                        tbstr.Items[ParentMenuID].ChildItems[19].Enabled = true;
                 }
                 # endregion
 
@@ -178,6 +180,8 @@ namespace VV
                     else if (MenuID == 2) // Change Password
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 3) // Login SupplierName Update
+                        tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                    else if (MenuID == 4) // Heat No Control
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
                 # endregion
@@ -302,9 +306,8 @@ namespace VV
             try
             {
                 lblMessage.Visible = false;
-                txtRemarks.Text = "";
 
-                if (ddlDisposition.SelectedItem.Text != "----Please Select----")
+                if (ddlDisposition.SelectedItem.Text != "----Please Select----" && !string.IsNullOrEmpty(txtRemarks.Text.Trim()))
                 {
                     foreach (GridViewRow row in GridView3.Rows)
                     {
@@ -323,6 +326,8 @@ namespace VV
                             lblMessage.Visible = true;
 
                             FillUtilityStoresDetails();
+
+                            txtRemarks.Text = "";
                         }
                     }
                 }

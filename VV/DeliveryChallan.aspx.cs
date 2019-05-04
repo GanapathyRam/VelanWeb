@@ -99,6 +99,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[17].Enabled = true;
                     else if (MenuID == 24) // View SCM
                         tbstr.Items[ParentMenuID].ChildItems[18].Enabled = true;
+                    else if (MenuID == 25) // Week Wise Shortage Report
+                        tbstr.Items[ParentMenuID].ChildItems[19].Enabled = true;
                 }
                 # endregion
 
@@ -177,6 +179,8 @@ namespace VV
                     else if (MenuID == 2) // Change Password
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 3) // Login SupplierName Update
+                        tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                    else if (MenuID == 4) // Heat No Control
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
                 #endregion
@@ -341,11 +345,13 @@ namespace VV
                 dt.Columns.Add("Units", typeof(string));
                 dt.Columns.Add("Quantity", typeof(string));
                 dt.Columns.Add("QuantityReceived", typeof(string));
+                dt.Columns.Add("Rate", typeof(string));
 
                 dr = dt.NewRow();
                 dr["SLNo"] = 1;
                 dr["ItemDescription"] = string.Empty;
                 dr["Units"] = string.Empty;
+                dr["Rate"] = string.Empty;
                 dt.Rows.Add(dr);
 
                 //Store the DataTable in ViewState for future reference   
@@ -657,6 +663,7 @@ namespace VV
                         string itemDescription = ((TextBox)row.FindControl("txtItemDescription")).Text.ToString();
                         String quantity = ((TextBox)row.FindControl("txtQty")).Text.ToString();
                         string quantityReceived = ((TextBox)row.FindControl("txtReceived")).Text.ToString();
+                        string rate = ((TextBox)row.FindControl("txtRate")).Text.ToString();
 
                         decimal receivedQty = _dbObj.GetReceivedQtyForParticularDCNumber(txtDcNumber.Text, Convert.ToInt32(slno));
                         bool isDCNumberAvailableInDetails = _dbObj.IsDCDetailsAvailableForSlNo(txtDcNumber.Text, Convert.ToInt32(slno));
@@ -679,7 +686,8 @@ namespace VV
                             }
 
                             _dbObj.UpdateIntoDeliveryChallanDetails(dcNumber, Convert.ToInt32(slno), ddlUnit.SelectedItem.Text.ToString(),
-                         Convert.ToDecimal(quantity), itemDescription, Convert.ToDecimal(string.IsNullOrEmpty(quantityReceived.ToString()) ? 0 : Convert.ToDecimal(quantityReceived.ToString())));
+                         Convert.ToDecimal(quantity), Convert.ToDecimal(rate), itemDescription, 
+                         Convert.ToDecimal(string.IsNullOrEmpty(quantityReceived.ToString()) ? 0 : Convert.ToDecimal(quantityReceived.ToString())));
 
                             lblMessage.Visible = true;
                             lblMessage.ForeColor = System.Drawing.Color.Green;
@@ -688,7 +696,7 @@ namespace VV
                         else
                         {
                             _dbObj.InsertIntoDeliveryChallanDetails(dcNumber, Convert.ToInt32(slno), ddlUnit.SelectedItem.Text.ToString(),
-                      Convert.ToDecimal(quantity), itemDescription, Convert.ToString(ddlpreparedby));
+                      Convert.ToDecimal(quantity), Convert.ToDecimal(rate), itemDescription, Convert.ToString(ddlpreparedby));
 
                             ddlDcType.SelectedIndex = 0;
 
@@ -936,6 +944,7 @@ namespace VV
                     TextBox textItemDescription = (TextBox)GridView1.Rows[i].Cells[1].FindControl("txtItemDescription");
                     DropDownList ddl1 = (DropDownList)GridView1.Rows[i].Cells[2].FindControl("ddlForUnits");
                     TextBox textQuantitySend = (TextBox)GridView1.Rows[i].Cells[3].FindControl("txtQty");
+                    TextBox textRate = (TextBox)GridView1.Rows[i].Cells[3].FindControl("txtRate");
                     Label lblLocationID = (Label)GridView1.FindControl("lblUnitsID");
 
                     DataSet dsForItemCode = _dbObj.GetUnitsMasterDetails();
@@ -943,6 +952,7 @@ namespace VV
                     lblSerialNo.Text = ds.Tables[0].Rows[i]["SlNo"].ToString();
                     textItemDescription.Text = ds.Tables[0].Rows[i]["ItemDescription"].ToString();
                     textQuantitySend.Text = ds.Tables[0].Rows[i]["Quantity"].ToString();
+                    textRate.Text = ds.Tables[0].Rows[i]["Rate"].ToString();
 
                     ddl1.DataSource = dsForItemCode;
                     //ddl1.DataValueField = "Id";
@@ -1042,7 +1052,15 @@ namespace VV
                 DateTime currentDate = Convert.ToDateTime(System.DateTime.UtcNow.ToString("dd-MM-yyyy"));
                 //DateTime nextDayDate = Convert.ToDateTime(System.DateTime.UtcNow.ToString("dd-MM-yyyy")).AddDays(1);
 
-                if (Convert.ToDateTime(dcDate.ToString()) == currentDate) { }
+                if (Convert.ToDateTime(dcDate.ToString()) == currentDate) {
+                    Panel1.Visible = true;
+                    btnAdd.Visible = false;
+                    btnEdit.Visible = false;
+                    btnSearch.Visible = true;
+                    btnUpdate.Visible = true;
+                    btnAddItem.Visible = false;
+                    return;
+                }
                 //else if (Convert.ToDateTime(dcDate.ToString()) >= nextDayDate) { }
                 else
                 {
@@ -1095,6 +1113,11 @@ namespace VV
             {
                 LogError(ex, "Exception from While cancelling item from delivery chalan details and master.");
             }
+        }
+
+        protected void txtRate_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

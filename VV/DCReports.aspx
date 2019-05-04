@@ -21,13 +21,14 @@
     </script>
     <link href="CSS/Main.css" rel="stylesheet" />
     <div style="text-align: right;">
+        <asp:Button ID="btnBack" Width="100px" Height="30px" runat="server" Text="Back" OnClick="btnBack_Click" />
         <asp:Button ID="btnPrint" Width="100px" Height="30px" runat="server" Text="Print" OnClientClick="return PrintPanel();" />
     </div>
     <asp:Panel ID="pnlContents" runat="server">
         <asp:Panel ID="Panel1" runat="server" Style="display: inline;">
-            <table border="0" cellpadding="0" cellspacing="0"  style="margin-top: 0px;width:100%">
+            <table border="0" cellpadding="0" cellspacing="0" style="margin-top: 0px; width: 100%">
                 <tr style="height: 30px;">
-                    <td  style="text-align: center; font-size: medium;width:30%">
+                    <td style="text-align: center; font-size: medium; width: 30%">
                         <img id="IMG1" align="center" alt="Company Logo"
                             src="Images/logo_velan.png" style="cursor: pointer; width: 167px; height: 39px" />
                     </td>
@@ -40,7 +41,7 @@
                         <asp:Label ID="lblVelanCSTAndTINNo" runat="server" Text="Label"></asp:Label>
                     </td>
                 </tr>
-                </table>
+            </table>
             <table>
                 <tr style="height: 20px;">
                     <td colspan="5">
@@ -48,7 +49,7 @@
                     </td>
                 </tr>
                 <tr style="height: 30px;">
-                    <td colspan="5" style="text-align: center; font-size: medium;text-decoration:underline">
+                    <td colspan="5" style="text-align: center; font-size: medium; text-decoration: underline">
                         <asp:Label ID="lblHeader" runat="server" Text="" Font-Bold="True"></asp:Label>
                     </td>
                 </tr>
@@ -56,10 +57,10 @@
                     <td></td>
                 </tr>
                 <tr style="height: 30px">
-                    <td style="text-align: left; width:25%">
+                    <td style="text-align: left; width: 25%">
                         <asp:Label ID="lblDcNumber" Text="Delivery Challan No :" runat="server"></asp:Label>
                     </td>
-                    <td style="text-align:left; width: 220px;">
+                    <td style="text-align: left; width: 220px;">
                         <asp:Label ID="lbldcnumber1" Height="15px" CssClass="textBox" Text="" runat="server"></asp:Label></td>
                     <td style="padding-left: 10px; text-align: right; width: 220px;">
                         <asp:Label ID="lblDcDate" Text="Date :" runat="server"></asp:Label>
@@ -108,15 +109,15 @@
                     <td></td>
                 </tr>
                 <tr style="height: 30px;">
-                   <%-- <td style="text-align: right; width: 300px;">
+                    <%-- <td style="text-align: right; width: 300px;">
                         <asp:Label ID="lbltinno" Text="TIN NO :" runat="server"></asp:Label>
                     </td>
                     <td style="width: 220px;">
                         <asp:Label ID="lbltinno1" Height="15px" CssClass="textBox" Text="" runat="server"></asp:Label></td>--%>
-                    <td style="text-align: left; width:25%">
+                    <td style="text-align: left; width: 25%">
                         <asp:Label ID="lblcstno" Text="Supplier GST No :" runat="server"></asp:Label>
                     </td>
-                    <td style="text-align:left;">
+                    <td style="text-align: left;">
                         <asp:Label ID="lblcstno1" Height="15px" CssClass="textBox" Text="" runat="server"></asp:Label>
                     </td>
                     <td></td>
@@ -129,7 +130,7 @@
                 <ContentTemplate>--%>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"
                     PageSize="10" CssClass="Grid" HeaderStyle-CssClass="Grid_Header" DataKeyNames="SLNo"
-                    OnRowDataBound="GridView1_RowDataBound"
+                    OnRowDataBound="GridView1_RowDataBound" ShowFooter="true"
                     PagerStyle-CssClass="Grid_Pager" RowStyle-CssClass="Grid_Record" AlternatingRowStyle-CssClass="Grid_Alternate_Record" EmptyDataText="No Records To Display"
                     CellPadding="3" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>
@@ -163,16 +164,43 @@
                             </ItemTemplate>
                             <ItemStyle Wrap="false" />
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderStyle-Width="400px" HeaderText="Rate">
+                            <ItemTemplate>
+                                <asp:Label ID="lblRate" Width="60px" runat="server" Text='<%# Bind("Rate") %>'></asp:Label>
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderStyle-Width="400px" HeaderText="Amount">
+                            <ItemTemplate>
+                                <asp:Label ID="lblAmount" Width="60px" runat="server" Text='<%# Bind("Amount", "{0:#0.000}") %>'></asp:Label>
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </div>
+            <%--<div>
+                <table style="margin-left:500px;">
+                    <tr style="height: 30px;">
+                        <td colspan="1" style="text-align: left;">
+                            <asp:Label ID="lblTotal" Text="Total :" runat="server"></asp:Label>
+                        </td>
+                        <td colspan="2" style="text-align: left; margin-left: 30px;">
+                            <asp:Label ID="lblQuantitySum" Style="margin-left: 30px;" runat="server" Text=""></asp:Label>
+                        </td>
+                        <td colspan="1" style="text-align: left; margin-left: 310px;">
+                            <asp:Label ID="lblRateSum" Style="margin-left: 310px;" runat="server" Text=""></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+            </div>--%>
             <table border="0" cellpadding="0" cellspacing="0" style="margin-top: 20px;">
                 <tr style="height: 30px;">
-                    <td colspan="1" style=" text-align:left;">
+                    <td colspan="1" style="text-align: left;">
                         <asp:Label ID="lblReasonForSend" Text="Reason for Sending Outside :" runat="server"></asp:Label>
                     </td>
-                    <td colspan="3" style="text-align:left; margin-left:10px;">
-                        <asp:Label ID="lblReasonForSend1" style="margin-left:10px;" runat="server" Text=""></asp:Label>
+                    <td colspan="3" style="text-align: left; margin-left: 10px;">
+                        <asp:Label ID="lblReasonForSend1" Style="margin-left: 10px;" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <%--<tr style="height: 40px;">

@@ -2,28 +2,21 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace VV
 {
-    public partial class BuyerMaster : System.Web.UI.Page
+    public partial class WeekWiseShortageReport : System.Web.UI.Page
     {
-        SqlCommand cmd = new SqlCommand();
-        DataTable dt = new DataTable();
-        DBUtil _dbObj = new DBUtil();
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            #region Master Control
+            # region Master Control
 
-            #region Welcome Msg
-
-            DateTime dt = DateTime.MinValue;
-            Console.WriteLine(dt);
+            # region Welcome Msg
             string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
             Label lblUserName = (Label)this.Page.Master.FindControl("lblUserName");
             lblUserName.Text = "Welcome " + UserName;
@@ -182,7 +175,7 @@ namespace VV
                     else if (MenuID == 4) // Heat No Control
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
-                # endregion
+                #endregion
 
                 #region Stores
 
@@ -230,8 +223,10 @@ namespace VV
 
                     if (MenuID == 5) // Update PO
                         tbstr.Items[ParentMenuID].ChildItems[5].Enabled = true;
+
                     if (MenuID == 6) // Ready To Release
                         tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+
                     if (MenuID == 7) // WIP Aging
                         tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
 
@@ -247,148 +242,113 @@ namespace VV
                     if (MenuID == 11) // Enquiries And Reports
                         tbstr.Items[ParentMenuID].ChildItems[8].ChildItems[3].Enabled = true;
                 }
+
                 #endregion
             }
-            #endregion
+            # endregion
 
-
-
-            #endregion
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-IN");
 
             if (!Page.IsPostBack)
             {
-                ShowBuyerMasterDetails();
+                ShowWeekWiseShortageReport();
             }
 
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-IN");
-        }
-
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtEmployeeName.Text == string.Empty && txtEmail.Text == string.Empty)
-                {
-                    lblRequiredFields.Visible = true;
-                    lblRequiredFields1.Visible = true;
-                    return;
-                }
-
-                else if (txtEmployeeName.Text == string.Empty)
-                {
-                    lblRequiredFields.Visible = true;
-                    return;
-                }
-
-                else if (txtEmail.Text == string.Empty)
-                {
-                    lblRequiredFields1.Visible = true;
-                    return;
-                }
-
-                string employeeName = txtEmployeeName.Text.Trim();
-                string Email = txtEmail.Text.Trim();
-
-                _dbObj.InsertIntoBuyerMaster(employeeName, Email);
-
-                ShowBuyerMasterDetails();
-
-                btnClear_Click(sender, e);
-
-                lblRequiredFields.Visible = false;
-                lblMessage.Visible = true;
-                lblMessage.Text = "Buyer Details Added Successfully.";
-            }
-            catch (Exception ex)
-            {
-                LogError(ex, "Exception occured -- insert buyer master details.");
-            }
-            finally
-            {
-            }
-        }
-
-        protected void btnClear_Click(object sender, EventArgs e)
-        {
-            lblMessage.Visible = false;
-            txtEmployeeNameSearch.Text = "";
-            txtEmployeeName.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
+            # endregion
         }
 
         protected void btnSearchBox_Click(object sender, EventArgs e)
         {
             lblMessage.Visible = false;
 
-            String searchRowFilter = String.Empty, searchRowFilter4 = String.Empty;
-
-            string EmployeeName = txtEmployeeNameSearch.Text.Trim();
-
-            if (!string.IsNullOrEmpty(EmployeeName))
+            try
             {
-                searchRowFilter4 = "BuyerName like '%" + EmployeeName + "%'";
-            }
+                String searchRowFilter = String.Empty, searchRowFilter1 = String.Empty, searchRowFilter2 = String.Empty, searchRowFilter3 = String.Empty, searchRowFilter4 = String.Empty;
 
-            if (!String.IsNullOrEmpty(searchRowFilter4))
-            {
+                string OrderNo = txtOrderNo.Text.Trim();
+                string Pos = txtPos.Text.Trim();
+                string Buyer = txtBuyer.Text.Trim();
+                string Description = txtDescription.Text.Trim();
+
+                if (!string.IsNullOrEmpty(OrderNo))
+                {
+                    searchRowFilter1 = "PoOrder like '%" + OrderNo + "%'";
+                }
+                if (!string.IsNullOrEmpty(Pos))
+                {
+                    searchRowFilter2 = "Name like '%" + Pos + "%'";
+                }
+                if (!string.IsNullOrEmpty(Buyer))
+                {
+                    searchRowFilter3 = "Buyer like '%" + Buyer + "%'";
+                }
+                if (!string.IsNullOrEmpty(Description))
+                {
+                    searchRowFilter4 = "ItemNumber like '%" + Description + "%'";
+                }
+
+                if (!String.IsNullOrEmpty(searchRowFilter1))
+                    searchRowFilter = searchRowFilter1;
+
+                if (!String.IsNullOrEmpty(searchRowFilter2))
+                {
+                    if (!String.IsNullOrEmpty(searchRowFilter))
+                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter2;
+                    else
+                        searchRowFilter = searchRowFilter2;
+                }
+
+                if (!String.IsNullOrEmpty(searchRowFilter3))
+                {
+                    if (!String.IsNullOrEmpty(searchRowFilter))
+                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter3;
+                    else
+                        searchRowFilter = searchRowFilter3;
+                }
+
+                if (!String.IsNullOrEmpty(searchRowFilter4))
+                {
+                    if (!String.IsNullOrEmpty(searchRowFilter))
+                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter4;
+                    else
+                        searchRowFilter = searchRowFilter4;
+                }
+
                 if (!String.IsNullOrEmpty(searchRowFilter))
-                    searchRowFilter = searchRowFilter + " AND " + searchRowFilter4;
+                {
+                    DataSet searchDS = (DataSet)Cache["WeekWiseShortageReportCache"];
+
+                    DataView dv;
+                    dv = searchDS.Tables[0].DefaultView;
+
+                    dv.RowFilter = searchRowFilter;
+
+                    GridView1.DataSource = dv;
+                    GridView1.DataBind();
+
+                    GridViewColumnFormatting(searchDS);
+
+                }
                 else
-                    searchRowFilter = searchRowFilter4;
-            }
+                {
+                    DataSet searchDS = (DataSet)Cache["WeekWiseShortageReportCache"];
+                    GridView1.DataSource = searchDS;
+                    GridView1.DataBind();
 
-            if (!String.IsNullOrEmpty(searchRowFilter))
+                    GridViewColumnFormatting(searchDS);
+                }
+            }
+            catch (Exception ex)
             {
-                DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-
-                DataView dv;
-                dv = searchDS.Tables[0].DefaultView;
-
-                dv.RowFilter = searchRowFilter;
-
-                GridView1.DataSource = dv;
-                GridView1.DataBind();
-
-                //DataSet DS = new DataSet();
-                //DS.Tables.Add(dv.ToTable());
-                //Cache["CacheFromBuyerMasterDetails"] = DS;
+                LogError(ex, "Exception from while searching record based on Order No and Pos!.");
             }
-            else
-            {
-                DBUtil _DBObj = new DBUtil();
-                DataSet ds = _DBObj.RetriveByBuyerMasterDetails();
-                Cache["CacheFromBuyerMasterDetails"] = ds;
-
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-            }
-        }
-
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-            //  showgrid();
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             lblMessage.Visible = false;
 
-            DataSet ds = (DataSet)Cache["CacheFromBuyerMasterDetails"];
+            DataSet ds = (DataSet)Cache["WeekWiseShortageReportCache"];
 
             GridView1.PageIndex = e.NewPageIndex;
             GridView1.DataSource = ds;
@@ -403,7 +363,53 @@ namespace VV
             }
             catch (Exception ex)
             {
-                LogError(ex, "Exception from while clicking on page number from buyer master.");
+                LogError(ex, "Exception from while clicking on page number from Week Wise Shortage Report!.");
+            }
+        }
+
+        private void ShowWeekWiseShortageReport()
+        {
+            lblMessage.Visible = false;
+
+            try
+            {
+                DBUtil _DBObj = new DBUtil();
+                int week = 0;
+                int year = 0;
+
+                if (!string.IsNullOrWhiteSpace(txtWeekNo.Text))
+                {
+                    if (Convert.ToInt32(txtWeekNo.Text.ToString()) > 41)
+                    {
+                        lblMessage.Visible = true;
+                        lblMessage.ForeColor = System.Drawing.Color.Red;
+                        lblMessage.Text = "Week no should not be greater than 41";
+                        return;
+                    }
+                    else
+                    {
+                        week = Convert.ToInt32(txtWeekNo.Text.ToString());
+                    }
+                }
+
+                if (!string.IsNullOrWhiteSpace(txtYear.Text))
+                {
+                    year = Convert.ToInt32(txtYear.Text.ToString());
+                }
+
+                DataSet ds = _DBObj.ShowWeekWiseShortageReport(year, week);
+                Cache["WeekWiseShortageReportCache"] = ds;
+
+                GridView1.DataSource = ds.Tables[0];
+                GridView1.AlternatingRowStyle.HorizontalAlign = HorizontalAlign.Center;
+                GridView1.HorizontalAlign = HorizontalAlign.Center;
+                GridView1.DataBind();
+
+                GridViewColumnFormatting(ds);
+            }
+            catch (Exception ex)
+            {
+                LogError(ex, "Exception from display Week Wise Shortage Report!");
             }
         }
 
@@ -428,133 +434,107 @@ namespace VV
             }
         }
 
-        private void ShowBuyerMasterDetails()
+        private void GridViewColumnFormatting(DataSet ds)
         {
-            try
+            if (ds.Tables[1].Rows.Count > 0)
             {
-                string pageSize = ConfigurationManager.AppSettings["GridPageSize"].ToString();
-
-                DBUtil _DBObj = new DBUtil();
-                DataSet ds = _DBObj.RetriveByBuyerMasterDetails();
-
-                Cache["CacheFromBuyerMasterDetails"] = ds;
-
-                GridView1.PageSize = Convert.ToInt32(pageSize);
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-            }
-            catch (Exception ex)
-            {
-                LogError(ex, "Exception from display buyer master details!");
+                GridView1.HeaderRow.Cells[6].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_0"]);
+                GridView1.HeaderRow.Cells[7].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_1"]);
+                GridView1.HeaderRow.Cells[8].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_2"]);
+                GridView1.HeaderRow.Cells[9].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_3"]);
+                GridView1.HeaderRow.Cells[10].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_4"]);
+                GridView1.HeaderRow.Cells[11].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_5"]);
+                GridView1.HeaderRow.Cells[12].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_6"]);
+                GridView1.HeaderRow.Cells[13].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_7"]);
+                GridView1.HeaderRow.Cells[14].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_8"]);
+                GridView1.HeaderRow.Cells[15].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_9"]);
+                GridView1.HeaderRow.Cells[16].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_10"]);
+                GridView1.HeaderRow.Cells[17].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_11"]);
+                GridView1.HeaderRow.Cells[18].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_12"]);
+                GridView1.HeaderRow.Cells[19].Text = Convert.ToString(ds.Tables[1].Rows[0]["Week_n"]);
             }
         }
 
-        protected void btnDelete_Click(object sender, EventArgs e)
+        protected void btnExcelExport_Click(object sender, EventArgs e)
         {
-            lblMessage.Text = "";
+            string query = string.Empty;
+            string str = string.Empty;
+            DBUtil _DBObj = new DBUtil();
+
             try
             {
-                foreach (GridViewRow row in GridView1.Rows)
-                {
-                    bool isChecked = ((CheckBox)row.FindControl("chkSelect")).Checked;
-                    if (isChecked)
-                    {
-                        HiddenField hdnval = ((HiddenField)row.FindControl("hidBuyerIdGrid"));
-                        String BuyerNameHidden = ((System.Web.UI.HtmlControls.HtmlInputHidden)row.FindControl("hidBuyerName")).Value.ToString();
-                        String BuyerName = ((Label)row.FindControl("lblBuyerName")).Text.ToString();
+                DataSet ds = (DataSet)Cache["WeekWiseShortageReportCache"];
 
-                        _dbObj.DeleteIntoBuyerMaster(BuyerName, Convert.ToInt16(hdnval));
-                        lblMessage.Text = "Records Removed Successfully.";
-                        lblMessage.Visible = true;
-                    }
+                DataTable dt = ds.Tables[0];
+
+                if (ds.Tables[1].Rows.Count > 0)
+                {
+                    dt.Columns["w0"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_0"]);
+                    dt.Columns["w1"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_1"]);
+                    dt.Columns["w2"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_2"]);
+                    dt.Columns["w3"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_3"]);
+                    dt.Columns["w4"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_4"]);
+                    dt.Columns["w5"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_5"]);
+                    dt.Columns["w6"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_6"]);
+                    dt.Columns["w7"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_7"]);
+                    dt.Columns["w8"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_8"]);
+
+                    dt.Columns["w9"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_9"]);
+                    dt.Columns["w10"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_10"]);
+                    dt.Columns["w11"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_11"]);
+                    dt.Columns["w12"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_12"]);
+
+                    dt.Columns["wn"].ColumnName = Convert.ToString(ds.Tables[1].Rows[0]["Week_n"]);
                 }
 
-                ShowBuyerMasterDetails();
+                if (dt.Rows.Count > 0)
+                {
+                    Response.ClearContent();
+                    Response.Buffer = true;
+                    Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", "WeekWiseShortageReport.xls"));
+                    Response.ContentType = "application/ms-excel";
+
+                    foreach (DataColumn dtcol in dt.Columns)
+                    {
+                        Response.Write(str + dtcol.ColumnName);
+                        str = "\t";
+                    }
+                    Response.Write("\n");
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        str = "";
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            Response.Write(str + Convert.ToString(dr[j]));
+                            str = "\t";
+                        }
+                        Response.Write("\n");
+                    }
+                    Response.End();
+
+                }
             }
             catch (Exception ex)
             {
-                LogError(ex, "Exception occured -- delete buyer master details.");
+                Helper.LogError(ex, "Exception from export button click from Week Wise Shortage Report!");
             }
         }
 
-        protected void GridView1_RowCancelingEdit1(object sender, GridViewCancelEditEventArgs e)
-        {
-            lblMessage.Text = "";
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-            //  showgrid();
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-        }
-
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            lblMessage.Visible = false;
-            try
-            {
-                GridViewRow row = GridView1.Rows[e.RowIndex];
-
-                HiddenField hdnval = GridView1.Rows[e.RowIndex].FindControl("hidBuyerIdGrid") as HiddenField;
-                //HiddenField hdnval = ((HiddenField)GridView1.Rows[e.RowIndex].FindControl("hidBuyerIdGrid"));
-                var buyerName = (Label)GridView1.Rows[e.RowIndex].FindControl("lblBuyerNameGrid");
-                TextBox email = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtEmailGrid");
-
-                _dbObj.UpdateBuyerMaster(Convert.ToInt32(hdnval.Value), buyerName.Text.Trim(), email.Text.Trim());
-
-                GridView1.EditIndex = -1;
-
-                //lblMessage.Visible = true;
-                //lblMessage.ForeColor = System.Drawing.Color.Green;
-                //lblMessage.Text = "Details Updated successfully";
-
-                ShowBuyerMasterDetails();
-            }
-            catch (Exception ex)
-            {
-                LogError(ex, "Exception from while updating row from buyer Master.");
-            }
-        }
-
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            lblMessage.Text = "";
-
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = e.NewEditIndex;
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-        }
-
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void btnSearchBox1_Click(object sender, EventArgs e)
         {
             lblMessage.Visible = false;
 
-            try
+            if (string.IsNullOrWhiteSpace(txtWeekNo.Text) || string.IsNullOrWhiteSpace(txtYear.Text))
             {
-                GridViewRow row = GridView1.Rows[e.RowIndex];
+                lblMessage.Visible = true;
+                lblMessage.ForeColor = System.Drawing.Color.Red;
+                lblMessage.Text = "Please enter a starting year and week no, to proceed further.";
 
-                HiddenField hdnval = GridView1.Rows[e.RowIndex].FindControl("hidBuyerIdGrid") as HiddenField;
-                var buyerName = (Label)GridView1.Rows[e.RowIndex].FindControl("lblBuyerNameGrid");
-
-                _dbObj.DeleteIntoBuyerMaster(buyerName.Text.ToString(), Convert.ToInt32(hdnval.Value));
-
-                GridView1.EditIndex = -1;
-
-                ShowBuyerMasterDetails();
+                return;
             }
-            catch (Exception ex)
+            else
             {
-                LogError(ex, "Exception from while updating row from buyer Master.");
+                ShowWeekWiseShortageReport();
             }
         }
     }

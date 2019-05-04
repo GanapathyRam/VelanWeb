@@ -123,11 +123,20 @@
                                 </ItemTemplate>
                                 <ItemStyle Wrap="false" />
                                 <FooterStyle HorizontalAlign="Right" />
+                            </asp:TemplateField>
+
+                             <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="400px" HeaderText="Rate">
+                                <ItemTemplate>
+                                    <asp:TextBox ID="txtRate" Style="width: 60px;" Enabled="true" AutoPostBack="false" OnTextChanged="txtRate_TextChanged" runat="server" Text='<%# Bind("Rate") %>'> </asp:TextBox>
+                                </ItemTemplate>
+                                <ItemStyle Wrap="false" />
+                                <FooterStyle HorizontalAlign="Right" />
                                 <FooterTemplate>
                                     <asp:Button ID="ButtonAdd" OnClick="ButtonAdd_Click" Width="100px" Height="25px" runat="server"
                                         Text="Add New Row" />
                                 </FooterTemplate>
                             </asp:TemplateField>
+
                         </Columns>
                     </asp:GridView>
                 </ContentTemplate>

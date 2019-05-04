@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -100,6 +101,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[17].Enabled = true;
                     else if (MenuID == 24) // View SCM
                         tbstr.Items[ParentMenuID].ChildItems[18].Enabled = true;
+                    else if (MenuID == 25) // Week Wise Shortage Report
+                        tbstr.Items[ParentMenuID].ChildItems[19].Enabled = true;
                 }
                 # endregion
 
@@ -178,6 +181,8 @@ namespace VV
                     else if (MenuID == 2) // Change Password
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 3) // Login SupplierName Update
+                        tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                    else if (MenuID == 4) // Heat No Control
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
                 #endregion
@@ -302,6 +307,15 @@ namespace VV
                     GridView1.PageSize = Convert.ToInt32(pageSize);
                     GridView1.DataSource = ds.Tables[1];
                     GridView1.DataBind();
+
+                    //Calculate Sum and display in Footer Row
+                    decimal totalQuantity = ds.Tables[1].AsEnumerable().Sum(row => row.Field<decimal>("Quantity"));
+                    decimal totalAmount = ds.Tables[1].AsEnumerable().Sum(row => row.Field<decimal>("Amount"));
+
+                    GridView1.FooterRow.Cells[2].Text = "Total";
+                    GridView1.FooterRow.Cells[2].HorizontalAlign = HorizontalAlign.Left;
+                    GridView1.FooterRow.Cells[4].Text = Convert.ToString(Math.Round(totalQuantity, 3));
+                    GridView1.FooterRow.Cells[6].Text = Convert.ToString(Math.Round(totalAmount, 3));
                 }
 
                 if (ds != null && ds.Tables[0].Rows.Count > 0)
@@ -369,6 +383,11 @@ namespace VV
                 writer.WriteLine(message);
                 writer.Close();
             }
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/DeliveryChallan.aspx", false);
         }
     }
 }

@@ -1181,6 +1181,35 @@ namespace VV
             }
         }
 
+        public DataSet ShowWeekWiseShortageReport(int Year, int Week)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[WeekShortage]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@Week", Week)); // Int
+                cmd.Parameters.Add(new SqlParameter("@Year", Year)); // Int
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : ShowWeekWiseShortageReport() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region MIS Sales
@@ -1994,6 +2023,34 @@ namespace VV
             {
                 conn.Close();
                 Logger.Write(this.GetType().ToString() + " : BulkUpdateProdCompletion() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet FetchHeatNoControlAndSerialNoFromProdPrderNo(string ProdOrderNo)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("Select * from ProductionReleaseNew where ProdOrderNo ='"+ProdOrderNo+"'", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : FetchHeatNoControl() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
                 throw ex;
             }
         }
@@ -4537,7 +4594,7 @@ namespace VV
                 this.init();
 
                 //SqlCommand cmd = new SqlCommand("select * from DeliveryChallanDetails where DCNumber = '" + DCNumber + "'", conn);
-                SqlCommand cmd = new SqlCommand("select a.SlNo, a.ItemDescription, b.Units,b.Id, a.QuantityReceived, a.Quantity from DeliveryChallanDetails a, UnitsMaster b where a.DCNumber = '" + DCNumber + "' and a.Units = b.Units", conn);
+                SqlCommand cmd = new SqlCommand("select a.SlNo, a.ItemDescription, b.Units,b.Id, a.QuantityReceived, a.Quantity, a.Rate from DeliveryChallanDetails a, UnitsMaster b where a.DCNumber = '" + DCNumber + "' and a.Units = b.Units", conn);
                 cmd.CommandTimeout = 1000;
                 cmd.CommandType = CommandType.Text;
 
@@ -4670,7 +4727,7 @@ namespace VV
             }
         }
 
-        public void InsertIntoDeliveryChallanDetails(string DCNumber, int SlNo, string Units, decimal Quantity, string ItemDescription, string ReceivedBy)
+        public void InsertIntoDeliveryChallanDetails(string DCNumber, int SlNo, string Units, decimal Quantity, decimal Rate, string ItemDescription, string ReceivedBy)
         {
             try
             {
@@ -4685,6 +4742,7 @@ namespace VV
                 cmd.Parameters.Add(new SqlParameter("@SlNo", SlNo));
                 cmd.Parameters.Add(new SqlParameter("@Units", Units));
                 cmd.Parameters.Add(new SqlParameter("@Quantity", Quantity));
+                cmd.Parameters.Add(new SqlParameter("@Rate", Rate));
                 cmd.Parameters.Add(new SqlParameter("@ItemDescription", ItemDescription));
 
                 cmd.ExecuteNonQuery();
@@ -4731,7 +4789,7 @@ namespace VV
             }
         }
 
-        public void UpdateIntoDeliveryChallanDetails(string DCNumber, int SlNo, string Units, decimal Quantity, string ItemDescription, decimal QuantityReceived)
+        public void UpdateIntoDeliveryChallanDetails(string DCNumber, int SlNo, string Units, decimal Quantity, decimal Rate, string ItemDescription, decimal QuantityReceived)
         {
             try
             {
@@ -4746,6 +4804,7 @@ namespace VV
                 cmd.Parameters.Add(new SqlParameter("@SlNo", SlNo));
                 cmd.Parameters.Add(new SqlParameter("@Units", Units));
                 cmd.Parameters.Add(new SqlParameter("@Quantity", Quantity));
+                cmd.Parameters.Add(new SqlParameter("@Rate", Rate));
                 cmd.Parameters.Add(new SqlParameter("@ItemDescription", ItemDescription));
                 cmd.Parameters.Add(new SqlParameter("@QuantityReceived", QuantityReceived));
 
@@ -6219,6 +6278,78 @@ namespace VV
                 //LogError(ex, "Exception from export button click!");
                 conn.Close();
                 Logger.Write(this.GetType().ToString() + " : RetriveByWIPAgingDetails() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void InsertHeatNoControl(bool IsHeatNoControlFor)
+        {
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spInsertHeatNoControl]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IsHeadNoControlFor", IsHeatNoControlFor)); // bool
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertHeatNoControl() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdateHeatNoControl(bool IsHeatNoControlFor)
+        {
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spUpdateHeatNoControl]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IsHeadNoControlFor", IsHeatNoControlFor)); // bool
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertHeatNoControl() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet FetchHeatNoControl()
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("Select * from General", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : FetchHeatNoControl() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
                 throw ex;
             }
         }

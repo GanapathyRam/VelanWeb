@@ -92,6 +92,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[17].Enabled = true;
                     else if (MenuID == 24) // View SCM
                         tbstr.Items[ParentMenuID].ChildItems[18].Enabled = true;
+                    else if (MenuID == 25) // Week Wise Shortage Report
+                        tbstr.Items[ParentMenuID].ChildItems[19].Enabled = true;
                 }
                 # endregion
 
@@ -169,6 +171,8 @@ namespace VV
                     else if (MenuID == 2) // Change Password
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 3) // Login SupplierName Update
+                        tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                    else if (MenuID == 4) // Heat No Control
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
                 # endregion
@@ -264,6 +268,8 @@ namespace VV
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            lblMessage.Visible = false;
+
             DataSet searchDS = (DataSet)Cache["ProdCompletionDataFromDBCache"];
             GridView1.DataSource = searchDS;
             GridView1.DataBind();
@@ -276,6 +282,10 @@ namespace VV
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            DataSet ds = new DataSet();
+            DBUtil _dbObj = new DBUtil();
+            bool isHeatNoControl = false;
+
             try
             {
                 Label lbProdOrderNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblProdOrderNo");
@@ -283,16 +293,46 @@ namespace VV
                 Label lbOrderNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblOrderNo");
                 Label lbLineNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblLineNo");
                 Label lbPos = (Label)GridView1.Rows[e.RowIndex].FindControl("lblPos");
+                Label lblBodyHeatNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblBodyHeatNo");
 
                 TextBox txProdDeliveryDate = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtProdDeliveryDate");
                 TextBox txProdComplDate = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtProdComplDate");
-               // TextBox txProdRemarks = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtProdRemarks");
+                // TextBox txProdRemarks = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtProdRemarks");
 
                 DropDownList drDwnPrdRem = (DropDownList)GridView1.Rows[e.RowIndex].FindControl("drpDwnPrdRem");
 
-                DBUtil _dbObj = new DBUtil();
+                ds = _dbObj.FetchHeatNoControl();
+
+                if (ds.Tables.Count > 0)
+                {
+                    isHeatNoControl = Convert.ToBoolean(ds.Tables[0].Rows[0]["HeatNoControl"].ToString());
+                }
+
+                if (isHeatNoControl && drDwnPrdRem.SelectedItem.Text.Trim() == "Under TPI")
+                {
+                    if (!string.IsNullOrEmpty(lblBodyHeatNo.Text) && !string.IsNullOrEmpty(lbSerialNo.Text))
+                    {
+                        _dbObj.UpdateProdCompletion(Int32.Parse(lbOrderNo.Text.Trim()), lbLineNo.Text.Trim(), Int32.Parse(lbPos.Text.Trim()), lbProdOrderNo.Text.Trim(), lbSerialNo.Text.Trim(), txProdDeliveryDate.Text.Trim(), txProdComplDate.Text.Trim(), drDwnPrdRem.SelectedItem.Text.Trim());
+                    }
+                    else
+                    {
+                        // showing the error message like heat or serial no is not available
+                        //lblMessage.Visible = true;
+                        //lblMessage.ForeColor = System.Drawing.Color.Red;
+                        //lblMessage.Text = "Selected row does not have body heat number to proceed further.";
+
+                        ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "alert",
+                            string.Format("alert('{1}', '{0}');", "", "Selected row does not have body heat number to proceed further."), true);
+                    }
+                }
+                else
+                {
+                    _dbObj.UpdateProdCompletion(Int32.Parse(lbOrderNo.Text.Trim()), lbLineNo.Text.Trim(), Int32.Parse(lbPos.Text.Trim()), lbProdOrderNo.Text.Trim(), lbSerialNo.Text.Trim(), txProdDeliveryDate.Text.Trim(), txProdComplDate.Text.Trim(), drDwnPrdRem.SelectedItem.Text.Trim());
+                }
                 //_dbObj.UpdateProdCompletion(Int32.Parse(lbOrderNo.Text.Trim()), lbLineNo.Text.Trim(), Int32.Parse(lbPos.Text.Trim()), lbProdOrderNo.Text.Trim(), lbSerialNo.Text.Trim(), txProdDeliveryDate.Text.Trim(), txProdComplDate.Text.Trim(), txProdRemarks.Text.Trim());
-                _dbObj.UpdateProdCompletion(Int32.Parse(lbOrderNo.Text.Trim()), lbLineNo.Text.Trim(), Int32.Parse(lbPos.Text.Trim()), lbProdOrderNo.Text.Trim(), lbSerialNo.Text.Trim(), txProdDeliveryDate.Text.Trim(), txProdComplDate.Text.Trim(), drDwnPrdRem.SelectedItem.Text.Trim());
+
+                // Commented From Ganapathy on : 10/04/2019
+                //_dbObj.UpdateProdCompletion(Int32.Parse(lbOrderNo.Text.Trim()), lbLineNo.Text.Trim(), Int32.Parse(lbPos.Text.Trim()), lbProdOrderNo.Text.Trim(), lbSerialNo.Text.Trim(), txProdDeliveryDate.Text.Trim(), txProdComplDate.Text.Trim(), drDwnPrdRem.SelectedItem.Text.Trim());
 
                 GridView1.EditIndex = -1;
                 showgrid();
@@ -332,7 +372,7 @@ namespace VV
                 //row["remarkdesc"] = "Please Select";
                 //tblRemarks.Rows.Add(row);
 
-                for (int i = 0; i <= ddlValues.Length-1; i++)
+                for (int i = 0; i <= ddlValues.Length - 1; i++)
                 {
                     row = tblRemarks.NewRow();
                     row["remarkid"] = ddlValues[i].Split('-')[0].Trim();
@@ -372,6 +412,8 @@ namespace VV
 
         protected void btnSearchBox_Click(object sender, EventArgs e)
         {
+            lblMessage.Visible = false;
+
             try
             {
                 String FigNo_Search = txtFigNo.Text.Trim();
@@ -433,6 +475,8 @@ namespace VV
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            lblMessage.Visible = false;
+
             DataSet ds = (DataSet)Cache["ProdCompletionDataFromDBCache"];
 
             GridView1.PageIndex = e.NewPageIndex;
@@ -487,6 +531,14 @@ namespace VV
                 Logger.Write(this.GetType().ToString() + " : View Prod Completion - When trying to do a Paging : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
                 throw ex;
             }
+        }
+
+        private void MessageBox(string strMsg)
+        {
+
+            //Label lbl = new Label();
+            //lblMessage.Text = @"<script language='javascript'>" & Environment.NewLine _ & "window.alert(" & "'" & strMsg & "'" & ")</script>";
+            //Page.Controls.Add(lbl)
         }
 
         //protected void Button1_Click(object sender, EventArgs e)

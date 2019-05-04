@@ -112,6 +112,14 @@
                                 </ItemTemplate>
                                 <ItemStyle Wrap="false" />
                             </asp:TemplateField>
+
+                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" Visible="false" HeaderText="Rate">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblRate" Text='<%# Bind("Rate") %>' runat="server" />
+                                </ItemTemplate>
+                                <ItemStyle Wrap="false" />
+                            </asp:TemplateField>
+
                             <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Quantity Already Received">
                                 <ItemTemplate>
                                     <asp:Label ID="lblQtyAlreadyReceived" Text='<%# Bind("QtyReceived") %>' runat="server" />

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace VV
 {
-    public partial class BuyerMaster : System.Web.UI.Page
+    public partial class HeatNoControl : System.Web.UI.Page
     {
         SqlCommand cmd = new SqlCommand();
         DataTable dt = new DataTable();
@@ -153,6 +153,7 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 7) // Branch Report
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+
                 }
                 # endregion
 
@@ -230,6 +231,7 @@ namespace VV
 
                     if (MenuID == 5) // Update PO
                         tbstr.Items[ParentMenuID].ChildItems[5].Enabled = true;
+
                     if (MenuID == 6) // Ready To Release
                         tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
                     if (MenuID == 7) // WIP Aging
@@ -252,158 +254,48 @@ namespace VV
             #endregion
 
 
-
             #endregion
 
             if (!Page.IsPostBack)
             {
-                ShowBuyerMasterDetails();
+                GetHeatNoControl();
             }
 
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-IN");
+        }
+
+        private void GetHeatNoControl()
+        {
+            try
+            {
+                DataSet ds = _dbObj.FetchHeatNoControl();
+
+                if (ds.Tables.Count > 0)
+                {
+                    chkCheck.Checked = Convert.ToBoolean(ds.Tables[0].Rows[0]["HeatNoControl"].ToString());
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                LogError(ex, "Exception from Fetch Heat No Control");
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtEmployeeName.Text == string.Empty && txtEmail.Text == string.Empty)
-                {
-                    lblRequiredFields.Visible = true;
-                    lblRequiredFields1.Visible = true;
-                    return;
-                }
+                _dbObj.InsertHeatNoControl(chkCheck.Checked);
 
-                else if (txtEmployeeName.Text == string.Empty)
-                {
-                    lblRequiredFields.Visible = true;
-                    return;
-                }
-
-                else if (txtEmail.Text == string.Empty)
-                {
-                    lblRequiredFields1.Visible = true;
-                    return;
-                }
-
-                string employeeName = txtEmployeeName.Text.Trim();
-                string Email = txtEmail.Text.Trim();
-
-                _dbObj.InsertIntoBuyerMaster(employeeName, Email);
-
-                ShowBuyerMasterDetails();
-
-                btnClear_Click(sender, e);
-
-                lblRequiredFields.Visible = false;
                 lblMessage.Visible = true;
-                lblMessage.Text = "Buyer Details Added Successfully.";
+                lblMessage.Text = "Heat number control has been saved successfully!";
+
+                GetHeatNoControl();
             }
             catch (Exception ex)
             {
-                LogError(ex, "Exception occured -- insert buyer master details.");
-            }
-            finally
-            {
-            }
-        }
-
-        protected void btnClear_Click(object sender, EventArgs e)
-        {
-            lblMessage.Visible = false;
-            txtEmployeeNameSearch.Text = "";
-            txtEmployeeName.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-        }
-
-        protected void btnSearchBox_Click(object sender, EventArgs e)
-        {
-            lblMessage.Visible = false;
-
-            String searchRowFilter = String.Empty, searchRowFilter4 = String.Empty;
-
-            string EmployeeName = txtEmployeeNameSearch.Text.Trim();
-
-            if (!string.IsNullOrEmpty(EmployeeName))
-            {
-                searchRowFilter4 = "BuyerName like '%" + EmployeeName + "%'";
-            }
-
-            if (!String.IsNullOrEmpty(searchRowFilter4))
-            {
-                if (!String.IsNullOrEmpty(searchRowFilter))
-                    searchRowFilter = searchRowFilter + " AND " + searchRowFilter4;
-                else
-                    searchRowFilter = searchRowFilter4;
-            }
-
-            if (!String.IsNullOrEmpty(searchRowFilter))
-            {
-                DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-
-                DataView dv;
-                dv = searchDS.Tables[0].DefaultView;
-
-                dv.RowFilter = searchRowFilter;
-
-                GridView1.DataSource = dv;
-                GridView1.DataBind();
-
-                //DataSet DS = new DataSet();
-                //DS.Tables.Add(dv.ToTable());
-                //Cache["CacheFromBuyerMasterDetails"] = DS;
-            }
-            else
-            {
-                DBUtil _DBObj = new DBUtil();
-                DataSet ds = _DBObj.RetriveByBuyerMasterDetails();
-                Cache["CacheFromBuyerMasterDetails"] = ds;
-
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-            }
-        }
-
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-            //  showgrid();
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-        }
-
-        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            lblMessage.Visible = false;
-
-            DataSet ds = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-
-            GridView1.PageIndex = e.NewPageIndex;
-            GridView1.DataSource = ds;
-            GridView1.DataBind();
-
-            try
-            {
-                DataView dv;
-                dv = ds.Tables[0].DefaultView;
-                GridView1.DataSource = dv;
-                GridView1.DataBind();
-            }
-            catch (Exception ex)
-            {
-                LogError(ex, "Exception from while clicking on page number from buyer master.");
+                LogError(ex, "Exception from heat number control insert.!");
             }
         }
 
@@ -428,133 +320,20 @@ namespace VV
             }
         }
 
-        private void ShowBuyerMasterDetails()
+        protected void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                string pageSize = ConfigurationManager.AppSettings["GridPageSize"].ToString();
+                _dbObj.UpdateHeatNoControl(chkCheck.Checked);
 
-                DBUtil _DBObj = new DBUtil();
-                DataSet ds = _DBObj.RetriveByBuyerMasterDetails();
+                lblMessage.Visible = true;
+                lblMessage.Text = "Heat number control has been updated successfully!";
 
-                Cache["CacheFromBuyerMasterDetails"] = ds;
-
-                GridView1.PageSize = Convert.ToInt32(pageSize);
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
+                GetHeatNoControl();
             }
             catch (Exception ex)
             {
-                LogError(ex, "Exception from display buyer master details!");
-            }
-        }
-
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            lblMessage.Text = "";
-            try
-            {
-                foreach (GridViewRow row in GridView1.Rows)
-                {
-                    bool isChecked = ((CheckBox)row.FindControl("chkSelect")).Checked;
-                    if (isChecked)
-                    {
-                        HiddenField hdnval = ((HiddenField)row.FindControl("hidBuyerIdGrid"));
-                        String BuyerNameHidden = ((System.Web.UI.HtmlControls.HtmlInputHidden)row.FindControl("hidBuyerName")).Value.ToString();
-                        String BuyerName = ((Label)row.FindControl("lblBuyerName")).Text.ToString();
-
-                        _dbObj.DeleteIntoBuyerMaster(BuyerName, Convert.ToInt16(hdnval));
-                        lblMessage.Text = "Records Removed Successfully.";
-                        lblMessage.Visible = true;
-                    }
-                }
-
-                ShowBuyerMasterDetails();
-            }
-            catch (Exception ex)
-            {
-                LogError(ex, "Exception occured -- delete buyer master details.");
-            }
-        }
-
-        protected void GridView1_RowCancelingEdit1(object sender, GridViewCancelEditEventArgs e)
-        {
-            lblMessage.Text = "";
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-            //  showgrid();
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-        }
-
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            lblMessage.Visible = false;
-            try
-            {
-                GridViewRow row = GridView1.Rows[e.RowIndex];
-
-                HiddenField hdnval = GridView1.Rows[e.RowIndex].FindControl("hidBuyerIdGrid") as HiddenField;
-                //HiddenField hdnval = ((HiddenField)GridView1.Rows[e.RowIndex].FindControl("hidBuyerIdGrid"));
-                var buyerName = (Label)GridView1.Rows[e.RowIndex].FindControl("lblBuyerNameGrid");
-                TextBox email = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtEmailGrid");
-
-                _dbObj.UpdateBuyerMaster(Convert.ToInt32(hdnval.Value), buyerName.Text.Trim(), email.Text.Trim());
-
-                GridView1.EditIndex = -1;
-
-                //lblMessage.Visible = true;
-                //lblMessage.ForeColor = System.Drawing.Color.Green;
-                //lblMessage.Text = "Details Updated successfully";
-
-                ShowBuyerMasterDetails();
-            }
-            catch (Exception ex)
-            {
-                LogError(ex, "Exception from while updating row from buyer Master.");
-            }
-        }
-
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            lblMessage.Text = "";
-
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = e.NewEditIndex;
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-        }
-
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            lblMessage.Visible = false;
-
-            try
-            {
-                GridViewRow row = GridView1.Rows[e.RowIndex];
-
-                HiddenField hdnval = GridView1.Rows[e.RowIndex].FindControl("hidBuyerIdGrid") as HiddenField;
-                var buyerName = (Label)GridView1.Rows[e.RowIndex].FindControl("lblBuyerNameGrid");
-
-                _dbObj.DeleteIntoBuyerMaster(buyerName.Text.ToString(), Convert.ToInt32(hdnval.Value));
-
-                GridView1.EditIndex = -1;
-
-                ShowBuyerMasterDetails();
-            }
-            catch (Exception ex)
-            {
-                LogError(ex, "Exception from while updating row from buyer Master.");
+                LogError(ex, "Exception from heat number control update.!");
             }
         }
     }
