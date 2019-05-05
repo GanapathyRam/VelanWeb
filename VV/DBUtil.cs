@@ -6525,6 +6525,598 @@ namespace VV
             }
         }
 
+        #region Patrol Master's Screen
+
+        public void InsertFromOperatorMaster(String OperatorCode, String OperatorName)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spInsertOperatorMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@OperatorCode", OperatorCode));
+                cmd.Parameters.Add(new SqlParameter("@OperatorName", OperatorName));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertFromOperatorMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdateFormOperatorMaster(String OperatorCode, String OperatorName)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spUpdateOperatorMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@OperatorCode", OperatorCode));
+                cmd.Parameters.Add(new SqlParameter("@OperatorName", OperatorName));
+              
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateFormOperatorMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void DeleteFromOperatorMaster(String OperatorCode)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spDeleteOperatorMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@OperatorCode", OperatorCode));
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : DeleteIntoEmployeeMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetriveByOperatorMasterDetails()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetOperatorMaster]", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByOperatorMasterDetails() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public bool IsOperatorCodeExist(string operatorCode)
+        {
+            bool isUserExist = false;
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand(" select * from OperatorMaster where OperatorCode ='" + operatorCode.Trim() + "'", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    isUserExist = true;
+                }
+
+                return isUserExist;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetLoginIsExist() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void InsertFromIPLocationMaster(String LocationCode, String LocationName)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spInsertIPLocationMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IPLocationCode", LocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPLocationName", LocationName));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertFromOperatorMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdateFormIPLocationMaster(String LocationCode, String LocationName)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spUpdateIPLocationMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IPLocationCode", LocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPLocationName", LocationName));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateFormIPLocationMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void DeleteFromIPLocationMaster(String LocationCode, String LocationName)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spDeleteIPLocationMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IPLocationCode", LocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPLocationName", LocationName));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : DeleteIntoEmployeeMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetriveByIPLocationMasterDetails()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetIPLocationMaster]", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByIPLocationMasterDetails() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public bool IsLocationCodeExist(string LocationCode)
+        {
+            bool isUserExist = false;
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("select * from IPLocationMaster where LocationCode ='" + LocationCode.Trim() + "'", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    isUserExist = true;
+                }
+
+                return isUserExist;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetLoginIsExist() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void InsertFromIPSubLocationMaster(String LocationCode, String SubLocationCode, String SubLocationName)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spInsertIPSubLocationMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IPLocationCode", LocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPSubLocationCode", SubLocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPSubLocationName", SubLocationName));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertFromIPSubLocationMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdateFormIPSubLocationMaster(String LocationCode, String SubLocationCode, String SubLocationName)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spUpdateIPSubLocationMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IPLocationCode", LocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPSubLocationCode", SubLocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPSubLocationName", SubLocationName));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateFormIPSubLocationMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void DeleteFromIPSubLocationMaster(String SubLocationCode, String SubLocationName)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spDeleteIPSubLocationMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IPSubLocationCode", SubLocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPSubLocationName", SubLocationName));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : DeleteFromIPSubLocationMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetriveByIPSubLocationMasterDetails()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetIPSubLocationMaster]", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByIPSubLocationMasterDetails() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public bool IsSubLocationCodeExist(string SubLocationCode)
+        {
+            bool isUserExist = false;
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("select * from IPSubLocationMaster where SubLocationCode ='" + SubLocationCode.Trim() + "'", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    isUserExist = true;
+                }
+
+                return isUserExist;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetLoginIsExist() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetriveByLocationCode()
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("SELECT distinct LocationCode from IPLocationMaster", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : FillDropDownLocationCode() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void InsertFromCheckListMaster(int Serial, String Description)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spInsertCheckListMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@CheckListSerial", Serial));
+                cmd.Parameters.Add(new SqlParameter("@CheckListDescription", Description));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertFromCheckListMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdateFormCheckListMaster(int Serial, String Description)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spUpdateCheckListMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@CheckListSerial", Serial));
+                cmd.Parameters.Add(new SqlParameter("@CheckListDescription", Description));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateFormCheckListMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void DeleteFromCheckListMaster(int Serial, String Description)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spDeleteCheckListMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@CheckListSerial", Serial));
+                cmd.Parameters.Add(new SqlParameter("@CheckListDescription", Description));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : DeleteFromCheckListMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetriveByCheckListMasterDetails()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetCheckListMaster]", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByCheckListMasterDetails() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public bool IsCheckListSerialExist(int Serial)
+        {
+            bool isUserExist = false;
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("Select * from CheckListMaster where CheckListSerial =" + Serial + "", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    isUserExist = true;
+                }
+
+                return isUserExist;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : IsCheckListSerialExist() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        #endregion
+
 
         #endregion
 

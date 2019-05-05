@@ -69,8 +69,10 @@
                                         <asp:MenuItem Value="Order status Report" Enabled="false"></asp:MenuItem>
                                         <asp:MenuItem Value="ToRelease Report" Enabled="false"></asp:MenuItem>
                                         <asp:MenuItem Value="SO BackLog Report" Enabled="false"></asp:MenuItem>
-                                        <asp:MenuItem Value="Ready To Release Report" Enabled="false"></asp:MenuItem> <%--//Shortage Report--%>
-                                        <asp:MenuItem Value="Shortage Report" Enabled="false"></asp:MenuItem> <%--//Shortage Report--%>                                        
+                                        <asp:MenuItem Value="Ready To Release Report" Enabled="false"></asp:MenuItem>
+                                        <%--//Shortage Report--%>
+                                        <asp:MenuItem Value="Shortage Report" Enabled="false"></asp:MenuItem>
+                                        <%--//Shortage Report--%>                                        
                                     </asp:MenuItem>
                                     <asp:MenuItem Value="Production Order Reversal" NavigateUrl="~/ProdOrderReversal.aspx" Enabled="false"></asp:MenuItem>
                                     <%--<asp:MenuItem Value="ICS PO Reversal" NavigateUrl="~/ICSPOReversal.aspx" Enabled="false"></asp:MenuItem>--%>
@@ -97,6 +99,13 @@
                                     <asp:MenuItem Value="TPI Offering" NavigateUrl="~/ViewTPIOffering.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="TPI Pending Report" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Status Importing" NavigateUrl="~/StatusImporting.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Patrol Master" Enabled="true">
+                                        <asp:MenuItem Value="Operator Master" NavigateUrl="~/OperatorMaster.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="IPLocation Master" NavigateUrl="~/IPLocationMaster.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="IPSubLocation Master" NavigateUrl="~/IPSubLocationMaster.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="CheckList Master" NavigateUrl="~/CheckListMaster.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="IPCheckList Master" NavigateUrl="~/IPCheckListMaster.aspx" Enabled="false"></asp:MenuItem>
+                                    </asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="Sales" Enabled="true">
                                     <asp:MenuItem Value="ITP/ GAD Information" NavigateUrl="~/ViewITP.aspx" Enabled="false"></asp:MenuItem>
@@ -129,24 +138,25 @@
                                     <asp:MenuItem Value="Delivery Challan Receipts" NavigateUrl="~/DeliveryChallanReceipts.aspx" Enabled="false"></asp:MenuItem>
                                     <%--<asp:MenuItem Value="Print DC" NavigateUrl="~/DCReports.aspx" Enabled="false"></asp:MenuItem>--%>
                                     <asp:MenuItem Value="Reports" Enabled="true">
-                                       <asp:MenuItem Value="All DC Reports" NavigateUrl="~/AllDCReport.aspx" Enabled="false"></asp:MenuItem>
-                                       </asp:MenuItem>
+                                        <asp:MenuItem Value="All DC Reports" NavigateUrl="~/AllDCReport.aspx" Enabled="false"></asp:MenuItem>
+                                    </asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="MIS Utility" Enabled="true">
                                     <asp:MenuItem Value="Sales Order Line Item Deletion" NavigateUrl="~/SalesOrderLineItemDeletion.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Serial No Details" NavigateUrl="~/SerialNoDetails.aspx" Enabled="false"></asp:MenuItem>
-                                    <asp:MenuItem Value="Sales Order Qty Decrement" NavigateUrl="~/SalesOrderQtyDecrement.aspx" Enabled="false"></asp:MenuItem> 
-                                    <asp:MenuItem Value="Convert FG" NavigateUrl="~/FGOrderChange.aspx" Enabled="false"></asp:MenuItem>   
+                                    <asp:MenuItem Value="Sales Order Qty Decrement" NavigateUrl="~/SalesOrderQtyDecrement.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Convert FG" NavigateUrl="~/FGOrderChange.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="FG To WIP Reversal" NavigateUrl="~/FgToWipReversal.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Update PO" NavigateUrl="~/UpdatePO.aspx" Enabled="false"></asp:MenuItem>
-                                    <asp:MenuItem Value="Ready To Release" NavigateUrl="~/ReadyToRelease.aspx" Enabled="false"></asp:MenuItem> <%--//Shortage Report--%> 
+                                    <asp:MenuItem Value="Ready To Release" NavigateUrl="~/ReadyToRelease.aspx" Enabled="false"></asp:MenuItem>
+                                    <%--//Shortage Report--%>
                                     <asp:MenuItem Value="WIP Aging Report" NavigateUrl="~/WIPAgingReport.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Stock Transfer" Enabled="true">
-                                       <asp:MenuItem Value="Request" NavigateUrl="~/UtilityRequest.aspx" Enabled="false"></asp:MenuItem>
-                                       <asp:MenuItem Value="Quality" NavigateUrl="~/UtilityQuality.aspx" Enabled="false"></asp:MenuItem>
-                                       <asp:MenuItem Value="Stores" NavigateUrl="~/UtilityStores.aspx" Enabled="false"></asp:MenuItem>
-                                       <asp:MenuItem Value="Enquiries & Reports" NavigateUrl="~/UtilityEnquiriesReports.aspx" Enabled="false"></asp:MenuItem>
-                                    </asp:MenuItem>                                                                                                                                                                                                                                                                                        
+                                        <asp:MenuItem Value="Request" NavigateUrl="~/UtilityRequest.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="Quality" NavigateUrl="~/UtilityQuality.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="Stores" NavigateUrl="~/UtilityStores.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="Enquiries & Reports" NavigateUrl="~/UtilityEnquiriesReports.aspx" Enabled="false"></asp:MenuItem>
+                                    </asp:MenuItem>
                                 </asp:MenuItem>
                             </Items>
                             <StaticMenuStyle BackColor="#661010" ForeColor="Black" HorizontalPadding="15px" />
@@ -177,7 +187,7 @@
                 </tr>
                 <tr>
                     <td class="footer">
-                         <p>&copy; Powered by <a href="http://frazesolutions.com/" style="color:yellow;" target="_blank">Fraze Software Solutions</a></p>
+                        <p>&copy; Powered by <a href="http://frazesolutions.com/" style="color: yellow;" target="_blank">Fraze Software Solutions</a></p>
                     </td>
                 </tr>
             </table>

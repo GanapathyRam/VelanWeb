@@ -123,6 +123,7 @@
     <Content Include="BulkRelease.aspx" />
     <Content Include="BulkTPIOffering.aspx" />
     <Content Include="BuyerMaster.aspx" />
+    <Content Include="CheckListMaster.aspx" />
     <Content Include="CSS\Main.css" />
     <Content Include="DeliveryChallan.aspx" />
     <Content Include="DeliveryChallanReceipts.aspx" />
@@ -131,8 +132,12 @@
     <Content Include="FgToWipReversal.aspx" />
     <Content Include="HeatNoControl.aspx" />
     <Content Include="ICSPOReversal.aspx" />
+    <Content Include="IPCheckListMaster.aspx" />
+    <Content Include="IPLocationMaster.aspx" />
+    <Content Include="IPSubLocationMaster.aspx" />
     <Content Include="ItemMaster.aspx" />
     <Content Include="LoginSupplierUpdation.aspx" />
+    <Content Include="OperatorMaster.aspx" />
     <Content Include="ProdOrderReversal.aspx" />
     <Content Include="CSS\PopUpStyleSheet.css" />
     <Content Include="ProductionOrderIssue.aspx" />
@@ -347,6 +352,13 @@
     <Compile Include="BuyerMaster.aspx.designer.cs">
       <DependentUpon>BuyerMaster.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CheckListMaster.aspx.cs">
+      <DependentUpon>CheckListMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckListMaster.aspx.designer.cs">
+      <DependentUpon>CheckListMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DeliveryChallan.aspx.cs">
       <DependentUpon>DeliveryChallan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -397,6 +409,27 @@
     <Compile Include="ICSPOReversal.aspx.designer.cs">
       <DependentUpon>ICSPOReversal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IPCheckListMaster.aspx.cs">
+      <DependentUpon>IPCheckListMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IPCheckListMaster.aspx.designer.cs">
+      <DependentUpon>IPCheckListMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IPLocationMaster.aspx.cs">
+      <DependentUpon>IPLocationMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IPLocationMaster.aspx.designer.cs">
+      <DependentUpon>IPLocationMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IPSubLocationMaster.aspx.cs">
+      <DependentUpon>IPSubLocationMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IPSubLocationMaster.aspx.designer.cs">
+      <DependentUpon>IPSubLocationMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ItemMaster.aspx.cs">
       <DependentUpon>ItemMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -410,6 +443,13 @@
     </Compile>
     <Compile Include="LoginSupplierUpdation.aspx.designer.cs">
       <DependentUpon>LoginSupplierUpdation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorMaster.aspx.cs">
+      <DependentUpon>OperatorMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperatorMaster.aspx.designer.cs">
+      <DependentUpon>OperatorMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProdOrderReversal.aspx.cs">
       <DependentUpon>ProdOrderReversal.aspx</DependentUpon>

@@ -1,19 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 
 namespace VV
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class IPLocationMaster : System.Web.UI.Page
     {
+        SqlCommand cmd = new SqlCommand();
+        DataTable dt = new DataTable();
+        DBUtil _dbObj = new DBUtil();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            # region Master Control
+            #region Master Control
 
-            # region Welcome Msg
+            #region Welcome Msg
+
+            DateTime dt = DateTime.MinValue;
+            Console.WriteLine(dt);
             string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
             Label lblUserName = (Label)this.Page.Master.FindControl("lblUserName");
             lblUserName.Text = "Welcome " + UserName;
@@ -130,6 +141,7 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[3].Enabled = true;
                     else if (MenuID == 7) // IP Check List Master
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[4].Enabled = true;
+
                 }
                 # endregion
 
@@ -154,6 +166,7 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 7) // Branch Report
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+
                 }
                 # endregion
 
@@ -183,7 +196,7 @@ namespace VV
                     else if (MenuID == 4) // Heat No Control
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
-                #endregion
+                # endregion
 
                 #region Stores
 
@@ -234,7 +247,6 @@ namespace VV
 
                     if (MenuID == 6) // Ready To Release
                         tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
-
                     if (MenuID == 7) // WIP Aging
                         tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
 
@@ -250,12 +262,276 @@ namespace VV
                     if (MenuID == 11) // Enquiries And Reports
                         tbstr.Items[ParentMenuID].ChildItems[8].ChildItems[3].Enabled = true;
                 }
-
                 #endregion
             }
-            # endregion
+            #endregion
 
-            # endregion
+
+
+            #endregion
+
+            if (!Page.IsPostBack)
+            {
+                ShowIPLocationMasterDetails();
+            }
+
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-IN");
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtLocationCode.Text == string.Empty)
+                {
+                    lblRequiredFields1.Visible = false;
+                    lblRequiredFields.Visible = true;
+                    return;
+                }
+
+                else if (txtLocationName.Text == string.Empty)
+                {
+                    lblRequiredFields.Visible = false;
+                    lblRequiredFields1.Visible = true;
+                    return;
+                }
+
+                string LocationCode = txtLocationCode.Text.Trim();
+                string LocationName = txtLocationName.Text.Trim();
+
+                bool IsExist = _dbObj.IsLocationCodeExist(LocationCode);
+
+                if (IsExist)
+                {
+                    lblMessage.Visible = true;
+                    lblMessage.ForeColor = System.Drawing.Color.Red;
+                    lblMessage.Text = "Location Code already exist in the system. Please try again with new one.";
+                    return;
+                }
+
+                _dbObj.InsertFromIPLocationMaster(LocationCode, LocationName);
+
+                ShowIPLocationMasterDetails();
+
+                btnClear_Click(sender, e);
+
+                lblRequiredFields.Visible = false;
+                lblRequiredFields1.Visible = false;
+                lblMessage.Visible = true;
+                lblMessage.ForeColor = System.Drawing.Color.Green;
+                lblMessage.Text = "Location Master Details Added Successfully.";
+            }
+            catch (Exception ex)
+            {
+                LogError(ex, "Exception occured -- insert location master details.");
+            }
+            finally
+            {
+            }
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            lblMessage.Visible = false;
+            txtLocationNameSearch.Text = "";
+            txtLocationCode.Text = string.Empty;
+            txtLocationName.Text = string.Empty;
+
+            DataSet searchDS = (DataSet)Cache["CacheFromIPLocationMasterDetails"];
+            GridView1.DataSource = searchDS;
+            GridView1.DataBind();
+
+        }
+
+        protected void btnSearchBox_Click(object sender, EventArgs e)
+        {
+            lblMessage.Visible = false;
+
+            String searchRowFilter = String.Empty, searchRowFilter4 = String.Empty;
+
+            string EmployeeName = txtLocationNameSearch.Text.Trim();
+
+            if (!string.IsNullOrEmpty(EmployeeName))
+            {
+                searchRowFilter4 = "LocationName like '%" + EmployeeName + "%'";
+            }
+
+            if (!String.IsNullOrEmpty(searchRowFilter4))
+            {
+                if (!String.IsNullOrEmpty(searchRowFilter))
+                    searchRowFilter = searchRowFilter + " AND " + searchRowFilter4;
+                else
+                    searchRowFilter = searchRowFilter4;
+            }
+
+            if (!String.IsNullOrEmpty(searchRowFilter))
+            {
+                DataSet searchDS = (DataSet)Cache["CacheFromIPLocationMasterDetails"];
+
+                DataView dv;
+                dv = searchDS.Tables[0].DefaultView;
+
+                dv.RowFilter = searchRowFilter;
+
+                GridView1.DataSource = dv;
+                GridView1.DataBind();
+
+                //DataSet DS = new DataSet();
+                //DS.Tables.Add(dv.ToTable());
+                //Cache["CacheFromEmployeeMasterDetails"] = DS;
+            }
+            else
+            {
+                DBUtil _DBObj = new DBUtil();
+                DataSet ds = _DBObj.RetriveByIPLocationMasterDetails();
+                Cache["CacheFromIPLocationMasterDetails"] = ds;
+
+                GridView1.DataSource = ds;
+                GridView1.DataBind();
+            }
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            DataSet searchDS = (DataSet)Cache["CacheFromIPLocationMasterDetails"];
+            GridView1.DataSource = searchDS;
+            GridView1.DataBind();
+
+            GridView1.EditIndex = -1;
+            //  showgrid();
+
+            GridView1.DataSource = searchDS;
+            GridView1.DataBind();
+
+            GridView1.EditIndex = -1;
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            lblMessage.Visible = false;
+
+            DataSet ds = (DataSet)Cache["CacheFromIPLocationMasterDetails"];
+
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
+
+            try
+            {
+                DataView dv;
+                dv = ds.Tables[0].DefaultView;
+                GridView1.DataSource = dv;
+                GridView1.DataBind();
+            }
+            catch (Exception ex)
+            {
+                LogError(ex, "Exception from while clicking on page number from location master.");
+            }
+        }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            lblMessage.Visible = false;
+
+            DataSet searchDS = (DataSet)Cache["CacheFromIPLocationMasterDetails"];
+            GridView1.DataSource = searchDS;
+            GridView1.DataBind();
+
+            GridView1.EditIndex = e.NewEditIndex;
+            //  showgrid();
+
+            GridView1.DataSource = searchDS;
+            GridView1.DataBind();
+        }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            lblMessage.Visible = false;
+            try
+            {
+                GridViewRow row = GridView1.Rows[e.RowIndex];
+
+                string LocationCode = row.Cells[1].Text;
+                string LocationName = ((TextBox)(row.Cells[2].Controls[0])).Text;
+
+                _dbObj.UpdateFormIPLocationMaster(LocationCode, LocationName.Trim());
+
+                GridView1.EditIndex = -1;
+
+                ShowIPLocationMasterDetails();
+            }
+            catch (Exception ex)
+            {
+                LogError(ex, "Exception from while updating row from location Master.");
+            }
+        }
+
+        private void LogError(Exception ex, string section)
+        {
+
+            string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+            message += Environment.NewLine;
+            message += "-----------------------------------------------------------";
+            message += Environment.NewLine;
+            message += string.Format("Message: {0}", ex.Message);
+            message += Environment.NewLine;
+            message += "Exception from SQLConnectionOpen" + "-" + section;
+            message += Environment.NewLine;
+            message += "-----------------------------------------------------------";
+            message += Environment.NewLine;
+            string path = Server.MapPath("~/ErrorLog.txt");
+            using (StreamWriter writer = new StreamWriter(path, true))
+            {
+                writer.WriteLine(message);
+                writer.Close();
+            }
+        }
+
+        //protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        //{
+        //    lblMessage.Visible = false;
+
+        //    try
+        //    {
+        //        int employeeCode = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+
+        //        _dbObj.DeleteIntoEmployeeMaster(Convert.ToString(employeeCode));
+
+        //        ShowEmployeeMasterDetails();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        LogError(ex, "Exception from while updating row from employee Master.");
+        //    }
+        //}
+
+        //protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+        //    if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != GridView1.EditIndex)
+        //    {
+        //        (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
+        //    }
+        //}
+
+        private void ShowIPLocationMasterDetails()
+        {
+            try
+            {
+                string pageSize = ConfigurationManager.AppSettings["GridPageSize"].ToString();
+
+                DBUtil _DBObj = new DBUtil();
+                DataSet ds = _DBObj.RetriveByIPLocationMasterDetails();
+
+                Cache["CacheFromIPLocationMasterDetails"] = ds;
+
+                GridView1.PageSize = Convert.ToInt32(pageSize);
+                GridView1.DataSource = ds;
+                GridView1.DataBind();
+            }
+            catch (Exception ex)
+            {
+                LogError(ex, "Exception from display location master details!");
+            }
         }
     }
 }
