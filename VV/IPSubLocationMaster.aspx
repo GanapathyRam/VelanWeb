@@ -5,16 +5,16 @@
     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-top: 20px;">
         <tr>
             <td style="padding-left: 200px; text-align: right; font-family: Verdana; width: 300px;">
-                <asp:Label ID="lblLocationCode" Text="Location Code" runat="server"></asp:Label>
+                <asp:Label ID="lblLocationCode" Text="Location Name" runat="server"></asp:Label>
             </td>
             <td style="padding-left: 30px; width: 220px;">
                 <%--<asp:TextBox ID="txtLocationCode" Height="15px" CssClass="textBox" MaxLength="2" runat="server"></asp:TextBox>--%>
                 <asp:DropDownList ID="ddlLocationCode" AutoPostBack="true" OnSelectedIndexChanged="ddlLocationCode_SelectedIndexChanged"
-                    DataTextField="LocationCode" DataValueField="LocationCode" Width="140px" runat="server">
+                    DataTextField="LocationName" DataValueField="LocationCode" Width="140px" runat="server">
                 </asp:DropDownList>
             </td>
             <td>
-                <asp:Label ID="lblRequiredFields" Text="Please Enter Sub Location Code" Visible="false" ForeColor="Red" runat="server"></asp:Label>
+                <asp:Label ID="lblRequiredFields" Text="Please Enter Location Code" Visible="false" ForeColor="Red" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -80,14 +80,14 @@
                         AutoGenerateEditButton="true" RowStyle-CssClass="Grid_Record" EmptyDataText="No Records To Display"
                         CellPadding="3">
                         <Columns>
-                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="SubLocation Code">
+                            <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="SubLocation Code">
                                 <ItemTemplate>
                                     <asp:Label ID="lblSubLocationCode" runat="server" Text='<%# Eval("SubLocationCode") %>'>
                                     </asp:Label>
                                 </ItemTemplate>
                                 <ItemStyle Wrap="false" />
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="SubLocation Name">
+                            <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="SubLocation Name">
                                 <ItemTemplate>
                                     <asp:Label ID="lblSubLocationName" runat="server" Text='<%# Eval("SubLocationName") %>'>
                                     </asp:Label>
@@ -98,8 +98,8 @@
                                 <ItemStyle Wrap="false" />
                                 <ItemStyle Wrap="false" />
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Location Code">
-                                <ItemTemplate>
+                            <asp:TemplateField HeaderText="Location Code" Visible="false">
+                               <%-- <ItemTemplate>
                                     <asp:Label ID="lblLocationCode" runat="server" Text='<%# Eval("LocationCode")%>'></asp:Label>
                                 </ItemTemplate>
                                 <EditItemTemplate>
@@ -107,7 +107,18 @@
                                     <asp:DropDownList ID="ddlLocationCodeGrid" Width="150px" runat="server"
                                         AutoPostBack="True">
                                     </asp:DropDownList>
-                                </EditItemTemplate>
+                                </EditItemTemplate>--%>
+                                 <ItemTemplate>
+                                    <asp:HiddenField ID="hdnLocationCode" runat="server" Value='<%#Bind("LocationCode") %>' />
+                                    <%--<asp:Label ID="lblLocationCode" runat="server" Text='<%# Eval("LocationName")%>'></asp:Label>--%>
+                                </ItemTemplate>
+                              <%--  <EditItemTemplate>
+                                    <asp:HiddenField ID="hdnLocationCode" runat="server" Value='<%#Eval("LocationCode") %>' />
+                                    <asp:DropDownList ID="ddlLocationCodeGrid" Width="150px" runat="server"
+                                        AutoPostBack="True">
+                                    </asp:DropDownList>
+                                </EditItemTemplate>--%>
+                                <ItemStyle Wrap="false" />
                             </asp:TemplateField>
                         </Columns>
                         <HeaderStyle CssClass="Grid_Header" />

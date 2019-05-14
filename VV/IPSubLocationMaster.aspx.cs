@@ -469,9 +469,11 @@ namespace VV
                 Label LocationCode = (Label)GridView1.Rows[e.RowIndex].FindControl("lblSubLocationCode");
                 TextBox LocationName = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtSubLocationName");
 
-                DropDownList ddlLocationCodeGrid = (DropDownList)GridView1.Rows[e.RowIndex].FindControl("ddlLocationCodeGrid");
+                HiddenField hdnvalLocationCode = ((HiddenField)row.FindControl("hdnLocationCode"));
 
-                _dbObj.UpdateFormIPSubLocationMaster(ddlLocationCodeGrid.SelectedItem.Text.ToString(), Convert.ToString(LocationCode.Text), Convert.ToString(LocationName.Text.Trim()));
+                //DropDownList ddlLocationCodeGrid = (DropDownList)GridView1.Rows[e.RowIndex].FindControl("ddlLocationCodeGrid");
+
+                _dbObj.UpdateFormIPSubLocationMaster(Convert.ToString(hdnvalLocationCode.Value), Convert.ToString(LocationCode.Text), Convert.ToString(LocationName.Text.Trim()));
 
                 GridView1.EditIndex = -1;
 
@@ -555,7 +557,7 @@ namespace VV
         {
 
             DBUtil _DBObj = new DBUtil();
-            DataSet ds = _DBObj.RetriveByLocationCode();
+            DataSet ds = _DBObj.RetriveByLocationName();
 
             ddlLocationCode.DataSource = ds;
             ddlLocationCode.DataBind();
@@ -572,38 +574,38 @@ namespace VV
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            DBUtil _DBObj = new DBUtil();
+            //DBUtil _DBObj = new DBUtil();
 
-            if (e.Row.RowType == DataControlRowType.DataRow && GridView1.EditIndex == e.Row.RowIndex)
-            {
-                DataSet ds = _DBObj.RetriveByLocationCode();
+            //if (e.Row.RowType == DataControlRowType.DataRow && GridView1.EditIndex == e.Row.RowIndex)
+            //{
+            //    DataSet ds = _DBObj.RetriveByLocationCode();
 
-                if (ds != null && ds.Tables[0].Rows.Count > 0)
-                {
-                    DataRowView drv = e.Row.DataItem as DataRowView;
+            //    if (ds != null && ds.Tables[0].Rows.Count > 0)
+            //    {
+            //        DataRowView drv = e.Row.DataItem as DataRowView;
 
-                    HiddenField hdnval = (HiddenField)e.Row.FindControl("LocationCode");
+            //        HiddenField hdnval = (HiddenField)e.Row.FindControl("LocationCode");
 
-                    DropDownList DropDownList1 = (DropDownList)e.Row.FindControl("ddlLocationCodeGrid");
+            //        DropDownList DropDownList1 = (DropDownList)e.Row.FindControl("ddlLocationCodeGrid");
 
-                    DropDownList1.DataSource = ds.Tables[0];
+            //        DropDownList1.DataSource = ds.Tables[0];
 
-                    DropDownList1.DataTextField = "LocationCode";
+            //        DropDownList1.DataTextField = "LocationCode";
 
-                    DropDownList1.DataValueField = "LocationCode";
+            //        DropDownList1.DataValueField = "LocationCode";
 
-                    DropDownList1.DataBind();
+            //        DropDownList1.DataBind();
 
-                    DropDownList1.Items.Insert(0, new ListItem("--Select--", "0"));
+            //        DropDownList1.Items.Insert(0, new ListItem("--Select--", "0"));
 
-                    if (hdnval != null)
-                    {
-                        DropDownList1.Items.FindByValue(hdnval.Value).Selected = true;
-                    }
+            //        if (hdnval != null)
+            //        {
+            //            DropDownList1.Items.FindByValue(hdnval.Value).Selected = true;
+            //        }
 
-                }
+            //    }
 
-            }
+            //}
         }
     }
 }

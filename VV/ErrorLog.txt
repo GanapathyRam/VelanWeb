@@ -3758,3 +3758,188 @@ Message: Object reference not set to an instance of an object.
 Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
 -----------------------------------------------------------
 
+Time: 05-05-2019 12:20:59 PM
+-----------------------------------------------------------
+Message: Specified argument was out of the range of valid values.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from while updating row from operator Master.
+-----------------------------------------------------------
+
+Time: 05-05-2019 12:21:19 PM
+-----------------------------------------------------------
+Message: Specified argument was out of the range of valid values.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from while updating row from operator Master.
+-----------------------------------------------------------
+
+Time: 05-05-2019 12:21:23 PM
+-----------------------------------------------------------
+Message: Specified argument was out of the range of valid values.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from while updating row from operator Master.
+-----------------------------------------------------------
+
+Time: 05-05-2019 12:25:40 PM
+-----------------------------------------------------------
+Message: Specified argument was out of the range of valid values.
+Parameter name: index
+Exception from SQLConnectionOpen-Exception from while updating row from operator Master.
+-----------------------------------------------------------
+
+Time: 05-05-2019 05:03:16 PM
+-----------------------------------------------------------
+Message: Procedure or function 'spInsertIPLocationMaster' expects parameter '@IPLocationCode', which was not supplied.
+Exception from SQLConnectionOpen-Exception occured -- insert location master details.
+-----------------------------------------------------------
+
+Time: 05-05-2019 05:12:22 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'OperatorCode'.
+Exception from SQLConnectionOpen-Exception from display location master details!
+-----------------------------------------------------------
+
+Time: 05-05-2019 05:12:23 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'OperatorCode'.
+Exception from SQLConnectionOpen-Exception occured -- insert location master details.
+-----------------------------------------------------------
+
+Time: 05-05-2019 05:13:05 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'OperatorCode'.
+Exception from SQLConnectionOpen-Exception from display location master details!
+-----------------------------------------------------------
+
+Time: 05-05-2019 05:15:17 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'OperatorCode'.
+Exception from SQLConnectionOpen-Exception from display location master details!
+-----------------------------------------------------------
+
+Time: 05-05-2019 10:46:26 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.LiteralControl' to type 'System.Web.UI.WebControls.TextBox'.
+Exception from SQLConnectionOpen-Exception from while updating row from location Master.
+-----------------------------------------------------------
+
+Time: 06-05-2019 01:04:59 AM
+-----------------------------------------------------------
+Message: Conversion failed when converting the nvarchar value 'Hello_1' to data type int.
+Exception from SQLConnectionOpen-Exception from while updating row from check list Master.
+-----------------------------------------------------------
+
+Time: 06-05-2019 01:05:04 AM
+-----------------------------------------------------------
+Message: Conversion failed when converting the nvarchar value 'Hello_1' to data type int.
+Exception from SQLConnectionOpen-Exception from while updating row from check list Master.
+-----------------------------------------------------------
+
+Time: 06-05-2019 01:05:21 AM
+-----------------------------------------------------------
+Message: Conversion failed when converting the nvarchar value 'Hello_1' to data type int.
+Exception from SQLConnectionOpen-Exception from while updating row from check list Master.
+-----------------------------------------------------------
+
+Time: 06-05-2019 01:06:30 AM
+-----------------------------------------------------------
+Message: Conversion failed when converting the nvarchar value 'Hello_1' to data type int.
+Exception from SQLConnectionOpen-Exception from while updating row from check list Master.
+-----------------------------------------------------------
+
+Time: 11-05-2019 01:44:15 PM
+-----------------------------------------------------------
+Message: Invalid column name 'True'.
+Exception from SQLConnectionOpen-Exception occured -- insert sub location master details.
+-----------------------------------------------------------
+
+Time: 11-05-2019 01:56:16 PM
+-----------------------------------------------------------
+Message: Invalid column name 'False'.
+Exception from SQLConnectionOpen-Exception occured -- insert sub location master details.
+-----------------------------------------------------------
+
+Time: 11-05-2019 11:46:25 PM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK_IPCheckListMaster'. Cannot insert duplicate key in object 'dbo.IPCheckListMaster'. The duplicate key value is (03, 02, 12).
+Exception from SQLConnectionOpen-Exception occured -- insert IP Check list master details.
+-----------------------------------------------------------
+
+Time: 11-05-2019 11:47:10 PM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK_IPCheckListMaster'. Cannot insert duplicate key in object 'dbo.IPCheckListMaster'. The duplicate key value is (03, 02, 12).
+Exception from SQLConnectionOpen-Exception occured -- insert IP Check list master details.
+-----------------------------------------------------------
+
+Time: 12-05-2019 12:10:52 AM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK_IPCheckListMaster'. Cannot insert duplicate key in object 'dbo.IPCheckListMaster'. The duplicate key value is (03, 02, 12).
+Exception from SQLConnectionOpen-Exception occured -- insert IP Check list master details.
+-----------------------------------------------------------
+
+Time: 12-05-2019 12:11:05 AM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK_IPCheckListMaster'. Cannot insert duplicate key in object 'dbo.IPCheckListMaster'. The duplicate key value is (03, 02, 12).
+Exception from SQLConnectionOpen-Exception occured -- insert IP Check list master details.
+-----------------------------------------------------------
+
+Time: 12-05-2019 12:11:38 AM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK_IPCheckListMaster'. Cannot insert duplicate key in object 'dbo.IPCheckListMaster'. The duplicate key value is (03, 02, 12).
+Exception from SQLConnectionOpen-Exception occured -- insert IP Check list master details.
+-----------------------------------------------------------
+
+Time: 12-05-2019 12:15:20 AM
+-----------------------------------------------------------
+Message: 'ddlLocationCode' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+Exception from SQLConnectionOpen-Exception occured -- insert IP Check list master details.
+-----------------------------------------------------------
+
+Time: 12-05-2019 01:14:21 PM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'LocationCode', table 'VVIMIS.dbo.IPSubLocationMaster'; column does not allow nulls. INSERT fails.
+Exception from SQLConnectionOpen-Exception occured -- insert sub location master details.
+-----------------------------------------------------------
+
+Time: 12-05-2019 01:33:16 PM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'LocationCode', table 'VVIMIS.dbo.IPSubLocationMaster'; column does not allow nulls. INSERT fails.
+Exception from SQLConnectionOpen-Exception occured -- insert sub location master details.
+-----------------------------------------------------------
+
+Time: 12-05-2019 01:35:56 PM
+-----------------------------------------------------------
+Message: Procedure or function spInsertIPSubLocationMaster has too many arguments specified.
+Exception from SQLConnectionOpen-Exception occured -- insert sub location master details.
+-----------------------------------------------------------
+
+Time: 12-05-2019 01:40:02 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception occured -- insert IP Check list master details.
+-----------------------------------------------------------
+
+Time: 14-05-2019 07:07:08 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from while updating row from employee Master.
+-----------------------------------------------------------
+
+Time: 14-05-2019 08:11:20 PM
+-----------------------------------------------------------
+Message: Procedure or function spUpdateIPSubLocationMaster has too many arguments specified.
+Exception from SQLConnectionOpen-Exception from while updating row from location Master.
+-----------------------------------------------------------
+
+Time: 14-05-2019 08:12:05 PM
+-----------------------------------------------------------
+Message: Procedure or function spUpdateIPSubLocationMaster has too many arguments specified.
+Exception from SQLConnectionOpen-Exception from while updating row from location Master.
+-----------------------------------------------------------
+
+Time: 14-05-2019 08:12:30 PM
+-----------------------------------------------------------
+Message: Procedure or function spUpdateIPSubLocationMaster has too many arguments specified.
+Exception from SQLConnectionOpen-Exception from while updating row from location Master.
+-----------------------------------------------------------
+

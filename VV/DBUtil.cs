@@ -841,7 +841,7 @@ namespace VV
             }
         }
 
-        public void DeleteIntoBuyerMaster(String BuyerName , int Id)
+        public void DeleteIntoBuyerMaster(String BuyerName, int Id)
         {
             try
             {
@@ -1658,7 +1658,7 @@ namespace VV
             }
         }
 
-        public void UpdateBaanDataByOrderNoAndPos(int OrderNum, int Pos, String Item, String Description,  DateTime OriginalPromDate, DateTime PlannedDelDate)
+        public void UpdateBaanDataByOrderNoAndPos(int OrderNum, int Pos, String Item, String Description, DateTime OriginalPromDate, DateTime PlannedDelDate)
         {
             try
             {
@@ -2035,7 +2035,7 @@ namespace VV
             {
                 this.init();
 
-                SqlCommand cmd = new SqlCommand("Select * from ProductionReleaseNew where ProdOrderNo ='"+ProdOrderNo+"'", conn);
+                SqlCommand cmd = new SqlCommand("Select * from ProductionReleaseNew where ProdOrderNo ='" + ProdOrderNo + "'", conn);
                 cmd.CommandTimeout = 1000;
                 cmd.CommandType = CommandType.Text;
 
@@ -3679,7 +3679,7 @@ namespace VV
         /// <param name="PlanWeek"></param>
         /// <param name="WIPWeek"></param>
         /// <param name="FGWeek"></param>
-        public void UpdateBaaNDataInMISOrderStatus(int OrderNum, String LineNum, int Pos, String Item, String Description, String ItemGroup, int DiffQtyToBeUpdated, int PlanWeek, int WIPWeek, int FGWeek, 
+        public void UpdateBaaNDataInMISOrderStatus(int OrderNum, String LineNum, int Pos, String Item, String Description, String ItemGroup, int DiffQtyToBeUpdated, int PlanWeek, int WIPWeek, int FGWeek,
             float UpdatedAmount, DateTime PlannedDelDate, DateTime OriginalPromDate, String CustomerName, String Description_2)
         {
             try
@@ -3791,7 +3791,7 @@ namespace VV
             {
                 this.init();
 
-                SqlCommand cmd = new SqlCommand("select * from login where UserName='"+userName+"'", conn);
+                SqlCommand cmd = new SqlCommand("select * from login where UserName='" + userName + "'", conn);
                 cmd.CommandTimeout = 1000;
                 cmd.CommandType = CommandType.Text;
 
@@ -5553,7 +5553,7 @@ namespace VV
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add(new SqlParameter("@QtyToBeReduced", QtyToBeReduced));
-                cmd.Parameters.Add(new SqlParameter("@OrderNo", OrderNo)); 
+                cmd.Parameters.Add(new SqlParameter("@OrderNo", OrderNo));
                 cmd.Parameters.Add(new SqlParameter("@Pos", Pos));
                 cmd.ExecuteNonQuery();
 
@@ -5912,7 +5912,7 @@ namespace VV
                 SqlCommand cmd = new SqlCommand("[spValidateItemNumberFromInventory]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@ItemNumber", ItemNumber));
-                
+
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
 
@@ -6053,7 +6053,7 @@ namespace VV
             {
                 this.init();
 
-                SqlCommand cmd = new SqlCommand("Update StockTransferRequest SET QCBy = '"+ QcBy + "', QCOn = '"+ QcOn.ToString("yyyy-MM-dd") + "', QCDisposition = '"+ QcDisposition + "', QCRemarks ='"+Remarks+"' where Id = '" + Id + "'", conn);
+                SqlCommand cmd = new SqlCommand("Update StockTransferRequest SET QCBy = '" + QcBy + "', QCOn = '" + QcOn.ToString("yyyy-MM-dd") + "', QCDisposition = '" + QcDisposition + "', QCRemarks ='" + Remarks + "' where Id = '" + Id + "'", conn);
                 cmd.CommandType = CommandType.Text;
 
                 cmd.ExecuteNonQuery();
@@ -6131,7 +6131,7 @@ namespace VV
             {
                 this.init();
 
-                SqlCommand cmd = new SqlCommand("Update StockTransferRequest SET StoresOn = '" + StoresOn.ToString("yyyy-MM-dd") + "', StoresDisposition = '" + StoresDisposition + "', StoresRemarks ='"+ Remarks + "' where Id = '" + Id + "'", conn);
+                SqlCommand cmd = new SqlCommand("Update StockTransferRequest SET StoresOn = '" + StoresOn.ToString("yyyy-MM-dd") + "', StoresDisposition = '" + StoresDisposition + "', StoresRemarks ='" + Remarks + "' where Id = '" + Id + "'", conn);
                 cmd.CommandType = CommandType.Text;
 
                 cmd.ExecuteNonQuery();
@@ -6566,7 +6566,7 @@ namespace VV
 
                 cmd.Parameters.Add(new SqlParameter("@OperatorCode", OperatorCode));
                 cmd.Parameters.Add(new SqlParameter("@OperatorName", OperatorName));
-              
+
                 cmd.ExecuteNonQuery();
 
                 conn.Close();
@@ -6975,6 +6975,34 @@ namespace VV
             }
         }
 
+        public DataSet RetriveByLocationName()
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("SELECT distinct LocationCode, LocationName from IPLocationMaster", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByLocationName() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
         public void InsertFromCheckListMaster(int Serial, String Description)
         {
             try
@@ -7111,6 +7139,208 @@ namespace VV
             {
                 conn.Close();
                 Logger.Write(this.GetType().ToString() + " : IsCheckListSerialExist() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetriveByIPSubLocationCode()
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("SELECT distinct SubLocationCode, SubLocationName from IPSubLocationMaster", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByIPSubLocatioCode() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetriveByCheckListSerial()
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("SELECT distinct CheckListSerial, CheckListDescription from CheckListMaster", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByCheckListSerial() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void InsertFromIPCheckListMaster(String IPLocationCode, String IPSubLocationCode, int CheckListSerial, int Active)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spInsertIPCheckListMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IPLocationCode", IPLocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPSubLocationCode", IPSubLocationCode));
+                cmd.Parameters.Add(new SqlParameter("@CheckListSerial", CheckListSerial));
+                cmd.Parameters.Add(new SqlParameter("@Active", Active));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertFromIPCheckListMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdateFormIPCheckListMaster(String IPLocationCode, String IPSubLocationCode, int CheckListSerial, int Active)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spUpdateIPCheckListMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IPLocationCode", IPLocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPSubLocationCode", IPSubLocationCode));
+                cmd.Parameters.Add(new SqlParameter("@CheckListSerial", CheckListSerial));
+                cmd.Parameters.Add(new SqlParameter("@Active", Active));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateFormCheckListMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void DeleteFromIPCheckListMaster(String IPLocationCode, String IPSubLocationCode, int CheckListSerial, int Active)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spDeleteIPCheckListMaster]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IPLocationCode", IPLocationCode));
+                cmd.Parameters.Add(new SqlParameter("@IPSubLocationCode", IPSubLocationCode));
+                cmd.Parameters.Add(new SqlParameter("@CheckListSerial", CheckListSerial));
+                cmd.Parameters.Add(new SqlParameter("@Active", Active));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : DeleteFromCheckListMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetriveByIPCheckListMasterDetails()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetIPCheckListMaster]", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByIPCheckListMasterDetails() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public bool IsIPCheckListDetailsExist(String IPLocationCode, String IPSubLocationCode, int CheckListSerial, int Active)
+        {
+            bool isUserExist = false;
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("SELECT * from IPCheckListMaster where LocationCode = '"+ IPLocationCode +"' and SubLocationCode = '"+IPSubLocationCode +"' and  CheckListSerial = '"+ CheckListSerial + "'", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    isUserExist = true;
+                }
+
+                return isUserExist;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : IsIPCheckListDetailsExist() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
                 throw ex;
             }
         }

@@ -129,6 +129,17 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 2) // Status Importing
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+
+                    else if (MenuID == 3) // Operator Master
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[0].Enabled = true;
+                    else if (MenuID == 4) // IP Location Master
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[1].Enabled = true;
+                    else if (MenuID == 5) // IP Sub Location Master
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[2].Enabled = true;
+                    else if (MenuID == 6) // Check List Master
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[3].Enabled = true;
+                    else if (MenuID == 7) // IP Check List Master
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[4].Enabled = true;
                 }
                 # endregion
 
