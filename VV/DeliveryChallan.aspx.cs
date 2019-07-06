@@ -605,7 +605,7 @@ namespace VV
             {
                 lblMessage.Visible = true;
                 lblMessage.ForeColor = System.Drawing.Color.Red;
-                lblMessage.Text = "Selected Requested by already has more than "+ConfigurationManager.AppSettings["DcPendingItems"].ToString() +" pending items, please choose others or complete the pending items!.";
+                lblMessage.Text = "Selected Requested by already has more than " + ConfigurationManager.AppSettings["DcPendingItems"].ToString() + " pending items, please choose others or complete the pending items!.";
                 return;
             }
 
@@ -639,13 +639,14 @@ namespace VV
                     DateTime currentDate = Convert.ToDateTime(System.DateTime.UtcNow.ToString("dd/MM/yyyy"));
                     //DateTime nextDayDate = Convert.ToDateTime(System.DateTime.UtcNow.ToString("dd/MM/yyyy")).AddDays(1);
 
-                    if (Convert.ToDateTime(dcDate.ToString()) == currentDate) { }
-                    //else if (Convert.ToDateTime(dcDate.ToString()) >= nextDayDate) { }
+                    //if (Convert.ToDateTime(dcDate.ToString()) == currentDate) { }
+                    if (Convert.ToDateTime(dcDate.ToString()) == currentDate || Convert.ToDateTime(dcDate.ToString()) == currentDate.AddDays(-1))
+                    { }
                     else
                     {
                         lblMessage.Visible = true;
                         lblMessage.ForeColor = System.Drawing.Color.Red;
-                        lblMessage.Text = "DC details can be update within 1 day of generation.";
+                        lblMessage.Text = "DC details can be update within 2 days of generation.";
                         return;
                     }
 
@@ -688,7 +689,7 @@ namespace VV
                                 lblMessage.Text = "Quantity send should be greater than received quantity.";
                                 return;
                             }
-                            else
+                            else if (receivedQty != 0)
                             {
                                 lblMessage.Visible = true;
                                 lblMessage.ForeColor = System.Drawing.Color.Red;
@@ -697,7 +698,7 @@ namespace VV
                             }
 
                             _dbObj.UpdateIntoDeliveryChallanDetails(dcNumber, Convert.ToInt32(slno), ddlUnit.SelectedItem.Text.ToString(),
-                         Convert.ToDecimal(quantity), Convert.ToDecimal(rate), itemDescription, 
+                         Convert.ToDecimal(quantity), Convert.ToDecimal(rate), itemDescription,
                          Convert.ToDecimal(string.IsNullOrEmpty(quantityReceived.ToString()) ? 0 : Convert.ToDecimal(quantityReceived.ToString())));
 
                             lblMessage.Visible = true;
@@ -857,13 +858,13 @@ namespace VV
                     DateTime currentDate = Convert.ToDateTime(System.DateTime.UtcNow.ToString("dd-MM-yyyy"));
                     //DateTime nextDayDate = Convert.ToDateTime(System.DateTime.UtcNow.ToString("dd-MM-yyyy")).AddDays(1);
 
-                    if (Convert.ToDateTime(dcDate.ToString()) == currentDate) { }
-                    //else if (Convert.ToDateTime(dcDate.ToString()) >= nextDayDate) { }
+                    if (Convert.ToDateTime(dcDate.ToString()) == currentDate || Convert.ToDateTime(dcDate.ToString()) == currentDate.AddDays(-1))
+                    { }
                     else
                     {
                         lblMessage.Visible = true;
                         lblMessage.ForeColor = System.Drawing.Color.Red;
-                        lblMessage.Text = "DC details can be update within 1 day of generation.";
+                        lblMessage.Text = "DC details can be delete within 2 days of generation.";
 
                         Panel1.Visible = true;
                         btnAdd.Visible = false;
@@ -1038,7 +1039,7 @@ namespace VV
             {
                 lblMessage.Visible = true;
                 lblMessage.ForeColor = System.Drawing.Color.Red;
-                lblMessage.Text = "Selected Requested by already has more than "+ConfigurationManager.AppSettings["DcPendingItems"].ToString()+" pending items, please choose others or complete the pending items!.";
+                lblMessage.Text = "Selected Requested by already has more than " + ConfigurationManager.AppSettings["DcPendingItems"].ToString() + " pending items, please choose others or complete the pending items!.";
             }
 
             ddlRequestedBy.SelectedValue = Convert.ToString(ddlRequestedBy.SelectedValue);
@@ -1059,55 +1060,58 @@ namespace VV
 
             try
             {
-                string dcDate = txtDcDate.Text;
+                string dcDate = txtDcDate.Text.Trim();
                 DateTime currentDate = Convert.ToDateTime(System.DateTime.UtcNow.ToString("dd-MM-yyyy"));
                 //DateTime nextDayDate = Convert.ToDateTime(System.DateTime.UtcNow.ToString("dd-MM-yyyy")).AddDays(1);
 
-                if (Convert.ToDateTime(dcDate.ToString()) == currentDate) {
-                    Panel1.Visible = true;
-                    btnAdd.Visible = false;
-                    btnEdit.Visible = false;
-                    btnSearch.Visible = true;
-                    btnUpdate.Visible = true;
-                    btnAddItem.Visible = false;
-                    return;
-                }
-                //else if (Convert.ToDateTime(dcDate.ToString()) >= nextDayDate) { }
-                else
+                bool isDCNumberAvailableInMaster = _dbObj.IsDCMasterAvailableForDCNo(txtDcNumber.Text.Trim());
+
+                if (!isDCNumberAvailableInMaster)
                 {
                     lblMessage.Visible = true;
                     lblMessage.ForeColor = System.Drawing.Color.Red;
-                    lblMessage.Text = "DC details can be update within 1 day of generation.";
-                    txtDcNumber.Text = "";
-
-                    Panel1.Visible = true;
-                    btnAdd.Visible = false;
-                    btnEdit.Visible = false;
-                    btnSearch.Visible = true;
-                    btnUpdate.Visible = true;
-                    btnAddItem.Visible = false;
-
-                    GetDropDownInfo();
-
-                    return;
+                    lblMessage.Text = "Invalid DCNumber.";
                 }
-
-                decimal receivedQty = _dbObj.GetReceivedQtyFromDCNumber(txtDcNumber.Text);
-
-                if (receivedQty == 0)
-                {
-                    _dbObj.RemoveDeliveryChallanMasterAndDetails(txtDcNumber.Text);
-                    lblMessage.Visible = true;
-                    lblMessage.ForeColor = System.Drawing.Color.Green;
-                    lblMessage.Text = "DC Details Cancelled Successfully.";
-                    txtDcNumber.Text = "";
-                }
-
                 else
                 {
-                    lblMessage.Visible = true;
-                    lblMessage.ForeColor = System.Drawing.Color.Red;
-                    lblMessage.Text = "Cannot be deleted because it has receive quantity.";
+                    if (Convert.ToDateTime(dcDate.ToString()) == currentDate || Convert.ToDateTime(dcDate.ToString()) == currentDate.AddDays(-1))
+                    {
+                        decimal receivedQty = _dbObj.GetReceivedQtyFromDCNumber(txtDcNumber.Text.Trim());
+
+                        if (receivedQty == 0)
+                        {
+                            _dbObj.RemoveDeliveryChallanMasterAndDetails(txtDcNumber.Text);
+                            lblMessage.Visible = true;
+                            lblMessage.ForeColor = System.Drawing.Color.Green;
+                            lblMessage.Text = "DC Details Cancelled Successfully.";
+                            txtDcNumber.Text = "";
+                        }
+                        else
+                        {
+                            lblMessage.Visible = true;
+                            lblMessage.ForeColor = System.Drawing.Color.Red;
+                            lblMessage.Text = "Cannot be deleted because it has receive quantity.";
+                        }
+                    }
+                    //else if (Convert.ToDateTime(dcDate.ToString()) >= nextDayDate) { }
+                    else
+                    {
+                        lblMessage.Visible = true;
+                        lblMessage.ForeColor = System.Drawing.Color.Red;
+                        lblMessage.Text = "DC details can be delete within 2 days of generation.";
+                        txtDcNumber.Text = "";
+
+                        Panel1.Visible = true;
+                        btnAdd.Visible = false;
+                        btnEdit.Visible = false;
+                        btnSearch.Visible = true;
+                        btnUpdate.Visible = true;
+                        btnAddItem.Visible = false;
+
+                        GetDropDownInfo();
+
+                        return;
+                    }
                 }
 
                 Panel1.Visible = true;
