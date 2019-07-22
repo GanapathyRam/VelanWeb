@@ -478,6 +478,22 @@ namespace VV
                             }
                         }
 
+                        // Inserting into WIP All
+                        for (int k = 0; k < dataTable.Rows.Count; k++)
+                        {
+                            bool IsProdOrderNoExist = _dbObj.IsProdOrderNoAvailableFromWIPAll(dataTable.Rows[k]["Prod.Order"].ToString());
+
+                            if (!IsProdOrderNoExist)
+                            {
+                                var prodOrderNo = Convert.ToString(dataTable.Rows[k]["Prod.Order"]);
+                                var itemNumber = Convert.ToString(dataTable.Rows[k]["ItemNumber"]);
+                                var description = Convert.ToString(dataTable.Rows[k]["Description"]);
+                                string qtyOrdered = Convert.ToString(dataTable.Rows[k]["Quantity"]);
+
+                                _dbObj.InsertWIPAllFromWIPImporting(prodOrderNo, itemNumber, description, qtyOrdered);
+                            }
+                        }
+
                         excelReader.Close();
 
                         using (SqlConnection con = new SqlConnection(sCon))
@@ -537,6 +553,8 @@ namespace VV
 
                                             // fecthing record from wip table to compare items into recent upload wip items
                                             DataSet dsForBalQuantity = _dbObj.RetriveByWIPItemsFromProdOrder(prodOrder);
+
+
 
                                             if (dsForBalQuantity != null)
                                             {
@@ -894,14 +912,14 @@ namespace VV
 
                                                     //if (OrderBalance != orderBalance && PoOrder == poOrder)
                                                     //{
-                                                        // update the orderBalance into db if mismatching from excel
-                                                        _dbObj.UpdatePOBalanceQuantity(PoOrder, poPosition, orderBalance, itemNumber, description,
-                                                            ordered, deliv, planDelDate);
+                                                    // update the orderBalance into db if mismatching from excel
+                                                    _dbObj.UpdatePOBalanceQuantity(PoOrder, poPosition, orderBalance, itemNumber, description,
+                                                        ordered, deliv, planDelDate);
 
-                                                        _dbObj.UpdatePOCommitmentDate();
+                                                    _dbObj.UpdatePOCommitmentDate();
 
-                                                        lblConfirm.Text = "PO DATA IMPORTED SUCCESSFULLY.";
-                                                        lblConfirm.Attributes.Add("style", "color:green");
+                                                    lblConfirm.Text = "PO DATA IMPORTED SUCCESSFULLY.";
+                                                    lblConfirm.Attributes.Add("style", "color:green");
                                                     //}
                                                 }
                                                 else

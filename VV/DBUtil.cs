@@ -2443,6 +2443,67 @@ namespace VV
             }
         }
 
+        public bool IsProdOrderNoAvailableFromWIPAll(string PoOrderNo)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("select * from wipall where ProdOrder  = '" + PoOrderNo + "'", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : IsProdOrderNoAvailableFromWIPAll() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void InsertWIPAllFromWIPImporting(string ProdOrder, string ItemNumber, string Description, string QtyOrd)
+        {
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spInsertWIPAll]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                cmd.Parameters.Add(new SqlParameter("@ProdOrderNo", ProdOrder)); // String
+                cmd.Parameters.Add(new SqlParameter("@ItemNumber", ItemNumber));
+                cmd.Parameters.Add(new SqlParameter("@Description", Description));
+                cmd.Parameters.Add(new SqlParameter("@QtyOrd", QtyOrd));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertWIPAllFromWIPImporting() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
         public DataSet RetriveByPOItemsFromOrderNo(string OrderNo, string PoPosition)
         {
             DataSet ds = new DataSet();
