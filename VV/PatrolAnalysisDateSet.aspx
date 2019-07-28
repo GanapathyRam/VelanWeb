@@ -12,7 +12,7 @@
             </td>
             <td style="padding-left: 10px; width: 220px;">
                 <asp:TextBox ID="txtFromDate" Height="15px" CssClass="textBox" runat="server"></asp:TextBox>
-                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" TargetControlID="txtFromDate" Format="yyyy-MM-dd" runat="server">
+                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" TargetControlID="txtFromDate" Format="dd-MM-yyyy" runat="server">
                 </ajaxToolkit:CalendarExtender>
             </td>
             <td></td>
@@ -25,7 +25,7 @@
                 <asp:Label ID="lblToDate" Text="To Date" runat="server"></asp:Label></td>
             <td style="padding-left: 10px; width: 220px;">
                 <asp:TextBox ID="txtToDate" Height="15px" CssClass="textBox" runat="server"></asp:TextBox>
-                <ajaxToolkit:CalendarExtender ID="CalendarExtender2" TargetControlID="txtToDate" Format="yyyy-MM-dd" runat="server">
+                <ajaxToolkit:CalendarExtender ID="CalendarExtender2" TargetControlID="txtToDate" Format="dd-MM-yyyy" runat="server">
                 </ajaxToolkit:CalendarExtender>
             </td>
         </tr>

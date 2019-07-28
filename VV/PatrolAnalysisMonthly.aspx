@@ -2,7 +2,7 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
-<asp:content id="Content1" contentplaceholderid="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <link href="CSS/Main.css" rel="stylesheet" />
     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-top: 20px;">
@@ -12,6 +12,16 @@
             </td>
             <td style="padding-left: 10px; width: 220px;">
                 <asp:TextBox ID="txtMonth" Height="15px" CssClass="textBox" runat="server"></asp:TextBox>
+                <asp:RangeValidator runat="server"
+                    ID="valrNumberOfPreviousOwners"
+                    ControlToValidate="txtMonth"
+                    Type="Integer"
+                    MinimumValue="1"
+                    MaximumValue="12"
+                    CssClass="input-error"
+                    ErrorMessage="Please enter a month from (1 to 12)"
+                    Display="Dynamic">
+                </asp:RangeValidator>
             </td>
             <td></td>
         </tr>
@@ -28,7 +38,7 @@
         <tr>
             <td>&nbsp;</td>
         </tr>
-          <tr>
+        <tr>
             <td>&nbsp;</td>
             <td>
                 <div style="padding-left: 125px; margin-top: 10px;">
@@ -36,21 +46,21 @@
                     &nbsp;
                 </div>
             </td>
-             <td style="text-align: left; font-size: medium; font-family: Verdana;">
+            <td style="text-align: left; font-size: medium; font-family: Verdana;">
                 <div>
-                    <asp:Panel ID="SearchPanel" style="margin-top:13px;" runat="server">
+                    <asp:Panel ID="SearchPanel" Style="margin-top: 13px;" runat="server">
                         <asp:ImageButton ID="imgExcelForPending" runat="server" Visible="false" AlternateText="Export To Excel" ImageUrl="~/Images/excel.jpg" OnClick="imgExcelForPending_Click" Height="25px" Width="25px" />
                     </asp:Panel>
                 </div>
             </td>
         </tr>
 
-    </table>    
+    </table>
 
-     <div style="margin-top: 30px;">
+    <div style="margin-top: 30px;">
         <asp:UpdatePanel ID="EmployeePanel" UpdateMode="always" runat="server">
             <ContentTemplate>
-                <div style="width:600px; margin-left: auto; margin-right: auto;">
+                <div style="width: 600px; margin-left: auto; margin-right: auto;">
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true"
                         DataKeyNames="LocationName" AllowPaging="true" PageSize="24"
                         OnPageIndexChanging="GridView1_PageIndexChanging" HeaderStyle-HorizontalAlign="Left"
@@ -71,4 +81,4 @@
         </asp:UpdatePanel>
 
     </div>
-</asp:content>
+</asp:Content>

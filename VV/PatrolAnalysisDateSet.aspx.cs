@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -291,7 +292,10 @@ namespace VV
 
                 if (!string.IsNullOrEmpty(txtFromDate.Text.Trim()) && !string.IsNullOrEmpty(txtToDate.Text.Trim()))
                 {
-                    ds = _DBObj.RetriveByPatrolAnalysisDateSet(txtFromDate.Text.Trim(), txtToDate.Text.Trim());
+                    string fromDate = DateTime.ParseExact(txtFromDate.Text.Trim(), "dd-MM-yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+                    string toDate = DateTime.ParseExact(txtToDate.Text.Trim(), "dd-MM-yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+
+                    ds = _DBObj.RetriveByPatrolAnalysisDateSet(fromDate, toDate);
 
                     if (ds.Tables[0].Rows.Count > 0)
                     {
