@@ -6588,6 +6588,74 @@ namespace VV
 
         #region Patrol Master's Screen
 
+        public DataSet RetriveByPatrolAnalysisDateSet(string FromDate, string ToDate)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetPatrolAnalysisDateSet]", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+                cmd.Parameters.Add(new SqlParameter("@FromDate", FromDate));
+                cmd.Parameters.Add(new SqlParameter("@ToDate", ToDate));
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                //LogError(ex, "Exception from export button click!");
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByDCSentItems() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetriveByPatrolAnalysisMonthly(string Month, string Year)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetPatrolAnalysisMonthly]", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+                cmd.Parameters.Add(new SqlParameter("@Month", Month));
+                cmd.Parameters.Add(new SqlParameter("@Year", Year));
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                //LogError(ex, "Exception from export button click!");
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByDCSentItems() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
         public void InsertFromOperatorMaster(String OperatorCode, String OperatorName)
         {
             try

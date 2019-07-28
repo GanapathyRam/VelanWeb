@@ -136,6 +136,10 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[3].Enabled = true;
                     else if (MenuID == 7) // IP Check List Master
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[4].Enabled = true;
+                    else if (MenuID == 8) // Report - Date Wise
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[5].Enabled = true;
+                    else if (MenuID == 9) // Report - Monthly wise
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[6].Enabled = true;
                 }
                 # endregion
 

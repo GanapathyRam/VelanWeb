@@ -141,6 +141,10 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[3].Enabled = true;
                     else if (MenuID == 7) // IP Check List Master
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[4].Enabled = true;
+                    else if (MenuID == 8) // Report - Date Wise
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[5].Enabled = true;
+                    else if (MenuID == 9) // Report - Monthly wise
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[6].Enabled = true;
 
                 }
                 # endregion
@@ -373,21 +377,29 @@ namespace VV
         {
             lblMessage.Visible = false;
 
-            String searchRowFilter = String.Empty, searchRowFilter4 = String.Empty;
+            String searchRowFilter = String.Empty, searchRowFilter1 = String.Empty, searchRowFilter2 = String.Empty;
 
             string EmployeeName = txtSubLocationNameSearch.Text.Trim();
+            string locationName = txtLocationNameSearch.Text.Trim();
 
+            if (!string.IsNullOrEmpty(locationName))
+            {
+                searchRowFilter1 = "LocationName like '%" + locationName + "%'";
+            }
             if (!string.IsNullOrEmpty(EmployeeName))
             {
-                searchRowFilter4 = "SubLocationName like '%" + EmployeeName + "%'";
+                searchRowFilter2 = "SubLocationName like '%" + EmployeeName + "%'";
             }
 
-            if (!String.IsNullOrEmpty(searchRowFilter4))
+            if (!String.IsNullOrEmpty(searchRowFilter1))
+                searchRowFilter = searchRowFilter1;
+
+            if (!String.IsNullOrEmpty(searchRowFilter2))
             {
                 if (!String.IsNullOrEmpty(searchRowFilter))
-                    searchRowFilter = searchRowFilter + " AND " + searchRowFilter4;
+                    searchRowFilter = searchRowFilter + " AND " + searchRowFilter2;
                 else
-                    searchRowFilter = searchRowFilter4;
+                    searchRowFilter = searchRowFilter2;
             }
 
             if (!String.IsNullOrEmpty(searchRowFilter))

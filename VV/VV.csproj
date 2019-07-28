@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AllDCReport.aspx" />
+    <Content Include="PatrolAnalysisDateSet.aspx" />
     <Content Include="App_Data\CachedProperties.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -138,6 +139,7 @@
     <Content Include="ItemMaster.aspx" />
     <Content Include="LoginSupplierUpdation.aspx" />
     <Content Include="OperatorMaster.aspx" />
+    <Content Include="PatrolAnalysisMonthly.aspx" />
     <Content Include="ProdOrderReversal.aspx" />
     <Content Include="CSS\PopUpStyleSheet.css" />
     <Content Include="ProductionOrderIssue.aspx" />
@@ -324,6 +326,13 @@
     <Compile Include="AllDCReport.aspx.designer.cs">
       <DependentUpon>AllDCReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PatrolAnalysisDateSet.aspx.cs">
+      <DependentUpon>PatrolAnalysisDateSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatrolAnalysisDateSet.aspx.designer.cs">
+      <DependentUpon>PatrolAnalysisDateSet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BranchReport.aspx.cs">
       <DependentUpon>BranchReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -450,6 +459,13 @@
     </Compile>
     <Compile Include="OperatorMaster.aspx.designer.cs">
       <DependentUpon>OperatorMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatrolAnalysisMonthly.aspx.cs">
+      <DependentUpon>PatrolAnalysisMonthly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatrolAnalysisMonthly.aspx.designer.cs">
+      <DependentUpon>PatrolAnalysisMonthly.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProdOrderReversal.aspx.cs">
       <DependentUpon>ProdOrderReversal.aspx</DependentUpon>

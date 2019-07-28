@@ -67,7 +67,7 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <div style="padding-left: 30px; margin-top: 10px;">
+                <div style="padding-left: 30px; margin-top: 5px;">
                     <asp:Button ID="btnSave" Style="font-style: normal;" runat="server" Width="90px" Height="30px" Text="Save" OnClick="btnSave_Click" />
                     &nbsp;
         <asp:Button ID="btnClear" runat="server" Width="90px" Style="font-style: normal; font-weight: 10px;" Height="30px" Text="Clear" OnClick="btnClear_Click" />
@@ -78,7 +78,9 @@
             </td>
         </tr>
     </table>
-    <div style="margin-left: 800px; text-align: center; font-family: Verdana;">
+    <div style="margin-left: 450px; margin-top:10px; text-align: center; font-family: Verdana;">
+        <asp:Label ID="lblLocationNameSearch" runat="server" Text="Location Name"></asp:Label>
+        <asp:TextBox ID="txtLocationNameSearch" Height="20px" Width="200px" runat="server" ToolTip="Enter SubLocation Name to be Searched" onKeyUp="ControlSearch(this)" />
         <asp:Label ID="lblSubLocationCodeSearch" runat="server" Text="SubLocation Name"></asp:Label>
         <asp:TextBox ID="txtSubLocationNameSearch" Height="20px" Width="200px" runat="server" ToolTip="Enter SubLocation Name to be Searched" onKeyUp="ControlSearch(this)" />
         &nbsp;<asp:Button ID="btnSearchBox" runat="server" Width="100px" Style="font-style: normal; height: 27px; font-weight: 10px;" Height="30px" Enabled="true" OnClick="btnSearchBox_Click" Text="Search" ToolTip="Click to Search Data" />

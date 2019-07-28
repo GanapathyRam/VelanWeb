@@ -99,12 +99,14 @@
                                     <asp:MenuItem Value="TPI Offering" NavigateUrl="~/ViewTPIOffering.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="TPI Pending Report" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Status Importing" NavigateUrl="~/StatusImporting.aspx" Enabled="false"></asp:MenuItem>
-                                    <asp:MenuItem Value="Patrol Master" Enabled="true">
+                                    <asp:MenuItem Value="Patrol" Enabled="true">
                                         <asp:MenuItem Value="Operator Master" NavigateUrl="~/OperatorMaster.aspx" Enabled="false"></asp:MenuItem>
                                         <asp:MenuItem Value="Location Master" NavigateUrl="~/IPLocationMaster.aspx" Enabled="false"></asp:MenuItem>
                                         <asp:MenuItem Value="Sub Location Master" NavigateUrl="~/IPSubLocationMaster.aspx" Enabled="false"></asp:MenuItem>
-                                        <asp:MenuItem Value="CheckList Master" NavigateUrl="~/CheckListMaster.aspx" Enabled="false"></asp:MenuItem>
-                                        <asp:MenuItem Value="Check List" NavigateUrl="~/IPCheckListMaster.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="Parameter Master" NavigateUrl="~/CheckListMaster.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="Location - Checklist" NavigateUrl="~/IPCheckListMaster.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="Analysis - Date Set" NavigateUrl="~/PatrolAnalysisDateSet.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="Analysis - Monthly" NavigateUrl="~/PatrolAnalysisMonthly.aspx" Enabled="false"></asp:MenuItem>
                                     </asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="Sales" Enabled="true">

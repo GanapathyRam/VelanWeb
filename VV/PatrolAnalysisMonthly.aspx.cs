@@ -4,16 +4,17 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace VV
 {
-    public partial class BuyerMaster : System.Web.UI.Page
+    public partial class PatrolAnalysisMonthly : System.Web.UI.Page
     {
         SqlCommand cmd = new SqlCommand();
-        DataTable dt = new DataTable();
+        System.Data.DataTable dt = new System.Data.DataTable();
         DBUtil _dbObj = new DBUtil();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +26,7 @@ namespace VV
             DateTime dt = DateTime.MinValue;
             Console.WriteLine(dt);
             string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
-            Label lblUserName = (Label)this.Page.Master.FindControl("lblUserName");
+            System.Web.UI.WebControls.Label lblUserName = (System.Web.UI.WebControls.Label)Page.Master.FindControl("lblUserName");
             lblUserName.Text = "Welcome " + UserName;
 
             LinkButton logout_btn = (LinkButton)this.Page.Master.FindControl("lnkBtnLogOut");
@@ -140,9 +141,10 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[3].Enabled = true;
                     else if (MenuID == 7) // IP Check List Master
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[4].Enabled = true;
-                    else if (MenuID == 8) // Report - Date Wise
+
+                    else if (MenuID == 8) // IP Check List Master
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[5].Enabled = true;
-                    else if (MenuID == 9) // Report - Monthly wise
+                    else if (MenuID == 9) // IP Check List Master
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[6].Enabled = true;
                 }
                 # endregion
@@ -197,7 +199,7 @@ namespace VV
                     else if (MenuID == 4) // Heat No Control
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
-                # endregion
+                #endregion
 
                 #region Stores
 
@@ -245,8 +247,10 @@ namespace VV
 
                     if (MenuID == 5) // Update PO
                         tbstr.Items[ParentMenuID].ChildItems[5].Enabled = true;
+
                     if (MenuID == 6) // Ready To Release
                         tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+
                     if (MenuID == 7) // WIP Aging
                         tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
 
@@ -262,6 +266,7 @@ namespace VV
                     if (MenuID == 11) // Enquiries And Reports
                         tbstr.Items[ParentMenuID].ChildItems[8].ChildItems[3].Enabled = true;
                 }
+
                 #endregion
             }
             #endregion
@@ -272,138 +277,59 @@ namespace VV
 
             if (!Page.IsPostBack)
             {
-                ShowBuyerMasterDetails();
+                FillPatrolAnalysisMonthly();
             }
-
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-IN");
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
+        private void FillPatrolAnalysisMonthly()
         {
             try
             {
-                if (txtEmployeeName.Text == string.Empty && txtEmail.Text == string.Empty)
+                string pageSize = ConfigurationManager.AppSettings["GridPageSize"].ToString();
+
+                DBUtil _DBObj = new DBUtil();
+                DataSet ds = new DataSet();
+
+                if (!string.IsNullOrEmpty(txtMonth.Text.Trim()) && !string.IsNullOrEmpty(txtYear.Text.Trim()))
                 {
-                    lblRequiredFields.Visible = true;
-                    lblRequiredFields1.Visible = true;
-                    return;
-                }
+                     ds = _DBObj.RetriveByPatrolAnalysisMonthly(txtMonth.Text.Trim(), txtYear.Text.Trim());
 
-                else if (txtEmployeeName.Text == string.Empty)
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        Cache["CacheFromPatrolAnalysisMonthly"] = ds;
+
+                        GridView1.PageSize = Convert.ToInt32(pageSize);
+                        GridView1.DataSource = ds;
+                        GridView1.DataBind();
+                        imgExcelForPending.Visible = true;
+                    }
+                    else
+                    {
+                        imgExcelForPending.Visible = false;
+
+                        GridView1.DataSource = ds;
+                        GridView1.DataBind();
+                    }
+                }
+                else
                 {
-                    lblRequiredFields.Visible = true;
-                    return;
+                    imgExcelForPending.Visible = false;
                 }
-
-                else if (txtEmail.Text == string.Empty)
-                {
-                    lblRequiredFields1.Visible = true;
-                    return;
-                }
-
-                string employeeName = txtEmployeeName.Text.Trim();
-                string Email = txtEmail.Text.Trim();
-
-                _dbObj.InsertIntoBuyerMaster(employeeName, Email);
-
-                ShowBuyerMasterDetails();
-
-                btnClear_Click(sender, e);
-
-                lblRequiredFields.Visible = false;
-                lblMessage.Visible = true;
-                lblMessage.Text = "Buyer Details Added Successfully.";
             }
             catch (Exception ex)
             {
-                LogError(ex, "Exception occured -- insert buyer master details.");
-            }
-            finally
-            {
-            }
-        }
-
-        protected void btnClear_Click(object sender, EventArgs e)
-        {
-            lblMessage.Visible = false;
-            txtEmployeeNameSearch.Text = "";
-            txtEmployeeName.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-        }
-
-        protected void btnSearchBox_Click(object sender, EventArgs e)
-        {
-            lblMessage.Visible = false;
-
-            String searchRowFilter = String.Empty, searchRowFilter4 = String.Empty;
-
-            string EmployeeName = txtEmployeeNameSearch.Text.Trim();
-
-            if (!string.IsNullOrEmpty(EmployeeName))
-            {
-                searchRowFilter4 = "BuyerName like '%" + EmployeeName + "%'";
-            }
-
-            if (!String.IsNullOrEmpty(searchRowFilter4))
-            {
-                if (!String.IsNullOrEmpty(searchRowFilter))
-                    searchRowFilter = searchRowFilter + " AND " + searchRowFilter4;
-                else
-                    searchRowFilter = searchRowFilter4;
-            }
-
-            if (!String.IsNullOrEmpty(searchRowFilter))
-            {
-                DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-
-                DataView dv;
-                dv = searchDS.Tables[0].DefaultView;
-
-                dv.RowFilter = searchRowFilter;
-
-                GridView1.DataSource = dv;
-                GridView1.DataBind();
-
-                //DataSet DS = new DataSet();
-                //DS.Tables.Add(dv.ToTable());
-                //Cache["CacheFromBuyerMasterDetails"] = DS;
-            }
-            else
-            {
-                DBUtil _DBObj = new DBUtil();
-                DataSet ds = _DBObj.RetriveByBuyerMasterDetails();
-                Cache["CacheFromBuyerMasterDetails"] = ds;
-
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
+                LogError(ex, "Exception from display Patrol Analysis Month!");
             }
         }
 
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
 
-            GridView1.EditIndex = -1;
-            //  showgrid();
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            lblMessage.Visible = false;
-
-            DataSet ds = (DataSet)Cache["CacheFromBuyerMasterDetails"];
+            DataSet ds = (DataSet)Cache["CacheFromPatrolAnalysisMonthly"];
 
             GridView1.PageIndex = e.NewPageIndex;
             GridView1.DataSource = ds;
@@ -418,13 +344,12 @@ namespace VV
             }
             catch (Exception ex)
             {
-                LogError(ex, "Exception from while clicking on page number from buyer master.");
+                LogError(ex, "Exception from while clicking on page number from patrol analysis monthly.");
             }
         }
 
         private void LogError(Exception ex, string section)
         {
-
             string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
             message += Environment.NewLine;
             message += "-----------------------------------------------------------";
@@ -443,133 +368,66 @@ namespace VV
             }
         }
 
-        private void ShowBuyerMasterDetails()
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            FillPatrolAnalysisMonthly();
+        }
+
+        protected void imgExcelForPending_Click(object sender, ImageClickEventArgs e)
+        {
+            string query = string.Empty;
+            string str = string.Empty;
+            string fileName = string.Empty;
+            DataSet ds = new DataSet();
+
             try
             {
-                string pageSize = ConfigurationManager.AppSettings["GridPageSize"].ToString();
 
                 DBUtil _DBObj = new DBUtil();
-                DataSet ds = _DBObj.RetriveByBuyerMasterDetails();
 
-                Cache["CacheFromBuyerMasterDetails"] = ds;
-
-                GridView1.PageSize = Convert.ToInt32(pageSize);
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-            }
-            catch (Exception ex)
-            {
-                LogError(ex, "Exception from display buyer master details!");
-            }
-        }
-
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            lblMessage.Text = "";
-            try
-            {
-                foreach (GridViewRow row in GridView1.Rows)
+                if (!string.IsNullOrEmpty(txtMonth.Text.Trim()) && !string.IsNullOrEmpty(txtYear.Text.Trim()))
                 {
-                    bool isChecked = ((CheckBox)row.FindControl("chkSelect")).Checked;
-                    if (isChecked)
-                    {
-                        HiddenField hdnval = ((HiddenField)row.FindControl("hidBuyerIdGrid"));
-                        String BuyerNameHidden = ((System.Web.UI.HtmlControls.HtmlInputHidden)row.FindControl("hidBuyerName")).Value.ToString();
-                        String BuyerName = ((Label)row.FindControl("lblBuyerName")).Text.ToString();
+                    ds = (DataSet)Cache["CacheFromPatrolAnalysisMonthly"];
+                    fileName = "PatrolAnalysisMonthWise.xls";
 
-                        _dbObj.DeleteIntoBuyerMaster(BuyerName, Convert.ToInt16(hdnval));
-                        lblMessage.Text = "Records Removed Successfully.";
-                        lblMessage.Visible = true;
+                    dt = ds.Tables[0];
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        Response.ClearContent();
+                        Response.Buffer = true;
+                        Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", fileName));
+                        Response.ContentType = "application/ms-excel";
+
+                        foreach (DataColumn dtcol in dt.Columns)
+                        {
+                            Response.Write(str + dtcol.ColumnName);
+                            str = "\t";
+                        }
+                        Response.Write("\n");
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            str = "";
+                            for (int j = 0; j < dt.Columns.Count; j++)
+                            {
+                                Response.Write(str + Convert.ToString(dr[j]));
+                                str = "\t";
+                            }
+                            Response.Write("\n");
+                        }
+                        Response.End();
+
+                    }
+                    else
+                    {
+                        //lblConfirm.Text = "No Records Found.";
+                        //lblConfirm.Attributes.Add("style", "color:Red");
                     }
                 }
-
-                ShowBuyerMasterDetails();
             }
             catch (Exception ex)
             {
-                LogError(ex, "Exception occured -- delete buyer master details.");
-            }
-        }
-
-        protected void GridView1_RowCancelingEdit1(object sender, GridViewCancelEditEventArgs e)
-        {
-            lblMessage.Text = "";
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-            //  showgrid();
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-        }
-
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            lblMessage.Visible = false;
-            try
-            {
-                GridViewRow row = GridView1.Rows[e.RowIndex];
-
-                HiddenField hdnval = GridView1.Rows[e.RowIndex].FindControl("hidBuyerIdGrid") as HiddenField;
-                //HiddenField hdnval = ((HiddenField)GridView1.Rows[e.RowIndex].FindControl("hidBuyerIdGrid"));
-                var buyerName = (Label)GridView1.Rows[e.RowIndex].FindControl("lblBuyerNameGrid");
-                TextBox email = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtEmailGrid");
-
-                _dbObj.UpdateBuyerMaster(Convert.ToInt32(hdnval.Value), buyerName.Text.Trim(), email.Text.Trim());
-
-                GridView1.EditIndex = -1;
-
-                //lblMessage.Visible = true;
-                //lblMessage.ForeColor = System.Drawing.Color.Green;
-                //lblMessage.Text = "Details Updated successfully";
-
-                ShowBuyerMasterDetails();
-            }
-            catch (Exception ex)
-            {
-                LogError(ex, "Exception from while updating row from buyer Master.");
-            }
-        }
-
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            lblMessage.Text = "";
-
-            DataSet searchDS = (DataSet)Cache["CacheFromBuyerMasterDetails"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = e.NewEditIndex;
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-        }
-
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            lblMessage.Visible = false;
-
-            try
-            {
-                GridViewRow row = GridView1.Rows[e.RowIndex];
-
-                HiddenField hdnval = GridView1.Rows[e.RowIndex].FindControl("hidBuyerIdGrid") as HiddenField;
-                var buyerName = (Label)GridView1.Rows[e.RowIndex].FindControl("lblBuyerNameGrid");
-
-                _dbObj.DeleteIntoBuyerMaster(buyerName.Text.ToString(), Convert.ToInt32(hdnval.Value));
-
-                GridView1.EditIndex = -1;
-
-                ShowBuyerMasterDetails();
-            }
-            catch (Exception ex)
-            {
-                LogError(ex, "Exception from while updating row from buyer Master.");
+                LogError(ex, "Exception from export button click from Utility Enquiries And Report!");
             }
         }
     }
