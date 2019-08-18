@@ -112,6 +112,33 @@ namespace VV {
         protected global::System.Web.UI.WebControls.RadioButton RadioButton1;
         
         /// <summary>
+        /// lblPriority control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPriority;
+        
+        /// <summary>
+        /// txtPriority control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPriority;
+        
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>
@@ -148,13 +175,13 @@ namespace VV {
         protected global::System.Web.UI.WebControls.Label lblLocationNameSearch;
         
         /// <summary>
-        /// txtLocationNameSearch control.
+        /// ddlLocationCodeGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLocationNameSearch;
+        protected global::System.Web.UI.WebControls.DropDownList ddlLocationCodeGrid;
         
         /// <summary>
         /// lblSubLocationCodeSearch control.
@@ -166,13 +193,13 @@ namespace VV {
         protected global::System.Web.UI.WebControls.Label lblSubLocationCodeSearch;
         
         /// <summary>
-        /// txtSubLocationNameSearch control.
+        /// ddlSubLocationCodeGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSubLocationNameSearch;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSubLocationCodeGrid;
         
         /// <summary>
         /// btnSearchBox control.

@@ -281,6 +281,7 @@ namespace VV
                 FillSubLocationCode();
                 FillCheckListSerial();
 
+
                 RadioButton1.Checked = true;
             }
 
@@ -324,6 +325,7 @@ namespace VV
                 string SubLocationCode = ddlSubLocationCode.SelectedValue.ToString();
                 string CheckListSerial = ddlCheckListSerial.SelectedValue.ToString();
                 bool Active = RadioButton1.Checked;
+                int Priority = Convert.ToInt32(txtPriority.Text.Trim());
 
                 bool IsExist = _dbObj.IsIPCheckListDetailsExist(LocationCode, SubLocationCode, Convert.ToInt32(CheckListSerial), Active == false ? 0 : 1);
 
@@ -336,7 +338,7 @@ namespace VV
                     return;
                 }
 
-                _dbObj.InsertFromIPCheckListMaster(LocationCode, SubLocationCode, Convert.ToInt32(CheckListSerial), Active == false ? 0 : 1);
+                _dbObj.InsertFromIPCheckListMaster(LocationCode, SubLocationCode, Convert.ToInt32(CheckListSerial), Active == false ? 0 : 1, Priority);
 
                 ShowIPCheckListMasterDetails();
 
@@ -360,8 +362,9 @@ namespace VV
         protected void btnClear_Click(object sender, EventArgs e)
         {
             lblMessage.Visible = false;
-            txtSubLocationNameSearch.Text = "";
-            txtSubLocationNameSearch.Text = string.Empty;
+            ddlLocationCodeGrid.SelectedIndex = 0;
+            ddlSubLocationCodeGrid.SelectedIndex = 0;
+            txtPriority.Text = string.Empty;
 
             ddlLocationCode.SelectedIndex = 0;
             ddlSubLocationCode.SelectedIndex = 0;
@@ -379,16 +382,16 @@ namespace VV
 
             String searchRowFilter = String.Empty, searchRowFilter1 = String.Empty, searchRowFilter2 = String.Empty;
 
-            string EmployeeName = txtSubLocationNameSearch.Text.Trim();
-            string locationName = txtLocationNameSearch.Text.Trim();
+            string subLocationName = ddlSubLocationCodeGrid.SelectedItem.Text.Trim();
+            string locationName = ddlLocationCodeGrid.SelectedItem.Text.Trim();
 
             if (!string.IsNullOrEmpty(locationName))
             {
                 searchRowFilter1 = "LocationName like '%" + locationName + "%'";
             }
-            if (!string.IsNullOrEmpty(EmployeeName))
+            if (!string.IsNullOrEmpty(subLocationName))
             {
-                searchRowFilter2 = "SubLocationName like '%" + EmployeeName + "%'";
+                searchRowFilter2 = "SubLocationName like '%" + subLocationName + "%'";
             }
 
             if (!String.IsNullOrEmpty(searchRowFilter1))
@@ -493,10 +496,13 @@ namespace VV
 
                 Label Active = (Label)GridView1.Rows[e.RowIndex].FindControl("lblActive");
                 DropDownList ddlActiveGrid = (DropDownList)GridView1.Rows[e.RowIndex].FindControl("ddlActiveGrid");
+                TextBox txtPriority = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtGridPriority");
+
 
                 HiddenField hdnvalLocationCode = ((HiddenField)row.FindControl("hdnLocationCode"));
                 HiddenField hdnvalSubLocationCode = ((HiddenField)row.FindControl("hdnSubLocationCode"));
                 HiddenField hdnvalCheckListSerial = ((HiddenField)row.FindControl("hdnCheckListSerial"));
+                HiddenField hdnvalCheckListPriority = ((HiddenField)row.FindControl("hdnPriority"));
 
                 if (Convert.ToString(ddlActiveGrid.SelectedItem.Text) == "False")
                 {
@@ -520,7 +526,7 @@ namespace VV
                 //DropDownList ddlCheckListGrid = (DropDownList)GridView1.Rows[e.RowIndex].FindControl("ddlCheckListSerialGrid");
 
                 _dbObj.UpdateFormIPCheckListMaster(Convert.ToString(hdnvalLocationCode.Value), Convert.ToString(hdnvalSubLocationCode.Value),
-                    Convert.ToInt32(hdnvalCheckListSerial.Value), isActive);
+                    Convert.ToInt32(hdnvalCheckListSerial.Value), isActive, Convert.ToInt32(txtPriority.Text.Trim()));
 
                 GridView1.EditIndex = -1;
 
@@ -630,6 +636,11 @@ namespace VV
 
             ddlLocationCode.Items.Insert(0, "----Please Select----");
 
+            ddlLocationCodeGrid.DataSource = ds;
+            ddlLocationCodeGrid.DataBind();
+
+            ddlLocationCodeGrid.Items.Insert(0, "----Please Select----");
+
             return ds;
         }
 
@@ -643,6 +654,11 @@ namespace VV
             ddlSubLocationCode.DataBind();
 
             ddlSubLocationCode.Items.Insert(0, "----Please Select----");
+
+            ddlSubLocationCodeGrid.DataSource = ds;
+            ddlSubLocationCodeGrid.DataBind();
+
+            ddlSubLocationCodeGrid.Items.Insert(0, "----Please Select----");
 
             return ds;
         }

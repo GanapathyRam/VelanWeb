@@ -4278,7 +4278,7 @@ namespace VV
             }
         }
 
-        public void UpdateIntoEmployeeMaster(String EmployeeCode, String EmployeeName, String Email, String VelanEmployeeCode, bool Dc)
+        public void UpdateIntoEmployeeMaster(String EmployeeCode, String EmployeeName, String Email, String VelanEmployeeCode, bool Dc, bool Qc)
         {
             try
             {
@@ -4294,6 +4294,7 @@ namespace VV
                 cmd.Parameters.Add(new SqlParameter("@Email", Email));
                 cmd.Parameters.Add(new SqlParameter("@VelanEmployeeCode", VelanEmployeeCode));
                 cmd.Parameters.Add(new SqlParameter("@Dc", Dc));
+                cmd.Parameters.Add(new SqlParameter("@Qc", Qc));
 
                 cmd.ExecuteNonQuery();
 
@@ -7328,7 +7329,7 @@ namespace VV
             }
         }
 
-        public void InsertFromIPCheckListMaster(String IPLocationCode, String IPSubLocationCode, int CheckListSerial, int Active)
+        public void InsertFromIPCheckListMaster(String IPLocationCode, String IPSubLocationCode, int CheckListSerial, int Active, int PriorityIP)
         {
             try
             {
@@ -7343,6 +7344,7 @@ namespace VV
                 cmd.Parameters.Add(new SqlParameter("@IPSubLocationCode", IPSubLocationCode));
                 cmd.Parameters.Add(new SqlParameter("@CheckListSerial", CheckListSerial));
                 cmd.Parameters.Add(new SqlParameter("@Active", Active));
+                cmd.Parameters.Add(new SqlParameter("@Priority", PriorityIP));
 
                 cmd.ExecuteNonQuery();
 
@@ -7356,7 +7358,7 @@ namespace VV
             }
         }
 
-        public void UpdateFormIPCheckListMaster(String IPLocationCode, String IPSubLocationCode, int CheckListSerial, int Active)
+        public void UpdateFormIPCheckListMaster(String IPLocationCode, String IPSubLocationCode, int CheckListSerial, int Active, int PriorityIP)
         {
             try
             {
@@ -7371,6 +7373,7 @@ namespace VV
                 cmd.Parameters.Add(new SqlParameter("@IPSubLocationCode", IPSubLocationCode));
                 cmd.Parameters.Add(new SqlParameter("@CheckListSerial", CheckListSerial));
                 cmd.Parameters.Add(new SqlParameter("@Active", Active));
+                cmd.Parameters.Add(new SqlParameter("@Priority", PriorityIP));
 
                 cmd.ExecuteNonQuery();
 

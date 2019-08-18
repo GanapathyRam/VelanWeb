@@ -440,8 +440,9 @@ namespace VV
                 string email = ((TextBox)(row.Cells[3].Controls[0])).Text;
                 string velanEmployeeCode = ((TextBox)(row.Cells[4].Controls[0])).Text;
                 bool dc = ((CheckBox)(row.Cells[5].Controls[0])).Checked;
+                bool qc = ((CheckBox)(row.Cells[7].Controls[0])).Checked;
 
-                _dbObj.UpdateIntoEmployeeMaster(Convert.ToString(employeeCode), employeeName.Trim(), email.Trim(), velanEmployeeCode.Trim(), dc);
+                _dbObj.UpdateIntoEmployeeMaster(Convert.ToString(employeeCode), employeeName.Trim(), email.Trim(), velanEmployeeCode.Trim(), dc, qc);
 
                 GridView1.EditIndex = -1;
 
