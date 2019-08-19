@@ -44,6 +44,7 @@
                 <div>
                     <asp:Panel ID="SearchPanel" style="margin-top:13px;" runat="server">
                         <asp:ImageButton ID="imgExcelForPending" runat="server" Visible="false" AlternateText="Export To Excel" ImageUrl="~/Images/excel.jpg" OnClick="imgExcelForPending_Click" Height="25px" Width="25px" />
+                        &nbsp;<asp:ImageButton ID="ImagePatrolData" runat="server" Visible="false" AlternateText="Export To Excel" ToolTip="Patrol Data" ImageUrl="~/Images/excel.jpg" OnClick="ImagePatrolData_Click" Height="25px" Width="25px" />
                     </asp:Panel>
                 </div>
             </td>

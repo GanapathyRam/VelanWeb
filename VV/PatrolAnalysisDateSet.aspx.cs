@@ -289,6 +289,7 @@ namespace VV
 
                 DBUtil _DBObj = new DBUtil();
                 DataSet ds = new DataSet();
+                DataSet ds1 = new DataSet();
 
                 if (!string.IsNullOrEmpty(txtFromDate.Text.Trim()) && !string.IsNullOrEmpty(txtToDate.Text.Trim()))
                 {
@@ -296,6 +297,8 @@ namespace VV
                     string toDate = DateTime.ParseExact(txtToDate.Text.Trim(), "dd-MM-yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
 
                     ds = _DBObj.RetriveByPatrolAnalysisDateSet(fromDate, toDate);
+
+                    ds1 = _DBObj.RetriveByPatrolDataFromDateSet(fromDate, toDate);
 
                     if (ds.Tables[0].Rows.Count > 0)
                     {
@@ -314,9 +317,22 @@ namespace VV
                         GridView1.DataSource = ds;
                         GridView1.DataBind();
                     }
+
+                    if (ds1.Tables[0].Rows.Count > 0)
+                    {
+                        Cache["CacheFromPatrolDataFromDataSet"] = ds1;
+
+                        ImagePatrolData.Visible = true;
+                    }
+                    else
+                    {
+                        ImagePatrolData.Visible = false;
+                       
+                    }
                 }
                 else
                 {
+                    ImagePatrolData.Visible = false;
                     imgExcelForPending.Visible = false;
                 }
             }
@@ -428,6 +444,64 @@ namespace VV
             catch (Exception ex)
             {
                 LogError(ex, "Exception from export button click from Utility Enquiries And Report!");
+            }
+        }
+
+        protected void ImagePatrolData_Click(object sender, ImageClickEventArgs e)
+        {
+            string query = string.Empty;
+            string str = string.Empty;
+            string fileName = string.Empty;
+            DataSet ds = new DataSet();
+
+            try
+            {
+
+                DBUtil _DBObj = new DBUtil();
+
+                if (!string.IsNullOrEmpty(txtFromDate.Text.Trim()) && !string.IsNullOrEmpty(txtToDate.Text.Trim()))
+                {
+                    ds = (DataSet)Cache["CacheFromPatrolDataFromDataSet"];
+                    fileName = "PatrolData.xls";
+
+                    dt = ds.Tables[0];
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        Response.ClearContent();
+                        Response.Buffer = true;
+                        Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", fileName));
+                        Response.ContentType = "application/ms-excel";
+
+                        foreach (DataColumn dtcol in dt.Columns)
+                        {
+                            Response.Write(str + dtcol.ColumnName);
+                            str = "\t";
+                        }
+                        Response.Write("\n");
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            str = "";
+                            for (int j = 0; j < dt.Columns.Count; j++)
+                            {
+                                Response.Write(str + Convert.ToString(dr[j]));
+                                str = "\t";
+                            }
+                            Response.Write("\n");
+                        }
+                        Response.End();
+
+                    }
+                    else
+                    {
+                        //lblConfirm.Text = "No Records Found.";
+                        //lblConfirm.Attributes.Add("style", "color:Red");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex, "Exception from export button click from showing patrol data!");
             }
         }
     }

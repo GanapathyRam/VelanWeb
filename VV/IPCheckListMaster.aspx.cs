@@ -417,17 +417,21 @@ namespace VV
                 GridView1.DataSource = dv;
                 GridView1.DataBind();
 
-                //DataSet DS = new DataSet();
-                //DS.Tables.Add(dv.ToTable());
-                //Cache["CacheFromEmployeeMasterDetails"] = DS;
+                DataSet DS = new DataSet();
+                DS.Tables.Add(dv.ToTable());
+                Cache["CacheFromIPCheckListMasterDetails"] = DS;
             }
             else
             {
-                DBUtil _DBObj = new DBUtil();
-                DataSet ds = _DBObj.RetriveByIPCheckListMasterDetails();
-                Cache["CacheFromIPCheckListMasterDetails"] = ds;
+                //DBUtil _DBObj = new DBUtil();
+                //DataSet ds = _DBObj.RetriveByIPCheckListMasterDetails();
+                //Cache["CacheFromIPCheckListMasterDetails"] = ds;
 
-                GridView1.DataSource = ds;
+                //GridView1.DataSource = ds;
+                //GridView1.DataBind();
+
+                DataSet searchDS = (DataSet)Cache["CacheFromIPCheckListMasterDetails"];
+                GridView1.DataSource = searchDS;
                 GridView1.DataBind();
             }
         }

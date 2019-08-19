@@ -6623,6 +6623,40 @@ namespace VV
             }
         }
 
+        public DataSet RetriveByPatrolDataFromDateSet(string FromDate, string ToDate)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetPatrolDataFromDateSet]", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+                cmd.Parameters.Add(new SqlParameter("@FromDate", FromDate));
+                cmd.Parameters.Add(new SqlParameter("@ToDate", ToDate));
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                //LogError(ex, "Exception from export button click!");
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByPatrolDataFromDateSet() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
         public DataSet RetriveByPatrolAnalysisMonthly(string Month, string Year)
         {
             DataSet ds = new DataSet();
