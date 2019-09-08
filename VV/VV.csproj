@@ -140,6 +140,7 @@
     <Content Include="LoginSupplierUpdation.aspx" />
     <Content Include="OperatorMaster.aspx" />
     <Content Include="PatrolAnalysisMonthly.aspx" />
+    <Content Include="PatrolReview.aspx" />
     <Content Include="ProdOrderReversal.aspx" />
     <Content Include="CSS\PopUpStyleSheet.css" />
     <Content Include="ProductionOrderIssue.aspx" />
@@ -466,6 +467,13 @@
     </Compile>
     <Compile Include="PatrolAnalysisMonthly.aspx.designer.cs">
       <DependentUpon>PatrolAnalysisMonthly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatrolReview.aspx.cs">
+      <DependentUpon>PatrolReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatrolReview.aspx.designer.cs">
+      <DependentUpon>PatrolReview.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProdOrderReversal.aspx.cs">
       <DependentUpon>ProdOrderReversal.aspx</DependentUpon>

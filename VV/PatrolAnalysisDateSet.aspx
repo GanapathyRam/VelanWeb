@@ -3,6 +3,29 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script language="javascript" type="text/javascript">
+        function Check(parentChk) {
+
+            var elements = document.getElementsByTagName("INPUT");
+            for (i = 0; i < elements.length; i++) {
+                if (parentChk.checked == true) {
+                    if (IsCheckBox(elements[i])) {
+                        elements[i].checked = true;
+                    }
+
+                }
+                else {
+                    if (IsCheckBox(elements[i])) {
+                        elements[i].checked = false;
+                    }
+                }
+            }
+        }
+
+        function IsCheckBox(chk) {
+            return (chk.type == 'checkbox');
+        }
+    </script>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <link href="CSS/Main.css" rel="stylesheet" />
     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-top: 20px;">
@@ -42,7 +65,7 @@
             </td>
             <td style="text-align: left; font-size: medium; font-family: Verdana;">
                 <div>
-                    <asp:Panel ID="SearchPanel" style="margin-top:13px;" runat="server">
+                    <asp:Panel ID="SearchPanel" Style="margin-top: 13px;" runat="server">
                         <asp:ImageButton ID="imgExcelForPending" runat="server" Visible="false" AlternateText="Export To Excel" ImageUrl="~/Images/excel.jpg" OnClick="imgExcelForPending_Click" Height="25px" Width="25px" />
                         &nbsp;<asp:ImageButton ID="ImagePatrolData" runat="server" Visible="false" AlternateText="Export To Excel" ToolTip="Patrol Data" ImageUrl="~/Images/excel.jpg" OnClick="ImagePatrolData_Click" Height="25px" Width="25px" />
                     </asp:Panel>

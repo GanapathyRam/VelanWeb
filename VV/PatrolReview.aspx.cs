@@ -1,23 +1,34 @@
-﻿using Libraries.Entity;
-using Microsoft.Practices.EnterpriseLibrary.Logging;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace VV
 {
-    public partial class ProductionOrderIssue : System.Web.UI.Page
+    public partial class PatrolReview : Page
     {
+        SqlCommand cmd = new SqlCommand();
+        DataTable dt = new DataTable();
+        DBUtil _dbObj = new DBUtil();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            # region Master Control
+            #region Master Control
 
-            # region Welcome Msg
+            #region Welcome Msg
+
+            DateTime dt = DateTime.MinValue;
+            Console.WriteLine(dt);
             string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
-            Label lblUserName = (Label)this.Page.Master.FindControl("lblUserName");
+            System.Web.UI.WebControls.Label lblUserName = (System.Web.UI.WebControls.Label)Page.Master.FindControl("lblUserName");
             lblUserName.Text = "Welcome " + UserName;
 
             LinkButton logout_btn = (LinkButton)this.Page.Master.FindControl("lnkBtnLogOut");
@@ -242,6 +253,7 @@ namespace VV
 
                     if (MenuID == 6) // Ready To Release
                         tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+
                     if (MenuID == 7) // WIP Aging
                         tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
 
@@ -257,227 +269,257 @@ namespace VV
                     if (MenuID == 11) // Enquiries And Reports
                         tbstr.Items[ParentMenuID].ChildItems[8].ChildItems[3].Enabled = true;
                 }
+
                 #endregion
             }
-            # endregion
+            #endregion
 
-            # endregion
+            #endregion
 
-            if (!IsPostBack)
+            if (!Page.IsPostBack)
             {
-                FillGrid();
+                FillDropDownMeetMaster();
             }
-
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-IN");
         }
 
-        public void FillGrid()
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            DBUtil _dbObj = new DBUtil();
+            DataSet ds = (DataSet)Cache["CacheFromPatrolReviewDataSet"];
 
-            DataSet ds = _dbObj.RetrieveProdOrderIssuesData();
-
-            Cache["CacheFromProdOrderIssues"] = ds;
-
-            grdViewWIPResult.DataSource = ds;
-            grdViewWIPResult.DataBind();
-        }
-
-        protected void grdViewWIPResult_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            DataSet ds = (DataSet)Cache["CacheFromProdOrderIssues"];
-
-            grdViewWIPResult.PageIndex = e.NewPageIndex;
-            grdViewWIPResult.DataSource = ds;
-            grdViewWIPResult.DataBind();
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
 
             try
             {
-                String ProdOrderNo_Search = txtProdOrderNo.Text.Trim();
-
-                String searchRowFilter = String.Empty, searchRowFilter1 = String.Empty;
-
-                if (!String.IsNullOrEmpty(ProdOrderNo_Search))
-                {
-                    searchRowFilter1 = "ProdOrderNo = '" + ProdOrderNo_Search + "'";
-                }
-
-
-                if (!String.IsNullOrEmpty(searchRowFilter1))
-                {
-                    searchRowFilter = searchRowFilter + searchRowFilter1;
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter))
-                {
-                    DataView dv;
-                    dv = ds.Tables[0].DefaultView;
-
-                    dv.RowFilter = searchRowFilter;
-
-                    grdViewWIPResult.DataSource = dv;
-                    grdViewWIPResult.DataBind();
-                }
-            }
-
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : View Prod Order Reversal - When trying to do a Paging : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-        }
-
-        protected void btnSearchBox_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                String ProdOrderNo_Search = txtProdOrderNo.Text.Trim();
-
-                DBUtil _dbObj = new DBUtil();
-
-                DataSet ds = _dbObj.RetrieveProdOrderReversalDataForStores(ProdOrderNo_Search);
-
-                grdViewWIPResult.DataSource = ds;
-                grdViewWIPResult.DataBind();
-
-                Cache["CacheFromProdOrderIssues"] = ds;
-
-            }
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : btnSearchBox_Click : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-
-        }
-
-        protected void btnReverse_Click(object sender, EventArgs e)
-        {
-
-            DBUtil _DBObj = new DBUtil();
-
-            foreach (GridViewRow row in grdViewWIPResult.Rows)
-            {
-                bool isChecked = ((CheckBox)row.FindControl("chkSelect")).Checked;
-                if (isChecked)
-                {
-                    String OrderNo = ((System.Web.UI.HtmlControls.HtmlInputHidden)row.FindControl("hidOrderNo")).Value.ToString();
-                    String LineNum = ((Label)row.FindControl("lblLineNum")).Text.ToString();
-                    String Pos = ((Label)row.FindControl("lblPos")).Text.ToString();
-                    //String SerialNo = ((Label)row.FindControl("lblSerialNo")).Text.ToString();
-                    String ProdOrderNo = ((Label)row.FindControl("lblProdOrderNo")).Text.ToString();
-                    String BalanceQty = ((Label)row.FindControl("lblProdBalanceQty")).Text.ToString();
-
-                    //_DBObj.ProductionOrderReversal(Int32.Parse(OrderNo.Trim()), LineNum.Trim(), Int32.Parse(Pos.Trim()), ProdOrderNo.Trim(), SerialNo.Trim());
-
-                    _DBObj.ProductionOrderReversalForStores(Int32.Parse(OrderNo.Trim()), LineNum.Trim(), Int32.Parse(Pos.Trim()), ProdOrderNo.Trim(), Int32.Parse(BalanceQty.Trim()));
-
-                    _DBObj.UpdateProductionStoresIssued(Int32.Parse(OrderNo.Trim()), LineNum.Trim(), Int32.Parse(Pos.Trim()), ProdOrderNo.Trim());
-
-                }
-            }
-
-            //String ProdOrderNo_Search = txtProdOrderNo.Text.Trim();
-            //DataSet ds = _DBObj.RetrieveProdOrderReversalData(ProdOrderNo_Search);
-
-            //grdViewWIPResult.DataSource = ds;
-            //grdViewWIPResult.DataBind();
-
-            //Cache["CacheFromProdOrderIssues"] = ds;
-
-            FillGrid();
-        }
-
-        protected void btnRemPagination_Click(object sender, EventArgs e)
-        {
-            String ProdOrderNo_Search = txtProdOrderNo.Text.Trim();
-
-            String searchRowFilter = String.Empty, searchRowFilter1 = String.Empty;
-
-            if (!String.IsNullOrEmpty(ProdOrderNo_Search))
-            {
-                searchRowFilter1 = "ProdOrderNo = '" + ProdOrderNo_Search + "'";
-            }
-
-            if (!String.IsNullOrEmpty(searchRowFilter1))
-            {
-                searchRowFilter = searchRowFilter + searchRowFilter1;
-            }
-
-
-            if (!String.IsNullOrEmpty(searchRowFilter))
-            {
-                DataSet searchDS = (DataSet)Cache["CacheFromProdOrderIssues"];
-
                 DataView dv;
-                dv = searchDS.Tables[0].DefaultView;
-
-                dv.RowFilter = searchRowFilter;
-
-                grdViewWIPResult.AllowPaging = false;
-                grdViewWIPResult.DataSource = dv;
-                grdViewWIPResult.DataBind();
+                dv = ds.Tables[0].DefaultView;
+                GridView1.DataSource = dv;
+                GridView1.DataBind();
             }
-            else
+            catch (Exception ex)
             {
-                grdViewWIPResult.AllowPaging = false;
-                DataSet searchDS = (DataSet)Cache["CacheFromProdOrderIssues"];
-                grdViewWIPResult.DataSource = searchDS;
-                grdViewWIPResult.DataBind();
+                Helper.LogError(ex, "Exception from while clicking on page number from patrol review.");
             }
         }
 
-        protected void ExcelExport_Click(object sender, ImageClickEventArgs e)
+        private void FillPatrolAnalysisDataSet()
         {
-            string query = string.Empty;
-            DBUtil _DBObj = new DBUtil();
-            string str = string.Empty;
-
             try
             {
-                DataSet ds = _DBObj.RetrieveProdOrderIssuesDataForExport();
-                DataTable dt = ds.Tables[0];
+                string pageSize = ConfigurationManager.AppSettings["GridPageSize"].ToString();
 
-                if (dt.Rows.Count > 0)
+                DBUtil _DBObj = new DBUtil();
+                DataSet ds = new DataSet();
+                DataSet ds1 = new DataSet();
+
+                if (!string.IsNullOrEmpty(txtFromDate.Text.Trim()) && !string.IsNullOrEmpty(txtToDate.Text.Trim()))
                 {
-                    Response.ClearContent();
-                    Response.Buffer = true;
-                    Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", "ProdOrderIssue.xls"));
-                    Response.ContentType = "application/ms-excel";
+                    string fromDate = DateTime.ParseExact(txtFromDate.Text.Trim(), "dd-MM-yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+                    string toDate = DateTime.ParseExact(txtToDate.Text.Trim(), "dd-MM-yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+                    int meetCode = Convert.ToInt16(ddlMeetName.SelectedItem.Value);
 
-                    foreach (DataColumn dtcol in dt.Columns)
-                    {
-                        Response.Write(str + dtcol.ColumnName);
-                        str = "\t";
-                    }
-                    Response.Write("\n");
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        str = "";
-                        for (int j = 0; j < dt.Columns.Count; j++)
-                        {
-                            Response.Write(str + Convert.ToString(dr[j]));
-                            str = "\t";
-                        }
-                        Response.Write("\n");
-                    }
-                    Response.End();
+                    ds = _DBObj.RetriveByPatrolReviewDateSet(fromDate, toDate, meetCode);
 
-                }
-                else
-                {
-                    //lblConfirm.Text = "No Records Found.";
-                    //lblConfirm.Attributes.Add("style", "color:Red");
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        Cache["CacheFromPatrolReviewDataSet"] = ds;
+
+                        GridView1.PageSize = Convert.ToInt32(pageSize);
+                        GridView1.DataSource = ds;
+                        GridView1.DataBind();
+
+                        ViewState["dirState"] = ds.Tables[0];
+                        ViewState["sortdr"] = "Asc";
+                    }
+                    else
+                    {
+                        GridView1.DataSource = ds;
+                        GridView1.DataBind();
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Logger.Write(ex, "Exception from export button click from Production Order Issue in Stores");
+                LogError(ex, "Exception from display patrol analysis dataset!");
+            }
+        }
+
+        private void LogError(Exception ex, string section)
+        {
+            string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+            message += Environment.NewLine;
+            message += "-----------------------------------------------------------";
+            message += Environment.NewLine;
+            message += string.Format("Message: {0}", ex.Message);
+            message += Environment.NewLine;
+            message += "Exception from SQLConnectionOpen" + "-" + section;
+            message += Environment.NewLine;
+            message += "-----------------------------------------------------------";
+            message += Environment.NewLine;
+            string path = Server.MapPath("~/ErrorLog.txt");
+            using (StreamWriter writer = new StreamWriter(path, true))
+            {
+                writer.WriteLine(message);
+                writer.Close();
+            }
+        }
+
+        public void FillDropDownMeetMaster()
+        {
+            DBUtil _DBObj = new DBUtil();
+            DataSet ds = _DBObj.RetriveByMeetMaster();
+
+            ddlMeetName.DataSource = ds;
+            ddlMeetName.DataBind();
+
+            ddlMeetName.Items.Insert(0, "----Please Select----");
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            lblMessage.Visible = false;
+            FillPatrolAnalysisDataSet();
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DBUtil _DBObj = new DBUtil();
+            DataSet ds;
+            string actionPlan, responsibility, actionTaken = string.Empty;
+            DateTime? targetDate;
+            bool status = false;
+            lblMessage.Visible = false;
+
+            try
+            {
+                foreach (GridViewRow row in GridView1.Rows)
+                {
+                    bool isChecked = ((CheckBox)row.FindControl("chkSelect")).Checked;
+                    if (isChecked)
+                    {
+                        HiddenField hiddenPatrolNumber = ((HiddenField)row.FindControl("hidPatrolNumber"));
+                        HiddenField hiddenCheckListSerial = ((HiddenField)row.FindControl("hidCheckListSerial"));
+
+                        string lblActionPlan = ((Label)row.FindControl("lblActionPlan")).Text.ToString();
+                        string lblResponsibility = ((Label)row.FindControl("lblResponsibility")).Text.ToString();
+                        string lblGridActionTaken = ((Label)row.FindControl("lblGridActionTaken")).Text.ToString();
+
+                        bool lblGridStatus = false;
+                        if ((CheckBox)row.FindControl("lblGridStatus") != null)
+                        {
+                            lblGridStatus = ((CheckBox)row.FindControl("lblGridStatus")).Checked;
+                        }
+
+                        DateTime? gridTargetDate = null;
+                        if (((Label)row.FindControl("lblTargetDate")).Text != "")
+                        {
+                            string savedTargetDate =  ((Label)row.FindControl("lblTargetDate")).Text;
+                            gridTargetDate = Convert.ToDateTime(((Label)row.FindControl("lblTargetDate")).Text);
+                        }
+
+                        if (string.IsNullOrEmpty(txtActionPlan.Text.Trim()))
+                        {
+                            actionPlan = lblActionPlan;
+                        }
+                        else
+                        {
+                            actionPlan = txtActionPlan.Text.Trim();
+                        }
+                        if (string.IsNullOrEmpty(txtResponsibility.Text.Trim()))
+                        {
+                            responsibility = lblResponsibility;
+                        }
+                        else
+                        {
+                            responsibility = txtResponsibility.Text.Trim();
+                        }
+                        if (string.IsNullOrEmpty(txtActionTaken.Text.Trim()))
+                        {
+                            actionTaken = lblGridActionTaken;
+                        }
+                        else
+                        {
+                            actionTaken = txtActionTaken.Text.Trim();
+                        }
+                        if (ddlStatus.SelectedItem.Value == "1")
+                        {
+                            status = true;  // Close
+                        }
+                        else
+                        {
+                            status = false; // Open
+                        }
+                        if (string.IsNullOrEmpty(txtTargetDate.Text.Trim()))
+                        {
+                            targetDate = gridTargetDate;
+                        }
+                        else
+                        {
+                            targetDate = Convert.ToDateTime(txtTargetDate.Text.Trim());
+                        }
+
+                        _DBObj.UpdatePatrolReview(Convert.ToString(hiddenPatrolNumber.Value), Convert.ToString(hiddenCheckListSerial.Value), Convert.ToString(actionPlan),
+                            Convert.ToString(responsibility), Convert.ToString(actionTaken),
+                            Convert.ToBoolean(status), Convert.ToDateTime(targetDate));
+
+                        lblMessage.Text = "Patrol Review details updated successfully.";
+                        lblMessage.Visible = true;
+                    }
+                }
+
+                FillPatrolAnalysisDataSet();
+
+                txtActionPlan.Text = "";
+                txtActionTaken.Text = "";
+                txtResponsibility.Text = "";
+                txtTargetDate.Text = "";
+            }
+            catch (Exception ex)
+            {
+                LogError(ex, "Exception occured while updating patrol review.");
             }
             finally
             {
             }
         }
 
+        protected void GridView1_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            string sortingDirection = string.Empty;
+            DataSet ds = (DataSet)Cache["CacheFromPatrolReviewDataSet"];
+
+            if (dir == SortDirection.Ascending)
+            {
+                dir = SortDirection.Descending;
+                sortingDirection = "Desc";
+            }
+            else
+            {
+                dir = SortDirection.Ascending;
+                sortingDirection = "Asc";
+            }
+
+            DataView sortedView = new DataView(ds.Tables[0]);
+            sortedView.Sort = e.SortExpression + " " + sortingDirection;
+            GridView1.DataSource = sortedView;
+            GridView1.DataBind();
+        }
+
+        public SortDirection dir
+        {
+            get
+            {
+                if (ViewState["dirState"] == null)
+                {
+                    ViewState["dirState"] = SortDirection.Ascending;
+                }
+                return (SortDirection)ViewState["dirState"];
+            }
+            set
+            {
+                ViewState["dirState"] = value;
+            }
+        }
     }
 }

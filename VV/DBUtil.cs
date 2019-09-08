@@ -6657,6 +6657,108 @@ namespace VV
             }
         }
 
+        public DataSet RetriveByPatrolReviewDateSet(string FromDate, string ToDate, int MeetCode)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetPatrolReviewDateSet]", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+                cmd.Parameters.Add(new SqlParameter("@FromDate", FromDate));
+                cmd.Parameters.Add(new SqlParameter("@ToDate", ToDate));
+                cmd.Parameters.Add(new SqlParameter("@MeetCode", MeetCode));
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                //LogError(ex, "Exception from export button click!");
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByDCSentItems() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdatePatrolReview(String PatrolNumber, String CheckListSerial, String ActionPlan, String Responsibility, String ActionTaken, bool Status,
+            DateTime? TargetDate)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spUpdatePatrolReview]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@PatrolNumber", PatrolNumber));
+                cmd.Parameters.Add(new SqlParameter("@CheckListSerial", CheckListSerial));
+                cmd.Parameters.Add(new SqlParameter("@ActionPlan", ActionPlan));
+                cmd.Parameters.Add(new SqlParameter("@Responsibility", Responsibility));
+                cmd.Parameters.Add(new SqlParameter("@ActionTaken", ActionTaken));
+                cmd.Parameters.Add(new SqlParameter("@Status", Status));
+                if (TargetDate == Convert.ToDateTime("01-01-0001 00:00:00"))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@TargetDate", DBNull.Value));
+                }
+                else
+                {
+                    cmd.Parameters.Add(new SqlParameter("@TargetDate", TargetDate));
+                }
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateFormOperatorMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetriveByMeetMaster()
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("select MeetCode, MeetName from  MeetsMaster", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetriveByMeetMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
         public DataSet RetriveByPatrolAnalysisMonthly(string Month, string Year)
         {
             DataSet ds = new DataSet();
@@ -7486,7 +7588,7 @@ namespace VV
             {
                 this.init();
 
-                SqlCommand cmd = new SqlCommand("SELECT * from IPCheckListMaster where LocationCode = '"+ IPLocationCode +"' and SubLocationCode = '"+IPSubLocationCode +"' and  CheckListSerial = '"+ CheckListSerial + "'", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * from IPCheckListMaster where LocationCode = '" + IPLocationCode + "' and SubLocationCode = '" + IPSubLocationCode + "' and  CheckListSerial = '" + CheckListSerial + "'", conn);
                 cmd.CommandTimeout = 1000;
                 cmd.CommandType = CommandType.Text;
 

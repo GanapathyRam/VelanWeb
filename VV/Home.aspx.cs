@@ -134,6 +134,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[5].Enabled = true;
                     else if (MenuID == 9) // IP Check List Master
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[6].Enabled = true;
+                    else if (MenuID == 10) // Patrol Review
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[7].Enabled = true;
                 }
                 # endregion
 
