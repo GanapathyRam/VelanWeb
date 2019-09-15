@@ -6657,7 +6657,7 @@ namespace VV
             }
         }
 
-        public DataSet RetriveByPatrolReviewDateSet(string FromDate, string ToDate, int MeetCode)
+        public DataSet RetriveByPatrolReviewDateSet(string FromDate, string ToDate, int MeetCode, string LocationCode)
         {
             DataSet ds = new DataSet();
 
@@ -6673,6 +6673,7 @@ namespace VV
                 cmd.Parameters.Add(new SqlParameter("@FromDate", FromDate));
                 cmd.Parameters.Add(new SqlParameter("@ToDate", ToDate));
                 cmd.Parameters.Add(new SqlParameter("@MeetCode", MeetCode));
+                cmd.Parameters.Add(new SqlParameter("@LocationCode", LocationCode));
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;

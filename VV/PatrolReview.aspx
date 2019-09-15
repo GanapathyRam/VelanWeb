@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/VV.Master" CodeBehind="PatrolReview.aspx.cs" Inherits="VV.PatrolReview" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/VV.Master" CodeBehind="PatrolReview.aspx.cs" Culture="en-IN"
+    EnableEventValidation="false" Inherits="VV.PatrolReview" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
@@ -15,7 +16,10 @@
                 <ajaxToolkit:CalendarExtender ID="CalendarExtender1" TargetControlID="txtFromDate" Format="dd-MM-yyyy" runat="server">
                 </ajaxToolkit:CalendarExtender>
             </td>
-            <td></td>
+            <td>
+                <asp:RequiredFieldValidator ID="lblRequiredFields" runat="server" ControlToValidate="txtFromDate" Display="Dynamic" ErrorMessage="Please Select From Date"></asp:RequiredFieldValidator>
+                <%--<asp:Label ID="lblRequiredFields"  Text="Please Select From Date" Visible="false" ForeColor="Red" runat="server"></asp:Label>--%>
+            </td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -28,6 +32,22 @@
                 <ajaxToolkit:CalendarExtender ID="CalendarExtender2" TargetControlID="txtToDate" Format="dd-MM-yyyy" runat="server">
                 </ajaxToolkit:CalendarExtender>
             </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtToDate" Display="Dynamic" ErrorMessage="Please Select To Date"></asp:RequiredFieldValidator>
+                <%--<asp:Label ID="Label1"  Text="Please Select To Date" Visible="false" ForeColor="Red" runat="server"></asp:Label>--%>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="margin-left: 100px; text-align: right; font-family: Verdana; height: 21px;">
+                <asp:Label ID="lblLocationName" Text="Location Name" runat="server"></asp:Label></td>
+            <td style="padding-left: 30px; width: 220px; height: 25px;">
+                <asp:DropDownList ID="ddlLocationCode" DataTextField="LocationName" DataValueField="LocationCode" Height="23px" Width="160px" runat="server">
+                </asp:DropDownList>
+            </td>
+            <td></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -79,7 +99,7 @@
             <ContentTemplate>
                 <div style="width: 1200px; margin-left: 50px; overflow: scroll;">
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"
-                        DataKeyNames="LocationName" AllowPaging="true" PageSize="24" AllowSorting="false"
+                        DataKeyNames="LocationName" AllowPaging="true" PageSize="24" AllowSorting="true"
                         OnPageIndexChanging="GridView1_PageIndexChanging" HeaderStyle-HorizontalAlign="Left"
                         CssClass="Grid" HeaderStyle-CssClass="Grid_Header" OnSorting="GridView1_Sorting"
                         RowStyle-CssClass="Grid_Record" EmptyDataText="No Records To Display"
@@ -88,37 +108,8 @@
                             <asp:TemplateField HeaderText="">
                                 <ItemTemplate>
                                     <asp:CheckBox ID="chkSelect" EnableViewState="false" runat="server" onclick="EnableTextBox(this)" />
-                                     <asp:HiddenField ID="hidPatrolNumber" runat="server" Value='<%#Bind("PatrolNumber") %>' />
-                                     <asp:HiddenField ID="hidCheckListSerial" runat="server" Value='<%#Bind("CheckListSerial") %>' />
-                                </ItemTemplate>
-                                <ItemStyle Wrap="false" />
-                            </asp:TemplateField>
-
-                            <%--<asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Patrol Date">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblGridPatrolDate" runat="server" Text='<%# Eval("PatrolDate") %>'>
-                                    </asp:Label>
-                                </ItemTemplate>
-                                <ItemStyle Wrap="false" />
-                            </asp:TemplateField>--%>
-                             <asp:BoundField HeaderText="Patrol Date" ItemStyle-HorizontalAlign="left" DataField="PatrolDate" SortExpression="PatrolDate" 
-                                DataFormatString="{0:dd-MM-yyyy}"
-                                HtmlEncode="False">
-                                <ItemStyle Wrap="false" />
-                            </asp:BoundField>
-
-                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Patrol No">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblGridPatrolNo" runat="server" Text='<%# Eval("PatrolNumber") %>'>
-                                    </asp:Label>
-                                </ItemTemplate>
-                                <ItemStyle Wrap="false" />
-                            </asp:TemplateField>
-
-                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Location Name" SortExpression="LocationName">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblGridLocationName" runat="server" Text='<%# Eval("LocationName") %>'>
-                                    </asp:Label>
+                                    <asp:HiddenField ID="hidPatrolNumber" runat="server" Value='<%#Bind("PatrolNumber") %>' />
+                                    <asp:HiddenField ID="hidCheckListSerial" runat="server" Value='<%#Bind("CheckListSerial") %>' />
                                 </ItemTemplate>
                                 <ItemStyle Wrap="false" />
                             </asp:TemplateField>
@@ -126,30 +117,6 @@
                             <asp:TemplateField HeaderStyle-HorizontalAlign="Center" SortExpression="SubLocationName" HeaderText="SubLocation Name">
                                 <ItemTemplate>
                                     <asp:Label ID="lblGridSubLocationName" runat="server" Text='<%# Eval("SubLocationName") %>'>
-                                    </asp:Label>
-                                </ItemTemplate>
-                                <ItemStyle Wrap="false" />
-                            </asp:TemplateField>
-
-                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" SortExpression="CheckListSerial" HeaderText="CheckList Serial">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblGridCheckListSerial" runat="server" Text='<%# Eval("CheckListSerial") %>'>
-                                    </asp:Label>
-                                </ItemTemplate>
-                                <ItemStyle Wrap="false" />
-                            </asp:TemplateField>
-
-                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Prod Order No">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblGridProdOrderNo" runat="server" Text='<%# Eval("ProdOrderNo") %>'>
-                                    </asp:Label>
-                                </ItemTemplate>
-                                <ItemStyle Wrap="false" />
-                            </asp:TemplateField>
-
-                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Item">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblGridItem" runat="server" Text='<%# Eval("Item") %>'>
                                     </asp:Label>
                                 </ItemTemplate>
                                 <ItemStyle Wrap="false" />
@@ -163,7 +130,7 @@
                                 <ItemStyle Wrap="false" />
                             </asp:TemplateField>
 
-                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="CheckList Description">
+                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" SortExpression="CheckListDescription" HeaderText="CheckList Description">
                                 <ItemTemplate>
                                     <asp:Label ID="lblGridCheckListDescription" runat="server" Text='<%# Eval("CheckListDescription") %>'>
                                     </asp:Label>
@@ -171,7 +138,24 @@
                                 <ItemStyle Wrap="false" />
                             </asp:TemplateField>
 
-                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Meet Name">
+
+                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" Visible="false" HeaderText="Location Name" SortExpression="LocationName">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblGridLocationName" runat="server" Text='<%# Eval("LocationName") %>'>
+                                    </asp:Label>
+                                </ItemTemplate>
+                                <ItemStyle Wrap="false" />
+                            </asp:TemplateField>
+
+                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" Visible="false" SortExpression="CheckListSerial" HeaderText="CheckList Serial">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblGridCheckListSerial" runat="server" Text='<%# Eval("CheckListSerial") %>'>
+                                    </asp:Label>
+                                </ItemTemplate>
+                                <ItemStyle Wrap="false" />
+                            </asp:TemplateField>
+
+                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" Visible="false" HeaderText="Meet Name">
                                 <ItemTemplate>
                                     <asp:Label ID="lblGridMeetName" runat="server" Text='<%# Eval("MeetName") %>'>
                                     </asp:Label>
@@ -214,7 +198,7 @@
                             <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Status">
                                 <ItemTemplate>
                                     <asp:CheckBox ID="chkShipped" Enabled="false" runat="server" Checked='<%# Eval("Status") %>' />
-                                   <%-- <asp:Label ID="lblGridStatus" runat="server" Text='<%# Eval("Status") %>'>
+                                    <%-- <asp:Label ID="lblGridStatus" runat="server" Text='<%# Eval("Status") %>'>
                                     </asp:Label>--%>
                                 </ItemTemplate>
                                 <ItemStyle Wrap="false" />
@@ -228,11 +212,37 @@
                                 <ItemStyle Wrap="false" />
                             </asp:TemplateField>
 
-                            <%--<asp:BoundField HeaderText="Target Date" ItemStyle-HorizontalAlign="left" DataField="TargetDate" SortExpression="TargetDate" 
+
+                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Patrol No">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblGridPatrolNo" runat="server" Text='<%# Eval("PatrolNumber") %>'>
+                                    </asp:Label>
+                                </ItemTemplate>
+                                <ItemStyle Wrap="false" />
+                            </asp:TemplateField>
+
+                            <asp:BoundField HeaderText="Patrol Date" ItemStyle-HorizontalAlign="left" DataField="PatrolDate"
                                 DataFormatString="{0:dd-MM-yyyy}"
                                 HtmlEncode="False">
                                 <ItemStyle Wrap="false" />
-                            </asp:BoundField>--%>
+                            </asp:BoundField>
+
+                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Prod Order No">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblGridProdOrderNo" runat="server" Text='<%# Eval("ProdOrderNo") %>'>
+                                    </asp:Label>
+                                </ItemTemplate>
+                                <ItemStyle Wrap="false" />
+                            </asp:TemplateField>
+
+                            <asp:TemplateField HeaderStyle-HorizontalAlign="Center" HeaderText="Item">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblGridItem" runat="server" Text='<%# Eval("Item") %>'>
+                                    </asp:Label>
+                                </ItemTemplate>
+                                <ItemStyle Wrap="false" />
+                            </asp:TemplateField>
+
 
                         </Columns>
                         <HeaderStyle CssClass="Grid_Header" />

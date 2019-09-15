@@ -278,8 +278,11 @@ namespace VV
 
             if (!Page.IsPostBack)
             {
+                FillLocationCode();
                 FillDropDownMeetMaster();
             }
+
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-IN");
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -318,8 +321,9 @@ namespace VV
                     string fromDate = DateTime.ParseExact(txtFromDate.Text.Trim(), "dd-MM-yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
                     string toDate = DateTime.ParseExact(txtToDate.Text.Trim(), "dd-MM-yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
                     int meetCode = Convert.ToInt16(ddlMeetName.SelectedItem.Value);
+                    string LocationCode = Convert.ToString(ddlLocationCode.SelectedValue);
 
-                    ds = _DBObj.RetriveByPatrolReviewDateSet(fromDate, toDate, meetCode);
+                    ds = _DBObj.RetriveByPatrolReviewDateSet(fromDate, toDate, meetCode, LocationCode);
 
                     if (ds.Tables[0].Rows.Count > 0)
                     {
@@ -363,6 +367,20 @@ namespace VV
                 writer.WriteLine(message);
                 writer.Close();
             }
+        }
+
+        private DataSet FillLocationCode()
+        {
+
+            DBUtil _DBObj = new DBUtil();
+            DataSet ds = _DBObj.RetriveByLocationName();
+
+            ddlLocationCode.DataSource = ds;
+            ddlLocationCode.DataBind();
+
+            ddlLocationCode.Items.Insert(0, "----Please Select----");
+
+            return ds;
         }
 
         public void FillDropDownMeetMaster()
@@ -474,6 +492,8 @@ namespace VV
                 txtActionTaken.Text = "";
                 txtResponsibility.Text = "";
                 txtTargetDate.Text = "";
+                txtFromDate.Text = "";
+                txtToDate.Text = "";
             }
             catch (Exception ex)
             {
@@ -510,15 +530,15 @@ namespace VV
         {
             get
             {
-                if (ViewState["dirState"] == null)
+                if (ViewState["dirState1"] == null)
                 {
-                    ViewState["dirState"] = SortDirection.Ascending;
+                    ViewState["dirState1"] = SortDirection.Ascending;
                 }
-                return (SortDirection)ViewState["dirState"];
+                return (SortDirection)ViewState["dirState1"];
             }
             set
             {
-                ViewState["dirState"] = value;
+                ViewState["dirState1"] = value;
             }
         }
     }
