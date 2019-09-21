@@ -143,6 +143,7 @@
     <Content Include="PatrolReview.aspx" />
     <Content Include="ProdOrderReversal.aspx" />
     <Content Include="CSS\PopUpStyleSheet.css" />
+    <Content Include="ProductionOrderImporting.aspx" />
     <Content Include="ProductionOrderIssue.aspx" />
     <Content Include="DCReports.aspx" />
     <Content Include="ReadyToRelease.aspx" />
@@ -481,6 +482,13 @@
     </Compile>
     <Compile Include="ProdOrderReversal.aspx.designer.cs">
       <DependentUpon>ProdOrderReversal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionOrderImporting.aspx.cs">
+      <DependentUpon>ProductionOrderImporting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductionOrderImporting.aspx.designer.cs">
+      <DependentUpon>ProductionOrderImporting.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductionOrderIssue.aspx.cs">
       <DependentUpon>ProductionOrderIssue.aspx</DependentUpon>

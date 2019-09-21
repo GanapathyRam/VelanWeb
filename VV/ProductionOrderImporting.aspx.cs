@@ -1,25 +1,31 @@
-﻿using Libraries.Entity;
-using Microsoft.Practices.EnterpriseLibrary.Logging;
+﻿using Excel;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Globalization;
-using System.Collections;
-using System.Xml;
-using System.Text;
 
 namespace VV
 {
-    public partial class ViewFGPlan : System.Web.UI.Page
+    public partial class ProductionOrderImporting : System.Web.UI.Page
     {
+        SqlCommand cmd = new SqlCommand();
+        DataTable dt = new DataTable();
+        DBUtil _dbObj = new DBUtil();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            # region Master Control
+            #region Master Control
 
-            # region Welcome Msg
+            #region Welcome Msg
+
+            DateTime dt = DateTime.MinValue;
+            Console.WriteLine(dt);
             string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
             Label lblUserName = (Label)this.Page.Master.FindControl("lblUserName");
             lblUserName.Text = "Welcome " + UserName;
@@ -267,236 +273,193 @@ namespace VV
             }
             # endregion
 
-            # endregion
+            //SearchPanel.Visible = false;
+
+            #region Section for displaying upload counts
+
+            //int wipCounts = _dbObj.GetWIPCounts();
+            //lblWipCount.Text = Convert.ToString(wipCounts);
+            //int poCounts = _dbObj.GetPOCounts();
+            //lblPoCount.Text = Convert.ToString(poCounts);
+            //int bomCounts = _dbObj.GetBOMCounts();
+            //lblBomCount.Text = Convert.ToString(bomCounts);
+            //int inventoryCounts = _dbObj.GetInventoryCounts();
+            //lblInventoryCount.Text = Convert.ToString(inventoryCounts);
+
+            #endregion
+
+            #endregion
+
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-IN");
         }
 
-        // This presumes that weeks start with Monday.
-        // Week 1 is the 1st week of the year with a Thursday in it.
-        public static int GetIso8601WeekOfYear(DateTime time)
+        protected void btImport_ServerClick(object sender, EventArgs e)
         {
-            // Seriously cheat.  If its Monday, Tuesday or Wednesday, then it'll 
-            // be the same week# as whatever Thursday, Friday or Saturday are,
-            // and we always get those right
-            DayOfWeek day = CultureInfo.InvariantCulture.Calendar.GetDayOfWeek(time);
-            if (day >= DayOfWeek.Monday && day <= DayOfWeek.Wednesday)
+            string conStr = string.Empty;
+            SqlBulkCopy oSqlBulk = null;
+            DataSet ds = new DataSet();
+            var dataTable = new DataTable();
+            String searchRowFilter = String.Empty;
+
+            // CHECK IF A FILE HAS BEEN SELECTED.
+            if ((FileUpload.HasFile))
             {
-                time = time.AddDays(3);
-            }
 
-            // Return the week of our adjusted day
-            return CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(time, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
-        }
-
-        protected void grdViewFGPlan_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            try
-            {
-                DataSet ds = (DataSet)Cache["FGDataFromDBCache"];
-
-                grdViewFGPlan.PageIndex = e.NewPageIndex;
-                grdViewFGPlan.DataSource = ds;
-                grdViewFGPlan.DataBind();
-            }
-
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : grdViewWIPResult_PageIndexChanging : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-        }
-
-        protected void btnMacro_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Response.Redirect("~/ViewMacroFGPlan.aspx?WeekNo=" + (String)Cache["WeekNo"].ToString() + "");
-            }
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : btnSearchBox_Click : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-        }
-
-        protected void btnSearchBox_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                String WeekNo_Search = txtWeekNo.Text.Trim();
-
-                Cache["WeekNo"] = WeekNo_Search;
-
-                DBUtil _dbObj = new DBUtil();
-
-                DataSet ds = _dbObj.GetReleasePlanData(Int32.Parse(WeekNo_Search.Trim()));
-
-                Cache["FGDataFromDBCache"] = ds;
-                grdViewFGPlan.DataSource = ds;
-                grdViewFGPlan.DataBind();
-                
-            }
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : btnSearchBox_Click : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-
-        }
-
-        protected void btnExcel_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DataSet ds = (DataSet)Cache["FGDataFromDBCache"];
-
-                Convert(ds, "FG Plan Data");
-            }
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : btnExcel_Click : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-        }
-
-        public void Convert(DataSet ds, string fileName)
-        {
-            Convert(ds.Tables, fileName);
-        }
-
-        public void Convert(IEnumerable tables, string fileName)
-        {
-            try
-            {
-                Response.ClearContent();
-                Response.ClearHeaders();
-                Response.Buffer = true;
-                Response.Charset = "";
-                Response.ContentType = "application/vnd.ms-excel";
-                Response.AddHeader("content-disposition",
-                         "attachment; filename=" + fileName + ".xls");
-
-                using (XmlTextWriter x = new XmlTextWriter(Response.OutputStream, Encoding.UTF8))
+                if (!Convert.IsDBNull(FileUpload.PostedFile) &
+                    FileUpload.PostedFile.ContentLength > 0)
                 {
-                    int sheetNumber = 0;
-                    x.WriteRaw("<?xml version=\"1.0\"?><?mso-application progid=\"Excel.Sheet\"?>");
-                    x.WriteRaw("<Workbook xmlns=\"urn:schemas-microsoft-com:office:spreadsheet\" ");
-                    x.WriteRaw("xmlns:o=\"urn:schemas-microsoft-com:office:office\" ");
-                    x.WriteRaw("xmlns:x=\"urn:schemas-microsoft-com:office:excel\">");
-                    x.WriteRaw("<Styles><Style ss:ID='sText'>" +
-                               "<NumberFormat ss:Format='@'/></Style>");
-                    x.WriteRaw("<Style ss:ID='sDate'><NumberFormat" +
-                               " ss:Format='[$-409]m/d/yy\\ h:mm\\ AM/PM;@'/>");
-                    x.WriteRaw("</Style></Styles>");
-                    foreach (DataTable dt in tables)
+                    try
                     {
-                        sheetNumber++;
-                        string sheetName = !string.IsNullOrEmpty(dt.TableName) ?
-                               dt.TableName : "Sheet" + sheetNumber.ToString();
-                        x.WriteRaw("<Worksheet ss:Name='" + sheetName + "'>");
-                        x.WriteRaw("<Table>");
-                        string[] columnTypes = new string[dt.Columns.Count];
+                        lblConfirm.Text = "";
 
-                        for (int i = 0; i < dt.Columns.Count; i++)
+                        string sCon = ConfigurationManager.ConnectionStrings["VVConnection"].ToString();
+                        SqlConnection conn = new SqlConnection(sCon);
+
+                        var cmd = conn.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = string.Format("SET FMTONLY ON; SELECT * FROM WIPALL; SET FMTONLY OFF;");
+                        conn.Open();
+                        dataTable.Load(cmd.ExecuteReader());
+                        conn.Close();
+
+                        string filename = Path.GetFileName(FileUpload.FileName);
+                        FileUpload.SaveAs(Server.MapPath("~/") + filename);
+
+                        FileStream stream;
+                        IExcelDataReader excelReader = null;
+
+                        stream = File.Open(Server.MapPath("~/") + filename, FileMode.Open, FileAccess.Read);
+
+                        string getExtension = Path.GetExtension(FileUpload.FileName);
+
+                        if (getExtension == ".xls")
                         {
-                            string colType = dt.Columns[i].DataType.ToString().ToLower();
-
-                            if (colType.Contains("datetime"))
-                            {
-                                columnTypes[i] = "DateTime";
-                                x.WriteRaw("<Column ss:StyleID='sDate'/>");
-
-                            }
-                            else if (colType.Contains("string"))
-                            {
-                                columnTypes[i] = "String";
-                                x.WriteRaw("<Column ss:StyleID='sText'/>");
-
-                            }
-                            else
-                            {
-                                x.WriteRaw("<Column />");
-
-                                if (colType.Contains("boolean"))
-                                {
-                                    columnTypes[i] = "Boolean";
-                                }
-                                else
-                                {
-                                    //default is some kind of number.
-                                    columnTypes[i] = "Number";
-                                }
-
-                            }
+                            excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
                         }
-                        //column headers
-                        x.WriteRaw("<Row>");
-                        foreach (DataColumn col in dt.Columns)
+                        else if (getExtension == ".xlsx")
                         {
-                            x.WriteRaw("<Cell ss:StyleID='sText'><Data ss:Type='String'>");
-                            x.WriteRaw(col.ColumnName);
-                            x.WriteRaw("</Data></Cell>");
+                            excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
                         }
-                        x.WriteRaw("</Row>");
-                        //data
-                        bool missedNullColumn = false;
-                        foreach (DataRow row in dt.Rows)
+
+                        excelReader.IsFirstRowAsColumnNames = true;
+
+                        ds = excelReader.AsDataSet();
+                        dataTable = ds.Tables[0];
+
+                        excelReader.Close();
+
+                        using (SqlConnection con = new SqlConnection(sCon))
                         {
-                            x.WriteRaw("<Row>");
-                            for (int i = 0; i < dt.Columns.Count; i++)
+                            con.Open();
+
+                            // CHECK WHETHER TABLE HAS RECORDS OR NOT. IF YES THEN CLEARING THE RECORDS FROM TABLE.
+                            cmd = new SqlCommand("SELECT * FROM WIPALL", con);
+                            cmd.CommandType = CommandType.Text;
+
+                            SqlDataAdapter da = new SqlDataAdapter();
+                            da.SelectCommand = cmd;
+                            da.Fill(dt);
+
+                            if (dataTable.Rows.Count > 0)
                             {
-                                if (!row.IsNull(i))
-                                {
-                                    if (missedNullColumn)
-                                    {
-                                        int displayIndex = i + 1;
-                                        x.WriteRaw("<Cell ss:Index='" + displayIndex.ToString() +
-                                                   "'><Data ss:Type='" +
-                                                   columnTypes[i] + "'>");
-                                        missedNullColumn = false;
-                                    }
-                                    else
-                                    {
-                                        x.WriteRaw("<Cell><Data ss:Type='" +
-                                                   columnTypes[i] + "'>");
-                                    }
+                                //DataView dv;
 
-                                    switch (columnTypes[i])
-                                    {
-                                        case "DateTime":
-                                            x.WriteRaw(((DateTime)row[i]).ToString("s"));
-                                            break;
-                                        case "Boolean":
-                                            x.WriteRaw(((bool)row[i]) ? "1" : "0");
-                                            break;
-                                        case "String":
-                                            x.WriteString(row[i].ToString());
-                                            break;
-                                        default:
-                                            x.WriteString(row[i].ToString());
-                                            break;
-                                    }
+                                //searchRowFilter = "Prod. Order not like '"+"4"+"%'";
 
-                                    x.WriteRaw("</Data></Cell>");
-                                }
-                                else
+                                //var fileteredRows = dataTable.Select(searchRowFilter).CopyToDataTable();
+
+                                //dv = dataTable.DefaultView;
+
+                                //dv.RowFilter = searchRowFilter;
+
+                                //var fillterDataTable = dv;
+
+                                //var test = dataTable.Select("Prod. Order not like '4%'");
+
+                                //var prodOrderNo = dataTable.AsEnumerable().Where(x => x.Field<string>("Prod. Order").StartsWith(""));
+
+                                for (int i = 0; i < dataTable.Rows.Count; i++)
                                 {
-                                    missedNullColumn = true;
+                                    string ProdorderNo = dataTable.Rows[i]["Prod. Order"].ToString();
+                                    string ItemNumber = dataTable.Rows[i]["Item Number"].ToString();
+                                    string Description = dataTable.Rows[i]["Description"].ToString();
+                                    string Quantity = dataTable.Rows[i]["Quantity"].ToString();
+
+                                    var notStartWith = Convert.ToString(ProdorderNo.Substring(0, 1) != "4");
+
+                                    if (dt != null && notStartWith == "True")
+                                    {
+                                        // Section to verify, whether the upload items already existing in the system.
+
+                                        var uploadProdOrder = from productionOrder in dt.AsEnumerable()
+                                                        where productionOrder.Field<string>("ProdOrder") == ProdorderNo
+                                                        select new
+                                                        {
+                                                            ItemNumber = productionOrder.Field<string>("ItemNumber"),
+                                                            Description = productionOrder.Field<string>("Description")
+                                                        };
+
+                                        if (uploadProdOrder.ToList().Count == 0 )
+                                        {
+                                            _dbObj.InsertWIPAllFromWIPImporting(ProdorderNo, ItemNumber, Description, Quantity);
+                                        }
+                                    }
                                 }
                             }
-                            x.WriteRaw("</Row>");
+
+                            lblConfirm.Text = "Production Order Imported Successfully!.";
+                            lblConfirm.Attributes.Add("style", "color:green");
                         }
-                        x.WriteRaw("</Table></Worksheet>");
                     }
-                    x.WriteRaw("</Workbook>");
+                    catch (Exception ex)
+                    {
+                        LogError(ex, "Exception from ProductionOrderImporting while file upload:");
+                    }
+                    finally
+                    {
+                        // CLEAR.
+                        cmd.Dispose();
+                    }
+
+                    //int bomCounts = _dbObj.GetBOMCounts();
+                    //lblBomCount.Text = Convert.ToString(bomCounts);
                 }
-                Response.End();
+                else
+                {
+                    lblConfirm.Text = "Upload file size content is zero!";
+                    lblConfirm.Attributes.Add("style", "color:red");
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Logger.Write(this.GetType().ToString() + " : Convert - Report Generation : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
+                lblConfirm.Text = "Doesn't have any file to uplaod. Please choose file!!";
+                lblConfirm.Attributes.Add("style", "color:red");
             }
         }
 
+        private void LogError(Exception ex, string section)
+        {
+            string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+            message += Environment.NewLine;
+            message += "-----------------------------------------------------------";
+            message += Environment.NewLine;
+            message += string.Format("Message: {0}", ex.Message);
+            message += Environment.NewLine;
+            message += "Exception from SQLConnectionOpen" + "-" + section;
+            message += Environment.NewLine;
+            message += "-----------------------------------------------------------";
+            message += Environment.NewLine;
+            string path = Server.MapPath("~/ErrorLog.txt");
+            using (StreamWriter writer = new StreamWriter(path, true))
+            {
+                writer.WriteLine(message);
+                writer.Close();
+            }
+        }
+
+        protected void btnProcess_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

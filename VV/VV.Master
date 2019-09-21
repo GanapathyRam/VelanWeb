@@ -108,6 +108,8 @@
                                         <asp:MenuItem Value="Analysis - Date Set" NavigateUrl="~/PatrolAnalysisDateSet.aspx" Enabled="false"></asp:MenuItem>
                                         <asp:MenuItem Value="Analysis - Monthly" NavigateUrl="~/PatrolAnalysisMonthly.aspx" Enabled="false"></asp:MenuItem>
                                         <asp:MenuItem Value="Patrol Review" NavigateUrl="~/PatrolReview.aspx" Enabled="false"></asp:MenuItem>
+                                        <asp:MenuItem Value="Production Order Importing" NavigateUrl="~/ProductionOrderImporting.aspx" Enabled="false"></asp:MenuItem>
+
                                     </asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="Sales" Enabled="true">

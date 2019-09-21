@@ -140,6 +140,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[6].Enabled = true;
                     else if (MenuID == 10) // Patrol Review
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[7].Enabled = true;
+                    else if (MenuID == 11) // Production Order Importing
+                        tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
                 }
                 # endregion
 
