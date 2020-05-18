@@ -14,7 +14,6 @@ namespace VV
     public class DBUtil
     {
         SqlConnection conn;
-
         /// <summary>
         /// Initialises the SQL Connection & also opens the Connection
         /// </summary>
