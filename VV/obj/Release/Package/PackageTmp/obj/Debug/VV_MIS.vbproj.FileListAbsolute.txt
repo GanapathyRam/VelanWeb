@@ -1,8 +1,0 @@
-e:\VV_Dev\VV_MIS\VV_MIS\obj\Debug\VV_MIS.vbproj.GenerateResource.Cache
-e:\VV_Dev\VV_MIS\VV_MIS\bin\VV.dll
-e:\VV_Dev\VV_MIS\VV_MIS\bin\VV.pdb
-e:\VV_Dev\VV_MIS\VV_MIS\bin\VV.xml
-e:\VV_Dev\VV_MIS\VV_MIS\obj\Debug\VV.Resources.resources
-e:\VV_Dev\VV_MIS\VV_MIS\obj\Debug\VV.dll
-e:\VV_Dev\VV_MIS\VV_MIS\obj\Debug\VV.xml
-e:\VV_Dev\VV_MIS\VV_MIS\obj\Debug\VV.pdb
