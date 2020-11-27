@@ -107,6 +107,10 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 2) // WIP Report
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                    else if (MenuID == 3) // Primary Box Entry
+                        tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                    else if (MenuID == 4) // Primary Box Maintance
+                        tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
                 # endregion
 
@@ -140,6 +144,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[7].Enabled = true;
                     else if (MenuID == 11) // Production Order Importing
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
+                    else if (MenuID == 12) // Heat No Values
+                        tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
                 }
                 # endregion
 
@@ -215,6 +221,11 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 6) // Delivery Challan Reports
                         tbstr.Items[ParentMenuID].ChildItems[5].ChildItems[0].Enabled = true;
+
+                    else if (MenuID == 7) // Secondary Box Entry
+                        tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+                    else if (MenuID == 8) // Secondary Box Entry - Maintenance
+                        tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
                 }
                 #endregion
 
@@ -244,6 +255,7 @@ namespace VV
 
                     if (MenuID == 6) // Ready To Release
                         tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+
                     if (MenuID == 7) // WIP Aging
                         tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
 
@@ -259,9 +271,10 @@ namespace VV
                     if (MenuID == 11) // Enquiries And Reports
                         tbstr.Items[ParentMenuID].ChildItems[8].ChildItems[3].Enabled = true;
                 }
+
                 #endregion
             }
-            # endregion
+            #endregion
 
             # endregion
 
@@ -372,9 +385,9 @@ namespace VV
 
                     //_DBObj.ProductionOrderReversal(Int32.Parse(OrderNo.Trim()), LineNum.Trim(), Int32.Parse(Pos.Trim()), ProdOrderNo.Trim(), SerialNo.Trim());
 
-                    _DBObj.ProductionOrderReversalForStores(Int32.Parse(OrderNo.Trim()), LineNum.Trim(), Int32.Parse(Pos.Trim()), ProdOrderNo.Trim(), Int32.Parse(BalanceQty.Trim()));
+                    _DBObj.ProductionOrderReversalForStores(Convert.ToString(OrderNo.Trim()), LineNum.Trim(), Int32.Parse(Pos.Trim()), ProdOrderNo.Trim(), Int32.Parse(BalanceQty.Trim()));
 
-                    _DBObj.UpdateProductionStoresIssued(Int32.Parse(OrderNo.Trim()), LineNum.Trim(), Int32.Parse(Pos.Trim()), ProdOrderNo.Trim());
+                    _DBObj.UpdateProductionStoresIssued(OrderNo.Trim(), LineNum.Trim(), Int32.Parse(Pos.Trim()), ProdOrderNo.Trim());
 
                 }
             }

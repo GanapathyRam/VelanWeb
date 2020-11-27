@@ -39,7 +39,7 @@
         }
     </script>
     <link href="CSS/Main.css" rel="stylesheet" />
-    <div style="text-align: left; background-color: #D99694; line-height: normal;">
+    <div style="text-align: left; background-color: #eceded; padding:5px; line-height: normal;">
         <asp:Panel ID="BulkUpdatePO1" runat="server">
             <asp:RadioButtonList ID="RadioButtonList1" Style="margin-left: 500px;" RepeatDirection="Horizontal" AutoPostBack="true" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" runat="server">
                 <asp:ListItem Text="Pending" Value="0"></asp:ListItem>

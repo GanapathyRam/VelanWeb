@@ -85,7 +85,7 @@
         <table border="0" cellpadding="5" cellspacing="0" width="100%">
             <tr>
                 <td align="center" colspan="2" valign="bottom">
-                    <asp:Button ID="buttonUpdate" runat="server"  Width="100px" CssClass="buttonText" Text="Add" ToolTip="Create New User"
+                    <asp:Button ID="buttonUpdate" runat="server"  style="width:60px; margin-left:40px;" CssClass="buttonText" Text="Add" ToolTip="Create New User"
                         OnClick="buttonUpdate_Click" /> &nbsp;
                     <asp:Button ID="buttonCancel" runat="server" CausesValidation="False" CssClass="buttonText" ToolTip="Cancel"
                         Text="Cancel" OnClick="buttonCancel_Click" />

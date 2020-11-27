@@ -116,8 +116,7 @@
 
                             <asp:TemplateField HeaderStyle-HorizontalAlign="Center" SortExpression="SubLocationName" HeaderText="SubLocation Name">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblGridSubLocationName" runat="server" Text='<%# Eval("SubLocationName") %>'>
-                                    </asp:Label>
+                                    <asp:Label ID="lblGridSubLocationName" runat="server" Text='<%# Eval("SubLocationName") %>'></asp:Label>
                                 </ItemTemplate>
                                 <ItemStyle Wrap="false" />
                             </asp:TemplateField>

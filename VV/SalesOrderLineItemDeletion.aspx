@@ -38,7 +38,7 @@
         }
     </script>
     <link href="CSS/Main.css" rel="stylesheet" />
-    <div style="text-align: right; line-height: normal;">
+    <div style="text-align: right; line-height: normal; background-color: #eceded; padding: 5px;">
         <asp:Panel ID="BulkUpdateWIP" runat="server">
             <asp:Label ID="lblOrderNo" runat="server" Style="font-family: Verdana; text-align: center;" Text="Order Number"></asp:Label>
             <asp:TextBox ID="txtOrderNo" runat="server" Height="15px" Style="height: 20px;" CssClass="textBox" ToolTip="Enter Order Number to be Searched" onKeyUp="ControlSearch(this)" />

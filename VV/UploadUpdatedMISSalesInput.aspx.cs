@@ -110,6 +110,10 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 2) // WIP Report
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                    else if (MenuID == 3) // Primary Box Entry
+                        tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                    else if (MenuID == 4) // Primary Box Maintance
+                        tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
                 # endregion
 
@@ -143,6 +147,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[7].Enabled = true;
                     else if (MenuID == 11) // Production Order Importing
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
+                    else if (MenuID == 12) // Heat No Values
+                        tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
                 }
                 # endregion
 
@@ -218,6 +224,11 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 6) // Delivery Challan Reports
                         tbstr.Items[ParentMenuID].ChildItems[5].ChildItems[0].Enabled = true;
+
+                    else if (MenuID == 7) // Secondary Box Entry
+                        tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+                    else if (MenuID == 8) // Secondary Box Entry - Maintenance
+                        tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
                 }
                 #endregion
 
@@ -356,7 +367,7 @@ namespace VV
 
                 for (int i = 0; i < ds_Uploaded.Tables[0].Rows.Count; i++)
                 {
-                    int OrderNo = Int32.Parse(ds_Uploaded.Tables[0].Rows[i]["OrderNo"].ToString());
+                    String OrderNo = Convert.ToString(ds_Uploaded.Tables[0].Rows[i]["OrderNo"]);
                     int Pos = Int32.Parse(ds_Uploaded.Tables[0].Rows[i]["Pos"].ToString());
                     String LineNum = ds_Uploaded.Tables[0].Rows[i]["Line#"].ToString();
 
@@ -399,13 +410,13 @@ namespace VV
                     if (isRecExistsinDB) // Record Exists in DB
                     {
                         // Update the Columns (SAPCOde, StockCode, TagNo, GADNo, QCINo, O2, H2, IBR, ASU, RelDate)
-                        _dbObj.UpdateMISSalesInput(OrderNo, LineNum, Pos, SAPCodeFromExcel, StockCodeFromExcel, O2FromExcel, H2FromExcel, IBRFromExcel, ASUFromExcel, TAGNoFromExcel, GADNoFromExcel, QCINoFromExcel, RelDateFromExcel,
+                        _dbObj.UpdateMISSalesInput(Convert.ToString(OrderNo), LineNum, Pos, SAPCodeFromExcel, StockCodeFromExcel, O2FromExcel, H2FromExcel, IBRFromExcel, ASUFromExcel, TAGNoFromExcel, GADNoFromExcel, QCINoFromExcel, RelDateFromExcel,
                             NaceFromExcel, LowEmissionFromExcel, OtherRequirementsFromExcel, GADDateFromExcel, PODateFromExcel, ValueTypeFromExcel);
                     }
                     else
                     {
                         // Insert a new Record into the MISSalesInput Database
-                        _dbObj.InsertIntoMISSalesInput(OrderNo, LineNum, Pos, SAPCodeFromExcel, StockCodeFromExcel, O2FromExcel, H2FromExcel, IBRFromExcel, ASUFromExcel, TAGNoFromExcel, GADNoFromExcel, QCINoFromExcel, RelDateFromExcel,
+                        _dbObj.InsertIntoMISSalesInput(Convert.ToString(OrderNo), LineNum, Pos, SAPCodeFromExcel, StockCodeFromExcel, O2FromExcel, H2FromExcel, IBRFromExcel, ASUFromExcel, TAGNoFromExcel, GADNoFromExcel, QCINoFromExcel, RelDateFromExcel,
                             NaceFromExcel, LowEmissionFromExcel, OtherRequirementsFromExcel, GADDateFromExcel, PODateFromExcel, ValueTypeFromExcel);
                     }
                 }

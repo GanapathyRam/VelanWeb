@@ -2,10 +2,10 @@
     EnableEventValidation="false" CodeBehind="Shortage.aspx.cs" Inherits="VV.Shortage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="margin-left: 500px; margin-top: 0px;">
+    <div style="margin-left: 500px; margin-top: 5px;">
         <asp:Label ID="lblConfirm" runat="server"></asp:Label>
     </div>
-    <div style="text-align: right;">
+    <div style="text-align: right; margin-bottom:5px;">
         <asp:Panel ID="SearchPanel" DefaultButton="btnSearchBox" runat="server">
             <asp:TextBox ID="txtOrderNumber" runat="server" ToolTip="Enter SO Number to be Searched" onKeyUp="ControlSearch(this)" />
             <asp:TextBox ID="txtPos" runat="server" ToolTip="Enter Pos to be Searched" onKeyUp="ControlSearch(this)" />

@@ -6,7 +6,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="CSS/Main.css" rel="stylesheet" />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <div style="text-align: center; background-color: #D99694; line-height: normal;">
+    <div style="text-align: center; background-color: #eceded; padding:5px; line-height: normal;">
         <div style="text-align: center; margin-left: 800px;">
             <asp:Button ID="btnAdd" Style="font-style: normal;" runat="server" Width="100px" Height="30px" Text="Add" OnClick="btnAdd_Click" />
             &nbsp;

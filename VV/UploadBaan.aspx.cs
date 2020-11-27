@@ -111,6 +111,10 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 2) // WIP Report
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                    else if (MenuID == 3) // Primary Box Entry
+                        tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                    else if (MenuID == 4) // Primary Box Maintance
+                        tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
                 # endregion
 
@@ -144,6 +148,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[7].Enabled = true;
                     else if (MenuID == 11) // Production Order Importing
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
+                    else if (MenuID == 12) // Heat No Values
+                        tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
                 }
                 # endregion
 
@@ -197,7 +203,7 @@ namespace VV
                     else if (MenuID == 4) // Heat No Control
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                 }
-                # endregion
+                #endregion
 
                 #region Stores
 
@@ -219,6 +225,11 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     else if (MenuID == 6) // Delivery Challan Reports
                         tbstr.Items[ParentMenuID].ChildItems[5].ChildItems[0].Enabled = true;
+
+                    else if (MenuID == 7) // Secondary Box Entry
+                        tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+                    else if (MenuID == 8) // Secondary Box Entry - Maintenance
+                        tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
                 }
                 #endregion
 
@@ -248,6 +259,7 @@ namespace VV
 
                     if (MenuID == 6) // Ready To Release
                         tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+
                     if (MenuID == 7) // WIP Aging
                         tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
 
@@ -263,9 +275,10 @@ namespace VV
                     if (MenuID == 11) // Enquiries And Reports
                         tbstr.Items[ParentMenuID].ChildItems[8].ChildItems[3].Enabled = true;
                 }
+
                 #endregion
             }
-            # endregion
+            #endregion
 
             # endregion
         }
@@ -444,13 +457,13 @@ namespace VV
                             if (DiffQty > 0)
                             {
                                 // Update OrderQty Also + BalanceQty + ToReleaseQty + other cols
-                                _dbObj.UpdateBaaNDataInMISOrderStatus(Int32.Parse(OrderNo), LineNum, Pos, Item, Description, ItemGroup, DiffQty, PlanWeek, WIPWeek, FGWeek, 
+                                _dbObj.UpdateBaaNDataInMISOrderStatus(OrderNo, LineNum, Pos, Item, Description, ItemGroup, DiffQty, PlanWeek, WIPWeek, FGWeek, 
                                     AmtFromExcel, Convert.ToDateTime(PlannedPromDate), Convert.ToDateTime(OriginalPromDate), CustomerName, Description_2);
                             }
                             else
                             {
                                 // Update other Cols other than OrderQty,BalanceQty,ToReleaseQty
-                                _dbObj.UpdateBaaNDataInMISOrderStatus(Int32.Parse(OrderNo), LineNum, Pos, Item, Description, ItemGroup, 0, PlanWeek, WIPWeek, FGWeek, AmtFromExcel,
+                                _dbObj.UpdateBaaNDataInMISOrderStatus(OrderNo, LineNum, Pos, Item, Description, ItemGroup, 0, PlanWeek, WIPWeek, FGWeek, AmtFromExcel,
                                     Convert.ToDateTime(PlannedPromDate), Convert.ToDateTime(OriginalPromDate), CustomerName, Description_2);
                             }
 
@@ -676,7 +689,7 @@ namespace VV
                     else
                     {
                         // Insert into MISFinanceInput
-                        _dbObj.InsertIntoMISFinanceInput(Int32.Parse(UpdatedDS.Tables[0].Rows[i][1].ToString().Trim()), UpdatedDS.Tables[0].Rows[i][4].ToString().Trim(), Int32.Parse(UpdatedDS.Tables[0].Rows[i][5].ToString().Trim()), String.Empty, String.Empty, String.Empty);
+                        _dbObj.InsertIntoMISFinanceInput(Convert.ToString(UpdatedDS.Tables[0].Rows[i][1].ToString().Trim()), UpdatedDS.Tables[0].Rows[i][4].ToString().Trim(), Int32.Parse(UpdatedDS.Tables[0].Rows[i][5].ToString().Trim()), String.Empty, String.Empty, String.Empty);
 
                         // Add the same into the ArrayList
                         myArrayList_OrderNo.Add(UpdatedDS.Tables[0].Rows[i][1].ToString().Trim());

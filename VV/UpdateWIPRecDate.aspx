@@ -40,7 +40,7 @@
                 ToolTip="Click to Search Data" CssClass="buttonText" Enabled="true" OnClick="btnSearchBox_Click" />
         </asp:Panel>
     </div>--%>
-    <div style="text-align: left; background-color: #D99694; line-height: normal;">
+    <div style="text-align: left; background-color: #eceded; line-height: normal;">
         <asp:Panel ID="BulkUpdateWIP" runat="server">
             <asp:Label ID="lblWIPSearch" runat="server" Font-Bold="true" Text="WIP Search:"></asp:Label>
             <asp:Label ID="lblProdOrder" runat="server" Style="margin-left: 200px;" Text="ProdOrder"></asp:Label>

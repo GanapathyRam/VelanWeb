@@ -30,7 +30,7 @@
             <asp:Label ID="lblConfirm" Visible="false" runat="server"></asp:Label>
         </div>
     </div>--%>
-    <div style="text-align: left; background-color: #D99694; line-height: normal;">
+    <div style="text-align: left; background-color: #eceded; line-height: normal;">
         <asp:Panel ID="BulkUpdatePO" runat="server">
             <asp:Label ID="lblPOSearch" runat="server" Font-Bold="true" Text="PO Search:"></asp:Label>
             <asp:Label ID="lblPOOrder" runat="server" Style="margin-left: 200px;" Text="PO Order"></asp:Label>

@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="CSS/Main.css" rel="stylesheet" />
-    <div style="text-align: right; margin-top: 10px; line-height: normal;">
+    <div style="text-align: right;  background-color: #eceded; padding: 5px; line-height: normal;">
         <asp:Panel ID="BulkUpdateWIP" runat="server">
             <asp:Label ID="lblEmployeeName" runat="server" Style="font-family: Verdana; text-align: center;" Text="Serial Number"></asp:Label>
             <asp:TextBox ID="txtSerialNo" runat="server" Height="15px" Style="height: 20px;" CssClass="textBox" ToolTip="Enter serial no to be Searched" onKeyUp="ControlSearch(this)" />

@@ -109,6 +109,10 @@ namespace VV
                             tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                         else if (MenuID == 2) // WIP Report
                             tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                        else if (MenuID == 3) // Primary Box Entry
+                            tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                        else if (MenuID == 4) // Primary Box Maintance
+                            tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     }
                     # endregion
 
@@ -142,6 +146,8 @@ namespace VV
                             tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[7].Enabled = true;
                         else if (MenuID == 11) // Production Order Importing
                             tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
+                        else if (MenuID == 12) // Heat No Values
+                            tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
                     }
                     # endregion
 
@@ -217,6 +223,11 @@ namespace VV
                             tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                         else if (MenuID == 6) // Delivery Challan Reports
                             tbstr.Items[ParentMenuID].ChildItems[5].ChildItems[0].Enabled = true;
+
+                        else if (MenuID == 7) // Secondary Box Entry
+                            tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+                        else if (MenuID == 8) // Secondary Box Entry - Maintenance
+                            tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
                     }
                     #endregion
 
@@ -280,7 +291,7 @@ namespace VV
                     lblLineNumVal.Text = LineNo;
                     lblPosVal.Text = Pos;
 
-                    DataSet ds = _dbObj.GetMISSalesInput(Int32.Parse(orderNo), LineNo, Int32.Parse(Pos));
+                    DataSet ds = _dbObj.GetMISSalesInput(Convert.ToString(orderNo), LineNo, Int32.Parse(Pos));
                     Cache["IsDataExists"] = "F";
 
                     if (ds != null)
@@ -370,12 +381,12 @@ namespace VV
                 if(isDataExists)
                 {
                     // Update
-                    _DBObj.UpdateMISSalesInput(Int32.Parse(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), SAPCode, StockCode, O2, H2, IBR, ASU, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty);
+                    _DBObj.UpdateMISSalesInput(Convert.ToString(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), SAPCode, StockCode, O2, H2, IBR, ASU, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty);
                 }
                 else
                 {
                     // Insert
-                    _DBObj.InsertIntoMISSalesInput(Int32.Parse(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), SAPCode, StockCode, O2, H2, IBR, ASU,String.Empty,String.Empty,String.Empty,String.Empty,
+                    _DBObj.InsertIntoMISSalesInput(Convert.ToString(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), SAPCode, StockCode, O2, H2, IBR, ASU, String.Empty, String.Empty, String.Empty, String.Empty,
                         String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty);
                 }
 

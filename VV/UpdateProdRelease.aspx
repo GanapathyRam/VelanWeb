@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Update Prod Release" Language="C#" MasterPageFile="~/VV.Master" AutoEventWireup="true" CodeBehind="UpdateProdRelease.aspx.cs" Inherits="VV.UpdateProdRelease" %>
+﻿<%@ Page Title="Update Prod Release" Language="C#" MasterPageFile="~/VV.Master" AutoEventWireup="true" CodeBehind="UpdateProdRelease.aspx.cs"
+     Inherits="VV.UpdateProdRelease" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <table width="100%" cellpadding="0" cellspacing="0">
@@ -151,14 +152,16 @@
                      <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="txtProdReleaseQty" runat="server" SetFocusOnError="true" ErrorMessage="Only Numbers allowed" ValidationExpression="\d+"></asp:RegularExpressionValidator>
                                 
             </tr>
-             <%--<tr>
+            
+             <tr>
                 <td align="right" class="detailTableRowHead">
-                    <asp:Label ID="lblReleaseType" Text ="Production Order Serial No Generation" runat="server"></asp:Label>
+                    <asp:Label ID="lblReleaseType" Text ="Is Serial No Generation is Required?" runat="server"></asp:Label>
+                    <%--//Production Order Serial No Generation--%>
                    </td>
                 <td align="left" class="detailTableRowContent">
                     <asp:CheckBox ID="chkBoxSerialNoGeneration" runat="server"></asp:CheckBox>
                 </td>
-            </tr>--%>
+            </tr>
         </table>
         <table border="0" cellpadding="5" cellspacing="0" width="100%">
             <tr>

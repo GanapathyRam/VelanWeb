@@ -50,27 +50,27 @@
             }
     }
 
-        function Check(parentChk) {
+    function Check(parentChk) {
 
-            var elements = document.getElementsByTagName("INPUT");
-            for (i = 0; i < elements.length; i++) {
-                if (parentChk.checked == true) {
-                    if (IsCheckBox(elements[i])) {
-                        elements[i].checked = true;
-                    }
-
+        var elements = document.getElementsByTagName("INPUT");
+        for (i = 0; i < elements.length; i++) {
+            if (parentChk.checked == true) {
+                if (IsCheckBox(elements[i])) {
+                    elements[i].checked = true;
                 }
-                else {
-                    if (IsCheckBox(elements[i])) {
-                        elements[i].checked = false;
-                    }
+
+            }
+            else {
+                if (IsCheckBox(elements[i])) {
+                    elements[i].checked = false;
                 }
             }
         }
+    }
 
-        function IsCheckBox(chk) {
-            return (chk.type == 'checkbox');
-        }
+    function IsCheckBox(chk) {
+        return (chk.type == 'checkbox');
+    }
 
     </script>
     <table style="height: 100%;" width="100%" cellpadding="0" cellspacing="0">
@@ -95,7 +95,7 @@
                     <asp:Button ID="btnSearchBox" runat="server" Text="Search" OnClick="btnSearchBox_Click"
                         ToolTip="Click to Search Data" CssClass="buttonText" Enabled="false" />
                     &nbsp;
-                    <asp:TextBox ID="txtProdOrder" runat="server" ToolTip="Enter Production Order number to be Searched" onKeyUp="ControlSearch(this)" /> 
+                    <asp:TextBox ID="txtProdOrder" runat="server" ToolTip="Enter Production Order number to be Searched" onKeyUp="ControlSearch(this)" />
                     <asp:Button ID="btnRelease" runat="server" Text="Release" OnClick="btnRelease_Click"
                         ToolTip="Click to Release Data" CssClass="buttonText" Enabled="false" />
                 </asp:Panel>
@@ -127,7 +127,7 @@
                                     </ItemTemplate>
                                     <ItemStyle Wrap="false" />
                                 </asp:TemplateField>
-                                  <asp:TemplateField HeaderText="Order No" ItemStyle-HorizontalAlign="left" SortExpression="Order No">
+                                <asp:TemplateField HeaderText="Order No" ItemStyle-HorizontalAlign="left" SortExpression="Order No">
                                     <ItemTemplate>
                                         <asp:Label ID="lblOrderNumber" runat="server" Text='<%# Eval("OrderNo") %>' />
                                     </ItemTemplate>

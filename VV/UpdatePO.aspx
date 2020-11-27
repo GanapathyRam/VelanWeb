@@ -25,7 +25,7 @@
         }
     </script>
 
-    <div style="text-align: left; background-color: #D99694; line-height: normal;">
+    <div style="text-align: left; background-color: #eceded; line-height: normal;">
         <asp:Panel ID="BulkUpdatePO" runat="server">
             
             <asp:Panel ID="BulkUpdatePO1" runat="server">

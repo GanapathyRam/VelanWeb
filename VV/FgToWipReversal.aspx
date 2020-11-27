@@ -109,7 +109,7 @@
             &nbsp;
             <asp:Button ID="btnSearchBox" Style="font-style: normal;" runat="server" Width="90px" Height="30px" Visible="false" Text="Search" OnClick="btnSearchBox_Click" ToolTip="Click to Search Data" />
             &nbsp;
-            <asp:Button ID="btnUpdate" Style="font-style: normal;" runat="server" Width="90px" Height="30px" Text="Reverse" OnClick="btnUpdate_Click" ToolTip="Click to Search Data" />
+            <asp:Button ID="btnUpdate" Style="font-style: normal;" runat="server" Width="90px" Height="30px" Text="TPI Reversal" OnClick="btnUpdate_Click" ToolTip="Click to Search Data" />
         </asp:Panel>
     </div>
     <div style="margin-top: 10px;">

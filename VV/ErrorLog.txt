@@ -3943,3 +3943,123 @@ Message: Procedure or function spUpdateIPSubLocationMaster has too many argument
 Exception from SQLConnectionOpen-Exception from while updating row from location Master.
 -----------------------------------------------------------
 
+Time: 07-06-2020 08:21:03 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 07-06-2020 08:29:43 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 08-06-2020 07:46:45 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+Exception from SQLConnectionOpen-Exception from display Week Wise Shortage Report!
+-----------------------------------------------------------
+
+Time: 08-06-2020 11:11:02 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display patrol analysis dataset!
+-----------------------------------------------------------
+
+Time: 08-06-2020 11:11:10 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display patrol analysis dataset!
+-----------------------------------------------------------
+
+Time: 08-06-2020 11:11:14 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from display patrol analysis dataset!
+-----------------------------------------------------------
+
+Time: 17-06-2020 11:43:50 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from ProductionOrderImporting while file upload:
+-----------------------------------------------------------
+
+Time: 17-06-2020 11:45:45 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from ProductionOrderImporting while file upload:
+-----------------------------------------------------------
+
+Time: 17-06-2020 11:56:44 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+Exception from SQLConnectionOpen-Exception from ProductionOrderImporting while file upload:
+-----------------------------------------------------------
+
+Time: 18-06-2020 12:16:42 AM
+-----------------------------------------------------------
+Message: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+Exception from SQLConnectionOpen-Exception from SO BackLog while file upload:
+-----------------------------------------------------------
+
+Time: 20-06-2020 07:48:05 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 01-11-2020 01:20:55 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'SO0000012' to data type int.
+Exception from SQLConnectionOpen-Exception from export button click!
+-----------------------------------------------------------
+
+Time: 01-11-2020 10:05:04 PM
+-----------------------------------------------------------
+Message: The given ColumnMapping does not match up with any column in the source or destination.
+Exception from SQLConnectionOpen-Exception from bom while file upload:
+-----------------------------------------------------------
+
+Time: 02-11-2020 11:33:02 PM
+-----------------------------------------------------------
+Message: The given ColumnMapping does not match up with any column in the source or destination.
+Exception from SQLConnectionOpen-Exception from bom while file upload:
+-----------------------------------------------------------
+
+Time: 02-11-2020 11:34:19 PM
+-----------------------------------------------------------
+Message: The given ColumnMapping does not match up with any column in the source or destination.
+Exception from SQLConnectionOpen-Exception from bom while file upload:
+-----------------------------------------------------------
+
+Time: 02-11-2020 11:36:04 PM
+-----------------------------------------------------------
+Message: The given ColumnMapping does not match up with any column in the source or destination.
+Exception from SQLConnectionOpen-Exception from bom while file upload:
+-----------------------------------------------------------
+
+Time: 02-11-2020 11:40:03 PM
+-----------------------------------------------------------
+Message: The given value of type String from the data source cannot be converted to type int of the specified target column.
+Exception from SQLConnectionOpen-Exception from bom while file upload:
+-----------------------------------------------------------
+
+Time: 02-11-2020 11:43:04 PM
+-----------------------------------------------------------
+Message: The given value of type String from the data source cannot be converted to type int of the specified target column.
+Exception from SQLConnectionOpen-Exception from bom while file upload:
+-----------------------------------------------------------
+
+Time: 03-11-2020 10:15:06 PM
+-----------------------------------------------------------
+Message: A DataTable named 'Table' already belongs to this DataSet.
+Exception from SQLConnectionOpen-Exception from while searching record based on Order No and Pos!.
+-----------------------------------------------------------
+
+Time: 26-11-2020 10:26:23 AM
+-----------------------------------------------------------
+Message: Column 'DCnumber' does not belong to table Table.
+Exception from SQLConnectionOpen-Exception from view delivery challan master details!
+-----------------------------------------------------------
+

@@ -63,19 +63,15 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>C:\Users\ganapathy.raman\Desktop\Engineering\VVPublish\bin\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="Interop.Microsoft.Office.Interop.Excel, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Interop.Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="Libraries">
       <HintPath>C:\Users\ganapathy.raman\Desktop\Engineering\VVPublish\bin\Libraries.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\packages\Microsoft.Office.Interop.Excel.12.0.4518.1014\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Office.Interop.Outlook.15.0.4420.1017\lib\net20\Microsoft.Office.Interop.Outlook.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
       <HintPath>C:\Users\ganapathy.raman\Desktop\Engineering\VVPublish\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
@@ -115,6 +111,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AllDCReport.aspx" />
+    <Content Include="HeatNoValues.aspx" />
+    <Content Include="LnImporting.aspx" />
     <Content Include="PatrolAnalysisDateSet.aspx" />
     <Content Include="App_Data\CachedProperties.xml">
       <SubType>Designer</SubType>
@@ -141,6 +139,9 @@
     <Content Include="OperatorMaster.aspx" />
     <Content Include="PatrolAnalysisMonthly.aspx" />
     <Content Include="PatrolReview.aspx" />
+    <Content Include="PrimaryBoxEntry.aspx" />
+    <Content Include="PrimaryBoxEntryMaintenance.aspx" />
+    <Content Include="PrimaryBoxNoForPrint.aspx" />
     <Content Include="ProdOrderReversal.aspx" />
     <Content Include="CSS\PopUpStyleSheet.css" />
     <Content Include="ProductionOrderImporting.aspx" />
@@ -150,6 +151,7 @@
     <Content Include="SalesOrderLineItemDeletion.aspx" />
     <Content Include="SalesOrderQtyDecrement.aspx" />
     <Content Include="ScheduleProcess.aspx" />
+    <Content Include="SecondaryBoxEntry.aspx" />
     <Content Include="SerialNoDetails.aspx" />
     <Content Include="Shortage.aspx" />
     <Content Include="StatusImporting.aspx" />
@@ -158,6 +160,7 @@
     <Content Include="UpdatePassword.aspx" />
     <Content Include="UpdatePO.aspx" />
     <Content Include="UpdatePOCommitmentDate.aspx" />
+    <Content Include="UpdatePrimaryBoxEntry.aspx" />
     <Content Include="UpdateScreenAccess.aspx" />
     <Content Include="CreateNewUser.aspx" />
     <Content Include="UpdateWIPRecDate.aspx" />
@@ -277,11 +280,6 @@
     <Content Include="Login.aspx" />
     <Content Include="MISFinancialInput.xml" />
     <Content Include="MISFinancialInput.xsl" />
-    <Content Include="obj\Debug\VV.dll" />
-    <Content Include="obj\Debug\VV.pdb" />
-    <Content Include="obj\Debug\VV.vbproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\VV.xml" />
-    <Content Include="obj\Debug\VV_MIS.vbproj.FileListAbsolute.txt" />
     <Content Include="Properties\PublishProfiles\g.pubxml.user" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -317,6 +315,7 @@
     </Content>
     <Content Include="ViewITP.aspx" />
     <Content Include="BulkProdCompletion.aspx" />
+    <Content Include="SecondaryBoxMaintenance.aspx" />
     <Content Include="WeekWiseShortageReport.aspx" />
     <Content Include="WIPAgingReport.aspx" />
   </ItemGroup>
@@ -327,6 +326,20 @@
     </Compile>
     <Compile Include="AllDCReport.aspx.designer.cs">
       <DependentUpon>AllDCReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HeatNoValues.aspx.cs">
+      <DependentUpon>HeatNoValues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HeatNoValues.aspx.designer.cs">
+      <DependentUpon>HeatNoValues.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LnImporting.aspx.cs">
+      <DependentUpon>LnImporting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LnImporting.aspx.designer.cs">
+      <DependentUpon>LnImporting.aspx</DependentUpon>
     </Compile>
     <Compile Include="PatrolAnalysisDateSet.aspx.cs">
       <DependentUpon>PatrolAnalysisDateSet.aspx</DependentUpon>
@@ -476,6 +489,27 @@
     <Compile Include="PatrolReview.aspx.designer.cs">
       <DependentUpon>PatrolReview.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PrimaryBoxEntry.aspx.cs">
+      <DependentUpon>PrimaryBoxEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrimaryBoxEntry.aspx.designer.cs">
+      <DependentUpon>PrimaryBoxEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrimaryBoxEntryMaintenance.aspx.cs">
+      <DependentUpon>PrimaryBoxEntryMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrimaryBoxEntryMaintenance.aspx.designer.cs">
+      <DependentUpon>PrimaryBoxEntryMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrimaryBoxNoForPrint.aspx.cs">
+      <DependentUpon>PrimaryBoxNoForPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrimaryBoxNoForPrint.aspx.designer.cs">
+      <DependentUpon>PrimaryBoxNoForPrint.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProdOrderReversal.aspx.cs">
       <DependentUpon>ProdOrderReversal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -531,6 +565,13 @@
     </Compile>
     <Compile Include="ScheduleProcess.aspx.designer.cs">
       <DependentUpon>ScheduleProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecondaryBoxEntry.aspx.cs">
+      <DependentUpon>SecondaryBoxEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecondaryBoxEntry.aspx.designer.cs">
+      <DependentUpon>SecondaryBoxEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="SerialNoDetails.aspx.cs">
       <DependentUpon>SerialNoDetails.aspx</DependentUpon>
@@ -588,6 +629,13 @@
     </Compile>
     <Compile Include="UpdatePOCommitmentDate.aspx.designer.cs">
       <DependentUpon>UpdatePOCommitmentDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePrimaryBoxEntry.aspx.cs">
+      <DependentUpon>UpdatePrimaryBoxEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdatePrimaryBoxEntry.aspx.designer.cs">
+      <DependentUpon>UpdatePrimaryBoxEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateScreenAccess.aspx.cs">
       <DependentUpon>UpdateScreenAccess.aspx</DependentUpon>
@@ -891,6 +939,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VVDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SecondaryBoxMaintenance.aspx.cs">
+      <DependentUpon>SecondaryBoxMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecondaryBoxMaintenance.aspx.designer.cs">
+      <DependentUpon>SecondaryBoxMaintenance.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WeekWiseShortageReport.aspx.cs">
       <DependentUpon>WeekWiseShortageReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -908,14 +963,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EmailExcel\" />
-    <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="UserControls\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\Thumbs.db" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\VV.vbproj.GenerateResource.Cache" />
-    <None Include="obj\Debug\VV_MIS.vbproj.GenerateResource.Cache" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\g.pubxml" />
     <Content Include="VV.Master" />
@@ -934,30 +985,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="obj\Debug\VV.Resources.resources" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="Microsoft.Office.Core">
-      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>4</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

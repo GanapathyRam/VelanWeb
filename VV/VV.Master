@@ -22,7 +22,7 @@
                     <td style="width: 100%;" valign="top">
                         <table border="0" cellpadding="0" cellspacing="0" style="height: 100%;" width="99%">
                             <tr>
-                                <td align="left" style="background-color: white; height: 39px;" valign="top">
+                                <td align="left" style="background-color: white; height: 39px; padding-top:5px;" valign="top">
                                     <img id="IMG1" align="left" alt="Company Logo"
                                         src="Images/logo_velan.png" style="cursor: pointer; width: 167px; height: 39px" />
                                     &nbsp;
@@ -30,7 +30,7 @@
                                 <td>
                                     <table border="0" cellpadding="0" cellspacing="0" style="height: 100%;" width="100%">
                                         <tr>
-                                            <td valign="middle" class="logoApplicationName" style="background-color: white; letter-spacing: 0.5mm; padding-left: 780px;"
+                                            <td valign="middle" class="logoApplicationName" style="background-color: white; letter-spacing: 0.5mm; padding-top:10px; padding-left: 780px;"
                                                 align="right">MIS Order Status</td>
                                         </tr>
                                         <tr>
@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <td class="menu" valign="bottom" align="left">
-                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" OnMenuItemClick="NavigationMenu_MenuItemClick">
+                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" Style="background-color:transparent; padding: 0 15px 12px 15px;" OnMenuItemClick="NavigationMenu_MenuItemClick">
                             <%--<DataBindings>
                                 <asp:MenuItemBinding DataMember="item" NavigateUrlField="NavigateUrl" TextField="Text"
                                     ToolTipField="" ValueField="" />
@@ -56,7 +56,8 @@
                             <Items>
                                 <asp:MenuItem Value="Home" NavigateUrl="~/Home.aspx"></asp:MenuItem>
                                 <asp:MenuItem Value="Planning" Enabled="true">
-                                    <asp:MenuItem Value="Import SO Backlog" NavigateUrl="~/UploadBaan.aspx" Enabled="false"></asp:MenuItem>
+                                    <%--<asp:MenuItem Value="Import SO Backlog" NavigateUrl="~/UploadBaan.aspx" Enabled="false"></asp:MenuItem>--%>
+                                    <asp:MenuItem Value="Import SO Backlog" NavigateUrl="~/LnImporting.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Production Release" NavigateUrl="~/ViewProdRelease.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Invoiced Data Importing" NavigateUrl="~/UploadInvoice.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Freeze Plan" NavigateUrl="~/FreezePlan.aspx" Enabled="false"></asp:MenuItem>
@@ -91,9 +92,11 @@
                                     <asp:MenuItem Value="Week Wise Shortage Report" NavigateUrl="~/WeekWiseShortageReport.aspx" Enabled="false"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="Production" Enabled="true">
-                                    <asp:MenuItem Value="WIP To FG" NavigateUrl="~/ViewWIPItems.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="WIP to TPI" NavigateUrl="~/ViewWIPItems.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Prod Completion" NavigateUrl="~/ViewProdCompletion.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="WIP Report" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Primary Box Entry" NavigateUrl="~/PrimaryBoxEntry.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Primary Box Maintenance" NavigateUrl="~/PrimaryBoxEntryMaintenance.aspx" Enabled="false"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="Quality" Enabled="true">
                                     <asp:MenuItem Value="TPI Offering" NavigateUrl="~/ViewTPIOffering.aspx" Enabled="false"></asp:MenuItem>
@@ -109,8 +112,8 @@
                                         <asp:MenuItem Value="Analysis - Monthly" NavigateUrl="~/PatrolAnalysisMonthly.aspx" Enabled="false"></asp:MenuItem>
                                         <asp:MenuItem Value="Patrol Review" NavigateUrl="~/PatrolReview.aspx" Enabled="false"></asp:MenuItem>
                                         <asp:MenuItem Value="Production Order Importing" NavigateUrl="~/ProductionOrderImporting.aspx" Enabled="false"></asp:MenuItem>
-
                                     </asp:MenuItem>
+                                    <asp:MenuItem Value="Heat No Values" NavigateUrl="~/HeatNoValues.aspx" Enabled="false"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="Sales" Enabled="true">
                                     <asp:MenuItem Value="ITP/ GAD Information" NavigateUrl="~/ViewITP.aspx" Enabled="false"></asp:MenuItem>
@@ -145,13 +148,15 @@
                                     <asp:MenuItem Value="Reports" Enabled="true">
                                         <asp:MenuItem Value="All DC Reports" NavigateUrl="~/AllDCReport.aspx" Enabled="false"></asp:MenuItem>
                                     </asp:MenuItem>
+                                    <asp:MenuItem Value="Secondary Box Entry" NavigateUrl="~/SecondaryBoxEntry.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Secondary Box Maintenance" NavigateUrl="~/SecondaryBoxMaintenance.aspx" Enabled="false"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="MIS Utility" Enabled="true">
                                     <asp:MenuItem Value="Sales Order Line Item Deletion" NavigateUrl="~/SalesOrderLineItemDeletion.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Serial No Details" NavigateUrl="~/SerialNoDetails.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Sales Order Qty Decrement" NavigateUrl="~/SalesOrderQtyDecrement.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Convert FG" NavigateUrl="~/FGOrderChange.aspx" Enabled="false"></asp:MenuItem>
-                                    <asp:MenuItem Value="FG To WIP Reversal" NavigateUrl="~/FgToWipReversal.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="TPI Reversal" NavigateUrl="~/FgToWipReversal.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Update PO" NavigateUrl="~/UpdatePO.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Ready To Release" NavigateUrl="~/ReadyToRelease.aspx" Enabled="false"></asp:MenuItem>
                                     <%--//Shortage Report--%>
@@ -164,7 +169,18 @@
                                     </asp:MenuItem>
                                 </asp:MenuItem>
                             </Items>
-                            <StaticMenuStyle BackColor="#661010" ForeColor="Black" HorizontalPadding="15px" />
+                            <StaticMenuStyle BackColor="#1567a1" ForeColor="#ffffff" HorizontalPadding="15px" />
+                            <StaticMenuItemStyle Font-Bold="true" Font-Names="Trebuchet MS, Verdana" Font-Size="13px"
+                                ForeColor="white" HorizontalPadding="10" />
+                            <StaticSelectedStyle BorderStyle="None" />
+                            <StaticHoverStyle ForeColor="#ffffff" />
+                            <DynamicMenuStyle BackColor="#eceded" ForeColor="#212529" BorderColor="#eceded"
+                                BorderWidth="1px" HorizontalPadding="0px" VerticalPadding="0px" />
+                            <DynamicMenuItemStyle ForeColor="#212529" HorizontalPadding="3px" ItemSpacing="0px"
+                                VerticalPadding="1px" Font-Bold="true" Font-Names="Trebuchet MS, Verdana" Font-Size="12px" />
+                            <DynamicHoverStyle BackColor="#1567a1" ForeColor="#ffffff" BorderStyle="None" />
+                            <DynamicSelectedStyle BorderStyle="None" />
+                            <%--<StaticMenuStyle BackColor="#16679F" ForeColor="Black" HorizontalPadding="15px" />
                             <StaticMenuItemStyle Font-Bold="true" Font-Names="Trebuchet MS, Verdana" Font-Size="13px"
                                 ForeColor="White" HorizontalPadding="10" />
                             <StaticSelectedStyle BorderStyle="None" />
@@ -173,8 +189,8 @@
                                 BorderWidth="1px" HorizontalPadding="0px" VerticalPadding="0px" />
                             <DynamicMenuItemStyle ForeColor="Maroon" HorizontalPadding="3px" ItemSpacing="0px"
                                 VerticalPadding="1px" Font-Bold="true" Font-Names="Trebuchet MS, Verdana" Font-Size="12px" />
-                            <DynamicHoverStyle BackColor="#FFC0C0" ForeColor="#661010" BorderStyle="None" />
-                            <DynamicSelectedStyle BorderStyle="None" />
+                            <DynamicHoverStyle BackColor="#FFC0C0" ForeColor="#16679F" BorderStyle="None" />
+                            <DynamicSelectedStyle BorderStyle="None" />--%>
                         </asp:Menu>
                     </td>
                 </tr>
@@ -191,8 +207,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="footer">
-                        <p>&copy; Powered by <a href="http://frazesolutions.com/" style="color: yellow;" target="_blank">Fraze Software Solutions</a></p>
+                    <td class="footer" style="font-size:12px;">
+                        <p>&copy; Powered by <a href="http://frazesolutions.com/" style="color: white;" target="_blank">Fraze Software Solutions</a></p>
                     </td>
                 </tr>
             </table>

@@ -109,6 +109,10 @@ namespace VV
                             tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                         else if (MenuID == 2) // WIP Report
                             tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                        else if (MenuID == 3) // Primary Box Entry
+                            tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
+                        else if (MenuID == 4) // Primary Box Maintance
+                            tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                     }
                     # endregion
 
@@ -142,6 +146,8 @@ namespace VV
                             tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[7].Enabled = true;
                         else if (MenuID == 11) // Production Order Importing
                             tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
+                        else if (MenuID == 12) // Heat No Values
+                            tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
                     }
                     # endregion
 
@@ -217,6 +223,11 @@ namespace VV
                             tbstr.Items[ParentMenuID].ChildItems[MenuID].Enabled = true;
                         else if (MenuID == 6) // Delivery Challan Reports
                             tbstr.Items[ParentMenuID].ChildItems[5].ChildItems[0].Enabled = true;
+
+                        else if (MenuID == 7) // Secondary Box Entry
+                            tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+                        else if (MenuID == 8) // Secondary Box Entry - Maintenance
+                            tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
                     }
                     #endregion
 
@@ -246,6 +257,7 @@ namespace VV
 
                         if (MenuID == 6) // Ready To Release
                             tbstr.Items[ParentMenuID].ChildItems[6].Enabled = true;
+
                         if (MenuID == 7) // WIP Aging
                             tbstr.Items[ParentMenuID].ChildItems[7].Enabled = true;
 
@@ -261,9 +273,10 @@ namespace VV
                         if (MenuID == 11) // Enquiries And Reports
                             tbstr.Items[ParentMenuID].ChildItems[8].ChildItems[3].Enabled = true;
                     }
+
                     #endregion
                 }
-                # endregion
+                #endregion
 
                 # endregion
 
@@ -283,8 +296,19 @@ namespace VV
 
                         if (dr.Length > 0)
                         {
-                            lblOrderNoVal.Text = orderNo;
                             lblOrderTypeVal.Text = dr[0]["OrderType"].ToString().Trim();
+
+                            if (!lblOrderTypeVal.Text.Trim().ToUpper().Equals("ICS"))
+                            {
+                                chkBoxSerialNoGeneration.Checked = true;
+                                chkBoxSerialNoGeneration.Enabled = false;
+                            }
+                            else
+                            {
+                                chkBoxSerialNoGeneration.Enabled = true;
+                            }
+
+                            lblOrderNoVal.Text = orderNo;
                             lblPosVal.Text = dr[0]["Pos"].ToString().Trim();
                             lblLineNumVal.Text = dr[0]["LineNum"].ToString().Trim();
                             lblCustNameVal.Text = dr[0]["CustomerName"].ToString().Trim();
@@ -329,14 +353,13 @@ namespace VV
         {
             try
             {
-                
                 String SerialNo = "";
                 String valueSpare = "";
                 DBUtil _DBObj = new DBUtil();
 
                 DataSet ds = new DataSet();
 
-                ds = _DBObj.GetMISOrderStatusForValveSpare(Convert.ToInt32(Request.QueryString["OrderNo"].ToString()), Convert.ToInt32(Request.QueryString["Pos"].ToString()));
+                ds = _DBObj.GetMISOrderStatusForValveSpare(Convert.ToString(Request.QueryString["OrderNo"]), Convert.ToInt32(Request.QueryString["Pos"].ToString()));
 
                 if (ds != null && ds.Tables[0].Rows.Count > 0)
                 {
@@ -352,7 +375,7 @@ namespace VV
                     {
                         //Guid mySerialNumber = Guid.NewGuid();
 
-                        if(i==1)
+                        if (i == 1)
                             SerialNo = GenerateSerialNo();
                         else
                         {
@@ -365,19 +388,45 @@ namespace VV
 
                         }
                         // Generate serial no depending on the Qty count
-                        _DBObj.InsertProdutionReleaseData(Int32.Parse(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), txtProdOrderNo.Text.Trim(), SerialNo, 1);
+                        _DBObj.InsertProdutionReleaseData(Convert.ToString(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), txtProdOrderNo.Text.Trim(), SerialNo, 1);
                     }
                 }
                 else
                 {
-                    //Guid mySerialNumber = Guid.NewGuid();
-                    SerialNo = "";
+                    // Logic added from Ganapathy - 25-05-2020 : Generating the serial no for ICS as well, based on user selection on the check box
+                    if (chkBoxSerialNoGeneration.Checked && lblOrderTypeVal.Text.Trim().ToUpper().Equals("ICS"))
+                    {
+                        for (int i = 1; i <= Int32.Parse(txtProdReleaseQty.Text.Trim()); i++)
+                        {
+                            //Guid mySerialNumber = Guid.NewGuid();
 
-                    // Generate only one
-                    _DBObj.InsertProdutionReleaseData(Int32.Parse(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), txtProdOrderNo.Text.Trim(), SerialNo, Int32.Parse(txtProdReleaseQty.Text.Trim()));
+                            if (i == 1)
+                                SerialNo = GenerateSerialNo();
+                            else
+                            {
+                                // Just Increment the last SerialNo
+                                string[] SplitVal = SerialNo.Split('-');
+                                int LastNum = Int32.Parse(SplitVal[1].Trim());
+                                LastNum = LastNum + 1;
+
+                                SerialNo = SplitVal[0].Trim() + "-" + LastNum.ToString();
+
+                            }
+                            // Generate serial no depending on the Qty count
+                            _DBObj.InsertProdutionReleaseData(Convert.ToString(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), txtProdOrderNo.Text.Trim(), SerialNo, 1);
+                        }
+                    }
+                    else
+                    {
+                        //Guid mySerialNumber = Guid.NewGuid();
+                        SerialNo = "";
+
+                        // Generate only one
+                        _DBObj.InsertProdutionReleaseData(Convert.ToString(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), txtProdOrderNo.Text.Trim(), SerialNo, Int32.Parse(txtProdReleaseQty.Text.Trim()));
+                    }
                 }
 
-                ds = _DBObj.GetProductionReleasedData(Int32.Parse(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), txtProdOrderNo.Text.Trim());
+                ds = _DBObj.GetProductionReleasedData(Convert.ToString(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), txtProdOrderNo.Text.Trim());
 
                 // ToReleaseQty = ToReleaseQty - Prod Release Qty
                 // WIP Qty = WIP Qty + Prod Release Qty
@@ -397,8 +446,8 @@ namespace VV
 
                 //_DBObj.UpdateQtyInMISOrderStatusTableForProdRelease(lblOrderTypeVal.Text.Trim(), Int32.Parse(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), _ToReleaseQty, _WIPQty);
 
-                _DBObj.UpdateQtyInMISOrderStatusTableForProdRelease(lblOrderTypeVal.Text.Trim(), Int32.Parse(lblOrderNoVal.Text.Trim()), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), _ToReleaseQty, _UnderPickQty);
-                
+                _DBObj.UpdateQtyInMISOrderStatusTableForProdRelease(lblOrderTypeVal.Text.Trim(), lblOrderNoVal.Text.Trim(), lblLineNumVal.Text.Trim(), Int32.Parse(lblPosVal.Text.Trim()), _ToReleaseQty, _WIPQty);
+
 
                 grdViewUpdateProdResult.DataSource = ds;
                 grdViewUpdateProdResult.DataBind();
@@ -407,7 +456,7 @@ namespace VV
 
                 Cache.Remove("ToReleaseQty");
                 Cache.Remove("WIPQty");
-                
+
             }
             catch (Exception ex)
             {

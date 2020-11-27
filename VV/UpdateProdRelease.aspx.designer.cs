@@ -310,6 +310,24 @@ namespace VV {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
+        /// lblReleaseType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReleaseType;
+        
+        /// <summary>
+        /// chkBoxSerialNoGeneration control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkBoxSerialNoGeneration;
+        
+        /// <summary>
         /// buttonUpdate control.
         /// </summary>
         /// <remarks>

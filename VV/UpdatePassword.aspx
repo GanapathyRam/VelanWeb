@@ -72,7 +72,7 @@
         <table border="0" cellpadding="5" cellspacing="0" width="100%">
             <tr>
                 <td align="center" colspan="2" valign="bottom">
-                    <asp:Button ID="buttonUpdate" runat="server"  Width="100px" CssClass="buttonText" Text="Change Password" ToolTip="Chnage Password"
+                    <asp:Button ID="buttonUpdate" runat="server"  style="margin-left:80px;" CssClass="buttonText" Text="Change Password" ToolTip="Chnage Password"
                         OnClick="buttonUpdate_Click" /> &nbsp;
                     <asp:Button ID="buttonCancel" runat="server" CausesValidation="False" CssClass="buttonText" ToolTip="Cancel"
                         Text="Cancel" OnClick="buttonCancel_Click" />

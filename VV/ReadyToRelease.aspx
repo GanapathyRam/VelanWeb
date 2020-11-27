@@ -37,15 +37,17 @@
             return (chk.type == 'checkbox');
         }
     </script>
-    <div style="margin-left: 600px; text-align: center; font-family: Verdana;">
-        <asp:Panel ID="BulkUpdateWIP" runat="server">
-            <asp:Label ID="lblItem" runat="server" Style="font-family: Verdana; text-align: center;" Text="Item"></asp:Label>
-            <asp:TextBox ID="txtItem" runat="server" Height="15px" Style="height: 20px;" CssClass="textBox" ToolTip="Enter item to be Searched" onKeyUp="ControlSearch(this)" />
-            &nbsp;
-            <asp:Button ID="btnSearchBox" Style="font-style: normal;" runat="server" Width="90px" Height="30px" Text="Search" OnClick="btnSearchBox_Click" ToolTip="Click to Search Data" />
-            &nbsp;
-            <asp:Button ID="btnExcelExport" Style="font-style: normal;" runat="server" Width="90px" Height="30px" Text="Excel Export" OnClick="btnExcelExport_Click" ToolTip="Click to Export Excel" />
-        </asp:Panel>
+    <div style="background-color: #eceded; padding: 5px; font-family: Verdana;">
+        <div style="margin-left: 650px; text-align: center; "
+            <asp:Panel ID="BulkUpdateWIP" runat="server">
+                <asp:Label ID="lblItem" runat="server" Style="font-family: Verdana; text-align: center;" Text="Item"></asp:Label>
+                <asp:TextBox ID="txtItem" runat="server" Height="15px" Style="height: 20px;" CssClass="textBox" ToolTip="Enter item to be Searched" onKeyUp="ControlSearch(this)" />
+                &nbsp;
+                <asp:Button ID="btnSearchBox" Style="font-style: normal;" runat="server" Width="90px" Height="30px" Text="Search" OnClick="btnSearchBox_Click" ToolTip="Click to Search Data" />
+                &nbsp;
+                <asp:Button ID="btnExcelExport" Style="font-style: normal;" runat="server" Width="90px" Height="30px" Text="Excel Export" OnClick="btnExcelExport_Click" ToolTip="Click to Export Excel" />
+            </asp:Panel>
+         </div>
     </div>
      <div style="margin-top:10px;">
         <asp:Label ID="lblMessage" Style="margin-left: 900px; font-size: small; font-family: Verdana; text-align: right;" CssClass="lblSuccessMessage" Visible="false" runat="server"></asp:Label>

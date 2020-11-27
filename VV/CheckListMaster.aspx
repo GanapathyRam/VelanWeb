@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/VV.Master" EnableEventValidation ="false" CodeBehind="CheckListMaster.aspx.cs" Inherits="VV.CheckListMaster" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/VV.Master" EnableEventValidation ="false" CodeBehind="CheckListMaster.aspx.cs" 
+    Inherits="VV.CheckListMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="CSS/Main.css" rel="stylesheet" />

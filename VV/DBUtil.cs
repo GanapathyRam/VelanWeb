@@ -207,7 +207,7 @@ namespace VV
         /// <param name="ProdOrderNo"></param>
         /// <param name="SerialNo"></param>
         /// <param name="ProdReleaseQty"></param>
-        public void InsertProdutionReleaseData(int OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, int ProdReleaseQty)
+        public void InsertProdutionReleaseData(string OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, int ProdReleaseQty)
         {
             try
             {
@@ -242,7 +242,7 @@ namespace VV
             }
         }
 
-        public DataSet GetMISOrderStatusForValveSpare(int OrderNo, int Pos)
+        public DataSet GetMISOrderStatusForValveSpare(string OrderNo, int Pos)
         {
             DataSet ds = new DataSet();
             //var valveSpare = string.Empty;
@@ -279,7 +279,7 @@ namespace VV
         /// <param name="Pos"></param>
         /// <param name="ProdOrderNo"></param>
         /// <returns></returns>
-        public DataSet GetProductionReleasedData(int OrderNum, String LineNum, int Pos, String ProdOrderNo)
+        public DataSet GetProductionReleasedData(string OrderNum, String LineNum, int Pos, String ProdOrderNo)
         {
             DataSet ds = new DataSet();
             try
@@ -319,7 +319,7 @@ namespace VV
         /// <param name="Pos"></param>
         /// <param name="ToReleaseQty"></param>
         /// <param name="WIPQty"></param>
-        public void UpdateQtyInMISOrderStatusTableForProdRelease(String OrderType, int OrderNum, String LineNum, int Pos, int ToReleaseQty, int WIPQty)
+        public void UpdateQtyInMISOrderStatusTableForProdRelease(String OrderType, string OrderNum, String LineNum, int Pos, int ToReleaseQty, int WIPQty)
         {
             try
             {
@@ -356,7 +356,7 @@ namespace VV
         /// <param name="Pos"></param>
         /// <param name="FGQty"></param>
         /// <param name="WIPQty"></param>
-        public void UpdateQtyInMISOrderStatusTableForWIPToFG(String OrderType, int OrderNum, String LineNum, int Pos, int FGQty, int WIPQty)
+        public void UpdateQtyInMISOrderStatusTableForWIPToFG(String OrderType, string OrderNum, String LineNum, int Pos, int FGQty, int WIPQty)
         {
             try
             {
@@ -396,7 +396,7 @@ namespace VV
         /// <param name="ProdOrderNo"></param>
         /// <param name="SerialNo"></param>
         /// <param name="BalanceQty"></param>
-        public void UpdateBalanceQtyInProdOrderReleaseTableForWIPToFG(int OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, int BalanceQty)
+        public void UpdateBalanceQtyInProdOrderReleaseTableForWIPToFG(string OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, int BalanceQty)
         {
             try
             {
@@ -608,7 +608,7 @@ namespace VV
         /// <param name="Pos"></param>
         /// <param name="ProdOrderNo"></param>
         /// <param name="SerialNo"></param>
-        public void ProductionOrderReversal(int OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, int BalanceQty, string StoreIssued)
+        public void ProductionOrderReversal(string OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, int BalanceQty, string StoreIssued)
         {
             try
             {
@@ -638,7 +638,7 @@ namespace VV
             }
         }
 
-        public void UpdateProductionStoresIssued(int OrderNum, String LineNum, int Pos, String ProdOrderNo)
+        public void UpdateProductionStoresIssued(string OrderNum, String LineNum, int Pos, String ProdOrderNo)
         {
             try
             {
@@ -666,7 +666,7 @@ namespace VV
             }
         }
 
-        public void ProductionOrderReversalForStores(int OrderNum, String LineNum, int Pos, String ProdOrderNo, int BalanceQty)
+        public void ProductionOrderReversalForStores(string OrderNum, String LineNum, int Pos, String ProdOrderNo, int BalanceQty)
         {
             try
             {
@@ -1033,7 +1033,7 @@ namespace VV
             }
         }
 
-        public void UpdateOrderStatus(string CustomerName, int OrderNo, int Pos, DateTime? MaterialReceiptDate,
+        public void UpdateOrderStatus(string CustomerName, string OrderNo, int Pos, DateTime? MaterialReceiptDate,
             DateTime? MachiningCompletionDate, DateTime? AssemblyReleaseDate, DateTime? TPI_1Date, DateTime? TPI_2Date, string Remarks, bool ReceiptActivity,
             bool MachiningActivity, bool AssemblyActivity, bool TPI_1Activity, bool TPI_2Activity, bool ReceiptNL, bool MachiningNL, bool AssemblyNL, bool TPI_1NL,
             bool TPI_2NL, bool chkReceipt, bool chkMachine, bool chkAssembly, bool chkTPI1, bool chkTPI2, bool chkReason)
@@ -1228,7 +1228,7 @@ namespace VV
         /// <param name="GADNo"></param>
         /// <param name="QCINo"></param>
         /// <param name="ReleaseDate"></param>
-        public void InsertIntoMISSalesInput(int OrderNum, String LineNum, int Pos, String SAPCode, String StockCode, String O2, String H2, String IBR, String ASU, String TAGNo, String GADNo, String QCINo, String ReleaseDate,
+        public void InsertIntoMISSalesInput(String OrderNum, String LineNum, int Pos, String SAPCode, String StockCode, String O2, String H2, String IBR, String ASU, String TAGNo, String GADNo, String QCINo, String ReleaseDate,
             String Nace, String LowEmission, String OtherRequirment, String GADDate, String PODate, String ValueType)
         {
             try
@@ -1288,7 +1288,7 @@ namespace VV
         /// <param name="H2"></param>
         /// <param name="IBR"></param>
         /// <param name="ASU"></param>
-        public void UpdateMISSalesInput(int OrderNum, String LineNum, int Pos, String SAPCode, String StockCode, String O2, String H2, String IBR, String ASU, String TAGNo, String GADNo, String QCINo, String ReleaseDate,
+        public void UpdateMISSalesInput(string OrderNum, String LineNum, int Pos, String SAPCode, String StockCode, String O2, String H2, String IBR, String ASU, String TAGNo, String GADNo, String QCINo, String ReleaseDate,
             String Nace, String LowEmission, String OtherRequirment, String GADDate, String PODate, String ValueType)
         {
             try
@@ -1342,7 +1342,7 @@ namespace VV
         /// <param name="LineNum"></param>
         /// <param name="Pos"></param>
         /// <returns></returns>
-        public DataSet GetMISSalesInput(int OrderNum, String LineNum, int Pos)
+        public DataSet GetMISSalesInput(String OrderNum, String LineNum, int Pos)
         {
             DataSet ds = new DataSet();
             try
@@ -1414,7 +1414,7 @@ namespace VV
         /// <param name="ABG"></param>
         /// <param name="PBG"></param>
         /// <param name="RP"></param>
-        public void InsertIntoMISFinanceInput(int OrderNum, String LineNum, int Pos, String ABG, String PBG, String RP)
+        public void InsertIntoMISFinanceInput(String OrderNum, String LineNum, int Pos, String ABG, String PBG, String RP)
         {
             try
             {
@@ -1461,7 +1461,7 @@ namespace VV
         /// <param name="ABG"></param>
         /// <param name="PBG"></param>
         /// <param name="RP"></param>
-        public void UpdateMISFinanceInput(int OrderNum, String LineNum, int Pos, String ABG, String PBG, String RP)
+        public void UpdateMISFinanceInput(String OrderNum, String LineNum, int Pos, String ABG, String PBG, String RP)
         {
             try
             {
@@ -1506,7 +1506,7 @@ namespace VV
         /// <param name="LineNum"></param>
         /// <param name="Pos"></param>
         /// <returns></returns>
-        public DataSet GetMISFinanceInput(int OrderNum, String LineNum, int Pos)
+        public DataSet GetMISFinanceInput(String OrderNum, String LineNum, int Pos)
         {
             DataSet ds = new DataSet();
             try
@@ -1629,7 +1629,7 @@ namespace VV
             }
         }
 
-        public DataSet RetrieveBaaNDataForInvoiceFromOrderNoAndPos(int OrderNo, int Pos)
+        public DataSet RetrieveBaaNDataForInvoiceFromOrderNoAndPos(string OrderNo, int Pos)
         {
             DataSet ds = new DataSet();
             try
@@ -1718,7 +1718,7 @@ namespace VV
         /// <param name="FGQty"></param>
         /// <param name="BalanceQty"></param>
         /// <param name="InvoicedQty"></param>
-        public void UpdateQtyInMISForInvoice(int OrderNum, String LineNum, int Pos, int FGQty, int BalanceQty, int InvoicedQty)
+        public void UpdateQtyInMISForInvoice(String OrderNum, String LineNum, int Pos, int FGQty, int BalanceQty, int InvoicedQty)
         {
             try
             {
@@ -1756,7 +1756,7 @@ namespace VV
         /// <param name="InvoiceDate"></param>
         /// <param name="InvoiceNo"></param>
         /// <param name="IsSuccess"></param>
-        public void InsertInvoiceData(int OrderNum, String LineNum, int Pos, String DelQty, String InvoiceDate, String InvoiceNo, bool IsSuccess)
+        public void InsertInvoiceData(String OrderNum, String LineNum, int Pos, String DelQty, String InvoiceDate, String InvoiceNo, bool IsSuccess)
         {
             try
             {
@@ -1868,7 +1868,7 @@ namespace VV
         /// <param name="ApprovedGAD"></param>
         /// <param name="Inspection1"></param>
         /// <param name="Inspection2"></param>
-        public void UpdateMISFinanceInputForITP(int OrderNum, String LineNum, int Pos, String ITP, String ApprovedITP, String GAD, String ApprovedGAD, String Inspection1, String Inspection2)
+        public void UpdateMISFinanceInputForITP(String OrderNum, String LineNum, int Pos, String ITP, String ApprovedITP, String GAD, String ApprovedGAD, String Inspection1, String Inspection2)
         {
             try
             {
@@ -1949,7 +1949,7 @@ namespace VV
         /// <param name="ProdDeliveryDate"></param>
         /// <param name="ProdComplDate"></param>
         /// <param name="ProdRemarks"></param>
-        public void UpdateProdCompletion(int OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, String ProdDeliveryDate, String ProdComplDate, String ProdRemarks)
+        public void UpdateProdCompletion(string OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, String ProdDeliveryDate, String ProdComplDate, String ProdRemarks)
         {
             try
             {
@@ -2499,6 +2499,70 @@ namespace VV
             {
                 conn.Close();
                 Logger.Write(this.GetType().ToString() + " : InsertWIPAllFromWIPImporting() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void InsertLnSoBackLogImporting(string OrderNo, string LineNumber, string CustomerName, string CustomerOrderNo, string CustomerOrderPos, DateTime OrderDate, DateTime WhPlannedDeliveryDate,
+            DateTime SoPlannedDeliveryDate, string Item, string Description, string ProductType, string ProductLine, int OrderedQty, int BalanceQty)
+        {
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spInsertLnSoBackLog]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                cmd.Parameters.Add(new SqlParameter("@OrderNo", OrderNo)); // String
+                cmd.Parameters.Add(new SqlParameter("@LineNum", LineNumber));
+                cmd.Parameters.Add(new SqlParameter("@CustomerName", CustomerName));
+                cmd.Parameters.Add(new SqlParameter("@CustomerOrderNo", CustomerOrderNo));
+                cmd.Parameters.Add(new SqlParameter("@CustomerOrderPos", CustomerOrderPos));
+
+                cmd.Parameters.Add(new SqlParameter("@OrderDate", OrderDate));
+                cmd.Parameters.Add(new SqlParameter("@WhPlannedDeliveryDate", WhPlannedDeliveryDate));
+                cmd.Parameters.Add(new SqlParameter("@SoPlannedDeliveryDate", SoPlannedDeliveryDate));
+                cmd.Parameters.Add(new SqlParameter("@Item", Item));
+                cmd.Parameters.Add(new SqlParameter("@Description", Description));
+                cmd.Parameters.Add(new SqlParameter("@ProductType", ProductType));
+                cmd.Parameters.Add(new SqlParameter("@ProductLine", ProductLine));
+                cmd.Parameters.Add(new SqlParameter("@OrderedQty", OrderedQty));
+                cmd.Parameters.Add(new SqlParameter("@BalanceQty", BalanceQty));
+
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertWIPAllFromWIPImporting() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdateLnSoBackLogImporting()
+        {
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spUpdateLNSoBackLog]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateLnSoBackLogImporting() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
                 throw ex;
             }
         }
@@ -3171,7 +3235,7 @@ namespace VV
         /// <param name="TPIOfferDate"></param>
         /// <param name="QCRemarks"></param>
         /// <param name="IRNCompletionDate"></param>
-        public void UpdateTPIOffering(int OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, String TPIOfferDate, String QCRemarks, String IRNCompletionDate)
+        public void UpdateTPIOffering(String OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, String TPIOfferDate, String QCRemarks, String IRNCompletionDate)
         {
             try
             {
@@ -3291,7 +3355,7 @@ namespace VV
         /// <param name="ProdOrderNo"></param>
         /// <param name="SerialNo"></param>
         /// <param name="SCNCompletionDate"></param>
-        public void UpdateSCNinput(int OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, String SCNCompletionDate)
+        public void UpdateSCNinput(String OrderNum, String LineNum, int Pos, String ProdOrderNo, String SerialNo, String SCNCompletionDate)
         {
             try
             {
@@ -3739,7 +3803,7 @@ namespace VV
         /// <param name="PlanWeek"></param>
         /// <param name="WIPWeek"></param>
         /// <param name="FGWeek"></param>
-        public void UpdateBaaNDataInMISOrderStatus(int OrderNum, String LineNum, int Pos, String Item, String Description, String ItemGroup, int DiffQtyToBeUpdated, int PlanWeek, int WIPWeek, int FGWeek,
+        public void UpdateBaaNDataInMISOrderStatus(string OrderNum, String LineNum, int Pos, String Item, String Description, String ItemGroup, int DiffQtyToBeUpdated, int PlanWeek, int WIPWeek, int FGWeek,
             float UpdatedAmount, DateTime PlannedDelDate, DateTime OriginalPromDate, String CustomerName, String Description_2)
         {
             try
@@ -5604,7 +5668,7 @@ namespace VV
             }
         }
 
-        public void UpdateSaleOrderQtyDecrement(int QtyToBeReduced, int OrderNo, int Pos)
+        public void UpdateSaleOrderQtyDecrement(int QtyToBeReduced, string OrderNo, int Pos)
         {
             try
             {
@@ -5628,7 +5692,7 @@ namespace VV
             }
         }
 
-        public void UpdateSalesOrderLineItemDeletion(int OrderNo, int Pos)
+        public void UpdateSalesOrderLineItemDeletion(string OrderNo, int Pos)
         {
             try
             {
@@ -5704,7 +5768,7 @@ namespace VV
             }
         }
 
-        public void UpdateBaaNDataInMISOrderStatusFromOrder(int OrderNum, int Pos, int ToReleaseQty, int FGQty, int QtyToConvert)
+        public void UpdateBaaNDataInMISOrderStatusFromOrder(string OrderNum, int Pos, int ToReleaseQty, int FGQty, int QtyToConvert)
         {
             try
             {
@@ -5731,7 +5795,7 @@ namespace VV
             }
         }
 
-        public void UpdateBaaNDataInMISOrderStatusToOrder(int OrderNum, int Pos, int ToReleaseQty, int FGQty, int QtyToConvert)
+        public void UpdateBaaNDataInMISOrderStatusToOrder(string OrderNum, int Pos, int ToReleaseQty, int FGQty, int QtyToConvert)
         {
             try
             {
@@ -5789,7 +5853,7 @@ namespace VV
             }
         }
 
-        public DataSet RetrieveFGToWIReversalItems(int OrderNo, int Pos, int Flag)
+        public DataSet RetrieveFGToWIReversalItems(string OrderNo, int Pos, int Flag)
         {
             DataSet ds = new DataSet();
             try
@@ -5818,7 +5882,7 @@ namespace VV
             }
         }
 
-        public void UpdateFGToWIReversalItems(int OrderNum, int Pos, string SerialNo)
+        public void UpdateFGToWIReversalItems(string OrderNum, int Pos, string SerialNo)
         {
             try
             {
@@ -5990,7 +6054,7 @@ namespace VV
             }
         }
 
-        public void InsertStockTransferRequest(int RequestedBy, DateTime RequestDate, string ItemcodeFrom, string ItemcodeTo, int OrderNo, int Pos, float Quantity,
+        public void InsertStockTransferRequest(int RequestedBy, DateTime RequestDate, string ItemcodeFrom, string ItemcodeTo, string OrderNo, int Pos, float Quantity,
             string Remarks)
         {
             try
@@ -6503,7 +6567,7 @@ namespace VV
             }
         }
 
-        public DataSet RetriveByDetailedReport(int OrderNo)
+        public DataSet RetriveByDetailedReport(string OrderNo)
         {
             DataSet ds = new DataSet();
             try
@@ -7615,10 +7679,729 @@ namespace VV
 
         #endregion
 
+        #region Heat No Values
+
+        public DataSet GetMatrialCodeFromChemicalMechanicalMaster()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("select MaterialCode, (MaterialDesc + MatlType) as MaterialDesc from ChemicalMechanicalMaster", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetMatrialCodeFromChemicalMechanicalMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet GetMatrialCodeForHeatNoValues()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("Select HTCode, HTDesc from HeatTreatmentMaster", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetMatrialCodeForHeatNoValues() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet GetHeatNoValuesFromMaterialCode(string materialCode, string description)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("SELECT CMM.CMin, CMM.CMax, HCM.CAct, CMM.MnMin, CMM.MnMax, HCM.MnAct,CMM.PMin, CMM.PMax, HCM.PAct, CMM.SMin, CMM.SMax, HCM.SAct, CMM.SiMin, CMM.SiMax, HCM.SiAct, CMM.CuMin, CMM.CuMax,HCM.CuAct, CMM.NiMin, CMM.NiMax, HCM.NiAct, CMM.CrMin, CMM.CrMax, HCM.CrAct, CMM.MoMin, CMM.MoMax, HCM.MoAct, CMM.VMin, CMM.VMax, HCM.VAct, CMM.CuNiCrMoVMin, CMM.CuNiCrMoVMax,HCM.CuNiCrMoVAct, CMM.CrMoMin, CMM.CrMoMax, HCM.CrMoAct, CMM.NbMin, CMM.NbMax, HCM.NbAct, CMM.NMin, CMM.NMax, HCM.NAct,CMM.AlMin, CMM.AlMax, HCM.AlAct, CMM.TiMin, CMM.TiMax, HCM.TiAct,CMM.ZrMin, CMM.ZrMax, HCM.ZrAct, CMM.FeMin, CMM.FeMax, HCM.FeAct,CMM.TaMin, CMM.TaMax, HCM.TaAct, CMM.NbTaMin, CMM.NbTaMax, HCM.NbTaAct, CMM.TensileMPAMin, CMM.TensileMPAMax,HCM.TensileMPAAct, CMM.TensileKSIMin, CMM.TensileKSIMax, HCM.TensileKSIAct, CMM.YieldMPAMin, HCM.YieldMPAAct, CMM.YieldKSIMin, HCM.YieldKSIAct, CMM.ElongationMin, HCM.ElongationAct,CMM.ReductionMin, HCM.ReductionAct, CMM.HardnessMin, CMM.HardnessMax, HCM.HardnessAct, HCM.HTCode, HCM.Impact1Act,HCM.Impact2Act,HCM.Impact3Act,HCM.Impact4Act,HCM.Impact5Act,HCM.Impact6Act,HCM.TemperatureFAct,HCM.TemperatureCAct FROM ChemicalMechanicalMaster as CMM Left outer join HeatCodeMaster as HCM on CMM.MaterialCode = HCM.MaterialCode where CMM.MaterialCode='" + materialCode+ "' and CMM.MaterialDesc + CMM.MatlType='" + description +"'", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetHeatNoValuesFromMaterialCode() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet GetHeatNoDetails(string HeatCodeNo)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("select * from HeatCodeMaster where HeatNo = '"+ HeatCodeNo + "'", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetHeatNoDetails() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void InsertHeatNoMaster(string HeatNo, string Supplier, string MaterialCode, string Matltype, string PED, string CAct, string MnAct, string PAct, 
+            string SAct, string SiAct, string CuAct, string NiAct, string CrAct, string MoAct, string VAct, string CuNiCrMoVAct, string CrMoAct, string NbAct, 
+            string NAct, string AlAct, string TiAct,
+            string ZrAct, string FeAct, string TaAct, string NbTaAct, string TensileMPAAct, string TensileKSIAct, string YieldMPAAct, string YieldKSIAct, string ElongationAct, 
+            string ReductionAct, string HardnessAct, string HTCode, string Impact1, string Impact2, string Impact3, string Impact4, string Impact5, string Impact6,
+            string TemperatureF, string TemperatureC)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spInsertHeatNo]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@HeatNo", HeatNo));
+                cmd.Parameters.Add(new SqlParameter("@Supplier", Supplier));
+                cmd.Parameters.Add(new SqlParameter("@MaterialCode", MaterialCode));
+                cmd.Parameters.Add(new SqlParameter("@Matltype", Matltype));
+                cmd.Parameters.Add(new SqlParameter("@PED", PED));
+                cmd.Parameters.Add(new SqlParameter("@CAct", CAct));
+                cmd.Parameters.Add(new SqlParameter("@MnAct", MnAct));
+                cmd.Parameters.Add(new SqlParameter("@PAct", PAct));
+                cmd.Parameters.Add(new SqlParameter("@SAct", SAct));
+                cmd.Parameters.Add(new SqlParameter("@SiAct", SiAct));
+                cmd.Parameters.Add(new SqlParameter("@CuAct", CuAct));
+                cmd.Parameters.Add(new SqlParameter("@NiAct", NiAct));
+                cmd.Parameters.Add(new SqlParameter("@CrAct", CrAct));
+                cmd.Parameters.Add(new SqlParameter("@MoAct", MoAct));
+                cmd.Parameters.Add(new SqlParameter("@VAct", VAct));
+                cmd.Parameters.Add(new SqlParameter("@CuNiCrMoVAct", CuNiCrMoVAct));
+                cmd.Parameters.Add(new SqlParameter("@CrMoAct", CrMoAct));
+                cmd.Parameters.Add(new SqlParameter("@NbAct", NbAct));
+                cmd.Parameters.Add(new SqlParameter("@NAct", NAct));
+
+                cmd.Parameters.Add(new SqlParameter("@AlAct", AlAct));
+                cmd.Parameters.Add(new SqlParameter("@TiAct", TiAct));
+                cmd.Parameters.Add(new SqlParameter("@ZrAct", ZrAct));
+                cmd.Parameters.Add(new SqlParameter("@FeAct", FeAct));
+                cmd.Parameters.Add(new SqlParameter("@TaAct", TaAct));
+                cmd.Parameters.Add(new SqlParameter("@NbTaAct", NbTaAct));
+                cmd.Parameters.Add(new SqlParameter("@TensileMPAAct", TensileMPAAct));
+                cmd.Parameters.Add(new SqlParameter("@TensileKSIAct", TensileKSIAct));
+                cmd.Parameters.Add(new SqlParameter("@YieldMPAAct", YieldMPAAct));
+                cmd.Parameters.Add(new SqlParameter("@YieldKSIAct", YieldKSIAct));
+                cmd.Parameters.Add(new SqlParameter("@ElongationAct", ElongationAct));
+                cmd.Parameters.Add(new SqlParameter("@ReductionAct", ReductionAct));
+                cmd.Parameters.Add(new SqlParameter("@HardnessAct", HardnessAct));
+
+                cmd.Parameters.Add(new SqlParameter("@HTCode", HTCode));
+                cmd.Parameters.Add(new SqlParameter("@Impact1Act", Impact1));
+                cmd.Parameters.Add(new SqlParameter("@Impact2Act", Impact2));
+                cmd.Parameters.Add(new SqlParameter("@Impact3Act", Impact3));
+
+                cmd.Parameters.Add(new SqlParameter("@Impact4Act", Impact4));
+                cmd.Parameters.Add(new SqlParameter("@Impact5Act", Impact5));
+                cmd.Parameters.Add(new SqlParameter("@Impact6Act", Impact6));
+                cmd.Parameters.Add(new SqlParameter("@TemperatureFAct", TemperatureF));
+                cmd.Parameters.Add(new SqlParameter("@TemperatureCAct", TemperatureC));
+
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertHeatNoMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+
+        public void UpdateHeatNoMaster(string HeatNo, string Supplier, string MaterialCode, string Matltype, string PED, string CAct, string MnAct, string PAct,
+            string SAct, string SiAct, string CuAct, string NiAct, string CrAct, string MoAct, string VAct, string CuNiCrMoVAct, string CrMoAct, string NbAct,
+            string NAct, string AlAct, string TiAct,
+            string ZrAct, string FeAct, string TaAct, string NbTaAct, string TensileMPAAct, string TensileKSIAct, string YieldMPAAct, string YieldKSIAct, 
+            string ElongationAct, string ReductionAct, string HardnessAct, string HTCode, string Impact1, string Impact2, string Impact3, string Impact4, string Impact5, string Impact6,
+            string TemperatureF, string TemperatureC)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spUpdateHeatNo]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@HeatNo", HeatNo));                
+                cmd.Parameters.Add(new SqlParameter("@Supplier", Supplier));
+
+                cmd.Parameters.Add(new SqlParameter("@MaterialCode", MaterialCode));
+                cmd.Parameters.Add(new SqlParameter("@Matltype", Matltype));
+
+                cmd.Parameters.Add(new SqlParameter("@PED", PED));
+                cmd.Parameters.Add(new SqlParameter("@CAct", CAct));
+                cmd.Parameters.Add(new SqlParameter("@MnAct", MnAct));
+                cmd.Parameters.Add(new SqlParameter("@PAct", PAct));
+                cmd.Parameters.Add(new SqlParameter("@SAct", SAct));
+                cmd.Parameters.Add(new SqlParameter("@SiAct", SiAct));
+                cmd.Parameters.Add(new SqlParameter("@CuAct", CuAct));
+                cmd.Parameters.Add(new SqlParameter("@NiAct", NiAct));
+                cmd.Parameters.Add(new SqlParameter("@CrAct", CrAct));
+                cmd.Parameters.Add(new SqlParameter("@MoAct", MoAct));
+                cmd.Parameters.Add(new SqlParameter("@VAct", VAct));
+                cmd.Parameters.Add(new SqlParameter("@CuNiCrMoVAct", CuNiCrMoVAct));
+                cmd.Parameters.Add(new SqlParameter("@CrMoAct", CrMoAct));
+                cmd.Parameters.Add(new SqlParameter("@NbAct", NbAct));
+                cmd.Parameters.Add(new SqlParameter("@NAct", NAct));
+                cmd.Parameters.Add(new SqlParameter("@AlAct", AlAct));
+                cmd.Parameters.Add(new SqlParameter("@TiAct", TiAct));
+                cmd.Parameters.Add(new SqlParameter("@ZrAct", ZrAct));
+                cmd.Parameters.Add(new SqlParameter("@FeAct", FeAct));
+                cmd.Parameters.Add(new SqlParameter("@TaAct", TaAct));
+                cmd.Parameters.Add(new SqlParameter("@NbTaAct", NbTaAct));
+                cmd.Parameters.Add(new SqlParameter("@TensileMPAAct", TensileMPAAct));
+                cmd.Parameters.Add(new SqlParameter("@TensileKSIAct", TensileKSIAct));
+                cmd.Parameters.Add(new SqlParameter("@YieldMPAAct", YieldMPAAct));
+                cmd.Parameters.Add(new SqlParameter("@YieldKSIAct", YieldKSIAct));
+                cmd.Parameters.Add(new SqlParameter("@ElongationAct", ElongationAct));
+                cmd.Parameters.Add(new SqlParameter("@ReductionAct", ReductionAct));
+                cmd.Parameters.Add(new SqlParameter("@HardnessAct", HardnessAct));
+
+                cmd.Parameters.Add(new SqlParameter("@HTCode", HTCode));
+                cmd.Parameters.Add(new SqlParameter("@Impact1Act", Impact1));
+                cmd.Parameters.Add(new SqlParameter("@Impact2Act", Impact2));
+                cmd.Parameters.Add(new SqlParameter("@Impact3Act", Impact3));
+
+                cmd.Parameters.Add(new SqlParameter("@Impact4Act", Impact4));
+                cmd.Parameters.Add(new SqlParameter("@Impact5Act", Impact5));
+                cmd.Parameters.Add(new SqlParameter("@Impact6Act", Impact6));
+                cmd.Parameters.Add(new SqlParameter("@TemperatureFAct", TemperatureF));
+                cmd.Parameters.Add(new SqlParameter("@TemperatureCAct", TemperatureC));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateHeatNoMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void DeleteHeatNoMaster(string HeatNo, string MaterialCode)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spDeleteHeatNo]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@HeatNo", HeatNo));
+                cmd.Parameters.Add(new SqlParameter("@MaterialCode", MaterialCode));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : DeleteHeatNoMaster() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
 
         #endregion
 
 
+        #endregion
+
+        #region Production
+
+        public DataSet RetrievePrimaryBoxEntry()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("spgetPBPendingProdOrders", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetrievePrimaryBoxEntry() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet FetchPrimaryBoxEntryFromProdNoAndOrderNo(string ProdOrderNo, string OrderNo, int Pos)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("select * from ProductionReleaseNew where ProdOrderNo ='" + ProdOrderNo + "' and OrderNum = '" + OrderNo + "' and Pos='" + Pos + "'", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : FetchPrimaryBoxEntryFromProdNoAndOrderNo() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public string GetPrimaryBoxNo()
+        {
+            DataSet ds = new DataSet();
+            string primaryBoxNo = string.Empty;
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("select top(1) PrimaryBoxNo from PrimaryBox Order by PrimaryBoxNo desc", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    primaryBoxNo = Convert.ToString(ds.Tables[0].Rows[0]["PrimaryBoxNo"].ToString());
+                }
+
+                return primaryBoxNo;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetPrimaryBoxNo() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public string GetSecondaryBoxNo()
+        {
+            DataSet ds = new DataSet();
+            string secondaryBoxNo = string.Empty;
+
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("select top(1) SecondaryBoxNo from SecondaryBox Order by SecondaryBoxNo desc", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+                conn.Close();
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    secondaryBoxNo = Convert.ToString(ds.Tables[0].Rows[0]["SecondaryBoxNo"].ToString());
+                }
+
+                return secondaryBoxNo;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetSecondaryBoxNo() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void InsertFromPrimaryBoxNo(String PrimaryBoxNo, int PrimaryBoxQty, string ProdOrderNo, string BodyHeatNo, string BonnetHeatNo,
+            string DrgNo, string TagNo)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spInsertPrimaryBox]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@PrimaryBoxNo", PrimaryBoxNo));
+                cmd.Parameters.Add(new SqlParameter("@PrimaryBoxQty", PrimaryBoxQty));
+                cmd.Parameters.Add(new SqlParameter("@ProdOrderNo", ProdOrderNo));
+                cmd.Parameters.Add(new SqlParameter("@BodyHeatNo", BodyHeatNo));
+                cmd.Parameters.Add(new SqlParameter("@BonnetHeatNo", BonnetHeatNo));
+                cmd.Parameters.Add(new SqlParameter("@DrgNo", DrgNo));
+                cmd.Parameters.Add(new SqlParameter("@TagNo", TagNo));
+                cmd.Parameters.Add(new SqlParameter("@CreatedBy", UserName));
+                cmd.Parameters.Add(new SqlParameter("@CreatedOn", DateTime.UtcNow));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertFromPrimaryBoxNo() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdateProductionReleaseNewPrimaryBoxEntry(int PackedQty, string ProdOrderNo)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spUpdateProductionReleaseNewPrimaryBoxEntry]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@ProdOrderNo", ProdOrderNo));
+                cmd.Parameters.Add(new SqlParameter("@PackedQty", PackedQty));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateProductionReleaseNewPrimaryBoxEntry() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdateProductionReleaseNewPrimaryBoxDelete(int PackedQty, string ProdOrderNo)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spUpdateProductionReleaseNewPrimaryBoxDelete]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@ProdOrderNo", ProdOrderNo));
+                cmd.Parameters.Add(new SqlParameter("@PrimaryBoxQty", PackedQty));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateProductionReleaseNewPrimaryBoxDelete() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetrievePendingPrimaryBoxforSecondaryBox()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("spGetPendingPrimaryBoxforSecondaryBox", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetrievePendingPrimaryBoxforSecondaryBox() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void InsertSecondaryBox(string PrimaryBoxNo, string SecondaryBoxNo)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spInsertSecondaryBox]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@SecondaryBoxNo", SecondaryBoxNo));
+                cmd.Parameters.Add(new SqlParameter("@PrimaryBoxNo", PrimaryBoxNo));
+                cmd.Parameters.Add(new SqlParameter("@CreatedBy", UserName));
+                cmd.Parameters.Add(new SqlParameter("@CreatedOn", DateTime.UtcNow));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : InsertSecondaryBox() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetrievePrimaryBoxEntryMaintenance(string ProdOrderNo)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("spGetPrimaryBoxforEdit", conn);
+                cmd.Parameters.Add(new SqlParameter("@ProdOrderNo", ProdOrderNo));
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : spGetPrimaryBoxforEdit() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void UpdateProductionReleaseNewPrimaryBoxEditSave(string PrimaryBoxNo, string BodyHeatNo, string BonnetHeatNo, string DrgNo, string TagNo)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spUpdateProductionReleaseNewPrimaryBoxEditSave]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@PrimaryBoxNo", PrimaryBoxNo));
+                cmd.Parameters.Add(new SqlParameter("@BodyHeatNo", BodyHeatNo));
+                cmd.Parameters.Add(new SqlParameter("@BonnetHeatNo", BonnetHeatNo));
+                cmd.Parameters.Add(new SqlParameter("@DrgNo", DrgNo));
+                cmd.Parameters.Add(new SqlParameter("@TagNo", TagNo));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : UpdateProductionReleaseNewPrimaryBoxEntry() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public void DeletePrimaryBox(string PrimaryBoxNo)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spDeletePrimaryBox]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@PrimaryBoxNo", PrimaryBoxNo));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : DeletePrimaryBox() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetrieveSecondaryBoxEntryMaintenance(string SecondaryBoxNo)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("spGetSecondaryBoxforEdit", conn);
+                cmd.Parameters.Add(new SqlParameter("@SecondaryBoxNo", SecondaryBoxNo));
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetrieveSecondaryBoxEntryMaintenance() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+
+        public void DeleteSecondaryBox(string SecondaryBoxNo, string PrimaryBoxNo)
+        {
+            try
+            {
+                this.init();
+
+                string UserName = (String)HttpContext.Current.Session["LoggedOnUser"];
+
+                SqlCommand cmd = new SqlCommand("[spDeleteSecondaryBox]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@SecondaryBoxNo", SecondaryBoxNo));
+                cmd.Parameters.Add(new SqlParameter("@PrimaryBoxNo", PrimaryBoxNo));
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : DeleteSecondaryBox() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet RetrievePrimaryBoxForPrint(string PrimaryBoxNo)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetPrimaryBoxNoForPrint]", conn);
+
+                cmd.Parameters.Add(new SqlParameter("@PrimaryBoxNo", PrimaryBoxNo));
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetrievePrimaryBoxForPrint() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+
+
+        #endregion 
     }
 
     public class CustomComparer : IComparer

@@ -6,15 +6,16 @@
    width:100%;
     padding-right: 0px; 
     padding-left: 0px; 
-    padding-bottom: 0px; 
+    padding-bottom: 0px;
     margin: 0px;
     padding-top: 0px
 }
-
+/*2nd row bg color: #D99694*/
 .logoApplicationName  
 {
     font-size:16px;
-    color:#B22222;
+    /*color:#B22222;*/
+    color:#1567a1;
     font:verdana;
     font-weight:bold;
     padding-bottom:5px;
@@ -24,20 +25,26 @@
 .secondLevelHeader
 {
 	height: 19px; 
-	background-color:#D99694;
+	/*background-color:#D99694;
     font-size:13px;
     color:White;
     font:verdana;
     font-weight:bold;
-    padding-bottom:5px;	
-	
+    padding-bottom:5px;*/	
+	background-color: #eceded;
+    font-size: 13px;
+    color: #212529;
+    font: verdana;
+    font-weight: bold;
+    padding: 5px;
 }
 
 .menu 
 {
 	height: 19px; 
 	width: 99%; 
-	background-color:#661010;
+    background-color: #1567a1;
+	/*background-color:#661010;*/
     /*background-color:#16679F;*/
 }
 
@@ -98,15 +105,22 @@ td.body
 
 .footer 
 {
-    background-color:#993333;
-    /*background-color:#16679F;*/
-    color:#FFFFFF;
-    height:20px;
+    /*background-color:#993333;*/
+    /*background-color:#032e4c;*/
+    background-color: #1567a1;
+    /*color:#FFFFFF;*/
+    /*height:20px;*/
     width: 100%; 
     text-align: center;
-    padding-left:10px;
+    /*padding-left:10px;*/
+    padding: 5px;
     font-size:xx-small;
-    vertical-align:middle;    
+    vertical-align:middle; 
+    /*position: relative;
+    bottom: -43px;*/
+     position: fixed;
+    bottom: 0;
+    right: 0;   
 }
 
 .thClass
@@ -127,7 +141,7 @@ td.body
 
 .SliderPopup
 {
-  background-color: #FAFAD2; 
+  background-color: #1567a1; 
   border: 1px solid #4B4B6F; 
   border-top-color: #9495A2; 
   border-left-color: #9495A2; 
@@ -212,11 +226,15 @@ td.body
     background-color: White;
     elevation:above;
     font-size:10px;
-    color: Maroon;
+    color: #fff;
     font-weight:bold;
-    border-style:groove;
+    /*border-style:groove;
     border-width:2px;
-    outline-style:groove;
+    outline-style:groove;*/
+    background-color: #1567a1;
+    /* border-width: 2px; */
+    border: #1567a1;
+    padding: 8px 12px
 }
 
 
@@ -361,6 +379,7 @@ td.body
   cursor: default;
   width:100%; 
   height:100%;
+  margin-bottom:70px;
 }
 .Grid_New 
 { 
@@ -373,6 +392,7 @@ td.body
   cursor: default;
   width:100%; 
   height:100%;
+  margin-bottom:70px;
 }
 .Grid_Header
 {
@@ -471,6 +491,9 @@ td.body
  color:#FFFFFF; 
  vertical-align:middle;
  background-color:#C0C0C0;
+     /*position: relative;
+    bottom: -16px;
+    right: 0;*/
 }
 
 .EmptyCell
@@ -809,7 +832,8 @@ td.body
  
 .userName
 {
-  color:Maroon; 
+  /*color:Maroon;*/ 
+  color:#1567a1;
   font-family:tahoma; 
   font-size:11px;
   font-weight: bold;
@@ -1148,7 +1172,8 @@ body {
 
 .MyProfile
 {
-	color:#006400;
+	/*color:#006400;*/
+    color:red;
 	font-family:Trebuchet MS;
 	font-size:smaller;
 }
@@ -1183,4 +1208,8 @@ body {
     outline-style:groove;
     width:88px;*/
 
+}
+
+#SearchPanel{
+    margin:3px;
 }

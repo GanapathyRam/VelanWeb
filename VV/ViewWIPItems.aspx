@@ -83,7 +83,7 @@
             <td width="80%" align="right" style="padding-left: 270px;" class="secondLevelHeader">
                 <%--Added by Arun on 27-Jan'08 to implement the search on pressing enter itslef--%>
                 <asp:Panel ID="SearchPanel" DefaultButton="btnSearchBox" runat="server">
-                <asp:Button ID="btnConvert" Text="WIP To FG" runat="server" CssClass="buttonText" OnClick="btnConvert_Click" Visible="true"/>
+                <asp:Button ID="btnConvert" Text="WIP To TPI" runat="server" CssClass="buttonText" OnClick="btnConvert_Click" Visible="true"/>
                 <asp:Button ID="lnlRemPageination" runat="server" Text="Display All" CssClass="buttonText" OnClick="btnRemPagination_Click" Visible="true"/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <asp:TextBox ID="txtProdOrderNo" runat="server" ToolTip="Enter Prod Order No to be Searched" onKeyUp="ControlSearch(this)" />
                     <asp:TextBox ID="txtSalesOrderNo" runat="server" ToolTip="Enter Order Number to be Searched"/>
@@ -115,7 +115,7 @@
                                         <input type="checkbox" id="chkAll" name="chkAll" onclick="Check(this)" />
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                                        <asp:CheckBox ID="chkSelect" EnableViewState="false" runat="server" Visible='<%# Eval("OrderType").ToString() != "ICS" %>' />
+                                        <asp:CheckBox ID="chkSelect" EnableViewState="false" runat="server" Visible='<%# Eval("SerialNo").ToString() != "" %>' />
                                         <input id="hidOrderNo" value='<%# Eval("OrderNo") %>' type="hidden" runat="server" />
                                     </ItemTemplate>
                                     <ItemStyle Wrap="false" />
@@ -128,7 +128,7 @@
                                                                 DataBinder.Eval(Container.DataItem,"Pos") + "&SerialNo=" +
                                                                 DataBinder.Eval(Container.DataItem,"SerialNo") + "&ProdOrderNo=" +
                                                                 DataBinder.Eval(Container.DataItem,"ProdOrderNo") %>' 
-                                            Enabled='<%# Eval("OrderType").ToString() == "ICS" ? true:false %>' runat="server" Text='<%# Eval("OrderNo") %>'></asp:HyperLink>
+                                            Enabled='<%# Eval("OrderType").ToString() == "ICS" && Eval("SerialNo").ToString() == "" ? true:false %>' runat="server" Text='<%# Eval("OrderNo") %>'></asp:HyperLink>
                                     </ItemTemplate>
                                     <ItemStyle Wrap="false" />
                                    <%-- <ItemStyle Width="100px" />
