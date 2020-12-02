@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,8 +9,9 @@ using System.Web.UI.WebControls;
 
 namespace VV
 {
-    public partial class PrimaryBoxEntryManitance : System.Web.UI.Page
+    public partial class DocPageOne : System.Web.UI.Page
     {
+        DataSet ds = new DataSet();
         DBUtil _dbObj = new DBUtil();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -279,177 +281,70 @@ namespace VV
 
             # endregion
 
-            if (!IsPostBack)
+            if (!Page.IsPostBack)
             {
+                GetPrintDetails();
             }
         }
 
-        public void showgrid(string ProdOrderNo)
+        private void GetPrintDetails()
         {
             try
             {
-                DBUtil _DBObj = new DBUtil();
-                DataSet ds = _DBObj.RetrievePrimaryBoxEntryMaintenance(ProdOrderNo);
+                string PrimaryBoxNo = (String)HttpContext.Current.Session["PrimaryBoxNumber"];
 
-                Cache["PrimaryBoxForEditCache"] = ds;
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
+                DataSet ds = _dbObj.RetrievePrimaryBoxForPrint(PrimaryBoxNo);
+
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    lblPrimaryBoxNo.Text = Convert.ToString(PrimaryBoxNo.Substring(1,6));
+
+                    lblCustomerNameText.Text = Convert.ToString(ds.Tables[0].Rows[0]["CustomerName"].ToString());
+                    lblVelanOrdertext.Text = Convert.ToString(ds.Tables[0].Rows[0]["OrderNo"].ToString());
+                    lblPosText.Text = Convert.ToString(ds.Tables[0].Rows[0]["Pos"].ToString());
+
+                    lblCustomerPOText.Text = Convert.ToString(ds.Tables[0].Rows[0]["CustomerOrderNo"].ToString());
+                    lblCustomerOrderPosText.Text = Convert.ToString(ds.Tables[0].Rows[0]["CustomerOrderPos"].ToString());
+                    lblQuantitytext.Text = Convert.ToString(ds.Tables[0].Rows[0]["PrimaryBoxQty"].ToString());
+                    lblFigureNumberText.Text = Convert.ToString(ds.Tables[0].Rows[0]["Item"].ToString());
+
+                    lblApplicableStdsText.Text = Convert.ToString(ds.Tables[0].Rows[0]["AppStd"].ToString());
+                    lblDescriptionText.Text = Convert.ToString(ds.Tables[0].Rows[0]["Description"].ToString());
+
+                    lblCreatedOn.Text = Convert.ToString(ds.Tables[0].Rows[0]["CreatedOn"].ToString());
+                }
+
             }
             catch (Exception ex)
             {
-                //Logger.Write(this.GetType().ToString() + " : showgrid : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
+                LogError(ex, "Exception from doc page one!");
             }
         }
 
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        private void LogError(Exception ex, string section)
         {
-            DataSet searchDS = (DataSet)Cache["PrimaryBoxForEditCache"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
 
-            GridView1.EditIndex = e.NewEditIndex;
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-        }
-
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            DataSet ds = new DataSet();
-            bool isHeatNoControl = false;
-
-            try
+            string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+            message += Environment.NewLine;
+            message += "-----------------------------------------------------------";
+            message += Environment.NewLine;
+            message += string.Format("Message: {0}", ex.Message);
+            message += Environment.NewLine;
+            message += "Exception from SQLConnectionOpen" + "-" + section;
+            message += Environment.NewLine;
+            message += "-----------------------------------------------------------";
+            message += Environment.NewLine;
+            string path = Server.MapPath("~/ErrorLog.txt");
+            using (StreamWriter writer = new StreamWriter(path, true))
             {
-                Label lblPrimaryBoxNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblPrimaryBoxNo");
-
-                TextBox txtBodyHeatNo = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtBodyHeatNo");
-                TextBox txtBonnetHeatNo = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtBonnetHeatNo");
-                TextBox txtDrgNo = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtDrgNo");
-                TextBox txtTagNo = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtTagNo");
-
-                _dbObj.UpdateProductionReleaseNewPrimaryBoxEditSave(Convert.ToString(lblPrimaryBoxNo.Text.Trim()), txtBodyHeatNo.Text.Trim(), txtBonnetHeatNo.Text.Trim(), txtDrgNo.Text.Trim(), txtTagNo.Text.Trim());
-
-                GridView1.EditIndex = -1;
-
-                showgrid(txtProdOrderNo.Text.Trim());
-            }
-            catch (Exception ex)
-            {
-                //Logger.Write(this.GetType().ToString() + " : GridView1_RowUpdating : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
+                writer.WriteLine(message);
+                writer.Close();
             }
         }
 
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        protected void btnBack_Click(object sender, EventArgs e)
         {
-            DataSet searchDS = (DataSet)Cache["PrimaryBoxForEditCache"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-            //  showgrid();
-
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = -1;
-        }
-
-        protected void btnSearchBox_Click(object sender, EventArgs e)
-        {
-            showgrid(txtProdOrderNo.Text.Trim());
-        }
-
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            try
-            {
-                GridViewRow row = GridView1.Rows[e.RowIndex];
-
-                Label lblPrimaryBoxNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblPrimaryBoxNo");
-                Label lblProdOrderNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblProdOrderNo");
-                Label lblPrimaryBoxQty = (Label)GridView1.Rows[e.RowIndex].FindControl("lblPrimaryBoxQty");
-
-
-                _dbObj.DeletePrimaryBox(Convert.ToString(lblPrimaryBoxNo.Text.Trim()));
-
-                _dbObj.UpdateProductionReleaseNewPrimaryBoxDelete(Convert.ToInt32(lblPrimaryBoxQty.Text), Convert.ToString(lblProdOrderNo.Text));
-
-                GridView1.EditIndex = -1;
-
-                showgrid(txtProdOrderNo.Text.Trim());
-            }
-            catch (Exception ex)
-            {
-                //LogError(ex, "Exception from while updating row from buyer Master.");
-            }
-        }
-
-        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != GridView1.EditIndex)
-            {
-                (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
-            }
-        }
-
-        protected void BtnPrint_Click(object sender, EventArgs e)
-        {
-            //Get the button that raised the event
-            Button btn = (Button)sender;
-
-            //Get the row that contains this button
-            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-
-            GridViewRow clickedRow = ((Button)sender).NamingContainer as GridViewRow;
-
-            var primaryBoxNo = ((System.Web.UI.HtmlControls.HtmlInputControl)(clickedRow.FindControl("hidPrimaryBoxNo"))).Value;
-
-            Session["PrimaryBoxNumber"] = Convert.ToString(primaryBoxNo);
-
-            //Response.Redirect("~/PrimaryBoxNoForPrint.aspx", false);
-        }
-
-        protected void BtnDocPage1_Click(object sender, EventArgs e)
-        {
-            //Get the button that raised the event
-            Button btn = (Button)sender;
-
-            //Get the row that contains this button
-            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-
-            GridViewRow clickedRow = ((Button)sender).NamingContainer as GridViewRow;
-
-            var primaryBoxNo = ((System.Web.UI.HtmlControls.HtmlInputControl)(clickedRow.FindControl("hidPrimaryBoxNoDocPage1"))).Value;
-
-            Session["PrimaryBoxNumber"] = Convert.ToString(primaryBoxNo);
-
-            //Response.Redirect("~/DocPageOne.aspx", false);
-        }
-
-        protected void BtnDocPage3_Click(object sender, EventArgs e)
-        {
-            //Get the button that raised the event
-            Button btn = (Button)sender;
-
-            //Get the row that contains this button
-            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-
-            GridViewRow clickedRow = ((Button)sender).NamingContainer as GridViewRow;
-
-            var primaryBoxNo = ((System.Web.UI.HtmlControls.HtmlInputControl)(clickedRow.FindControl("hidPrimaryBoxNoDocPage2"))).Value;
-
-            Session["PrimaryBoxNumber"] = Convert.ToString(primaryBoxNo);
-
-            //Page.ClientScript.RegisterStartupScript(this.GetType(), "OpenWindow", "window.open('DocPageThree.aspx','_blank');", true);
-
-            //Response.Redirect("~/DocPageThree.aspx", false);
-        }
-
-        protected void BtnDOCPage2_Click(object sender, EventArgs e)
-        {
-
+            Response.Redirect("~/UpdatePrimaryBoxEntry.aspx", false);
         }
     }
 }

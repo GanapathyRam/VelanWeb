@@ -37,7 +37,7 @@
                             <asp:Label ID="lblLocation" Style="margin-left: 10px;" runat="server" Text="Label"></asp:Label>
                         </td>--%>
                     </tr>
-                    <tr style="height: 35px; border-bottom: 1px solid;">
+                    <tr style="height: 40px; border-bottom: 1px solid;">
                         <td colspan="1" style="text-align: left; width: 20%">
                             <asp:Label ID="lblBoxNo" runat="server" Text="Box No"></asp:Label>
                             :</td>
@@ -46,7 +46,7 @@
                             <asp:Label ID="lblTextBoxNo" Style="height: 25px; width: 350px" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
-                    <tr style="height: 35px; border-bottom: 1px solid;">
+                    <tr style="height: 40px; border-bottom: 1px solid;">
                         <td colspan="1" style="text-align: left; width: 20%">
                             <asp:Label ID="lblFigureNo" runat="server" Text="Fig No"></asp:Label>
                             :</td>
@@ -55,7 +55,7 @@
                             <asp:Label ID="lblTextFigNo" Style="height: 25px; width: 400px" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
-                    <tr style="height: 35px; border-bottom: 1px solid;">
+                    <tr style="height: 40px; border-bottom: 1px solid;">
                         <td colspan="1" style="text-align: left; width: 20%">
                             <asp:Label ID="lblSize" runat="server" Text="Size"></asp:Label>
                             :</td>
@@ -72,7 +72,7 @@
 
                         </td>
                     </tr>
-                    <tr style="height: 35px; border-bottom: 1px solid;">
+                    <tr style="height: 40px; border-bottom: 1px solid;">
                         <td colspan="1" style="text-align: left; width: 20%">
                             <asp:Label ID="lblType" runat="server" Text="Type"></asp:Label>
                             :</td>
@@ -88,7 +88,7 @@
                             <asp:Label ID="lblTextQty" Style="height: 25px; width: 130px" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
-                    <tr style="height: 35px; border-bottom: 1px solid;">
+                    <tr style="height: 40px; border-bottom: 1px solid;">
                         <td colspan="1" style="text-align: left; width: 20%">
                             <asp:Label ID="lblBodyHeat" runat="server" Text="Body Heat"></asp:Label>
                             :</td>
@@ -96,8 +96,8 @@
                             <asp:Label ID="lblTextHeatCode" Style="height: 25px; width: 350px" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
-                    <tr style="height: 35px; border-bottom: 1px solid;">
-                        <td colspan="1" style="text-align: left;width: 30%">
+                    <tr style="height: 40px; border-bottom: 1px solid;">
+                        <td colspan="1" style="text-align: left;width: 35%">
                             <asp:Label ID="lblBonnerCoverHeat" runat="server" Text="Bonnet Heat"></asp:Label>
                             :</td>
                         <td colspan="3" style="text-align: left; font-size: small;">

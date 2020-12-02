@@ -4,6 +4,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <script language="javascript" type="text/javascript">
+        function OpenWindowForSticker() {
+            window.open("PrimaryBoxNoForPrint.aspx");
+        }
+        function OpenWindowForDocPageOne() {
+            window.open("DocPageOne.aspx");
+        }
+        function OpenWindowForDocPageThree() {
+            window.open("DocPageThree.aspx");
+        }
+    </script>
+
     <link href="CSS/Main.css" rel="stylesheet" />
     
 
@@ -124,16 +136,43 @@
                                     <ItemStyle Wrap="false" />
                                 </asp:TemplateField>
 
-                                <%--<asp:TemplateField HeaderText="Edit" Visible="false" ShowHeader="false">
-                                    <ItemTemplate>
-                                        <asp:LinkButton ID="btnedit" runat="server" CommandName="Edit" Text="Edit"></asp:LinkButton>
-                                    </ItemTemplate>
-                                    <EditItemTemplate>
-                                        <asp:LinkButton ID="btnupdate" runat="server" CommandName="Update" Text="Update"></asp:LinkButton>
-                                        <asp:LinkButton ID="btncancel" runat="server" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
-                                    </EditItemTemplate>
-                                    <ItemStyle Wrap="false" />
-                                </asp:TemplateField>--%>
+                                <asp:TemplateField HeaderText="" Visible="true">
+                            <ItemTemplate>
+                                <asp:Button ID="BtnPrint" runat="server" Text="Sticker"
+                                    OnClick="BtnPrint_Click" OnClientClick="OpenWindowForSticker()"/>
+                                <input id="hidPrimaryBoxNo" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="" Visible="true">
+                            <ItemTemplate>
+                                <asp:Button ID="BtnDocPage1" runat="server" Text="DOCPage1"
+                                    OnClick="BtnDocPage1_Click" OnClientClick="OpenWindowForDocPageOne()"/>
+                                <input id="hidPrimaryBoxNoDocPage1" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="" Visible="true">
+                            <ItemTemplate>
+                                <asp:Button ID="BtnDOCPage2" runat="server" Text="DOCPage2"
+                                    OnClick="BtnDOCPage2_Click" OnClientClick="target ='_blank';"/>
+                                <input id="hidPrimaryBoxNoDocPage2" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="" Visible="true">
+                            <ItemTemplate>
+                                <asp:Button ID="BtnDocPage3" runat="server" Text="DOCPage3"
+                                    OnClick="BtnDocPage3_Click" OnClientClick="OpenWindowForDocPageThree()"/>
+                                <input id="hidPrimaryBoxNoDocPage3" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
+
+                                
                             </Columns>
 
                             <HeaderStyle CssClass="Grid_Header" />

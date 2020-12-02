@@ -3,6 +3,15 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script language="javascript" type="text/javascript">
+        function OpenWindowForSticker() {
+            window.open("PrimaryBoxNoForPrint.aspx");
+        }
+        function OpenWindowForDocPageOne() {
+            window.open("DocPageOne.aspx");
+        }
+        function OpenWindowForDocPageThree() {
+            window.open("DocPageThree.aspx");
+        }
     </script>
     <table style="height: 100%;" width="100%" cellpadding="0" cellspacing="0">
         <tr>
@@ -77,7 +86,7 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
         <asp:UpdatePanel ID="EmployeePanel" UpdateMode="always" runat="server">
             <ContentTemplate>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" Style="margin-left: 100px;" Width="60%"
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" Style="margin-left: 10px; overflow-y:scroll;" Width="60%"
                     OnRowCancelingEdit="GridView1_RowCancelingEdit" PageSize="30" OnRowEditing="GridView1_RowEditing"
                     HeaderStyle-HorizontalAlign="Left" CssClass="Grid" HeaderStyle-CssClass="Grid_Header" OnRowUpdating="GridView1_RowUpdating"
                     RowStyle-CssClass="Grid_Record" EmptyDataText="No Records To Display"
@@ -162,9 +171,36 @@
                         <asp:TemplateField HeaderText="" Visible="true">
                             <ItemTemplate>
                                 <asp:Button ID="BtnPrint" runat="server" Text="Sticker"
-                                    OnClick="BtnPrint_Click" />
+                                    OnClick="BtnPrint_Click" OnClientClick="OpenWindowForSticker()"/>
                                 <input id="hidPrimaryBoxNo" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
                                 <input id="hidBoxQty" value='<%# Eval("ValveBoxQty") %>' type="hidden" runat="server" />
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="" Visible="true">
+                            <ItemTemplate>
+                                <asp:Button ID="BtnDocPage1" runat="server" Text="DOCPage1"
+                                    OnClick="BtnDocPage1_Click" OnClientClick="OpenWindowForDocPageOne()"/>
+                                <input id="hidPrimaryBoxNoDocPage1" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="" Visible="true">
+                            <ItemTemplate>
+                                <asp:Button ID="BtnDOCPage2" runat="server" Text="DOCPage2"
+                                    OnClick="BtnDOCPage2_Click" OnClientClick="target ='_blank';"/>
+                                <input id="hidPrimaryBoxNoDocPage2" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
+                            </ItemTemplate>
+                            <ItemStyle Wrap="false" />
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="" Visible="true">
+                            <ItemTemplate>
+                                <asp:Button ID="BtnDocPage3" runat="server" Text="DOCPage3"
+                                    OnClick="BtnDocPage3_Click" OnClientClick="OpenWindowForDocPageThree()"/>
+                                <input id="hidPrimaryBoxNoDocPage3" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
                             </ItemTemplate>
                             <ItemStyle Wrap="false" />
                         </asp:TemplateField>

@@ -111,6 +111,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AllDCReport.aspx" />
+    <Content Include="DocPageOne.aspx" />
+    <Content Include="DocPageThree.aspx" />
     <Content Include="HeatNoValues.aspx" />
     <Content Include="LnImporting.aspx" />
     <Content Include="PatrolAnalysisDateSet.aspx" />
@@ -326,6 +328,20 @@
     </Compile>
     <Compile Include="AllDCReport.aspx.designer.cs">
       <DependentUpon>AllDCReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocPageOne.aspx.cs">
+      <DependentUpon>DocPageOne.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocPageOne.aspx.designer.cs">
+      <DependentUpon>DocPageOne.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocPageThree.aspx.cs">
+      <DependentUpon>DocPageThree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocPageThree.aspx.designer.cs">
+      <DependentUpon>DocPageThree.aspx</DependentUpon>
     </Compile>
     <Compile Include="HeatNoValues.aspx.cs">
       <DependentUpon>HeatNoValues.aspx</DependentUpon>

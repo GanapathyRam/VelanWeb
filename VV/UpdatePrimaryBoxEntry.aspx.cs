@@ -589,7 +589,48 @@ namespace VV
             Session["PrimaryBoxNumber"] = Convert.ToString(primaryBoxNo);
             Session["BoxQty"] = Convert.ToString(boxQty);
 
-            Response.Redirect("~/PrimaryBoxNoForPrint.aspx", false);
+            //Response.Redirect("~/PrimaryBoxNoForPrint.aspx", false);
+        }
+
+        protected void BtnDocPage1_Click(object sender, EventArgs e)
+        {
+            //Get the button that raised the event
+            Button btn = (Button)sender;
+
+            //Get the row that contains this button
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+            GridViewRow clickedRow = ((Button)sender).NamingContainer as GridViewRow;
+
+            var primaryBoxNo = ((System.Web.UI.HtmlControls.HtmlInputControl)(clickedRow.FindControl("hidPrimaryBoxNoDocPage1"))).Value;
+
+            Session["PrimaryBoxNumber"] = Convert.ToString(primaryBoxNo);
+
+            //Response.Redirect("~/DocPageOne.aspx", false);
+        }
+
+        protected void BtnDocPage3_Click(object sender, EventArgs e)
+        {
+            //Get the button that raised the event
+            Button btn = (Button)sender;
+
+            //Get the row that contains this button
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+            GridViewRow clickedRow = ((Button)sender).NamingContainer as GridViewRow;
+
+            var primaryBoxNo = ((System.Web.UI.HtmlControls.HtmlInputControl)(clickedRow.FindControl("hidPrimaryBoxNoDocPage2"))).Value;
+
+            Session["PrimaryBoxNumber"] = Convert.ToString(primaryBoxNo);
+
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "OpenWindow", "window.open('DocPageThree.aspx','_blank');", true);
+
+            //Response.Redirect("~/DocPageThree.aspx", false);
+        }
+
+        protected void BtnDOCPage2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void BindGrid(int packingQty, int noOfBoxes, string ProdOrderNo, string BodyHeatNo, string BonnetHeatNo, string DrgNo, string TagNo, int ValveBoxQty, int prodReleaseQty)
