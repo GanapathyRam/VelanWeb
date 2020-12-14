@@ -51,7 +51,7 @@
                         </td>
                     </tr>
                     </table>
-                    <table style="border:1px solid; width:60%;">
+                    <table style="border:1px solid; width:60%; border-collapse: collapse;">
                         <tr style="height: 30px; border-bottom: 1px solid; font-size: 10px;">
                             <td colspan="1" style="text-align: left; width: 50%; font-weight:600;">
                                 <asp:Label ID="Label11" runat="server" Text="Valve Item"></asp:Label>
@@ -62,7 +62,7 @@
                         </tr>
                         <tr style="height: 30px; border-bottom: 1px solid; font-size: 10px;">
                             <td colspan="1" style="text-align: left; width: 50%">
-                                <asp:Label ID="Label13" runat="server" Text="DISC"></asp:Label>
+                                <asp:Label ID="Label13" runat="server" Text=""></asp:Label>
                                 </td>
                             <td colspan="3" style="text-align: left; border-left: 1px solid;">
                                 <asp:Label ID="lblDiscText" Style="height: 25px; width: 350px" runat="server" Text=""></asp:Label>

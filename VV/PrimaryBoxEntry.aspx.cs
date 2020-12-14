@@ -148,6 +148,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
                     else if (MenuID == 12) // Heat No Values
                         tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
+                    else if (MenuID == 13) // Box Enquiry
+                        tbstr.Items[ParentMenuID].ChildItems[5].Enabled = true;
                 }
                 # endregion
 
@@ -442,6 +444,43 @@ namespace VV
             {
                 Logger.Write(this.GetType().ToString() + " : showgrid : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
                 throw ex;
+            }
+        }
+
+        protected void btnSearchBox_Click(object sender, EventArgs e)
+        {
+            String searchRowFilter = String.Empty, searchRowFilter1 = String.Empty, searchRowFilter2 = String.Empty, searchRowFilter3 = String.Empty, searchRowFilter4 = String.Empty;
+
+            BulkUpdateWIP.Visible = true;
+
+            string ProdOrder = txtProdOrder.Text.Trim();
+
+            if (!string.IsNullOrEmpty(ProdOrder))
+            {
+                searchRowFilter1 = "ProdOrderNo like '%" + ProdOrder + "%'";
+            }
+        
+            if (!String.IsNullOrEmpty(searchRowFilter1))
+                searchRowFilter = searchRowFilter1;
+
+            if (!String.IsNullOrEmpty(searchRowFilter))
+            {
+                DataSet searchDS = (DataSet)Cache["PrimaryBoxEntryFromDBCache"];
+
+                DataView dv;
+                dv = searchDS.Tables[0].DefaultView;
+
+                dv.RowFilter = searchRowFilter;
+
+                GridView1.DataSource = dv;
+                GridView1.DataBind();
+            }
+            else
+            {
+                DataSet searchDS = (DataSet)Cache["PrimaryBoxEntryFromDBCache"];
+
+                GridView1.DataSource = searchDS;
+                GridView1.DataBind();
             }
         }
     }

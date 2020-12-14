@@ -10,7 +10,16 @@
 namespace VV {
     
     
-    public partial class PrimaryBoxEntry {
+    public partial class BoxEnquiry {
+        
+        /// <summary>
+        /// lblHeaderName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHeaderName;
         
         /// <summary>
         /// BulkUpdateWIP control.
@@ -22,58 +31,13 @@ namespace VV {
         protected global::System.Web.UI.WebControls.Panel BulkUpdateWIP;
         
         /// <summary>
-        /// lblWIPSearch control.
+        /// btnExcelExport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWIPSearch;
-        
-        /// <summary>
-        /// lblProdOrder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProdOrder;
-        
-        /// <summary>
-        /// txtProdOrder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProdOrder;
-        
-        /// <summary>
-        /// btnSearchBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearchBox;
-        
-        /// <summary>
-        /// lblPageTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPageTitle;
-        
-        /// <summary>
-        /// UpdateProgress2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgress2;
+        protected global::System.Web.UI.WebControls.Button btnExcelExport;
         
         /// <summary>
         /// ScriptManager1 control.

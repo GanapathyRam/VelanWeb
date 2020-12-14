@@ -21,7 +21,7 @@
     <link href="CSS/Main.css" rel="stylesheet" />
     <div style="position: absolute; right: 10px; top:110px">
         <asp:Button ID="btnBack" Width="100px" Height="30px" runat="server" Visible="false" Text="Back" OnClick="btnBack_Click" />
-        <asp:Button ID="btnPrint" Width="100px" Height="30px" runat="server" Text="Print" OnClientClick="return PrintPanel();" />
+        <asp:Button ID="btnPrint" Width="100px" Height="30px" runat="server" Visible="false" Text="Print" OnClientClick="return PrintPanel();" />
     </div>
 
     <asp:Panel ID="pnlContents" runat="server">

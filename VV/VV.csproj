@@ -60,6 +60,10 @@
     <Reference Include="FreeLibrary">
       <HintPath>C:\Users\ganapathy.raman\Desktop\Engineering\VVPublish\bin\FreeLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.28.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.28\lib\Net40\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>C:\Users\ganapathy.raman\Desktop\Engineering\VVPublish\bin\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
@@ -99,6 +103,7 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -111,9 +116,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AllDCReport.aspx" />
+    <Content Include="BoxEnquiry.aspx" />
     <Content Include="DocPageOne.aspx" />
     <Content Include="DocPageThree.aspx" />
+    <Content Include="DocPageTwo.aspx" />
     <Content Include="HeatNoValues.aspx" />
+    <Content Include="Images\MuruganSirSign.bmp" />
     <Content Include="LnImporting.aspx" />
     <Content Include="PatrolAnalysisDateSet.aspx" />
     <Content Include="App_Data\CachedProperties.xml">
@@ -329,6 +337,13 @@
     <Compile Include="AllDCReport.aspx.designer.cs">
       <DependentUpon>AllDCReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BoxEnquiry.aspx.cs">
+      <DependentUpon>BoxEnquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BoxEnquiry.aspx.designer.cs">
+      <DependentUpon>BoxEnquiry.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DocPageOne.aspx.cs">
       <DependentUpon>DocPageOne.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -342,6 +357,13 @@
     </Compile>
     <Compile Include="DocPageThree.aspx.designer.cs">
       <DependentUpon>DocPageThree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocPageTwo.aspx.cs">
+      <DependentUpon>DocPageTwo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocPageTwo.aspx.designer.cs">
+      <DependentUpon>DocPageTwo.aspx</DependentUpon>
     </Compile>
     <Compile Include="HeatNoValues.aspx.cs">
       <DependentUpon>HeatNoValues.aspx</DependentUpon>

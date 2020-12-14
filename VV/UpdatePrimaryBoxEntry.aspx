@@ -9,11 +9,14 @@
         function OpenWindowForDocPageOne() {
             window.open("DocPageOne.aspx");
         }
+        function OpenWindowForDocPageTwo() {
+            window.open("DocPageTwo.aspx");
+        }
         function OpenWindowForDocPageThree() {
             window.open("DocPageThree.aspx");
         }
     </script>
-    <table style="height: 100%;" width="100%" cellpadding="0" cellspacing="0">
+    <table style="height: 100%;" width="100%" cellpadding="0" cellspacing="0"> 
         <tr>
             <td align="left" class="secondLevelHeader" width="20%">
                 <asp:Label ID="lblPageTitle" runat="server" Text="View Primary Box Items" />
@@ -190,7 +193,7 @@
                         <asp:TemplateField HeaderText="" Visible="true">
                             <ItemTemplate>
                                 <asp:Button ID="BtnDOCPage2" runat="server" Text="DOCPage2"
-                                    OnClick="BtnDOCPage2_Click" OnClientClick="target ='_blank';"/>
+                                    OnClick="BtnDOCPage2_Click" OnClientClick="OpenWindowForDocPageTwo()"/>
                                 <input id="hidPrimaryBoxNoDocPage2" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
                             </ItemTemplate>
                             <ItemStyle Wrap="false" />

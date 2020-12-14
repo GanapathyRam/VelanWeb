@@ -92,7 +92,7 @@
                                     <asp:MenuItem Value="Week Wise Shortage Report" NavigateUrl="~/WeekWiseShortageReport.aspx" Enabled="false"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="Production" Enabled="true">
-                                    <asp:MenuItem Value="WIP to TPI" NavigateUrl="~/ViewWIPItems.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="WIP to FG" NavigateUrl="~/ViewWIPItems.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Prod Completion" NavigateUrl="~/ViewProdCompletion.aspx" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="WIP Report" Enabled="false"></asp:MenuItem>
                                     <asp:MenuItem Value="Primary Box Entry" NavigateUrl="~/PrimaryBoxEntry.aspx" Enabled="false"></asp:MenuItem>
@@ -114,6 +114,7 @@
                                         <asp:MenuItem Value="Production Order Importing" NavigateUrl="~/ProductionOrderImporting.aspx" Enabled="false"></asp:MenuItem>
                                     </asp:MenuItem>
                                     <asp:MenuItem Value="Heat No Values" NavigateUrl="~/HeatNoValues.aspx" Enabled="false"></asp:MenuItem>
+                                    <asp:MenuItem Value="Box Enquiry" NavigateUrl="~/BoxEnquiry.aspx" Enabled="false"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Value="Sales" Enabled="true">
                                     <asp:MenuItem Value="ITP/ GAD Information" NavigateUrl="~/ViewITP.aspx" Enabled="false"></asp:MenuItem>

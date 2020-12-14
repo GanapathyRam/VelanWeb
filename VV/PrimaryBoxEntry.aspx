@@ -9,9 +9,17 @@
     <script language="javascript" type="text/javascript">
 
     </script>
-    <%--  <div>
-        <asp:Label ID="lblMessage" Visible="true" Style="text-align: left;" runat="server"></asp:Label>
-    </div>--%>
+    <div style="text-align: right; background-color: #eceded; line-height: normal;">
+        <asp:Panel ID="BulkUpdateWIP" runat="server">
+            <asp:Label ID="lblWIPSearch" runat="server" Font-Bold="true" Text="PrimaryBoxNo Search:"></asp:Label>
+            <asp:Label ID="lblProdOrder" runat="server" Style="margin-left: 150px;" Text="Prod Order No"></asp:Label>
+            <asp:TextBox ID="txtProdOrder" runat="server" Width="100px" ToolTip="Enter Prod Order Number to be Searched" onKeyUp="ControlSearch(this)" />
+
+            &nbsp;<asp:Button ID="btnSearchBox" runat="server" CssClass="buttonText" Enabled="true" OnClick="btnSearchBox_Click" Text="Search" ToolTip="Click to Search Data" />
+            &nbsp;&nbsp;
+           
+        </asp:Panel>
+    </div>
     <table style="height: 100%;" width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td align="left" class="secondLevelHeader" width="15%">

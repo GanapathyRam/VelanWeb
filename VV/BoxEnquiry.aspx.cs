@@ -1,16 +1,15 @@
-﻿using Libraries.Entity;
-using Microsoft.Practices.EnterpriseLibrary.Logging;
+﻿using Microsoft.Practices.EnterpriseLibrary.Logging;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Configuration;
 
 namespace VV
 {
-    public partial class ViewTPIOffering : System.Web.UI.Page
+    public partial class BoxEnquiry : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -145,6 +144,7 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[7].Enabled = true;
                     else if (MenuID == 11) // Production Order Importing
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
+
                     else if (MenuID == 12) // Heat No Values
                         tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
                     else if (MenuID == 13) // Box Enquiry
@@ -277,396 +277,79 @@ namespace VV
 
                 #endregion
             }
-            #endregion
-
             # endregion
 
-            if (!IsPostBack)
-                showgrid();
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-IN");
+
+            if (!Page.IsPostBack)
+            {
+                ShowBoxEnquiryReport();
+            }
+
+            # endregion
         }
 
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        private void ShowBoxEnquiryReport()
         {
-            DataSet searchDS = (DataSet)Cache["TPIOfferingDataFromDBCache"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
+            DBUtil _dbObj = new DBUtil();
 
-            GridView1.EditIndex = -1;
-            //  showgrid();
+            DataSet ds = _dbObj.RetrieveBoxEnquiry();
 
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
+            Cache["CacheFromBoxEnquiry"] = ds;
 
-            GridView1.EditIndex = -1;
-        }
-
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            DataSet searchDS = (DataSet)Cache["TPIOfferingDataFromDBCache"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-            GridView1.EditIndex = e.NewEditIndex;
-            //  showgrid();
-
-            //DataSet searchDS = (DataSet)Cache["TPIOfferingDataFromDBCache"];
-            GridView1.DataSource = searchDS;
-            GridView1.DataBind();
-
-        }
-
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            try
-            {
-                Label lbProdOrderNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblProdOrderNo");
-                Label lbSerialNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblSerialNo");
-                Label lbOrderNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblOrderNo");
-                Label lbLineNo = (Label)GridView1.Rows[e.RowIndex].FindControl("lblLineNo");
-                Label lbPos = (Label)GridView1.Rows[e.RowIndex].FindControl("lblPos");
-
-                TextBox txTPIOfferDate = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtTPIOfferDate");
-                TextBox txQCRemarks = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtQCRemarks");
-                //DropDownList drDwnQCRem = (DropDownList)GridView1.Rows[e.RowIndex].FindControl("drpDwnQCRem");
-                TextBox txIRNComplDate = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtIRNComplDate");
-
-                DBUtil _dbObj = new DBUtil();
-                _dbObj.UpdateTPIOffering(lbOrderNo.Text.Trim(), lbLineNo.Text.Trim(), Int32.Parse(lbPos.Text.Trim()), lbProdOrderNo.Text.Trim(), lbSerialNo.Text.Trim(), txTPIOfferDate.Text.Trim(), txQCRemarks.Text.Trim(), txIRNComplDate.Text.Trim());
-                //_dbObj.UpdateTPIOffering(Int32.Parse(lbOrderNo.Text.Trim()), lbLineNo.Text.Trim(), Int32.Parse(lbPos.Text.Trim()), lbProdOrderNo.Text.Trim(), lbSerialNo.Text.Trim(), txTPIOfferDate.Text.Trim(), drDwnQCRem.SelectedItem.Text.Trim(), txIRNComplDate.Text.Trim());
-
-                GridView1.EditIndex = -1;
-                showgrid();
-            }
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : GridView1_RowUpdating : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-        }
-
-        /*
-        public DataSet GetRemarks()
-        {
-            try
-            {
-                DataTable tblRemarks = new DataTable();
-
-                DataColumn column;
-                DataRow row;
-
-                column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
-                column.ColumnName = "remarkdesc";
-                tblRemarks.Columns.Add(column);
-
-                column = new DataColumn();
-                column.DataType = System.Type.GetType("System.Int32");
-                column.ColumnName = "remarkid";
-                tblRemarks.Columns.Add(column);
-
-                string[] ddlValues = ConfigurationManager.AppSettings["QCRemarks"].ToString().Split(',');
-
-                //row = tblRemarks.NewRow();
-                //row["remarkid"] = 0;
-                //row["remarkdesc"] = "-- Select --";
-                //tblRemarks.Rows.Add(row);
-
-                for (int i = 0; i <= ddlValues.Length - 1; i++)
-                {
-                    row = tblRemarks.NewRow();
-                    row["remarkid"] = ddlValues[i].Split('-')[0].Trim();
-                    row["remarkdesc"] = ddlValues[i].Split('-')[1].Trim();
-                    tblRemarks.Rows.Add(row);
-                }
-
-                DataSet dsRemarks = new DataSet();
-                dsRemarks.Tables.Add(tblRemarks);
-
-                return dsRemarks;
-            }
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : GetRemarks : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-        }
-        */
-
-        public void showgrid()
-        {
-            try
-            {
-                DBUtil _DBObj = new DBUtil();
-                DataSet ds = _DBObj.RetrieveTPIOfferingData();
-
-                Cache["TPIOfferingDataFromDBCache"] = ds;
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-
-            }
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : showgrid : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-        }
-
-        protected void btnSearchBox_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                String FigNo_Search = txtFigNo.Text.Trim();
-                String OrderNo_Search = txtOrderNo.Text.Trim();
-                String Pos_Search = txtPos.Text.Trim();
-                String ProdSerialNo_Search = txtProdSerialNo.Text.Trim();
-
-                String searchRowFilter = String.Empty, searchRowFilter1 = String.Empty, searchRowFilter2 = String.Empty, searchRowFilter3 = String.Empty, searchRowFilter4 = String.Empty;
-
-                if (!String.IsNullOrEmpty(FigNo_Search))
-                {
-                    searchRowFilter1 = "FigNo like '%" + FigNo_Search + "%'";
-                }
-
-                if (!String.IsNullOrEmpty(OrderNo_Search))
-                {
-                    searchRowFilter2 = "OrderNum = '" + OrderNo_Search + "'";
-                }
-
-                if (!String.IsNullOrEmpty(Pos_Search))
-                {
-                    searchRowFilter3 = "Pos = '" + Pos_Search + "'";
-                }
-
-                if (!String.IsNullOrEmpty(ProdSerialNo_Search))
-                {
-                    searchRowFilter4 = "ProdOrderNo = '" + ProdSerialNo_Search + "'";
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter1))
-                    searchRowFilter = searchRowFilter1;
-
-                if (!String.IsNullOrEmpty(searchRowFilter2))
-                {
-                    if (!String.IsNullOrEmpty(searchRowFilter))
-                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter2;
-                    else
-                        searchRowFilter = searchRowFilter2;
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter3))
-                {
-                    if (!String.IsNullOrEmpty(searchRowFilter))
-                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter3;
-                    else
-                        searchRowFilter = searchRowFilter3;
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter4))
-                {
-                    if (!String.IsNullOrEmpty(searchRowFilter))
-                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter4;
-                    else
-                        searchRowFilter = searchRowFilter4;
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter))
-                {
-                    DataSet searchDS = (DataSet)Cache["TPIOfferingDataFromDBCache"];
-
-                    DataView dv;
-                    dv = searchDS.Tables[0].DefaultView;
-
-                    dv.RowFilter = searchRowFilter;
-
-                    GridView1.DataSource = dv;
-                    GridView1.DataBind();
-
-                    DataSet DS = new DataSet();
-                    DS.Tables.Add(dv.ToTable());
-                    Cache["TPIOfferingDataFromDBCache"] = DS;
-                }
-                else
-                {
-                    DataSet searchDS = (DataSet)Cache["TPIOfferingDataFromDBCache"];
-                    GridView1.DataSource = searchDS;
-                    GridView1.DataBind();
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : btnSearchBox_Click : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-        }
-
-        /*
-        protected void Search()
-        {
-            try
-            {
-                String FigNo_Search = txtFigNo.Text.Trim();
-                String OrderNo_Search = txtOrderNo.Text.Trim();
-                String Pos_Search = txtPos.Text.Trim();
-                String ProdSerialNo_Search = txtProdSerialNo.Text.Trim();
-
-                String searchRowFilter = String.Empty, searchRowFilter1 = String.Empty, searchRowFilter2 = String.Empty, searchRowFilter3 = String.Empty, searchRowFilter4 = String.Empty;
-
-                if (!String.IsNullOrEmpty(FigNo_Search))
-                {
-                    searchRowFilter1 = "FigNo like '%" + FigNo_Search + "%'";
-                }
-
-                if (!String.IsNullOrEmpty(OrderNo_Search))
-                {
-                    searchRowFilter2 = "OrderNum = '" + OrderNo_Search + "'";
-                }
-
-                if (!String.IsNullOrEmpty(Pos_Search))
-                {
-                    searchRowFilter3 = "Pos = '" + Pos_Search + "'";
-                }
-
-                if (!String.IsNullOrEmpty(ProdSerialNo_Search))
-                {
-                    searchRowFilter4 = "ProdOrderNo = '" + ProdSerialNo_Search + "'";
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter1))
-                    searchRowFilter = searchRowFilter1;
-
-                if (!String.IsNullOrEmpty(searchRowFilter2))
-                {
-                    if (!String.IsNullOrEmpty(searchRowFilter))
-                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter2;
-                    else
-                        searchRowFilter = searchRowFilter2;
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter3))
-                {
-                    if (!String.IsNullOrEmpty(searchRowFilter))
-                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter3;
-                    else
-                        searchRowFilter = searchRowFilter3;
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter4))
-                {
-                    if (!String.IsNullOrEmpty(searchRowFilter))
-                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter4;
-                    else
-                        searchRowFilter = searchRowFilter4;
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter))
-                {
-                    DataSet searchDS = (DataSet)Cache["TPIOfferingDataFromDBCache"];
-
-                    DataView dv;
-                    dv = searchDS.Tables[0].DefaultView;
-
-                    dv.RowFilter = searchRowFilter;
-
-                    GridView1.DataSource = dv;
-                    GridView1.DataBind();
-                }
-                else
-                {
-                    DataSet searchDS = (DataSet)Cache["TPIOfferingDataFromDBCache"];
-                    GridView1.DataSource = searchDS;
-                    GridView1.DataBind();
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Write(this.GetType().ToString() + " : Search : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
-            }
-        }
-        */
-
-        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            DataSet ds = (DataSet)Cache["TPIOfferingDataFromDBCache"];
-
-            GridView1.PageIndex = e.NewPageIndex;
             GridView1.DataSource = ds;
             GridView1.DataBind();
+        }
+
+        protected void btnExcelExport_Click(object sender, EventArgs e)
+        {
+            string query = string.Empty;
+            DBUtil _DBObj = new DBUtil();
+            string str = string.Empty;
 
             try
             {
-                String FigNo_Search = txtFigNo.Text.Trim();
-                String OrderNo_Search = txtOrderNo.Text.Trim();
-                String Pos_Search = txtPos.Text.Trim();
-                String ProdSerialNo_Search = txtProdSerialNo.Text.Trim();
+                DataSet ds = _DBObj.RetrieveBoxEnquiry();
+                DataTable dt = ds.Tables[0];
 
-                String searchRowFilter = String.Empty, searchRowFilter1 = String.Empty, searchRowFilter2 = String.Empty, searchRowFilter3 = String.Empty, searchRowFilter4 = String.Empty;
-
-                if (!String.IsNullOrEmpty(FigNo_Search))
+                if (dt.Rows.Count > 0)
                 {
-                    searchRowFilter1 = "FigNo like '%" + FigNo_Search + "%'";
+                    Response.ClearContent();
+                    Response.Buffer = true;
+                    Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", "BoxEnquiry.xls"));
+                    Response.ContentType = "application/ms-excel";
+
+                    foreach (DataColumn dtcol in dt.Columns)
+                    {
+                        Response.Write(str + dtcol.ColumnName);
+                        str = "\t";
+                    }
+                    Response.Write("\n");
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        str = "";
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            Response.Write(str + Convert.ToString(dr[j]));
+                            str = "\t";
+                        }
+                        Response.Write("\n");
+                    }
+                    Response.End();
+
                 }
-
-                if (!String.IsNullOrEmpty(OrderNo_Search))
+                else
                 {
-                    searchRowFilter2 = "OrderNum = '" + OrderNo_Search + "'";
-                }
-
-                if (!String.IsNullOrEmpty(Pos_Search))
-                {
-                    searchRowFilter3 = "Pos = '" + Pos_Search + "'";
-                }
-
-                if (!String.IsNullOrEmpty(ProdSerialNo_Search))
-                {
-                    searchRowFilter4 = "ProdOrderNo = '" + ProdSerialNo_Search + "'";
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter1))
-                    searchRowFilter = searchRowFilter1;
-
-                if (!String.IsNullOrEmpty(searchRowFilter2))
-                {
-                    if (!String.IsNullOrEmpty(searchRowFilter))
-                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter2;
-                    else
-                        searchRowFilter = searchRowFilter2;
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter3))
-                {
-                    if (!String.IsNullOrEmpty(searchRowFilter))
-                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter3;
-                    else
-                        searchRowFilter = searchRowFilter3;
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter4))
-                {
-                    if (!String.IsNullOrEmpty(searchRowFilter))
-                        searchRowFilter = searchRowFilter + " AND " + searchRowFilter4;
-                    else
-                        searchRowFilter = searchRowFilter4;
-                }
-
-                if (!String.IsNullOrEmpty(searchRowFilter))
-                {
-                    DataSet searchDS = (DataSet)Cache["TPIOfferingDataFromDBCache"];
-
-                    DataView dv;
-                    dv = searchDS.Tables[0].DefaultView;
-
-                    dv.RowFilter = searchRowFilter;
-
-                    GridView1.DataSource = dv;
-                    GridView1.DataBind();
+                    //lblConfirm.Text = "No Records Found.";
+                    //lblConfirm.Attributes.Add("style", "color:Red");
                 }
             }
-
             catch (Exception ex)
             {
-                Logger.Write(this.GetType().ToString() + " : View TPI Offering - When trying to do a Paging : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
-                throw ex;
+                Logger.Write(ex, "Exception from export button click from Production Order Issue in Stores");
+            }
+            finally
+            {
             }
         }
     }

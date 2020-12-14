@@ -83,7 +83,7 @@
             <td width="80%" align="right" style="padding-left: 270px;" class="secondLevelHeader">
                 <%--Added by Arun on 27-Jan'08 to implement the search on pressing enter itslef--%>
                 <asp:Panel ID="SearchPanel" DefaultButton="btnSearchBox" runat="server">
-                <asp:Button ID="btnConvert" Text="WIP To TPI" runat="server" CssClass="buttonText" OnClick="btnConvert_Click" Visible="true"/>
+                <asp:Button ID="btnConvert" Text="WIP To FG" runat="server" CssClass="buttonText" OnClick="btnConvert_Click" Visible="true"/>
                 <asp:Button ID="lnlRemPageination" runat="server" Text="Display All" CssClass="buttonText" OnClick="btnRemPagination_Click" Visible="true"/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <asp:TextBox ID="txtProdOrderNo" runat="server" ToolTip="Enter Prod Order No to be Searched" onKeyUp="ControlSearch(this)" />
                     <asp:TextBox ID="txtSalesOrderNo" runat="server" ToolTip="Enter Order Number to be Searched"/>

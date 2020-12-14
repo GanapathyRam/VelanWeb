@@ -149,6 +149,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
                     else if (MenuID == 12) // Heat No Values
                         tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
+                    else if (MenuID == 13) // Box Enquiry
+                        tbstr.Items[ParentMenuID].ChildItems[5].Enabled = true;
                 }
                 # endregion
 
@@ -396,7 +398,7 @@ namespace VV
 
                     bool isRecExistsinDB = false;
 
-                    DataRow[] Filter = ds_FromDB_B4Update.Tables[0].Select("OrderNo = " + OrderNo + " AND LineNum = '" + LineNum + "' AND Pos = " + Pos);
+                    DataRow[] Filter = ds_FromDB_B4Update.Tables[0].Select("OrderNo = '"+ OrderNo +"' AND Pos = " + Pos);
 
                     if (Filter.Length > 0)
                     {

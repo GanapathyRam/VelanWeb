@@ -26,7 +26,7 @@
     <asp:Panel ID="pnlContents" runat="server">
         <asp:Panel ID="Panel1" runat="server" Style="display: inline;">
             <div style="width: 100%;">
-                <table border="0" style="margin: 0px auto; width: 40%; border:1px solid; border-collapse:collapse; ">
+                <table border="0" style="margin: 0px auto; width: 412px; border:1px solid; border-collapse:collapse; ">
                     <tr style="height: 35px; border-bottom:1px solid;">
                         <td colspan="4" style="text-align: left; padding-left: 1px; width: 10%;">
                             <img id="IMG1" align="center" alt="Company Logo"
@@ -97,7 +97,7 @@
                         </td>
                     </tr>
                     <tr style="height: 40px; border-bottom: 1px solid;">
-                        <td colspan="1" style="text-align: left;width: 35%">
+                        <td colspan="1" style="text-align: left;width: 27%">
                             <asp:Label ID="lblBonnerCoverHeat" runat="server" Text="Bonnet Heat"></asp:Label>
                             :</td>
                         <td colspan="3" style="text-align: left; font-size: small;">

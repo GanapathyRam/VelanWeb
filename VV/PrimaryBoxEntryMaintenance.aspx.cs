@@ -147,6 +147,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
                     else if (MenuID == 12) // Heat No Values
                         tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
+                    else if (MenuID == 13) // Box Enquiry
+                        tbstr.Items[ParentMenuID].ChildItems[5].Enabled = true;
                 }
                 # endregion
 
@@ -438,7 +440,7 @@ namespace VV
 
             GridViewRow clickedRow = ((Button)sender).NamingContainer as GridViewRow;
 
-            var primaryBoxNo = ((System.Web.UI.HtmlControls.HtmlInputControl)(clickedRow.FindControl("hidPrimaryBoxNoDocPage2"))).Value;
+            var primaryBoxNo = ((System.Web.UI.HtmlControls.HtmlInputControl)(clickedRow.FindControl("hidPrimaryBoxNoDocPage3"))).Value;
 
             Session["PrimaryBoxNumber"] = Convert.ToString(primaryBoxNo);
 
@@ -449,7 +451,17 @@ namespace VV
 
         protected void BtnDOCPage2_Click(object sender, EventArgs e)
         {
+            //Get the button that raised the event
+            Button btn = (Button)sender;
 
+            //Get the row that contains this button
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+            GridViewRow clickedRow = ((Button)sender).NamingContainer as GridViewRow;
+
+            var primaryBoxNo = ((System.Web.UI.HtmlControls.HtmlInputControl)(clickedRow.FindControl("hidPrimaryBoxNoDocPage2"))).Value;
+
+            Session["PrimaryBoxNumber"] = Convert.ToString(primaryBoxNo);
         }
     }
 }

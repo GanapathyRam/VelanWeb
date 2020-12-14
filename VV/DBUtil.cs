@@ -7735,14 +7735,14 @@ namespace VV
             }
         }
 
-        public DataSet GetHeatNoValuesFromMaterialCode(string materialCode, string description)
+        public DataSet GetHeatNoValuesFromMaterialCode(string materialCode, string description, string HeatCode)
         {
             DataSet ds = new DataSet();
             try
             {
                 this.init();
 
-                SqlCommand cmd = new SqlCommand("SELECT CMM.CMin, CMM.CMax, HCM.CAct, CMM.MnMin, CMM.MnMax, HCM.MnAct,CMM.PMin, CMM.PMax, HCM.PAct, CMM.SMin, CMM.SMax, HCM.SAct, CMM.SiMin, CMM.SiMax, HCM.SiAct, CMM.CuMin, CMM.CuMax,HCM.CuAct, CMM.NiMin, CMM.NiMax, HCM.NiAct, CMM.CrMin, CMM.CrMax, HCM.CrAct, CMM.MoMin, CMM.MoMax, HCM.MoAct, CMM.VMin, CMM.VMax, HCM.VAct, CMM.CuNiCrMoVMin, CMM.CuNiCrMoVMax,HCM.CuNiCrMoVAct, CMM.CrMoMin, CMM.CrMoMax, HCM.CrMoAct, CMM.NbMin, CMM.NbMax, HCM.NbAct, CMM.NMin, CMM.NMax, HCM.NAct,CMM.AlMin, CMM.AlMax, HCM.AlAct, CMM.TiMin, CMM.TiMax, HCM.TiAct,CMM.ZrMin, CMM.ZrMax, HCM.ZrAct, CMM.FeMin, CMM.FeMax, HCM.FeAct,CMM.TaMin, CMM.TaMax, HCM.TaAct, CMM.NbTaMin, CMM.NbTaMax, HCM.NbTaAct, CMM.TensileMPAMin, CMM.TensileMPAMax,HCM.TensileMPAAct, CMM.TensileKSIMin, CMM.TensileKSIMax, HCM.TensileKSIAct, CMM.YieldMPAMin, HCM.YieldMPAAct, CMM.YieldKSIMin, HCM.YieldKSIAct, CMM.ElongationMin, HCM.ElongationAct,CMM.ReductionMin, HCM.ReductionAct, CMM.HardnessMin, CMM.HardnessMax, HCM.HardnessAct, HCM.HTCode, HCM.Impact1Act,HCM.Impact2Act,HCM.Impact3Act,HCM.Impact4Act,HCM.Impact5Act,HCM.Impact6Act,HCM.TemperatureFAct,HCM.TemperatureCAct FROM ChemicalMechanicalMaster as CMM Left outer join HeatCodeMaster as HCM on CMM.MaterialCode = HCM.MaterialCode where CMM.MaterialCode='" + materialCode+ "' and CMM.MaterialDesc + CMM.MatlType='" + description +"'", conn);
+                SqlCommand cmd = new SqlCommand("SELECT CMM.CMin, CMM.CMax, HCM.CAct, CMM.MnMin, CMM.MnMax, HCM.MnAct,CMM.PMin, CMM.PMax, HCM.PAct, CMM.SMin, CMM.SMax, HCM.SAct, CMM.SiMin, CMM.SiMax, HCM.SiAct, CMM.CuMin, CMM.CuMax,HCM.CuAct, CMM.NiMin, CMM.NiMax, HCM.NiAct, CMM.CrMin, CMM.CrMax, HCM.CrAct, CMM.MoMin, CMM.MoMax, HCM.MoAct, CMM.VMin, CMM.VMax, HCM.VAct, CMM.CuNiCrMoVMin, CMM.CuNiCrMoVMax,HCM.CuNiCrMoVAct, CMM.CrMoMin, CMM.CrMoMax, HCM.CrMoAct, CMM.NbMin, CMM.NbMax, HCM.NbAct, CMM.NMin, CMM.NMax, HCM.NAct,CMM.AlMin, CMM.AlMax, HCM.AlAct, CMM.TiMin, CMM.TiMax, HCM.TiAct,CMM.ZrMin, CMM.ZrMax, HCM.ZrAct, CMM.FeMin, CMM.FeMax, HCM.FeAct,CMM.TaMin, CMM.TaMax, HCM.TaAct, CMM.NbTaMin, CMM.NbTaMax, HCM.NbTaAct, CMM.TensileMPAMin, CMM.TensileMPAMax,HCM.TensileMPAAct, CMM.TensileKSIMin, CMM.TensileKSIMax, HCM.TensileKSIAct, CMM.YieldMPAMin, HCM.YieldMPAAct, CMM.YieldKSIMin, HCM.YieldKSIAct, CMM.ElongationMin, HCM.ElongationAct,CMM.ReductionMin, HCM.ReductionAct, CMM.HardnessMin, CMM.HardnessMax, HCM.HardnessAct, HCM.HTCode, HCM.Impact1Act,HCM.Impact2Act,HCM.Impact3Act,HCM.Impact4Act,HCM.Impact5Act,HCM.Impact6Act,HCM.TemperatureFAct,HCM.TemperatureCAct FROM ChemicalMechanicalMaster as CMM Left outer join HeatCodeMaster as HCM on CMM.MaterialCode = HCM.MaterialCode where CMM.MaterialCode='" + materialCode+ "' and CMM.MaterialDesc + CMM.MatlType='" + description + "' and HCM.HeatNo = '"+ HeatCode + "'", conn);
                 cmd.CommandTimeout = 1000;
                 cmd.CommandType = CommandType.Text;
 
@@ -8399,9 +8399,64 @@ namespace VV
             }
         }
 
+        public DataSet RetrieveHeatCodeMasterDetails(string HeatCodeNo)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("[spGetHeatCodeDetails]", conn);
+
+                cmd.Parameters.Add(new SqlParameter("@HeatCode", HeatCodeNo));
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetrieveHeatCodeMasterDetails() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
 
 
         #endregion 
+
+        public DataSet RetrieveBoxEnquiry()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("spGetPrimaryBoxNoForQuery", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : RetrieveBoxEnquiry() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
     }
 
     public class CustomComparer : IComparer

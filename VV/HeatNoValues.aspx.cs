@@ -152,6 +152,8 @@ namespace VV
 
                     else if (MenuID == 12) // Heat No Values
                         tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
+                    else if (MenuID == 13) // Box Enquiry
+                        tbstr.Items[ParentMenuID].ChildItems[5].Enabled = true;
                 }
                 # endregion
 
@@ -310,7 +312,7 @@ namespace VV
 
                 Panel1.Visible = true;
 
-                FillTableValue(Convert.ToString(ds.Tables[0].Rows[0]["MaterialCode"]), Convert.ToString(ds.Tables[0].Rows[0]["Matltype"]));
+                FillTableValue(Convert.ToString(ds.Tables[0].Rows[0]["MaterialCode"]), Convert.ToString(ds.Tables[0].Rows[0]["Matltype"]), txtHeatNo.Text.Trim());
 
                 btnNew.Enabled = false;
 
@@ -354,10 +356,9 @@ namespace VV
                         _dbObj.InsertHeatNoMaster(txtHeatNo.Text.Trim(), txtSupplier.Text.Trim(), Convert.ToString(ddlMaterialCode.SelectedItem.Value), Convert.ToString(ddlMaterialCode.SelectedItem.Text), CheckBoxList1.SelectedItem.Value,
                             txtCActual.Text.Trim(), txtMnActual.Text.Trim(), txtPActual.Text.Trim(), txtSActual.Text.Trim(), txtSiActual.Text.Trim(), txtCuActual.Text.Trim(), txtNiActual.Text.Trim(), txtCrActual.Text.Trim(),
                             txtMoActual.Text.Trim(), txtVActual.Text.Trim(), txtCuNiCrMoVActual.Text.Trim(), txtCrMoActual.Text.Trim(), txtNbActual.Text.Trim(), txtNActual.Text.Trim(), txtAlActual.Text.Trim(), txtTiActual.Text.Trim(),
-                            txtZrActual.Text.Trim(), txtFeActual.Text.Trim(), txtTaActual.Text.Trim(), txtNbActual.Text.Trim(), txtTensileMPAActual.Text.Trim(), txtTensileKSIActual.Text.Trim(), txtYieldMPAActual.Text.Trim(),
+                            txtZrActual.Text.Trim(), txtFeActual.Text.Trim(), txtTaActual.Text.Trim(), txtNbTaActual.Text.Trim(), txtTensileMPAActual.Text.Trim(), txtTensileKSIActual.Text.Trim(), txtYieldMPAActual.Text.Trim(),
                             txtYieldKSIActual.Text.Trim(), txtElongationActual.Text.Trim(), txtReductionActual.Text.Trim(), txtHardnessActual.Text.Trim(), Convert.ToString(ddlHeatTreatment.SelectedItem.Value), txtImpact1.Text.Trim(),
-                            txtImpact2.Text.Trim(), txtImpact3.Text.Trim(), txtImpact4.Text.Trim(), txtImpact5.Text.Trim(), txtImpact6.Text.Trim(), txtTemperatureC.Text.Trim(),
-                            txtTemperatureF.Text.Trim());
+                            txtImpact2.Text.Trim(), txtImpact3.Text.Trim(), txtImpact4.Text.Trim(), txtImpact5.Text.Trim(), txtImpact6.Text.Trim(), txtTemperatureF.Text.Trim(), txtTemperatureC.Text.Trim());
 
                         lblMessage.Visible = true;
                         lblMessage.ForeColor = System.Drawing.Color.Green;
@@ -479,7 +480,7 @@ namespace VV
 
                 Panel1.Visible = true;
 
-                FillTableValue(ddlMaterialCode.SelectedItem.Value, ddlMaterialCode.SelectedItem.Text);
+                FillTableValue(ddlMaterialCode.SelectedItem.Value, ddlMaterialCode.SelectedItem.Text, txtHeatNo.Text.Trim());
             }
             else
             {
@@ -522,7 +523,7 @@ namespace VV
         {
             DataSet ds = new DataSet();
 
-            ds = _dbObj.GetHeatNoValuesFromMaterialCode("", "");
+            ds = _dbObj.GetHeatNoValuesFromMaterialCode("", "", "");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -532,13 +533,13 @@ namespace VV
 
         }
 
-        private void FillTableValue(string materialCode, string description)
+        private void FillTableValue(string materialCode, string description, string heatCode)
         {
             DataSet ds = new DataSet();
 
             try
             {
-                ds = _dbObj.GetHeatNoValuesFromMaterialCode(materialCode, description);
+                ds = _dbObj.GetHeatNoValuesFromMaterialCode(materialCode, description, heatCode);
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
@@ -588,7 +589,7 @@ namespace VV
 
                     lblCrMoMin.Text = Convert.ToString(ds.Tables[0].Rows[0]["CrMoMin"]);
                     lblCrMoMax.Text = Convert.ToString(ds.Tables[0].Rows[0]["CrMoMax"]);
-                    txtCrActual.Text = Convert.ToString(ds.Tables[0].Rows[0]["CrMoAct"]);
+                    txtCrMoActual.Text = Convert.ToString(ds.Tables[0].Rows[0]["CrMoAct"]);
 
                     lblNbMin.Text = Convert.ToString(ds.Tables[0].Rows[0]["NbMin"]);
                     lblNbMax.Text = Convert.ToString(ds.Tables[0].Rows[0]["NbMax"]);
@@ -636,7 +637,7 @@ namespace VV
 
                     lblYieldKSIMin.Text = Convert.ToString(ds.Tables[0].Rows[0]["YieldKSIMin"]);
                     //lblTensileKSIMax.Text = Convert.ToString(ds.Tables[0].Rows[0]["YieldKSIMax"]);
-                    txtYieldKSIActual.Text = Convert.ToString(ds.Tables[0].Rows[0]["TensileKSIAct"]);
+                    txtYieldKSIActual.Text = Convert.ToString(ds.Tables[0].Rows[0]["YieldKSIAct"]);
 
                     lblElongationMin.Text = Convert.ToString(ds.Tables[0].Rows[0]["ElongationMin"]);
                     //lblTensileKSIMax.Text = Convert.ToString(ds.Tables[0].Rows[0]["TensileKSIMax"]);
@@ -659,6 +660,126 @@ namespace VV
                     txtImpact6.Text = Convert.ToString(ds.Tables[0].Rows[0]["Impact6Act"]);
                     txtTemperatureC.Text = Convert.ToString(ds.Tables[0].Rows[0]["TemperatureCAct"]);
                     txtTemperatureF.Text = Convert.ToString(ds.Tables[0].Rows[0]["TemperatureFAct"]);
+                }
+                else
+                {
+                    lblCMin.Text = "";
+                    lblCMax.Text = "";
+                    txtCActual.Text = "";
+
+                    lblMnMin.Text = "";
+                    lblMnMax.Text = "";
+                    txtMnActual.Text = "";
+
+                    lblPMin.Text = "";
+                    lblPMax.Text = "";
+                    txtPActual.Text = "";
+
+                    lblSMin.Text = "";
+                    lblSMax.Text = "";
+                    txtSActual.Text = "";
+
+                    lblSiMin.Text = "";
+                    lblSiMax.Text = "";
+                    txtSiActual.Text = "";
+
+                    lblCuMin.Text = "";
+                    lblCuMax.Text = "";
+                    txtCuActual.Text = "";
+
+                    lblNiMin.Text = "";
+                    lblNiMax.Text = "";
+                    txtNiActual.Text = "";
+
+                    lblCrMin.Text = "";
+                    lblCrMax.Text = "";
+                    txtCrActual.Text = "";
+
+                    lblMoMin.Text = "";
+                    lblMoMax.Text = "";
+                    txtMoActual.Text = "";
+
+                    lblVMin.Text = "";
+                    lblVMax.Text = "";
+                    txtVActual.Text = "";
+
+                    lblCuNiCrMoVMin.Text = "";
+                    lblCuNiCrMoVMax.Text = "";
+                    txtCuNiCrMoVActual.Text = "";
+
+                    lblCrMoMin.Text = "";
+                    lblCrMoMax.Text = "";
+                    txtCrMoActual.Text = "";
+
+                    lblNbMin.Text = "";
+                    lblNbMax.Text = "";
+                    txtNbActual.Text = "";
+
+                    lblNMin.Text = "";
+                    lblNMax.Text = "";
+                    txtNActual.Text = "";
+
+                    lblAlMin.Text = "";
+                    lblAlMax.Text = "";
+                    txtAlActual.Text = "";
+
+                    lblTiMin.Text = "";
+                    lblTiMax.Text = "";
+                    txtTiActual.Text = "";
+
+                    lblZrMin.Text = "";
+                    lblZrMax.Text = "";
+                    txtZrActual.Text = "";
+
+                    lblFeMax.Text = "";
+                    lblFeMin.Text = "";
+                    txtFeActual.Text = "";
+
+                    lblTaMin.Text = "";
+                    lblTaMax.Text = "";
+                    txtTaActual.Text = "";
+
+                    lblNbTaMin.Text = "";
+                    lblNbTaMax.Text = "";
+                    txtNbTaActual.Text = "";
+
+                    lblTensileMPAMin.Text = "";
+                    TensileMPAMax.Text = "";
+                    txtTensileMPAActual.Text = "";
+
+                    lblTensileKSIMin.Text = "";
+                    lblTensileKSIMax.Text = "";
+                    txtTensileKSIActual.Text = "";
+
+                    lblYieldMPAMin.Text = "";
+                    //lblCMin.Text = Convert.ToString(ds.Tables[0].Rows[0]["YieldMPAMax"]);
+                    txtYieldMPAActual.Text = "";
+
+                    lblYieldKSIMin.Text = "";
+                    //lblTensileKSIMax.Text = Convert.ToString(ds.Tables[0].Rows[0]["YieldKSIMax"]);
+                    txtYieldKSIActual.Text = "";
+
+                    lblElongationMin.Text = "";
+                    //lblTensileKSIMax.Text = Convert.ToString(ds.Tables[0].Rows[0]["TensileKSIMax"]);
+                    txtElongationActual.Text = "";
+
+                    lblReductionMin.Text = "";
+                    //lblTensileKSIMax.Text = Convert.ToString(ds.Tables[0].Rows[0]["TensileKSIMax"]);
+                    txtReductionActual.Text = "";
+
+                    lblHardnessMin.Text = "";
+                    lblHardnessMax.Text = "";
+                    txtHardnessActual.Text = "";
+
+
+                    txtImpact1.Text = "";
+                    txtImpact2.Text = "";
+                    txtImpact3.Text = "";
+                    txtImpact4.Text = "";
+                    txtImpact5.Text = "";
+                    txtImpact6.Text = "";
+                    txtTemperatureC.Text = "";
+                    txtTemperatureF.Text = "";
                 }
             }
             catch (Exception ex)

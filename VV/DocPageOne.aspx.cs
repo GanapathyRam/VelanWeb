@@ -149,6 +149,8 @@ namespace VV
                         tbstr.Items[ParentMenuID].ChildItems[3].ChildItems[8].Enabled = true;
                     else if (MenuID == 12) // Heat No Values
                         tbstr.Items[ParentMenuID].ChildItems[4].Enabled = true;
+                    else if (MenuID == 13) // Box Enquiry
+                        tbstr.Items[ParentMenuID].ChildItems[5].Enabled = true;
                 }
                 # endregion
 
@@ -297,7 +299,7 @@ namespace VV
 
                 if (ds != null && ds.Tables[0].Rows.Count > 0)
                 {
-                    lblPrimaryBoxNo.Text = Convert.ToString(PrimaryBoxNo.Substring(1,6));
+                    lblPrimaryBoxNo.Text = Convert.ToString(PrimaryBoxNo.Substring(1, 6));
 
                     lblCustomerNameText.Text = Convert.ToString(ds.Tables[0].Rows[0]["CustomerName"].ToString());
                     lblVelanOrdertext.Text = Convert.ToString(ds.Tables[0].Rows[0]["OrderNo"].ToString());
@@ -312,6 +314,15 @@ namespace VV
                     lblDescriptionText.Text = Convert.ToString(ds.Tables[0].Rows[0]["Description"].ToString());
 
                     lblCreatedOn.Text = Convert.ToString(ds.Tables[0].Rows[0]["CreatedOn"].ToString());
+
+                    if ((Convert.ToBoolean(ds.Tables[0].Rows[0]["PEDPrint"].ToString())) == Convert.ToBoolean(1))
+                    {
+                        btnPrint.Visible = true;
+                    }
+                    else
+                    {
+                        btnPrint.Visible = false;
+                    }
                 }
 
             }
