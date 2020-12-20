@@ -41,7 +41,7 @@
                             <%--<asp:Label ID="lblLocation" Style="margin-left: 10px;" runat="server" Text="Label"></asp:Label>--%>
                         </td>
                         <td style="width: 25%; font-size: 10px;">
-                            <p>Page 1 of 3 </p>
+                            <%--<p>Page 1 of 3 </p>--%>
                             <h7 style="font-weight:600;">Certificate # / Rev: </h7>
                             <asp:Label ID="lblPrimaryBoxNo" Style="margin-left: 10px; font-weight:600;" runat="server" Text=""></asp:Label> 
                             &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 0
@@ -115,9 +115,9 @@
                     </tr>
                 </table>
 
-                <div style="text-align: center; display: flex; margin: 0 auto; margin-top:30px;">
-                    <div style="margin: 0 auto; font-size: 9px;">
-                        <img src="Images/MuruganSirSign.bmp" style="width:200px; height:50px" /><br />
+                <div style="text-align: center; display: flex; margin: 0px auto; margin-top:30px;">
+                    <div style="margin: 28px auto; font-size: 9px;">
+                        <img src="Images/MuruganSirSign.bmp" style="width:100px; height:25px" /><br />
                         <span>Murugan Nagappan for</span><br />
                         <hr style="width: 100px; margin-top: 10px; margin-bottom: 10px" />
                         <span>Velan</span>

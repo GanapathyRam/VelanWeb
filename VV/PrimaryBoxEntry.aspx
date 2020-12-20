@@ -78,6 +78,15 @@
                                     <%--                                    <ItemStyle Width="100px" />
                                     <HeaderStyle Width="100px" />--%>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Customer">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblPos" runat="server" Text='<%# Eval("CustomerName") %>'>
+                                        </asp:Label>
+                                    </ItemTemplate>
+                                    <ItemStyle Wrap="false" />
+                                    <%--                                    <ItemStyle Width="100px" />
+                                    <HeaderStyle Width="100px" />--%>
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Prod Order No">
                                     <ItemTemplate>
                                         <asp:Label ID="lblProdOrderNo" runat="server" Text='<%# Eval("ProdOrderNo") %>'>

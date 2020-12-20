@@ -130,13 +130,13 @@ namespace VV {
         protected global::System.Web.UI.WebControls.Label lblDescription;
         
         /// <summary>
-        /// CheckBoxList1 control.
+        /// RadioButtonList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
         
         /// <summary>
         /// Label2 control.
@@ -182,6 +182,24 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator test;
+        
+        /// <summary>
+        /// Panel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel2;
+        
+        /// <summary>
+        /// TextArea1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea TextArea1;
         
         /// <summary>
         /// Panel1 control.
@@ -310,6 +328,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtCActual;
         
         /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
         /// lblMnMinMnMax control.
         /// </summary>
         /// <remarks>
@@ -344,6 +371,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMnActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator10;
         
         /// <summary>
         /// lblPMinMax control.
@@ -382,6 +418,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtPActual;
         
         /// <summary>
+        /// RegularExpressionValidator24 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator24;
+        
+        /// <summary>
         /// lblSMinSMax control.
         /// </summary>
         /// <remarks>
@@ -416,6 +461,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
         
         /// <summary>
         /// lblSiMinSiMax control.
@@ -454,6 +508,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtSiActual;
         
         /// <summary>
+        /// RegularExpressionValidator11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator11;
+        
+        /// <summary>
         /// lblCuMinCuMax control.
         /// </summary>
         /// <remarks>
@@ -488,6 +551,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCuActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator23 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator23;
         
         /// <summary>
         /// lblNiMinNiMax control.
@@ -526,6 +598,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtNiActual;
         
         /// <summary>
+        /// RegularExpressionValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
+        
+        /// <summary>
         /// lblCrMinCrMax control.
         /// </summary>
         /// <remarks>
@@ -560,6 +641,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCrActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator12;
         
         /// <summary>
         /// lblMoMinMoMax control.
@@ -598,6 +688,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtMoActual;
         
         /// <summary>
+        /// RegularExpressionValidator22 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator22;
+        
+        /// <summary>
         /// lblVMinVMax control.
         /// </summary>
         /// <remarks>
@@ -632,6 +731,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtVActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator4;
         
         /// <summary>
         /// lblCuNiCrMoVMinCuNiCrMoVMax control.
@@ -742,6 +850,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtNbActual;
         
         /// <summary>
+        /// RegularExpressionValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator5;
+        
+        /// <summary>
         /// lblNMinNMax control.
         /// </summary>
         /// <remarks>
@@ -776,6 +893,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator13;
         
         /// <summary>
         /// lblAlMinAlMax control.
@@ -814,6 +940,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtAlActual;
         
         /// <summary>
+        /// RegularExpressionValidator21 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator21;
+        
+        /// <summary>
         /// lblTiMinTiMax control.
         /// </summary>
         /// <remarks>
@@ -848,6 +983,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTiActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator6;
         
         /// <summary>
         /// lblZrMinZrMax control.
@@ -886,6 +1030,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtZrActual;
         
         /// <summary>
+        /// RegularExpressionValidator14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator14;
+        
+        /// <summary>
         /// lblFeMinFeMax control.
         /// </summary>
         /// <remarks>
@@ -922,6 +1075,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtFeActual;
         
         /// <summary>
+        /// RegularExpressionValidator20 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator20;
+        
+        /// <summary>
         /// lblTaMinTaMax control.
         /// </summary>
         /// <remarks>
@@ -956,6 +1118,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTaActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator7;
         
         /// <summary>
         /// lblNbTaMinNbTaMax control.
@@ -1030,6 +1201,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtTensileMPAActual;
         
         /// <summary>
+        /// RegularExpressionValidator19 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator19;
+        
+        /// <summary>
         /// lblTensileKSIMinTensileKSIMax control.
         /// </summary>
         /// <remarks>
@@ -1064,6 +1244,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTensileKSIActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator8;
         
         /// <summary>
         /// lblYieldMPAMinYieldMPAMax control.
@@ -1102,6 +1291,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtYieldMPAActual;
         
         /// <summary>
+        /// RegularExpressionValidator15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator15;
+        
+        /// <summary>
         /// lblYieldKSIMinYieldKSIMax control.
         /// </summary>
         /// <remarks>
@@ -1136,6 +1334,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtYieldKSIActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator18;
         
         /// <summary>
         /// lblElongationMinElongationMax control.
@@ -1174,6 +1381,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtElongationActual;
         
         /// <summary>
+        /// RegularExpressionValidator9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator9;
+        
+        /// <summary>
         /// lblReductionMinReductionMax control.
         /// </summary>
         /// <remarks>
@@ -1210,6 +1426,15 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtReductionActual;
         
         /// <summary>
+        /// RegularExpressionValidator16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator16;
+        
+        /// <summary>
         /// lblHardnessMinHardnessMax control.
         /// </summary>
         /// <remarks>
@@ -1244,6 +1469,15 @@ namespace VV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHardnessActual;
+        
+        /// <summary>
+        /// RegularExpressionValidator17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator17;
         
         /// <summary>
         /// lblImpact1 control.

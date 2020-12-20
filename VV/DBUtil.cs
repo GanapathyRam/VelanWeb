@@ -7735,7 +7735,7 @@ namespace VV
             }
         }
 
-        public DataSet GetHeatNoValuesFromMaterialCode(string materialCode, string description, string HeatCode)
+        public DataSet GetMinAndMaxWithHeatCode(string materialCode, string description, string HeatCode)
         {
             DataSet ds = new DataSet();
             try
@@ -7758,6 +7758,33 @@ namespace VV
             {
                 conn.Close();
                 Logger.Write(this.GetType().ToString() + " : GetHeatNoValuesFromMaterialCode() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
+                throw ex;
+            }
+        }
+
+        public DataSet GetMinAndMaxWithoutHeatCode(string materialCode, string description)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                this.init();
+
+                SqlCommand cmd = new SqlCommand("SELECT CMM.CMin, CMM.CMax, CMM.MnMin, CMM.MnMax, CMM.PMin, CMM.PMax, CMM.SMin, CMM.SMax,CMM.SiMin, CMM.SiMax, CMM.CuMin, CMM.CuMax, CMM.NiMin, CMM.NiMax, CMM.CrMin, CMM.CrMax,  CMM.MoMin, CMM.MoMax, CMM.VMin,CMM.VMax, CMM.CuNiCrMoVMin, CMM.CuNiCrMoVMax, CMM.CrMoMin,CMM.CrMoMax, CMM.NbMin, CMM.NbMax,  CMM.NMin, CMM.NMax, CMM.AlMin, CMM.AlMax,CMM.TiMin, CMM.TiMax, CMM.ZrMin, CMM.ZrMax,  CMM.FeMin, CMM.FeMax, CMM.TaMin,CMM.TaMax, CMM.NbTaMin, CMM.NbTaMax,  CMM.TensileMPAMin, CMM.TensileMPAMax, CMM.TensileKSIMin, CMM.TensileKSIMax, CMM.YieldMPAMin,  CMM.YieldKSIMin,  CMM.ElongationMin, CMM.ReductionMin, CMM.HardnessMin, CMM.HardnessMax  FROM ChemicalMechanicalMaster as CMM where CMM.MaterialCode='" + materialCode + "' and CMM.MaterialDesc + CMM.MatlType='" + description + "'", conn);
+                cmd.CommandTimeout = 1000;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                da.Fill(ds);
+
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                Logger.Write(this.GetType().ToString() + " : GetMinAndMaxWithoutHeatCode() : " + " : " + DateTime.Now + " : " + ex.Message.ToString(), Category.General, Priority.Highest);
                 throw ex;
             }
         }
@@ -8427,8 +8454,6 @@ namespace VV
                 throw ex;
             }
         }
-
-
 
         #endregion 
 

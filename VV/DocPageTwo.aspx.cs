@@ -303,7 +303,29 @@ namespace VV
                 {
                     lblPrimaryBoxNo.Text = Convert.ToString(PrimaryBoxNo.Substring(1, 6));
 
-                    //Label13.Text = Convert.ToString(ds.Tables[0].Rows[0]["LabelDisc"].ToString());
+                    if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["PEDPrint"].ToString()))
+                    {
+                        if (Convert.ToBoolean(ds.Tables[0].Rows[0]["PEDPrint"].ToString()) == true)
+                        {
+                            Panel1.Visible = false;
+                        }
+                        else if (Convert.ToBoolean(ds.Tables[0].Rows[0]["PEDPrint"].ToString()) == false)
+                        {
+                            Panel1.Visible = true;
+
+                            lblCustomerNameText.Text = Convert.ToString(ds.Tables[0].Rows[0]["CustomerName"].ToString());
+                            lblVelanOrdertext.Text = Convert.ToString(ds.Tables[0].Rows[0]["OrderNo"].ToString());
+                            lblPosText.Text = Convert.ToString(ds.Tables[0].Rows[0]["Pos"].ToString());
+
+                            lblCustomerPOText.Text = Convert.ToString(ds.Tables[0].Rows[0]["CustomerOrderNo"].ToString());
+                            lblCustomerOrderPosText.Text = Convert.ToString(ds.Tables[0].Rows[0]["CustomerOrderPos"].ToString());
+                            lblQuantitytext.Text = Convert.ToString(ds.Tables[0].Rows[0]["PrimaryBoxQty"].ToString());
+                            lblFigureNumberText.Text = Convert.ToString(ds.Tables[0].Rows[0]["Item"].ToString());
+
+                            lblApplicableStdsText.Text = Convert.ToString(ds.Tables[0].Rows[0]["AppStd"].ToString());
+                            lblDescriptionText.Text = Convert.ToString(ds.Tables[0].Rows[0]["Description"].ToString());
+                        }
+                    }
 
                     lblTeststd.Text = Convert.ToString(ds.Tables[0].Rows[0]["TestStd"].ToString());
                     lblShell.Text = Convert.ToString(ds.Tables[0].Rows[0]["Shell"].ToString());
@@ -311,6 +333,18 @@ namespace VV
                     lblSeatHP.Text = Convert.ToString(ds.Tables[0].Rows[0]["HPSeat"].ToString());
                     lblSeatLP.Text = Convert.ToString(ds.Tables[0].Rows[0]["LPSeat"].ToString());
                     lblBackseat.Text = Convert.ToString(ds.Tables[0].Rows[0]["BackSeat"].ToString());
+
+                    lblShellTime.Text = Convert.ToString(ds.Tables[0].Rows[0]["ShellTime"].ToString());
+                    lblPackingTime.Text = Convert.ToString(ds.Tables[0].Rows[0]["PackingSeatTime"].ToString());
+                    lblSeatHPTime.Text = Convert.ToString(ds.Tables[0].Rows[0]["HPSeatTime"].ToString());
+                    lblSeatLPTime.Text = Convert.ToString(ds.Tables[0].Rows[0]["LPSeatTime"].ToString());
+                    lblBackseatTime.Text = Convert.ToString(ds.Tables[0].Rows[0]["BackSeatTime"].ToString());
+
+                    lblShellResult.Text = Convert.ToString(ds.Tables[0].Rows[0]["ShellResult"].ToString());
+                    lblPackingResult.Text = Convert.ToString(ds.Tables[0].Rows[0]["PackingSeatResult"].ToString());
+                    lblSeatHPResult.Text = Convert.ToString(ds.Tables[0].Rows[0]["HPSeatResult"].ToString());
+                    lblSeatLPResult.Text = Convert.ToString(ds.Tables[0].Rows[0]["LPSeatResult"].ToString());
+                    lblBackseatResult.Text = Convert.ToString(ds.Tables[0].Rows[0]["BackSeatResult"].ToString());
 
 
                     var sb = new StringBuilder();
@@ -372,7 +406,7 @@ namespace VV
                             sb.AppendFormat("</td>");
 
                             sb.AppendFormat("<td style='text-align: center; width: 8%; border-left: 1px solid;'>");
-                            sb.AppendFormat("<span> Heat </span>");
+                            sb.AppendFormat("<span>Body</span>");
                             sb.AppendFormat("</td>");
 
                             #endregion
@@ -394,7 +428,7 @@ namespace VV
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["VAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 46px 5px 3px;'>C.E</span>");
-                            //sb.AppendFormat("<span>'" + Convert.ToString(ds.Tables[0].Rows[0][""].ToString()) + "'</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["CE"].ToString()) + "</span>");
                             sb.AppendFormat("</div>");
 
                             sb.AppendFormat("<div style='width: 28%;'>");
@@ -449,11 +483,14 @@ namespace VV
                             sb.AppendFormat("<span style='padding: 6px 14px 5px 3px;'>Hardness (HB)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["HardnessAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
+                            sb.AppendFormat("<span style='padding: 6px 33px 5px 3px;'>Impact (J)</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact6Act"].ToString()) + "</span>");
+                            sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 14px 5px 3px;'>Heat Treatment</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["HTDesc"].ToString()) + "</span>");
-                            sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");
-                            sb.AppendFormat("<span></span>");
+                            //sb.AppendFormat("</br>");
+                            //sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");
+                            //sb.AppendFormat("<span></span>");
                             sb.AppendFormat("</div>");
 
                             sb.AppendFormat("<div style='width: 30%; display:inline-block;'>");
@@ -463,11 +500,11 @@ namespace VV
                             sb.AppendFormat("<span style='padding: 6px 11px 5px 3px;'>Elongation (%)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["ElongationAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");
-                            sb.AppendFormat("<span></span>");
+                            sb.AppendFormat("<span style='padding: 6px 29px 5px 3px;'>Impact (J)</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact2Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");
-                            sb.AppendFormat("<span></span>");
+                            sb.AppendFormat("<span style='padding: 6px 7px 5px 3px;'>Temperature (C)</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["TemperatureCAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");
                             sb.AppendFormat("<span></span>");
@@ -481,8 +518,8 @@ namespace VV
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["ReductionAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
 
-                            sb.AppendFormat("<span style='padding: 6px 36px 5px 3px;'></span>");
-                            sb.AppendFormat("<span></span>");
+                            sb.AppendFormat("<span style='padding: 6px 52px 5px 3px;'>Impact (J)</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact4Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 3px 5px 3px;'></span>");
                             sb.AppendFormat("<span></span>");
@@ -543,7 +580,7 @@ namespace VV
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["VAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 46px 5px 3px;'>C.E</span>");
-                            //sb.AppendFormat("<span>'" + Convert.ToString(ds.Tables[0].Rows[0][""].ToString()) + "'</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["CE"].ToString()) + "</span>");
                             sb.AppendFormat("</div>");
 
                             sb.AppendFormat("<div style='width: 28%;'>");
@@ -598,11 +635,12 @@ namespace VV
                             sb.AppendFormat("<span style='padding: 6px 14px 5px 3px;'>Hardness (HB)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["HardnessAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 14px 5px 3px;'>Heat Treatment</span>");
-                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["HTDesc"].ToString()) + "</span>");
+                            sb.AppendFormat("<span style='padding: 6px 33px 5px 3px;'>Impact (J)</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact6Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");
-                            sb.AppendFormat("<span></span>");
+                            sb.AppendFormat("<span style='padding: 6px 14px 5px 3px;'>Heat Treatment</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["HTDesc"].ToString()) + "</span>");                            
+                            
                             sb.AppendFormat("</div>");
 
                             sb.AppendFormat("<div style='width: 30%; display:inline-block;'>");
@@ -612,11 +650,11 @@ namespace VV
                             sb.AppendFormat("<span style='padding: 6px 11px 5px 3px;'>Elongation (%)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["ElongationAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");
-                            sb.AppendFormat("<span></span>");
+                            sb.AppendFormat("<span style='padding: 6px 29px 5px 3px;'>Impact (J)</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact2Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");
-                            sb.AppendFormat("<span></span>");
+                            sb.AppendFormat("<span style='padding: 6px 7px 5px 3px;'>Temperature (C)</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["TemperatureCAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");
                             sb.AppendFormat("<span></span>");
@@ -630,8 +668,8 @@ namespace VV
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["ReductionAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
 
-                            sb.AppendFormat("<span style='padding: 6px 36px 5px 3px;'></span>");
-                            sb.AppendFormat("<span></span>");
+                            sb.AppendFormat("<span style='padding: 6px 52px 5px 3px;'>Impact (J)</span>");
+                            sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact4Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 3px 5px 3px;'></span>");
                             sb.AppendFormat("<span></span>");

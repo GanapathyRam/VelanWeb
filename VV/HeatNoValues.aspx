@@ -3,18 +3,14 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%--<link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>--%>
-    <script language="javascript" type="text/javascript">
-
+    <script type="text/javascript">
     </script>
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
 
     <asp:Panel ID="Message" Style="text-align: right;" runat="server" Visible="true">
-        <asp:Label ID="lblMessage" Visible="false" Style="font-weight:700; text-align: center; padding-right: 300px;" runat="server" />
+        <asp:Label ID="lblMessage" Visible="false" Style="font-weight: 700; text-align: center; padding-right: 300px;" runat="server" />
         <asp:Label ID="Label1" runat="server" Style="color: red;" CssClass="required" Text="(*) This fields are required" />
     </asp:Panel>
     <div class="container-fluid" style="border-bottom: 1px solid; padding-bottom: 10px; border-bottom-color: silver;">
@@ -30,9 +26,9 @@
                     Text="*" ForeColor="Red" Font-Bold="true" Style="margin-left: 10px;" />
             </div>
             <div style="margin-left: 800px;">
-                <asp:Button ID="btnNew" Style="width: 80px;" OnClick="btnNew_Click" runat="server" Text="Save" />
-                &nbsp;<asp:Button ID="btnUpdate" Style="width: 80px;" OnClick="btnUpdate_Click" runat="server" Text="Update" />
-                &nbsp;<asp:Button ID="btnDelete" Style="width: 80px;" OnClick="btnDelete_Click" runat="server" Visible="true" Text="Delete" />
+                <asp:Button ID="btnNew" Style="width: 80px;" OnClick="btnNew_Click" runat="server" ValidationGroup="Insert" Text="Save" />
+                &nbsp;<asp:Button ID="btnUpdate" Style="width: 80px;" OnClick="btnUpdate_Click" ValidationGroup="Insert" runat="server" Text="Update" />
+                &nbsp;<asp:Button ID="btnDelete" Style="width: 80px;" OnClick="btnDelete_Click" ValidationGroup="Insert" runat="server" Visible="true" Text="Delete" />
             </div>
         </div>
     </div>
@@ -55,10 +51,14 @@
                     </td>
                     <td colspan="1">
                         <div>
-                            <asp:CheckBoxList ID="CheckBoxList1" RepeatDirection="Horizontal" runat="server">
+                            <%--<asp:CheckBoxList ID="CheckBoxList1" RepeatDirection="Horizontal" runat="server">
                                 <asp:ListItem Text="Yes" Value="0"></asp:ListItem>
                                 <asp:ListItem Selected="True" Text="No" Value="1"></asp:ListItem>
-                            </asp:CheckBoxList>
+                            </asp:CheckBoxList>--%>
+                            <asp:RadioButtonList ID="RadioButtonList1" RepeatDirection="Horizontal" runat="server">
+                                <asp:ListItem Text="Yes" Value="0"></asp:ListItem>
+                                <asp:ListItem Selected="True" Text="No" Value="1"></asp:ListItem>
+                            </asp:RadioButtonList>
                         </div>
                     </td>
                     <td colspan="1"></td>
@@ -93,6 +93,9 @@
             </table>
         </div>
     </div>
+    <asp:Panel ID="Panel2" Style="text-align: center;" runat="server" Visible="false">
+        <textarea id="TextArea1" runat="server" style="text-align: left; width: 500px; height: 30px; color: red" cols="20" rows="2"></textarea>
+    </asp:Panel>
     <asp:Panel ID="Panel1" runat="server" Visible="false">
         <div class="row" style="margin-left: 100px; border-bottom: 1px solid; padding-bottom: 80px; border-bottom-color: silver;">
             <table style="text-align: center;">
@@ -148,9 +151,18 @@
                         <asp:Label ID="lblCMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtCActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCActual" CausesValidation="True" runat="server" AutoPostBack="true" ValidationGroup="Insert" OnTextChanged="txtCActual_TextChanged"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
+                            ControlToValidate="txtCActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblMnMinMnMax" runat="server" Text="Mn"></asp:Label>
                     </td>
@@ -161,9 +173,18 @@
                         <asp:Label ID="lblMnMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtMnActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtMnActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtMnActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator10"
+                            ControlToValidate="txtMnActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblPMinMax" runat="server" Text="P"></asp:Label>
                     </td>
@@ -174,9 +195,18 @@
                         <asp:Label ID="lblPMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtPActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtPActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtPActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                          <asp:RegularExpressionValidator ID="RegularExpressionValidator24"
+                            ControlToValidate="txtPActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                 </tr>
 
                 <tr>
@@ -191,9 +221,18 @@
                         <asp:Label ID="lblSMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtSActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtSActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtSActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2"
+                            ControlToValidate="txtSActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblSiMinSiMax" runat="server" Text="Si"></asp:Label>
                     </td>
@@ -204,9 +243,18 @@
                         <asp:Label ID="lblSiMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtSiActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtSiActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtSiActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator11"
+                            ControlToValidate="txtSiActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblCuMinCuMax" runat="server" Text="Cu"></asp:Label>
                     </td>
@@ -217,9 +265,18 @@
                         <asp:Label ID="lblCuMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtCuActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCuActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtCuActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator23"
+                            ControlToValidate="txtCuActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                 </tr>
 
                 <tr>
@@ -234,9 +291,18 @@
                         <asp:Label ID="lblNiMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtNiActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtNiActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtNiActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3"
+                            ControlToValidate="txtNiActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblCrMinCrMax" runat="server" Text="Cr"></asp:Label>
                     </td>
@@ -247,9 +313,18 @@
                         <asp:Label ID="lblCrMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtCrActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCrActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtCrActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                           <asp:RegularExpressionValidator ID="RegularExpressionValidator12"
+                            ControlToValidate="txtCrActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblMoMinMoMax" runat="server" Text="Mo"></asp:Label>
                     </td>
@@ -260,9 +335,18 @@
                         <asp:Label ID="lblMoMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtMoActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtMoActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtMoActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator22"
+                            ControlToValidate="txtMoActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                 </tr>
 
                 <tr>
@@ -277,9 +361,18 @@
                         <asp:Label ID="lblVMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtVActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtVActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtVActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4"
+                            ControlToValidate="txtVActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblCuNiCrMoVMinCuNiCrMoVMax" runat="server" Text="CuNiCrMoV"></asp:Label>
                     </td>
@@ -290,7 +383,7 @@
                         <asp:Label ID="lblCuNiCrMoVMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtCuNiCrMoVActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCuNiCrMoVActual" Enabled="false" runat="server"></asp:TextBox>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1">
@@ -303,7 +396,7 @@
                         <asp:Label ID="lblCrMoMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtCrMoActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCrMoActual" Enabled="false" runat="server"></asp:TextBox>
                     </td>
                     <td colspan="1"></td>
                 </tr>
@@ -320,9 +413,18 @@
                         <asp:Label ID="lblNbMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtNbActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtNbActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtNbActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator5"
+                            ControlToValidate="txtNbActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblNMinNMax" runat="server" Text="N"></asp:Label>
                     </td>
@@ -333,9 +435,18 @@
                         <asp:Label ID="lblNMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtNActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtNActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtNActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator13"
+                            ControlToValidate="txtNActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblAlMinAlMax" runat="server" Text="Al"></asp:Label>
                     </td>
@@ -346,9 +457,18 @@
                         <asp:Label ID="lblAlMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtAlActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtAlActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtAlActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator21"
+                            ControlToValidate="txtAlActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                 </tr>
 
                 <tr>
@@ -363,9 +483,18 @@
                         <asp:Label ID="lblTiMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtTiActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtTiActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtTiActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator6"
+                            ControlToValidate="txtTiActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblZrMinZrMax" runat="server" Text="Zr"></asp:Label>
                     </td>
@@ -376,9 +505,18 @@
                         <asp:Label ID="lblZrMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtZrActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtZrActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtZrActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                          <asp:RegularExpressionValidator ID="RegularExpressionValidator14"
+                            ControlToValidate="txtZrActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblFeMinFeMax" runat="server" Text="Fe"></asp:Label>
                     </td>
@@ -389,9 +527,18 @@
                         <asp:Label ID="lblFeMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtFeActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtFeActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtFeActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator20"
+                            ControlToValidate="txtFeActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                 </tr>
 
                 <tr>
@@ -406,9 +553,18 @@
                         <asp:Label ID="lblTaMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtTaActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtTaActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtTaActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator7"
+                            ControlToValidate="txtTaActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblNbTaMinNbTaMax" runat="server" Text="NbTa"></asp:Label>
                     </td>
@@ -419,11 +575,11 @@
                         <asp:Label ID="lblNbTaMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtNbTaActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtNbTaActual" Enabled="false" runat="server"></asp:TextBox>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblTensileMPAMinTensileMPAMax" runat="server" Text="TensileMPA"></asp:Label>
+                        <asp:Label ID="lblTensileMPAMinTensileMPAMax" runat="server" Text="Tensile (MPa)"></asp:Label>
                     </td>
                     <td colspan="1">
                         <asp:Label ID="lblTensileMPAMin" runat="server" Text=""></asp:Label>
@@ -432,15 +588,24 @@
                         <asp:Label ID="TensileMPAMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtTensileMPAActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtTensileMPAActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtTensileMPAActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator19"
+                            ControlToValidate="txtTensileMPAActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                 </tr>
 
                 <tr>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblTensileKSIMinTensileKSIMax" runat="server" Text="TensileKSI"></asp:Label>
+                        <asp:Label ID="lblTensileKSIMinTensileKSIMax" runat="server" Text="Tensile (ksi)"></asp:Label>
                     </td>
                     <td colspan="1">
                         <asp:Label ID="lblTensileKSIMin" runat="server" Text=""></asp:Label>
@@ -449,11 +614,20 @@
                         <asp:Label ID="lblTensileKSIMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtTensileKSIActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtTensileKSIActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtTensileKSIActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblYieldMPAMinYieldMPAMax" runat="server" Text="YieldMPA"></asp:Label>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator8"
+                            ControlToValidate="txtTensileKSIActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
+                    <td colspan="1">
+                        <asp:Label ID="lblYieldMPAMinYieldMPAMax" runat="server" Text="Yield (MPa)"></asp:Label>
                     </td>
                     <td colspan="1">
                         <asp:Label ID="lblYieldMPAMin" runat="server" Text=""></asp:Label>
@@ -462,11 +636,20 @@
                         <asp:Label ID="lblYieldMPAMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtYieldMPAActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtYieldMPAActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtYieldMPAActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblYieldKSIMinYieldKSIMax" runat="server" Text="YieldKSI"></asp:Label>
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator15"
+                            ControlToValidate="txtYieldMPAActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
+                    <td colspan="1">
+                        <asp:Label ID="lblYieldKSIMinYieldKSIMax" runat="server" Text="Yield (ksi)"></asp:Label>
                     </td>
                     <td colspan="1">
                         <asp:Label ID="lblYieldKSIMin" runat="server" Text=""></asp:Label>
@@ -475,9 +658,18 @@
                         <asp:Label ID="lblYieldKSIMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtYieldKSIActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtYieldKSIActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtYieldKSIActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator18"
+                            ControlToValidate="txtYieldKSIActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                 </tr>
 
                 <tr>
@@ -492,9 +684,18 @@
                         <asp:Label ID="lblElongationMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtElongationActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtElongationActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtElongationActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                          <asp:RegularExpressionValidator ID="RegularExpressionValidator9"
+                            ControlToValidate="txtElongationActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblReductionMinReductionMax" runat="server" Text="Reduction"></asp:Label>
                     </td>
@@ -505,9 +706,18 @@
                         <asp:Label ID="lblReductionMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtReductionActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtReductionActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtReductionActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                          <asp:RegularExpressionValidator ID="RegularExpressionValidator16"
+                            ControlToValidate="txtReductionActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                     <td colspan="1">
                         <asp:Label ID="lblHardnessMinHardnessMax" runat="server" Text="Hardness"></asp:Label>
                     </td>
@@ -518,24 +728,33 @@
                         <asp:Label ID="lblHardnessMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtHardnessActual" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtHardnessActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtHardnessActual_TextChanged" runat="server"></asp:TextBox>
                     </td>
-                    <td colspan="1"></td>
+                    <td colspan="1">
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator17"
+                            ControlToValidate="txtHardnessActual"
+                            ValidationExpression="[0-9]*\.?[0-9]*"
+                            Display="Static"
+                            EnableClientScript="true"
+                            ErrorMessage="Please enter numbers only"
+                            ValidationGroup="Insert"
+                            runat="server" />
+                    </td>
                 </tr>
 
                 <tr>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblImpact1" runat="server" Text="Impact1"></asp:Label>
+                        <asp:Label ID="lblImpact1" runat="server" Text="Impact (ft-lb)"></asp:Label>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtImpact1" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtImpact1" Enabled="false" runat="server"></asp:TextBox>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblImpact2" runat="server" Text="Impact2"></asp:Label>
+                        <asp:Label ID="lblImpact2" runat="server" Text="Impact (J)"></asp:Label>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1"></td>
@@ -544,12 +763,12 @@
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblImpact3" runat="server" Text="Impact3"></asp:Label>
+                        <asp:Label ID="lblImpact3" runat="server" Text="Impact (ft-lb)"></asp:Label>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtImpact3" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtImpact3" Enabled="false" runat="server"></asp:TextBox>
                     </td>
                     <td colspan="1"></td>
                 </tr>
@@ -557,7 +776,7 @@
                 <tr>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblImpact4" runat="server" Text="Impact4"></asp:Label>
+                        <asp:Label ID="lblImpact4" runat="server" Text="Impact (J)"></asp:Label>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1"></td>
@@ -566,16 +785,16 @@
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblImpact5" runat="server" Text="Impact5"></asp:Label>
+                        <asp:Label ID="lblImpact5" runat="server" Text="Impact (ft-lb)"></asp:Label>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtImpact5" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtImpact5" Enabled="false" runat="server"></asp:TextBox>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblImpact6" runat="server" Text="Impact6"></asp:Label>
+                        <asp:Label ID="lblImpact6" runat="server" Text="Impact (J)"></asp:Label>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1"></td>
@@ -588,7 +807,7 @@
                 <tr>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblTemperatureFAct" runat="server" Text="TemperatureF"></asp:Label>
+                        <asp:Label ID="lblTemperatureFAct" runat="server" Text="Temperature F"></asp:Label>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1"></td>
@@ -597,7 +816,7 @@
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblTemperatureC" runat="server" Text="TemperatureC"></asp:Label>
+                        <asp:Label ID="lblTemperatureC" runat="server" Text="Temperature C"></asp:Label>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1"></td>

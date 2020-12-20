@@ -39,13 +39,61 @@
                             <h4 style="margin: 10px; font-weight: 600; font-size:14px; margin-left:100px">(EN 10204-3.1) </h4>
                         </td>
                         <td style="width: 25%; font-size: 10px;">
-                            <p>Page 2 of 3 </p>
+                            <%--<p>Page 2 of 3 </p>--%>
                             <h7 style="font-weight:600;">Certificate # / Rev: </h7>
                             <asp:Label ID="lblPrimaryBoxNo" Style="margin-left: 10px; font-weight:600;" runat="server" Text=""></asp:Label> 
                             &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 0
                         </td>
-                    </tr>             
-                  </table>
+                    </tr>
+                    <tr style="line-height:2;">
+                    <asp:Panel ID="Panel1" Visible="false" runat="server">            
+                        <td style="text-align: left; width: 24%; font-size: 9px;">
+                            <asp:Label ID="lblSize" runat="server" Text="Company 41"></asp:Label><br>
+                            <asp:Label ID="Label16" runat="server" Text="Velan Valves India Pvt Ltd"></asp:Label><br>
+                            <asp:Label ID="Label22" runat="server" Text="S.F No.337/1,"></asp:Label><br>
+                            <asp:Label ID="Label23" runat="server" Text="Thennampalayam-Annur Road"></asp:Label><br>
+                            <asp:Label ID="Label24" runat="server" Text="Naranapuram Village"></asp:Label><br>
+                            <asp:Label ID="Label25" runat="server" Text="Coimbatore-641 659 India"></asp:Label>
+                        </td>
+                        <td style="text-align: left; width: 30%; font-size: 9px;">
+                            <asp:Label ID="lblCustomerName" runat="server" Style="font-weight: bold" Text="Customer Name :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblCustomerNameText" runat="server" Text=""></asp:Label><br>
+                            <asp:Label ID="lblCustomerPO" runat="server" Style="font-weight: bold" Text="Customer PO :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblCustomerPOText" runat="server" Text=""></asp:Label><br>
+                            <asp:Label ID="lblPEDCategory" runat="server" Style="font-weight: bold" Text="Design Spec :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblPEDCategoryText" runat="server" Text="B 16.34"></asp:Label><br>
+                            <asp:Label ID="lblPEDFluidGroup" runat="server" Style="font-weight: bold" Text="Drawing Number :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblPEDFluidGroupText" runat="server" Text="N/A Rev. N/A"></asp:Label><br>
+                            <asp:Label ID="lblApplicableStds" runat="server" Style="font-weight: bold" Text="Tag Number(s) :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblApplicableStdsText" runat="server" Text="See Attached"></asp:Label><br>
+                         <%--   <asp:Label ID="lblOtherAppDirectives" runat="server" Style="font-weight: bold" Text="Other App. Directiives :"> </asp:Label>
+                            &nbsp;<asp:Label ID="lblOtherAppDirectivesText" runat="server" Text="ATEX 2014/34/EU, Group II Cat 2 G/D">
+                            </asp:Label>--%>
+                        </td>
+                        <td style="text-align: left; width: 40%; font-size: 9px;">
+                            <asp:Label ID="lblVelanOrder" runat="server" Style="font-weight: bold" Text="Velan Order # :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblVelanOrdertext" runat="server" Text=""></asp:Label>
+                             <asp:Label ID="Label30" runat="server" Style="font-weight: bold; padding-left:5px;" Text="Position :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblPosText" runat="server" Text=""></asp:Label><br>
+                            <asp:Label ID="lblCustomerOrderPos" runat="server" Style="font-weight: bold" Text="Customer Order Pos :"></asp:Label>
+                            &nbsp;
+                            <asp:Label ID="lblCustomerOrderPosText" runat="server" Text=""></asp:Label><br>
+                            <asp:Label ID="lblQuantity" runat="server" Style="font-weight: bold" Text="Quantity :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblQuantitytext" runat="server" Text=""></asp:Label><br>
+                            <asp:Label ID="lblFigureNumber" runat="server" Style="font-weight: bold" Text="Figure Number  :"></asp:Label>
+                            &nbsp;
+                            <asp:Label ID="lblFigureNumberText" runat="server" Text=""></asp:Label><br>
+                            <asp:Label ID="lblDescription" runat="server" Style="font-weight: bold" Text="Description :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblDescriptionText" runat="server" Text=""></asp:Label><br>
+                            <%--<asp:Label ID="lblDrawingNo" runat="server" Style="font-weight: bold" Text="Drawing Number :"></asp:Label>
+                                &nbsp;<asp:Label ID="lblDrawingNoText" runat="server" Text="N/A Rev. N/A">
+                                </asp:Label>--%>
+                        </td>
+                        </asp:Panel>
+                    </tr>
+                    
+                </table>
+
                 <table style="border:1px solid; width:100%; margin-top:-5px;">
                         <tr style="height: 20px; font-size: 10px;">
                             <td colspan="1" style="text-align: left; width: 25%; padding-left:15px; font-weight:600;">
@@ -92,19 +140,19 @@
                                 <asp:Label ID="Label13" runat="server" Text="Duration (sec)"></asp:Label>
                             </td>
                             <td colspan="1" style="text-align: center; width: 10%; border-left: 1px solid;">
-                                <asp:Label ID="Label14" runat="server" Text="15"></asp:Label>
+                                <asp:Label ID="lblShellTime" runat="server" Text=""></asp:Label>
                             </td>
                             <td colspan="1" style="text-align: center; width: 10%; border-left: 1px solid;">
-                                <asp:Label ID="Label26" runat="server" Text="15"></asp:Label>
+                                <asp:Label ID="lblPackingTime" runat="server" Text=""></asp:Label>
                             </td>
                             <td colspan="1" style="text-align: center; width: 10%; border-left: 1px solid;">
-                                <asp:Label ID="Label27" runat="server" Text="15"></asp:Label>
+                                <asp:Label ID="lblSeatHPTime" runat="server" Text=""></asp:Label>
                             </td>
                             <td colspan="1" style="text-align: center; width: 10%; border-left: 1px solid;">
-                                <asp:Label ID="Label28" runat="server" Text="15"></asp:Label>
+                                <asp:Label ID="lblSeatLPTime" runat="server" Text=""></asp:Label>
                             </td>
                             <td colspan="1" style="text-align: center; width: 10%; border-left: 1px solid;">
-                                <asp:Label ID="Label29" runat="server" Text="15"></asp:Label>
+                                <asp:Label ID="lblBackseatTime" runat="server" Text=""></asp:Label>
                             </td>
                          </tr>
                          <tr style="height: 20px; border-bottom: 1px solid; font-size: 10px;">
@@ -132,19 +180,19 @@
                                 <asp:Label ID="Label17" runat="server" Text="Result"></asp:Label>
                             </td>
                               <td colspan="1" style="text-align: center; width: 10%; border-left: 1px solid;">
-                                <asp:Label ID="Label10" runat="server" Text="ACCEPTABLE"></asp:Label>
+                                <asp:Label ID="lblShellResult" runat="server" Text=""></asp:Label>
                             </td>
                               <td colspan="1" style="text-align: center; width: 10%; border-left: 1px solid;">
-                                <asp:Label ID="Label19" runat="server" Text="ACCEPTABLE"></asp:Label>
+                                <asp:Label ID="lblPackingResult" runat="server" Text=""></asp:Label>
                             </td>
                             <td colspan="1" style="text-align: center; width: 10%; border-left: 1px solid;">
-                                <asp:Label ID="Label20" runat="server" Text="ACCEPTABLE"></asp:Label>
+                                <asp:Label ID="lblSeatHPResult" runat="server" Text=""></asp:Label>
                             </td>
                             <td colspan="1" style="text-align: center; width: 10%; border-left: 1px solid;">
-                                <asp:Label ID="Label21" runat="server" Text="ACCEPTABLE"></asp:Label>
+                                <asp:Label ID="lblSeatLPResult" runat="server" Text=""></asp:Label>
                             </td>
                             <td colspan="1" style="text-align: center; width: 10%; border-left: 1px solid;">
-                                <asp:Label ID="Label18" runat="server" Text="ACCEPTABLE"></asp:Label>
+                                <asp:Label ID="lblBackseatResult" runat="server" Text=""></asp:Label>
                             </td>
                         </tr>
                     </table>
