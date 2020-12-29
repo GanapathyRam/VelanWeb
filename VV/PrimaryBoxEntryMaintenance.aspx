@@ -20,7 +20,7 @@
     </script>
 
     <link href="CSS/Main.css" rel="stylesheet" />
-    
+
 
     <table style="height: 100%;" width="100%" cellpadding="0" cellspacing="0">
         <tr>
@@ -30,7 +30,7 @@
 
             <td width="75%" align="right" style="padding-left: 200px;" class="secondLevelHeader">
                 <asp:Panel ID="SearchPanel" DefaultButton="btnSearchBox" runat="server">
-                    <asp:Label ID="lblProdOrderNo" style="font-weight:100" Text="Prod Order No" runat="server"></asp:Label>
+                    <asp:Label ID="lblProdOrderNo" Style="font-weight: 100" Text="Prod Order No" runat="server"></asp:Label>
                     &nbsp;
                     <asp:TextBox ID="txtProdOrderNo" runat="server" ToolTip="Enter Prod Order No to be Searched" onKeyUp="ControlSearch(this)" />
                     <asp:Button ID="btnSearchBox" runat="server" Text="Search" OnClick="btnSearchBox_Click"
@@ -111,10 +111,17 @@
                                     <ItemStyle Wrap="false" />
                                 </asp:TemplateField>
 
+                                <asp:TemplateField HeaderText="PED">
+                                    <ItemTemplate>
+                                         <asp:Label ID="lblPED" runat="server" Text='<%# Eval("PED") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <ItemStyle Wrap="false" />
+                                </asp:TemplateField>
+
                                 <asp:TemplateField HeaderText="Body Heat No">
                                     <ItemTemplate>
                                         <asp:TextBox ID="txtBodyHeatNo" runat="server" Enabled="true" Text='<%# Bind("BodyHeatNo") %>'> </asp:TextBox>
-                                   </ItemTemplate>
+                                    </ItemTemplate>
                                     <ItemStyle Wrap="false" />
                                 </asp:TemplateField>
 
@@ -140,42 +147,41 @@
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="" Visible="true">
-                            <ItemTemplate>
-                                <asp:Button ID="BtnPrint" runat="server" Text="Sticker"
-                                    OnClick="BtnPrint_Click" OnClientClick="OpenWindowForSticker()"/>
-                                <input id="hidPrimaryBoxNo" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
-                            </ItemTemplate>
-                            <ItemStyle Wrap="false" />
-                        </asp:TemplateField>
+                                    <ItemTemplate>
+                                        <asp:Button ID="BtnPrint" runat="server" Text="Sticker"
+                                            OnClick="BtnPrint_Click" OnClientClick="OpenWindowForSticker()" />
+                                        <input id="hidPrimaryBoxNo" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
+                                    </ItemTemplate>
+                                    <ItemStyle Wrap="false" />
+                                </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="" Visible="true">
-                            <ItemTemplate>
-                                <asp:Button ID="BtnDocPage1" runat="server" Text="DOCPage1"
-                                    OnClick="BtnDocPage1_Click" OnClientClick="OpenWindowForDocPageOne()"/>
-                                <input id="hidPrimaryBoxNoDocPage1" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
-                            </ItemTemplate>
-                            <ItemStyle Wrap="false" />
-                        </asp:TemplateField>
+                                <asp:TemplateField HeaderText="" Visible="true">
+                                    <ItemTemplate>
+                                        <asp:Button ID="BtnDocPage1" runat="server" Text="DOCPage1"
+                                            OnClick="BtnDocPage1_Click" OnClientClick="OpenWindowForDocPageOne()" />
+                                        <input id="hidPrimaryBoxNoDocPage1" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
+                                    </ItemTemplate>
+                                    <ItemStyle Wrap="false" />
+                                </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="" Visible="true">
-                            <ItemTemplate>
-                                <asp:Button ID="BtnDOCPage2" runat="server" Text="DOCPage2"
-                                    OnClick="BtnDOCPage2_Click" OnClientClick="OpenWindowForDocPageTwo()"/>
-                                <input id="hidPrimaryBoxNoDocPage2" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
-                            </ItemTemplate>
-                            <ItemStyle Wrap="false" />
-                        </asp:TemplateField>
+                                <asp:TemplateField HeaderText="" Visible="true">
+                                    <ItemTemplate>
+                                        <asp:Button ID="BtnDOCPage2" runat="server" Text="DOCPage2"
+                                            OnClick="BtnDOCPage2_Click" OnClientClick="OpenWindowForDocPageTwo()" />
+                                        <input id="hidPrimaryBoxNoDocPage2" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
+                                    </ItemTemplate>
+                                    <ItemStyle Wrap="false" />
+                                </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="" Visible="true">
-                            <ItemTemplate>
-                                <asp:Button ID="BtnDocPage3" runat="server" Text="DOCPage3"
-                                    OnClick="BtnDocPage3_Click" OnClientClick="OpenWindowForDocPageThree()"/>
-                                <input id="hidPrimaryBoxNoDocPage3" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
-                            </ItemTemplate>
-                            <ItemStyle Wrap="false" />
-                        </asp:TemplateField>
+                                <asp:TemplateField HeaderText="" Visible="true">
+                                    <ItemTemplate>
+                                        <asp:Button ID="BtnDocPage3" runat="server" Text="DOCPage3"
+                                            OnClick="BtnDocPage3_Click" OnClientClick="OpenWindowForDocPageThree()" />
+                                        <input id="hidPrimaryBoxNoDocPage3" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
+                                    </ItemTemplate>
+                                    <ItemStyle Wrap="false" />
+                                </asp:TemplateField>
 
-                                
                             </Columns>
 
                             <HeaderStyle CssClass="Grid_Header" />

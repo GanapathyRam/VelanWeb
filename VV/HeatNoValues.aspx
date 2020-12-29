@@ -33,8 +33,8 @@
         </div>
     </div>
 
-    <div class="container-fluid" style="border-bottom: 1px solid; border-bottom-color: silver; padding-bottom: 10px;">
-        <div class="row" style="margin: 20px">
+    <div class="container-fluid" style="border-bottom: 1px solid; border-bottom-color: silver;">
+        <div class="row" style="margin: 10px">
             <table style="text-align: center; margin-left: 200px;">
                 <tr>
                     <td colspan="1">
@@ -159,7 +159,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -181,7 +181,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -203,7 +203,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -229,7 +229,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -251,7 +251,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -273,7 +273,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -299,7 +299,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -321,7 +321,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -343,7 +343,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -369,7 +369,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -421,7 +421,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -443,7 +443,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -465,7 +465,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -491,7 +491,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -513,7 +513,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -535,7 +535,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -561,7 +561,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -596,7 +596,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -622,7 +622,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -644,7 +644,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -666,7 +666,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -692,7 +692,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -714,7 +714,7 @@
                             ValidationExpression="[0-9]*\.?[0-9]*"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
+                            ErrorMessage="Invalid Input"
                             ValidationGroup="Insert"
                             runat="server" />
                     </td>
@@ -728,17 +728,9 @@
                         <asp:Label ID="lblHardnessMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtHardnessActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtHardnessActual_TextChanged" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtHardnessActual" runat="server"></asp:TextBox>
                     </td>
                     <td colspan="1">
-                         <asp:RegularExpressionValidator ID="RegularExpressionValidator17"
-                            ControlToValidate="txtHardnessActual"
-                            ValidationExpression="[0-9]*\.?[0-9]*"
-                            Display="Static"
-                            EnableClientScript="true"
-                            ErrorMessage="Please enter numbers only"
-                            ValidationGroup="Insert"
-                            runat="server" />
                     </td>
                 </tr>
 
@@ -807,7 +799,7 @@
                 <tr>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblTemperatureFAct" runat="server" Text="Temperature F"></asp:Label>
+                        <asp:Label ID="lblTemperatureFAct" runat="server" Text="Temp (F)"></asp:Label>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1"></td>
@@ -816,7 +808,7 @@
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1">
-                        <asp:Label ID="lblTemperatureC" runat="server" Text="Temperature C"></asp:Label>
+                        <asp:Label ID="lblTemperatureC" runat="server" Text="Temp (C)"></asp:Label>
                     </td>
                     <td colspan="1"></td>
                     <td colspan="1"></td>

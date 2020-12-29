@@ -157,22 +157,22 @@ namespace VV {
         protected global::System.Web.UI.WebControls.Label lblCustomerPOText;
         
         /// <summary>
-        /// lblPEDCategory control.
+        /// lblApplicableStds control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPEDCategory;
+        protected global::System.Web.UI.WebControls.Label lblApplicableStds;
         
         /// <summary>
-        /// lblPEDCategoryText control.
+        /// lblApplicableStdsText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPEDCategoryText;
+        protected global::System.Web.UI.WebControls.Label lblApplicableStdsText;
         
         /// <summary>
         /// lblPEDFluidGroup control.
@@ -193,22 +193,22 @@ namespace VV {
         protected global::System.Web.UI.WebControls.Label lblPEDFluidGroupText;
         
         /// <summary>
-        /// lblApplicableStds control.
+        /// lblPEDCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApplicableStds;
+        protected global::System.Web.UI.WebControls.Label lblPEDCategory;
         
         /// <summary>
-        /// lblApplicableStdsText control.
+        /// lblPEDCategoryText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApplicableStdsText;
+        protected global::System.Web.UI.WebControls.Label lblPEDCategoryText;
         
         /// <summary>
         /// lblVelanOrder control.

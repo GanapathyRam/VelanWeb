@@ -8121,7 +8121,7 @@ namespace VV
         }
 
         public void InsertFromPrimaryBoxNo(String PrimaryBoxNo, int PrimaryBoxQty, string ProdOrderNo, string BodyHeatNo, string BonnetHeatNo,
-            string DrgNo, string TagNo)
+            string DrgNo, string TagNo, bool PED)
         {
             try
             {
@@ -8139,6 +8139,7 @@ namespace VV
                 cmd.Parameters.Add(new SqlParameter("@BonnetHeatNo", BonnetHeatNo));
                 cmd.Parameters.Add(new SqlParameter("@DrgNo", DrgNo));
                 cmd.Parameters.Add(new SqlParameter("@TagNo", TagNo));
+                cmd.Parameters.Add(new SqlParameter("@PED", PED));
                 cmd.Parameters.Add(new SqlParameter("@CreatedBy", UserName));
                 cmd.Parameters.Add(new SqlParameter("@CreatedOn", DateTime.UtcNow));
 

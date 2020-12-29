@@ -58,7 +58,8 @@
                                         <asp:HyperLink ID="HypLnkOrderNo" NavigateUrl='<%# "UpdatePrimaryBoxEntry.aspx?OrderNo=" + DataBinder.Eval(Container.DataItem,"OrderNo") + "&ProdOrderNo=" +
                                                                 DataBinder.Eval(Container.DataItem,"ProdOrderNo") + "&Pos=" + DataBinder.Eval(Container.DataItem,"Pos") + "&ValveBoxQty=" +
                                                                 DataBinder.Eval(Container.DataItem,"ValveBoxQty") + "&Item=" +
-                                                                DataBinder.Eval(Container.DataItem,"Item") %>' runat="server" Text='<%# Eval("OrderNo") %>'></asp:HyperLink>
+                                                                DataBinder.Eval(Container.DataItem,"Item") + "&PEDPrint=" +
+                                                                DataBinder.Eval(Container.DataItem,"PEDPrint") %>' runat="server" Text='<%# Eval("OrderNo") %>'></asp:HyperLink>
                                         <%--Enabled='<%# Eval("ItemGroup").ToString() != "" ? true:false %>'--%>
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -121,6 +122,13 @@
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtPackedQty" runat="server" Enabled="true" Text='<%# Bind("PackedQty") %>'> </asp:TextBox>
                                     </EditItemTemplate>
+                                    <ItemStyle Wrap="false" />
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="PED Print">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblPEDPrint" runat="server" Text='<%# Eval("PEDPrint") %>'></asp:Label>
+                                    </ItemTemplate>
                                     <ItemStyle Wrap="false" />
                                 </asp:TemplateField>
 

@@ -1471,15 +1471,6 @@ namespace VV {
         protected global::System.Web.UI.WebControls.TextBox txtHardnessActual;
         
         /// <summary>
-        /// RegularExpressionValidator17 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator17;
-        
-        /// <summary>
         /// lblImpact1 control.
         /// </summary>
         /// <remarks>

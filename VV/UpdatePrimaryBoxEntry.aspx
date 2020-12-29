@@ -16,22 +16,29 @@
             window.open("DocPageThree.aspx");
         }
     </script>
-    <table style="height: 100%;" width="100%" cellpadding="0" cellspacing="0"> 
+    <table style="height: 100%;" width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td align="left" class="secondLevelHeader" width="20%">
                 <asp:Label ID="lblPageTitle" runat="server" Text="View Primary Box Items" />
             </td>
             <%--Added by Arun on 26-Dec'07.
             To show the Progress Bar image when any of the operations are done--%>
-            <td class="secondLevelHeader" align="left" width="10%">
-                <asp:UpdateProgress ID="UpdateProgress2" runat="server">
+            <td style="text-align:right; font-weight:bold;">
+                PED
+            </td>
+            <td width="10%">
+                <%-- <asp:UpdateProgress ID="UpdateProgress2" runat="server">
                     <ProgressTemplate>
                         Loading.....<asp:Image ID="ImgLoad" runat="server" ImageUrl="~/Images/loading.gif"
                             EnableTheming="true" ImageAlign="AbsMiddle" />
                     </ProgressTemplate>
-                </asp:UpdateProgress>
+                </asp:UpdateProgress>--%>
+                <asp:RadioButtonList ID="RadioButtonList1" Enabled="false" RepeatDirection="Horizontal" runat="server">
+                    <asp:ListItem Text="Yes" Value="1"></asp:ListItem>
+                    <asp:ListItem Selected="True" Text="No" Value="0"></asp:ListItem>
+                </asp:RadioButtonList>
             </td>
-            <td width="70%" align="left" style="padding-left: 100px;" class="secondLevelHeader">
+            <td width="70%" align="left" style="padding-left: 80px;" class="secondLevelHeader">
                 <%--Added by Arun to implement the search on pressing enter itslef--%>
                 <asp:Panel ID="SearchPanel" DefaultButton="btnSearchBox" runat="server">
                     <asp:Label ID="lblPackingQty" runat="server" Text="Total Qty"></asp:Label>
@@ -89,7 +96,7 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
         <asp:UpdatePanel ID="EmployeePanel" UpdateMode="always" runat="server">
             <ContentTemplate>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" Style="margin-left: 10px; overflow-y:scroll;" Width="60%"
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" Style="margin-left: 10px; overflow-y: scroll;" Width="60%"
                     OnRowCancelingEdit="GridView1_RowCancelingEdit" PageSize="30" OnRowEditing="GridView1_RowEditing"
                     HeaderStyle-HorizontalAlign="Left" CssClass="Grid" HeaderStyle-CssClass="Grid_Header" OnRowUpdating="GridView1_RowUpdating"
                     RowStyle-CssClass="Grid_Record" EmptyDataText="No Records To Display"
@@ -174,7 +181,7 @@
                         <asp:TemplateField HeaderText="" Visible="true">
                             <ItemTemplate>
                                 <asp:Button ID="BtnPrint" runat="server" Text="Sticker"
-                                    OnClick="BtnPrint_Click" OnClientClick="OpenWindowForSticker()"/>
+                                    OnClick="BtnPrint_Click" OnClientClick="OpenWindowForSticker()" />
                                 <input id="hidPrimaryBoxNo" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
                                 <input id="hidBoxQty" value='<%# Eval("ValveBoxQty") %>' type="hidden" runat="server" />
                             </ItemTemplate>
@@ -184,7 +191,7 @@
                         <asp:TemplateField HeaderText="" Visible="true">
                             <ItemTemplate>
                                 <asp:Button ID="BtnDocPage1" runat="server" Text="DOCPage1"
-                                    OnClick="BtnDocPage1_Click" OnClientClick="OpenWindowForDocPageOne()"/>
+                                    OnClick="BtnDocPage1_Click" OnClientClick="OpenWindowForDocPageOne()" />
                                 <input id="hidPrimaryBoxNoDocPage1" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
                             </ItemTemplate>
                             <ItemStyle Wrap="false" />
@@ -193,7 +200,7 @@
                         <asp:TemplateField HeaderText="" Visible="true">
                             <ItemTemplate>
                                 <asp:Button ID="BtnDOCPage2" runat="server" Text="DOCPage2"
-                                    OnClick="BtnDOCPage2_Click" OnClientClick="OpenWindowForDocPageTwo()"/>
+                                    OnClick="BtnDOCPage2_Click" OnClientClick="OpenWindowForDocPageTwo()" />
                                 <input id="hidPrimaryBoxNoDocPage2" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
                             </ItemTemplate>
                             <ItemStyle Wrap="false" />
@@ -202,7 +209,7 @@
                         <asp:TemplateField HeaderText="" Visible="true">
                             <ItemTemplate>
                                 <asp:Button ID="BtnDocPage3" runat="server" Text="DOCPage3"
-                                    OnClick="BtnDocPage3_Click" OnClientClick="OpenWindowForDocPageThree()"/>
+                                    OnClick="BtnDocPage3_Click" OnClientClick="OpenWindowForDocPageThree()" />
                                 <input id="hidPrimaryBoxNoDocPage3" value='<%# Eval("PrimaryBoxNo") %>' type="hidden" runat="server" />
                             </ItemTemplate>
                             <ItemStyle Wrap="false" />

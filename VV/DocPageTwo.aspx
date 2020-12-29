@@ -60,12 +60,12 @@
                             &nbsp;<asp:Label ID="lblCustomerNameText" runat="server" Text=""></asp:Label><br>
                             <asp:Label ID="lblCustomerPO" runat="server" Style="font-weight: bold" Text="Customer PO :"></asp:Label>
                             &nbsp;<asp:Label ID="lblCustomerPOText" runat="server" Text=""></asp:Label><br>
-                            <asp:Label ID="lblPEDCategory" runat="server" Style="font-weight: bold" Text="Design Spec :"></asp:Label>
-                            &nbsp;<asp:Label ID="lblPEDCategoryText" runat="server" Text="B 16.34"></asp:Label><br>
+                            <asp:Label ID="lblApplicableStds" runat="server" Style="font-weight: bold" Text="Design Spec :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblApplicableStdsText" runat="server" Text=""></asp:Label><br>
                             <asp:Label ID="lblPEDFluidGroup" runat="server" Style="font-weight: bold" Text="Drawing Number :"></asp:Label>
                             &nbsp;<asp:Label ID="lblPEDFluidGroupText" runat="server" Text="N/A Rev. N/A"></asp:Label><br>
-                            <asp:Label ID="lblApplicableStds" runat="server" Style="font-weight: bold" Text="Tag Number(s) :"></asp:Label>
-                            &nbsp;<asp:Label ID="lblApplicableStdsText" runat="server" Text="See Attached"></asp:Label><br>
+                            <asp:Label ID="lblPEDCategory" runat="server" Style="font-weight: bold" Text="Tag Number(s) :"></asp:Label>
+                            &nbsp;<asp:Label ID="lblPEDCategoryText" runat="server" Text="See Attached"></asp:Label><br>
                          <%--   <asp:Label ID="lblOtherAppDirectives" runat="server" Style="font-weight: bold" Text="Other App. Directiives :"> </asp:Label>
                             &nbsp;<asp:Label ID="lblOtherAppDirectivesText" runat="server" Text="ATEX 2014/34/EU, Group II Cat 2 G/D">
                             </asp:Label>--%>
@@ -212,10 +212,10 @@
                             <td style="text-align: center; width: 8%; font-weight: 600; border-left: 1px solid;">
                                 <span Style="height: 25px; width: 10%">Description</span>
                             </td>
-                            <td style="text-align: center; width: 40%; font-weight: 600; border-left: 1px solid;">
+                            <td style="text-align: center; width: 37%; font-weight: 600; border-left: 1px solid;">
                                 <span Style="height: 25px; width: 10%">CHEMICALS</span>
                             </td>
-                            <td style="text-align: center; width: 37%; font-weight: 600; border-left: 1px solid;">
+                            <td style="text-align: center; width: 40%; font-weight: 600; border-left: 1px solid;">
                                 <span Style="height: 25px; width: 10%">MECHANICALS</span>
                             </td>
                         </tr>

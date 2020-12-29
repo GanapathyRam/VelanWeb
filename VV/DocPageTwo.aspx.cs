@@ -365,10 +365,10 @@ namespace VV
                     sb.AppendFormat("<td style='text-align: center; width: 8%; font-weight: 600;border-left: 1px solid;'>");
                     sb.AppendFormat("<span>Description</span>");
                     sb.AppendFormat("</td>");
-                    sb.AppendFormat("<td style='text-align: center; width: 40%; font-weight: 600;border-left: 1px solid;'>");
+                    sb.AppendFormat("<td style='text-align: center; width: 37%; font-weight: 600;border-left: 1px solid;'>");
                     sb.AppendFormat("<span>CHEMICALS</span>");
                     sb.AppendFormat("</td>");
-                    sb.AppendFormat("<td style='text-align: center; width: 37%; font-weight: 600;border-left: 1px solid;'>");
+                    sb.AppendFormat("<td style='text-align: center; width: 40%; font-weight: 600;border-left: 1px solid;'>");
                     sb.AppendFormat("<span>MECHANICALS</span>");
                     sb.AppendFormat("</td>");
 
@@ -415,30 +415,30 @@ namespace VV
 
                             sb.AppendFormat("<td style='text-align: left; border-left: 1px solid; display:flex;'>");
                             sb.AppendFormat("<div style='width: 28%;'>");
-                            sb.AppendFormat("<span style='padding: 6px 20px 5px 3px;'>Carbon (C)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 21px 5px 3px;'>Carbon (C)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["CAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 26px 5px 3px;'>Sulfur (S)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["SAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 23px 5px 3px;'>Nickel (Ni)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 21px 5px 3px;'>Nickel (Ni)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["NiAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 12px 5px 3px;'>Vanadium (V)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["VAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 46px 5px 3px;'>C.E</span>");
+                            sb.AppendFormat("<span style='padding: 6px 45px 5px 3px;'>C.E</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["CE"].ToString()) + "</span>");
                             sb.AppendFormat("</div>");
 
                             sb.AppendFormat("<div style='width: 28%;'>");
-                            sb.AppendFormat("<span style='padding: 6px 10px 5px 3px;'>Manganese (Mn)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 11px 5px 3px;'>Manganese (Mn)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["MnAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 33px 5px 3px;'>Silicon (Si)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 30px 5px 3px;'>Silicon (Si)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["SiAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 18px 5px 3px;'>Chromium (Cr)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 16px 5px 3px;'>Chromium (Cr)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["CrAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 8px 5px 3px;'></span>");
@@ -449,7 +449,7 @@ namespace VV
                             sb.AppendFormat("</div>");
 
                             sb.AppendFormat("<div style='width: 33%;'>");
-                            sb.AppendFormat("<span style='padding: 6px 16px 5px 3px;'>Phosphorous (P)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 20px 5px 3px;'>Phosphorous (P)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["PAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 32px 5px 3px;'>Copper (Cu)</span>");
@@ -473,17 +473,17 @@ namespace VV
 
                             sb.AppendFormat("<td style='text-align: left; border-left: 1px solid;'>");
 
-                            sb.AppendFormat("<div style='width: 30%; display:inline-block;'>");
-                            sb.AppendFormat("<span style='padding: 6px 18px 5px 3px;'>Tensile (MPa)</span>");
+                            sb.AppendFormat("<div style='width: 40%; display:inline-block;'>");
+                            sb.AppendFormat("<span style='padding: 6px 19px 5px 3px;'>Tensile (MPa)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["TensileMPAAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 33px 5px 3px;'>Yield (ksi)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 30px 5px 3px;'>Yield (ksi)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["YieldKSIAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 14px 5px 3px;'>Hardness (HB)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 16px 5px 3px;'>Hardness (HB)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["HardnessAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 33px 5px 3px;'>Impact (J)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 31px 5px 3px;'>Impact (J)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact6Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 14px 5px 3px;'>Heat Treatment</span>");
@@ -497,10 +497,10 @@ namespace VV
                             sb.AppendFormat("<span style='padding: 6px 21px 5px 3px;'>Tensile (ksi)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["TensileKSIAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 11px 5px 3px;'>Elongation (%)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 12px 5px 3px;'>Elongation (%)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["ElongationAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 29px 5px 3px;'>Impact (J)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 28px 5px 3px;'>Impact (J)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact2Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 7px 5px 3px;'>Temperature (C)</span>");
@@ -511,10 +511,10 @@ namespace VV
                             sb.AppendFormat("</div>");
 
                             sb.AppendFormat("<div style='width: 30%; display:inline-block;'>");
-                            sb.AppendFormat("<span style='padding: 6px 44px 5px 3px;'>Yield (MPa)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 45px 5px 3px;'>Yield (MPa)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["YieldMPAAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 11px 5px 3px;'>Reduction of Area(%)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 13px 5px 3px;'>Reduction of Area(%)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["ReductionAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
 
@@ -567,30 +567,30 @@ namespace VV
 
                             sb.AppendFormat("<td style='text-align: left; border-left: 1px solid; display:flex;'>");
                             sb.AppendFormat("<div style='width: 28%;'>");
-                            sb.AppendFormat("<span style='padding: 6px 20px 5px 3px;'>Carbon (C)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 21px 5px 3px;'>Carbon (C)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["CAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 26px 5px 3px;'>Sulfur (S)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["SAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 23px 5px 3px;'>Nickel (Ni)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 21px 5px 3px;'>Nickel (Ni)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["NiAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 12px 5px 3px;'>Vanadium (V)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["VAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 46px 5px 3px;'>C.E</span>");
+                            sb.AppendFormat("<span style='padding: 6px 45px 5px 3px;'>C.E</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["CE"].ToString()) + "</span>");
                             sb.AppendFormat("</div>");
 
                             sb.AppendFormat("<div style='width: 28%;'>");
-                            sb.AppendFormat("<span style='padding: 6px 10px 5px 3px;'>Manganese (Mn)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 11px 5px 3px;'>Manganese (Mn)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["MnAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 33px 5px 3px;'>Silicon (Si)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 30px 5px 3px;'>Silicon (Si)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["SiAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 18px 5px 3px;'>Chromium (Cr)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 16px 5px 3px;'>Chromium (Cr)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["CrAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 8px 5px 3px;'></span>");
@@ -601,7 +601,7 @@ namespace VV
                             sb.AppendFormat("</div>");
 
                             sb.AppendFormat("<div style='width: 33%;'>");
-                            sb.AppendFormat("<span style='padding: 6px 16px 5px 3px;'>Phosphorous (P)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 20px 5px 3px;'>Phosphorous (P)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["PAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 32px 5px 3px;'>Copper (Cu)</span>");
@@ -625,17 +625,17 @@ namespace VV
 
                             sb.AppendFormat("<td style='text-align: left; border-left: 1px solid;'>");
 
-                            sb.AppendFormat("<div style='width: 30%; display:inline-block;'>");
-                            sb.AppendFormat("<span style='padding: 6px 18px 5px 3px;'>Tensile (MPa)</span>");
+                            sb.AppendFormat("<div style='width: 40%; display:inline-block;'>");
+                            sb.AppendFormat("<span style='padding: 6px 19px 5px 3px;'>Tensile (MPa)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["TensileMPAAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 33px 5px 3px;'>Yield (ksi)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 30px 5px 3px;'>Yield (ksi)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["YieldKSIAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 14px 5px 3px;'>Hardness (HB)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 16px 5px 3px;'>Hardness (HB)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["HardnessAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 33px 5px 3px;'>Impact (J)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 31px 5px 3px;'>Impact (J)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact6Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 14px 5px 3px;'>Heat Treatment</span>");
@@ -647,10 +647,10 @@ namespace VV
                             sb.AppendFormat("<span style='padding: 6px 21px 5px 3px;'>Tensile (ksi)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["TensileKSIAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 11px 5px 3px;'>Elongation (%)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 12px 5px 3px;'>Elongation (%)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["ElongationAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 29px 5px 3px;'>Impact (J)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 28px 5px 3px;'>Impact (J)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact2Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 7px 5px 3px;'>Temperature (C)</span>");
@@ -661,10 +661,10 @@ namespace VV
                             sb.AppendFormat("</div>");
 
                             sb.AppendFormat("<div style='width: 30%; display:inline-block;'>");
-                            sb.AppendFormat("<span style='padding: 6px 44px 5px 3px;'>Yield (MPa)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 45px 5px 3px;'>Yield (MPa)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["YieldMPAAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 11px 5px 3px;'>Reduction of Area(%)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 13px 5px 3px;'>Reduction of Area(%)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["ReductionAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
 

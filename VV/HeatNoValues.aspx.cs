@@ -354,7 +354,7 @@ namespace VV
 
                 if (ds == null || ds.Tables[0].Rows.Count == 0)
                 {
-                    if (ddlMaterialCode.SelectedItem.Text != "--Please Select--" && ddlHeatTreatment.SelectedItem.Text != "--Please Select--" 
+                    if (ddlMaterialCode.SelectedItem.Text != "--Please Select--" && ddlHeatTreatment.SelectedItem.Text != "--Please Select--"
                         && txtHeatNo.Text.Trim() != string.Empty && string.IsNullOrEmpty(TextArea1.Value))
                     {
                         _dbObj.InsertHeatNoMaster(txtHeatNo.Text.Trim(), txtSupplier.Text.Trim(), Convert.ToString(ddlMaterialCode.SelectedItem.Value), Convert.ToString(ddlMaterialCode.SelectedItem.Text), RadioButtonList1.SelectedItem.Value,
@@ -366,7 +366,7 @@ namespace VV
 
                         lblMessage.Visible = true;
                         lblMessage.ForeColor = System.Drawing.Color.Green;
-                        lblMessage.Text = "Saved Successfully!.";
+                        lblMessage.Text = "Saved Successfully!";
 
                         GetDropDownInfo();
 
@@ -406,7 +406,7 @@ namespace VV
 
                 if (ds != null && ds.Tables[0].Rows.Count > 0)
                 {
-                    if (ddlMaterialCode.SelectedItem.Text != "--Please Select--" && ddlHeatTreatment.SelectedItem.Text != "--Please Select--" 
+                    if (ddlMaterialCode.SelectedItem.Text != "--Please Select--" && ddlHeatTreatment.SelectedItem.Text != "--Please Select--"
                         && txtHeatNo.Text.Trim() != string.Empty && string.IsNullOrEmpty(TextArea1.Value))
                     {
                         _dbObj.UpdateHeatNoMaster(txtHeatNo.Text.Trim(), txtSupplier.Text.Trim(), Convert.ToString(ddlMaterialCode.SelectedItem.Value), Convert.ToString(ddlMaterialCode.SelectedItem.Text), RadioButtonList1.SelectedItem.Value,
@@ -419,7 +419,7 @@ namespace VV
 
                         lblMessage.Visible = true;
                         lblMessage.ForeColor = System.Drawing.Color.Green;
-                        lblMessage.Text = "Updated Successfully!.";
+                        lblMessage.Text = "Updated Successfully!";
                     }
                 }
             }
@@ -444,7 +444,7 @@ namespace VV
 
                     lblMessage.Visible = true;
                     lblMessage.ForeColor = System.Drawing.Color.Green;
-                    lblMessage.Text = "Deleted Successfully!.";
+                    lblMessage.Text = "Deleted Successfully!";
 
                     GetDropDownInfo();
 
@@ -506,7 +506,7 @@ namespace VV
 
                 lblMessage.ForeColor = System.Drawing.Color.Red;
 
-                lblMessage.Text = "Please select the required fields to proceed further.";
+                lblMessage.Text = "Selection Missing";
             }
         }
 
@@ -1136,7 +1136,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(cMin) <= Convert.ToDouble(cActual) && Convert.ToDouble(cMax) >= Convert.ToDouble(cActual))
+                        if (Convert.ToDouble(cMin) <= Convert.ToDouble(cActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1150,6 +1150,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1210,7 +1217,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(sMin) <= Convert.ToDouble(sActual) && Convert.ToDouble(sMax) >= Convert.ToDouble(sActual))
+                        if (Convert.ToDouble(sMin) <= Convert.ToDouble(sActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1224,6 +1231,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1284,7 +1298,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(niMin) <= Convert.ToDouble(niActual) && Convert.ToDouble(niMax) >= Convert.ToDouble(niActual))
+                        if (Convert.ToDouble(niMin) <= Convert.ToDouble(niActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1298,6 +1312,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1358,7 +1379,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(vMin) <= Convert.ToDouble(vActual) && Convert.ToDouble(vMax) >= Convert.ToDouble(vActual))
+                        if (Convert.ToDouble(vMin) <= Convert.ToDouble(vActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1372,6 +1393,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1432,7 +1460,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(nbMin) <= Convert.ToDouble(nbActual) && Convert.ToDouble(nbMax) >= Convert.ToDouble(nbActual))
+                        if (Convert.ToDouble(nbMin) <= Convert.ToDouble(nbActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1446,6 +1474,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1506,7 +1541,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(tiMin) <= Convert.ToDouble(tiActual) && Convert.ToDouble(tiMax) >= Convert.ToDouble(tiActual))
+                        if (Convert.ToDouble(tiMin) <= Convert.ToDouble(tiActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1520,6 +1555,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1580,7 +1622,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(taMin) <= Convert.ToDouble(taActual) && Convert.ToDouble(taMax) >= Convert.ToDouble(taActual))
+                        if (Convert.ToDouble(taMin) <= Convert.ToDouble(taActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1594,6 +1636,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1654,7 +1703,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(TensileKSIMin) <= Convert.ToDouble(TensileKSIActual) && Convert.ToDouble(TensileKSIMax) >= Convert.ToDouble(TensileKSIActual))
+                        if (Convert.ToDouble(TensileKSIMin) <= Convert.ToDouble(TensileKSIActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1668,6 +1717,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1703,7 +1759,7 @@ namespace VV
                 }
                 else
                 {
-                    if (ElongationMax != "--")
+                    if (ElongationMax != "--" && !string.IsNullOrEmpty(ElongationMax))
                     {
                         if (Convert.ToDouble(ElongationMin) <= Convert.ToDouble(ElongationActual))
                         {
@@ -1728,7 +1784,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(ElongationMin) <= Convert.ToDouble(ElongationActual) && Convert.ToDouble(ElongationMax) >= Convert.ToDouble(ElongationActual))
+                        if (Convert.ToDouble(ElongationMin) <= Convert.ToDouble(ElongationActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1742,6 +1798,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1802,7 +1865,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(MnMin) <= Convert.ToDouble(MnActual) && Convert.ToDouble(MnMax) >= Convert.ToDouble(MnActual))
+                        if (Convert.ToDouble(MnMin) <= Convert.ToDouble(MnActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1816,6 +1879,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1876,7 +1946,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(siMin) <= Convert.ToDouble(siActual) && Convert.ToDouble(siMax) >= Convert.ToDouble(siActual))
+                        if (Convert.ToDouble(siMin) <= Convert.ToDouble(siActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1890,6 +1960,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -1950,7 +2027,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(crMin) <= Convert.ToDouble(crActual) && Convert.ToDouble(crMax) >= Convert.ToDouble(crActual))
+                        if (Convert.ToDouble(crMin) <= Convert.ToDouble(crActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -1964,6 +2041,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -2024,7 +2108,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(nMin) <= Convert.ToDouble(nActual) && Convert.ToDouble(nMax) >= Convert.ToDouble(nActual))
+                        if (Convert.ToDouble(nMin) <= Convert.ToDouble(nActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2038,6 +2122,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -2098,7 +2189,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(ZRMin) <= Convert.ToDouble(ZRActual) && Convert.ToDouble(ZRMax) >= Convert.ToDouble(ZRActual))
+                        if (Convert.ToDouble(ZRMin) <= Convert.ToDouble(ZRActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2112,6 +2203,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -2147,7 +2245,7 @@ namespace VV
                 }
                 else
                 {
-                    if (YieldMPAMax != "--")
+                    if (YieldMPAMax != "--" && !string.IsNullOrEmpty(YieldMPAMax))
                     {
                         if (Convert.ToDouble(YieldMPAMin) <= Convert.ToDouble(YieldMPAActual))
                         {
@@ -2172,7 +2270,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(YieldMPAMin) <= Convert.ToDouble(YieldMPAActual) && Convert.ToDouble(YieldMPAMax) >= Convert.ToDouble(YieldMPAActual))
+                        if (Convert.ToDouble(YieldMPAMin) <= Convert.ToDouble(YieldMPAActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2186,6 +2284,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -2221,7 +2326,7 @@ namespace VV
                 }
                 else
                 {
-                    if (ReductionMax != "--")
+                    if (ReductionMax != "--" && !string.IsNullOrEmpty(ReductionMax))
                     {
                         if (Convert.ToDouble(ReductionMin) <= Convert.ToDouble(ReductionActual))
                         {
@@ -2246,7 +2351,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(ReductionMin) <= Convert.ToDouble(ReductionActual) && Convert.ToDouble(ReductionMax) >= Convert.ToDouble(ReductionActual))
+                        if (Convert.ToDouble(ReductionMin) <= Convert.ToDouble(ReductionActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2260,6 +2365,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -2320,7 +2432,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(HardnessMin) <= Convert.ToDouble(HardnessActual) && Convert.ToDouble(HardnessMax) >= Convert.ToDouble(HardnessActual))
+                        if (Convert.ToDouble(HardnessMin) <= Convert.ToDouble(HardnessActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2369,7 +2481,7 @@ namespace VV
                 }
                 else
                 {
-                    if (YieldKSIMax != "--")
+                    if (YieldKSIMax != "--" && !string.IsNullOrEmpty(YieldKSIMax))
                     {
                         if (Convert.ToDouble(YieldKSIMin) <= Convert.ToDouble(YieldKSIActual))
                         {
@@ -2394,7 +2506,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(YieldKSIMin) <= Convert.ToDouble(YieldKSIActual) && Convert.ToDouble(YieldKSIMax) >= Convert.ToDouble(YieldKSIActual))
+                        if (Convert.ToDouble(YieldKSIMin) <= Convert.ToDouble(YieldKSIActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2409,21 +2521,28 @@ namespace VV
                     }
                 }
             }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
+            }
         }
 
         protected void txtTensileMPAActual_TextChanged(object sender, EventArgs e)
         {
             var TensileMPAMin = lblTensileMPAMin.Text;
-            var TensileMPAMax = lblTensileMPAMinTensileMPAMax.Text;
+            var tensileMPAMax = TensileMPAMax.Text;
             var TensileMPAActual = txtTensileMPAActual.Text;
 
             if (!string.IsNullOrEmpty(TensileMPAActual))
             {
                 if (TensileMPAMin == "--")
                 {
-                    if (TensileMPAMax != "--")
+                    if (tensileMPAMax != "--")
                     {
-                        if (Convert.ToDouble(TensileMPAMax) >= Convert.ToDouble(TensileMPAActual))
+                        if (Convert.ToDouble(tensileMPAMax) >= Convert.ToDouble(TensileMPAActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2443,11 +2562,11 @@ namespace VV
                 }
                 else
                 {
-                    if (TensileMPAMax != "--")
+                    if (tensileMPAMax != "--")
                     {
                         if (Convert.ToDouble(TensileMPAMin) <= Convert.ToDouble(TensileMPAActual))
                         {
-                            if (Convert.ToDouble(TensileMPAMax) >= Convert.ToDouble(TensileMPAActual))
+                            if (Convert.ToDouble(tensileMPAMax) >= Convert.ToDouble(TensileMPAActual))
                             {
                                 Panel2.Visible = false;
                                 TextArea1.Value = string.Empty;
@@ -2468,7 +2587,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(TensileMPAMin) <= Convert.ToDouble(TensileMPAActual) && Convert.ToDouble(TensileMPAMax) >= Convert.ToDouble(TensileMPAActual))
+                        if (Convert.ToDouble(TensileMPAMin) <= Convert.ToDouble(TensileMPAActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2482,6 +2601,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -2542,7 +2668,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(feMin) <= Convert.ToDouble(feActual) && Convert.ToDouble(feMax) >= Convert.ToDouble(feActual))
+                        if (Convert.ToDouble(feMin) <= Convert.ToDouble(feActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2556,6 +2682,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -2616,7 +2749,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(aiMin) <= Convert.ToDouble(aiActual) && Convert.ToDouble(aiMax) >= Convert.ToDouble(aiActual))
+                        if (Convert.ToDouble(aiMin) <= Convert.ToDouble(aiActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2630,6 +2763,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -2690,7 +2830,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(moMin) <= Convert.ToDouble(moActual) && Convert.ToDouble(moMax) >= Convert.ToDouble(moActual))
+                        if (Convert.ToDouble(moMin) <= Convert.ToDouble(moActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2704,6 +2844,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -2764,7 +2911,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(CuMin) <= Convert.ToDouble(CuActual) && Convert.ToDouble(CuMax) >= Convert.ToDouble(CuActual))
+                        if (Convert.ToDouble(CuMin) <= Convert.ToDouble(CuActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2778,6 +2925,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
 
@@ -2838,7 +2992,7 @@ namespace VV
                     }
                     else
                     {
-                        if (Convert.ToDouble(pMin) <= Convert.ToDouble(pActual) && Convert.ToDouble(pMax) >= Convert.ToDouble(pActual))
+                        if (Convert.ToDouble(pMin) <= Convert.ToDouble(pActual))
                         {
                             Panel2.Visible = false;
                             TextArea1.Value = string.Empty;
@@ -2852,6 +3006,13 @@ namespace VV
                         }
                     }
                 }
+            }
+            else
+            {
+                Panel2.Visible = false;
+                TextArea1.Value = string.Empty;
+
+                return;
             }
         }
     }

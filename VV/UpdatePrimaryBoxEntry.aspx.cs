@@ -15,6 +15,7 @@ namespace VV
         string orderNo, lineNo, proOrderNo, item = string.Empty;
         int pos = 0;
         int ValveBoxQty = 0;
+        bool PED = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,6 +23,7 @@ namespace VV
             pos = Convert.ToInt32(Request.QueryString["Pos"].ToString());
             proOrderNo = Request.QueryString["ProdOrderNo"].ToString();
             item = Request.QueryString["Item"].ToString();
+            var PEDItems = Request.QueryString["PEDPrint"].ToString();
 
             # region Master Control
 
@@ -299,6 +301,25 @@ namespace VV
                 txtSoNoLabel.Text = orderNo;
                 txtPosLabel.Text = Convert.ToString(pos);
 
+                if (PEDItems == "False" || string.IsNullOrEmpty(PEDItems))
+                {
+                    PED = Convert.ToBoolean(0);
+                }
+                else
+                {
+                    PED = Convert.ToBoolean(1);
+                }
+            }
+
+            if (PED || RadioButtonList1.SelectedValue == "1")
+            {
+                RadioButtonList1.SelectedValue = Convert.ToString("1");
+                RadioButtonList1.Enabled = true;
+            }
+            else
+            {
+                RadioButtonList1.SelectedValue = Convert.ToString("0");
+                RadioButtonList1.Enabled = false;
             }
         }
 
@@ -556,7 +577,7 @@ namespace VV
 
                 _dbObj.InsertFromPrimaryBoxNo(Convert.ToString(ds.Tables[0].Rows[row.DataItemIndex]["Primary Box No"]), Convert.ToInt32(txtPackingQtyInput.Text), Convert.ToString(Request.QueryString["ProdOrderNo"].ToString()),
                     Convert.ToString(ds.Tables[0].Rows[row.DataItemIndex]["Body Heat No"]), Convert.ToString(ds.Tables[0].Rows[row.DataItemIndex]["Bonnet Heat No"]), Convert.ToString(ds.Tables[0].Rows[row.DataItemIndex]["Drg No"]),
-                    Convert.ToString(ds.Tables[0].Rows[row.DataItemIndex]["Tag No"]));
+                    Convert.ToString(ds.Tables[0].Rows[row.DataItemIndex]["Tag No"]), false);
 
                 //Reset the edit index.
                 GridView1.EditIndex = -1;
@@ -805,7 +826,8 @@ namespace VV
                         {
                             var qty = string.IsNullOrEmpty(txtGridPackingQty) ? 0 : Convert.ToInt32(txtGridPackingQty);
 
-                            _dbObj.InsertFromPrimaryBoxNo(lblPrimaryBoxNo, Convert.ToInt32(qty), lblProdOrderNo, txtBodyHeatNo, txtBonnetHeatNo, txtDrgNo, txtTagNo);
+                            _dbObj.InsertFromPrimaryBoxNo(lblPrimaryBoxNo, Convert.ToInt32(qty), lblProdOrderNo, txtBodyHeatNo, txtBonnetHeatNo, txtDrgNo, txtTagNo,
+                                RadioButtonList1.SelectedValue == "0" ? Convert.ToBoolean(0) : Convert.ToBoolean(1));
                         }
                         else
                         {
