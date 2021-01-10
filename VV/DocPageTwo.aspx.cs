@@ -503,7 +503,7 @@ namespace VV
                             sb.AppendFormat("<span style='padding: 6px 28px 5px 3px;'>Impact (J)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact2Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 7px 5px 3px;'>Temperature (C)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 7px 5px 3px;'>Temperature(°C)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["TemperatureCAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");
@@ -653,7 +653,7 @@ namespace VV
                             sb.AppendFormat("<span style='padding: 6px 28px 5px 3px;'>Impact (J)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["Impact2Act"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
-                            sb.AppendFormat("<span style='padding: 6px 7px 5px 3px;'>Temperature (C)</span>");
+                            sb.AppendFormat("<span style='padding: 6px 7px 5px 3px;'>Temperature(°C)</span>");
                             sb.AppendFormat("<span>" + Convert.ToString(ds.Tables[0].Rows[0]["TemperatureCAct"].ToString()) + "</span>");
                             sb.AppendFormat("</br>");
                             sb.AppendFormat("<span style='padding: 6px 0 5px 3px;'></span>");

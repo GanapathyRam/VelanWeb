@@ -614,7 +614,8 @@
                         <asp:Label ID="lblTensileKSIMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtTensileKSIActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtTensileKSIActual_TextChanged" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtTensileKSIActual" Enabled="false" runat="server"></asp:TextBox>
+                         <%--AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtTensileKSIActual_TextChanged"--%>
                     </td>
                     <td colspan="1">
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator8"
@@ -658,7 +659,8 @@
                         <asp:Label ID="lblYieldKSIMax" runat="server" Text=""></asp:Label>
                     </td>
                     <td colspan="1">
-                        <asp:TextBox ID="txtYieldKSIActual" AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtYieldKSIActual_TextChanged" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtYieldKSIActual" Enabled="false" runat="server"></asp:TextBox>
+                         <%--AutoPostBack="true" CausesValidation="True" ValidationGroup="Insert" OnTextChanged="txtYieldKSIActual_TextChanged"--%>
                     </td>
                     <td colspan="1">
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator18"
